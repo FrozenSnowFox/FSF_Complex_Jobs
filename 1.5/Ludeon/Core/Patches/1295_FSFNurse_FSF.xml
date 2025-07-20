@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- FSFNurse 1295 (FSF Complex Jobs)
+ 
+		Default Priority Order
+
+			Core - FSFTakeToBedToOperate 499 (Duplicated Task)
+			Alpha Genes - AG_AdministerMetal 81 (Moved to FSFNurse)
+			Core - DoctorFeedHumanlikes 80 (Moved to FSFNurse)
+			Dubs Bad Hygiene - DBHAdministerFluids 79 (Moved to FSFNurse)
+			Biotech DLC - FeedHemogen 72 (Moved to FSFNurse)
+			Core - DoctorRescue 60 (Moved to FSFNurse)
+			Dubs Bad Hygiene - washChild 53 (Duplicated Task)
+			Dubs Bad Hygiene - washPatient 52 (Moved to FSFNurse)
+			Dubs Bad Hygiene - DocCleanBedpan 51 (Moved to FSFNurse)
+			Core - DoctorFeedAnimals 40 (Moved to FSFNurse)
+			Core - VisitSickPawn 10 (Moved to FSFNurse)
+
+	-->
+			
+		<!-- Biotech Mechanoids Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Doctor"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Doctor"] ]</xpath>
+					<value>
+						<li>FSFNurse</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Doctor"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Doctor"] ]</xpath>
+					<value>
+						<li>FSFNurse</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Core - Rescue Downed Pawns -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoctorRescue"]/workType</xpath>
+				<value>
+					<workType>FSFNurse</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoctorRescue"]/priorityInType</xpath>
+				<value>
+					<priorityInType>500</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Core - Take Pawns To Bed To Operate (Duplicate Task) -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>					
+					<WorkGiverDef>
+						<defName>FSFTakeToBedToOperate</defName>
+						<label>take patients to bed for operations</label>
+						<giverClass>WorkGiver_TakeToBedToOperate</giverClass>
+						<workType>FSFNurse</workType>
+						<priorityInType>499</priorityInType>
+						<verb>take to operate</verb>
+						<gerund>taking to operate</gerund>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+					</WorkGiverDef>					
+				</value>
+			</li>			
+			
+		<!-- Alpha Genes - Doctor Feed Humanlikes Metal -->
+			
+			<li MayRequire="sarg.alphagenes" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "AG_AdministerMetal"]/workType</xpath>
+				<value>
+					<workType>FSFNurse</workType>
+				</value>
+			</li>
+			
+		<!-- Core - Doctor Feed Humanlikes -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoctorFeedHumanlikes"]/workType</xpath>
+				<value>
+					<workType>FSFNurse</workType>
+				</value>
+			</li>
+			
+		<!-- Core - Feed Prisoner (Duplicate Task) -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>					
+					<WorkGiverDef>
+						<defName>FSFFeedPrisoner</defName>
+						<label>feed prisoners</label>
+						<giverClass>WorkGiver_Warden_Feed</giverClass>
+						<workType>FSFNurse</workType>
+						<verb>feed</verb>
+						<gerund>feeding</gerund>
+						<priorityInType>79</priorityInType>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+					</WorkGiverDef>				
+				</value>
+			</li>	
+			
+		<!-- Biotech DLC - Feed Hemogen -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "FeedHemogen"]/workType</xpath>
+				<value>
+					<workType>FSFNurse</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "FeedHemogen"]/priorityInType</xpath>
+				<value>
+					<priorityInType>78</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Dubs Bad Hygiene - Administer Fluids -->
+			
+			<li MayRequire="Dubwise.DubsBadHygiene" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DBHAdministerFluids"]/workType</xpath>
+				<value>
+					<workType>FSFNurse</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="Dubwise.DubsBadHygiene" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DBHAdministerFluids"]/priorityInType</xpath>
+				<value>
+					<priorityInType>77</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Dubs Bad Hygiene - Administer Fluids Warden (Duplicate Task) -->
+			
+			<li MayRequire="Dubwise.DubsBadHygiene" Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>					
+					<WorkGiverDef  DBHThirst="true">
+						<defName>FSFDBHAdministerFluidsWarden</defName>
+						<label>administer fluids</label>
+						<giverClass>DubsBadHygiene.WorkGiver_AdministerFluids</giverClass>
+						<workType>FSFNurse</workType>
+						<verb>give drink</verb>
+						<gerund>serving drink</gerund>
+						<priorityInType>76</priorityInType>
+						<prioritizeSustains>true</prioritizeSustains>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+						<feedHumanlikesOnly>true</feedHumanlikesOnly>
+					</WorkGiverDef>			
+				</value>
+			</li>
+			
+		<!-- Core - Doctor Feed Animals -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoctorFeedAnimals"]/workType</xpath>
+				<value>
+					<workType>FSFNurse</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoctorFeedAnimals"]/priorityInType</xpath>
+				<value>
+					<priorityInType>55</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Dubs Bad Hygiene - Wash Child (Duplicate Task) -->
+			
+			<li MayRequire="Dubwise.DubsBadHygiene,Ludeon.RimWorld.Biotech" Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>					
+					<WorkGiverDef  DBHThirst="true">
+						<defName>FSFwashChild</defName>
+						<label>wash child</label>
+						<giverClass>DubsBadHygiene.WorkGiver_washChild</giverClass>
+						<workType>FSFNurse</workType>
+						<verb>wash</verb>
+						<gerund>washing</gerund>
+						<priorityInType>53</priorityInType>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+					</WorkGiverDef>			
+				</value>
+			</li>
+			
+		<!-- Dubs Bad Hygiene - Wash Patient -->
+			
+			<li MayRequire="Dubwise.DubsBadHygiene" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "washPatient"]/workType</xpath>
+				<value>
+					<workType>FSFNurse</workType>
+				</value>
+			</li>
+			
+		<!-- Dubs Bad Hygiene - Clean Bedpan -->
+			
+			<li MayRequire="Dubwise.DubsBadHygiene" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DocCleanBedpan"]/workType</xpath>
+				<value>
+					<workType>FSFNurse</workType>
+				</value>
+			</li>
+			
+		<!-- Core - Visit Sick Pawn -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VisitSickPawn"]/workType</xpath>
+				<value>
+					<workType>FSFNurse</workType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

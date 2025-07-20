@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Combat Extended -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ReloadTurrets"]/workType</xpath>
+				<value>
+					<workType>FSFRearming</workType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Vanilla Factions Expanded Pirates -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+			
+			<!-- Remove Tag from Trait so Hauling style jobs work -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/TraitDef[defName="VFEP_WarcasketTrait"]/disabledWorkTags/li[text()="ManualDumb"]</xpath>
+				<match Class="PatchOperationRemove">
+					<xpath>/Defs/TraitDef[defName = "VFEP_WarcasketTrait"]/disabledWorkTags/li[text()="ManualDumb"]</xpath>
+				</match>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

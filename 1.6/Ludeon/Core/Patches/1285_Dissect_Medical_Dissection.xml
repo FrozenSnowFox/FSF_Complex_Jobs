@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- Dissect 1285 (Medical Dissection) (478)
+
+		Default Priority Order
+
+			Medical Dissection - DoBillsDissection 100
+
+	-->
+			
+		<!-- Medical Dissection - Update Worktype Priority -->
+			
+			<li MayRequire="Heremeus.MedicalDissection" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "MedicalTraining"]/naturalPriority</xpath>
+				<value>
+					<naturalPriority>1285</naturalPriority>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Vanilla Furniture Expanded Security -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/WorkGiverDef[defName = "VFES_ConstructRearmTrap"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[@Name = "VFES_RearmTrap"]/workType</xpath>
+				<value>
+					<workType>FSFRearming</workType>
+				</value>
+			</li>
+
+		</operations>
+	</Operation>
+	
+</Patch>

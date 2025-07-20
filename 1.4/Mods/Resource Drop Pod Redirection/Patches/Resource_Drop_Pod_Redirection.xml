@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Resource Drop Pod Redirection -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "PodHackScan"]/workType</xpath>
+				<value>
+					<workType>FSFScan</workType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

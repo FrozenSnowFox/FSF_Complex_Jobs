@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Ultratech Altered Carbon -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VFEU_ExtractStack"]/workType</xpath>
+				<value>
+					<workType>FSFCremating</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VFEU_ExtractStack"]/priorityInType</xpath>
+				<value>
+					<priorityInType>95</priorityInType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VFEU_DoBillsDecryptionBench"]/priorityInType</xpath>
+				<value>
+					<priorityInType>150</priorityInType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- Cooking 1000 (Core)
+ 
+		Default Priority Order
+
+			Fortification Industrial Citadel - FT_OperateKitchen 125
+			Medieval Overhaul - DankPyon_DoBillsRusticCookingTable 110
+			Medieval Overhaul - DankPyon_DoBillsStewPot 110
+			Medieval Overhaul - DankPyon_DoBillsStoneOven 110
+			Medieval Overhaul - DankPyon_DoBillsMillstone 110
+			Medieval Overhaul - DankPyon_DoBillsGrill 110
+			SeedsPlease Lite ProcessSeeds 105
+			Vanilla Cooking Expanded - VCE_DoBillsFryer 101
+			Vanilla Cooking Expanded - VCE_DoBillsCanning 101
+			Vanilla Cooking Expanded - VCE_DoBillsPrep 101 (Condiment Bench)
+			Core - DoBillsCook 100
+			Primitive Workbenches - VBY_DoBillsBrewTea 100
+			Vanilla Brewing Expanded - VBE_DoBillsBar 100
+			Vanilla Brewing Expanded Coffees and Teas - VBE_DoBillsEspressoMachine 100
+			Vanilla Cooking Expanded - VCE_DoBillsGrill 100
+			Vanilla Cooking Expanded Sushi - VCE_DoBillsSushi 100
+			Vanilla Furniture Expanded Pack - FFE_DoBillsCook 100 (Non Powered Veggie Prep Bench)
+			Vanilla Furniture Expanded Pack - FFE_DoBillsMeatMincer 100
+			Vanilla Plants Expanded More Plants - VCE_DoBillsVegMilkExtractor 100
+			Core - DoBillsCookCampfire 97
+			Medieval Overhaul - DankPyon_DoBillsCookHearth 97
+			Core - DoBillsButcherFlesh 90 (Moved to FSFButcher)
+			Core - CookFillHopper 50 (Moved to Hauling)
+			Vanilla Factions Expanded Ancients - VFEA_DoBillsAncientCookingStation 50
+			Core - DoBillsBrew 30 (Moved to FSFProduction)
+			Alpha Crafts - AC_DoBillsOilPressWorkshop 20
+			Alpha Crafts - AC_DoBillsDairyProcessingStation 20
+			Alpha Crafts - AC_DoBillsGrinder 20
+			Alpha Crafts - AC_DoBillsArtisanTable 20
+			Alpha Crafts - AC_DoBillsBottlingPlant 20
+
+	-->
+			
+		<!-- Core - Update Worktype Description -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "Cooking"]/description</xpath>
+				<value>
+					<description>Prepare meals.</description>
+				</value>
+			</li>
+			
+		<!-- Vanilla Brewing Expanded - Do Bills at Bar -->
+			
+			<li MayRequire="VanillaExpanded.VBrewE" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VBE_DoBillsBar"]/priorityInType</xpath>
+				<value>
+					<priorityInType>250</priorityInType>
+				</value>
+			</li>
+			
+		<!-- SeedsPlease Lite - Process Seeds -->
+			
+			<li MayRequireAnyOf="Owlchemist.SeedsPleaseLite,Evyatar108.SeedsPleaseLiteRedux" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ProcessSeeds"]/priorityInType</xpath>
+				<value>
+					<priorityInType>245</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Cooking Expanded - Do Bills at Fryer -->
+			
+			<li MayRequire="VanillaExpanded.VCookE" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VCE_DoBillsFryer"]/priorityInType</xpath>
+				<value>
+					<priorityInType>200</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Cooking Expanded Sushi - Do Bills at Sushi Bench -->
+			
+			<li MayRequire="VanillaExpanded.VCookESushi" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VCE_DoBillsSushi"]/priorityInType</xpath>
+				<value>
+					<priorityInType>195</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Furniture Expanded Pack - Do Bills at Non Powered Cooking Bench -->
+			
+			<li MayRequire="Farxmai2.VanillaFurnitureExpandedPack" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "FFE_DoBillsCook"]/priorityInType</xpath>
+				<value>
+					<priorityInType>190</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Cooking Expanded - Do Bills at Grill -->
+			
+			<li MayRequire="VanillaExpanded.VCookE" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VCE_DoBillsGrill"]/priorityInType</xpath>
+				<value>
+					<priorityInType>185</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Factions Expanded Ancients - Do Bills at Ancient Stove -->
+			
+			<li MayRequire="VanillaExpanded.VFEA" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VFEA_DoBillsAncientCookingStation"]/priorityInType</xpath>
+				<value>
+					<priorityInType>180</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Plants Expanded More Plants - Do Bills at Veggie Milk Extractor -->
+			
+			<li MayRequire="VanillaExpanded.VPlantsEMore,VanillaExpanded.VCookE" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VCE_DoBillsVegMilkExtractor"]/priorityInType</xpath>
+				<value>
+					<priorityInType>50</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Cooking Expanded - Do Bills at Canner -->
+			
+			<li MayRequire="VanillaExpanded.VCookE" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VCE_DoBillsCanning"]/priorityInType</xpath>
+				<value>
+					<priorityInType>45</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Furniture Expanded Pack - Do Bills at Meat Mincer -->
+			
+			<li MayRequire="Farxmai2.VanillaFurnitureExpandedPack" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "FFE_DoBillsMeatMincer"]/priorityInType</xpath>
+				<value>
+					<priorityInType>40</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Medieval Overhaul - Do Bills at Millstone -->
+			
+			<li MayRequire="DankPyon.Medieval.Overhaul" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DankPyon_DoBillsMillstone"]/priorityInType</xpath>
+				<value>
+					<priorityInType>30</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Cooking Expanded - Do Bills at Condiment Bench -->
+			
+			<li MayRequire="VanillaExpanded.VCookE" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VCE_DoBillsPrep"]/priorityInType</xpath>
+				<value>
+					<priorityInType>30</priorityInType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

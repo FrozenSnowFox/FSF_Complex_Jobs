@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- VFE Mechanoids Unofficial -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/ThingDef[defName = "VFE_Mechanoids_AutohaulerBase"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "VFE_Mechanoids_AutohaulerBase"]/comps/li[@Class = "VFE.Mechanoids.CompProperties_MachineChargingStation"]/allowedWorkTypes</xpath>
+				<value>
+					<li>FSFRearming</li>
+					<li>FSFRefueling</li>
+					<li>FSFLoading</li>
+					<li>FSFDeliver</li>
+					<li>FSFCremating</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "VFE_Mechanoids_AutominerBase"]/comps/li[@Class = "VFE.Mechanoids.CompProperties_MachineChargingStation"]/allowedWorkTypes</xpath>
+				<value>
+					<li>FSFDrilling</li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- RimefellerCrafting 426 (Rimefeller) (Default 309)
+ 
+		Default Priority Order
+
+		Dubs Rimefeller - OperateResourceConsole 110
+
+	-->
+	
+		<!-- Dubs Rimefeller - (Move RimefellerCrafting Worktype Priority) -->
+			
+			<li MayRequire="Dubwise.Rimefeller" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "RimefellerCrafting"]/naturalPriority</xpath>
+				<value>
+					<naturalPriority>426</naturalPriority>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+	
+	<!-- Enable Convert Worktype -->
+	
+	<Operation Class="VFECore.PatchOperationToggableSequence">
+		<enabled>False</enabled>
+		<label>Enable Convert Worktype</label>
+		<mods>
+			<li>[FSF] Complex Jobs</li>
+		</mods>
+		
+  		<operations>
+		
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+  <WorkTypeDef>
+    <defName>FSFConvert</defName>
+    <labelShort>Convert</labelShort>
+    <pawnLabel>Warden</pawnLabel>
+    <gerundLabel>converting</gerundLabel>
+    <description>Convert prisoners to your Ideologion.</description>
+    <verb>Handle</verb>
+    <naturalPriority>1105</naturalPriority>
+    <requireCapableColonist>true</requireCapableColonist>
+    <disabledForSlaves>true</disabledForSlaves>
+    <relevantSkills>
+      <li>Social</li>
+    </relevantSkills>
+    <workTags>
+      <li>Social</li>
+      <li>AllWork</li>
+    </workTags>
+  </WorkTypeDef>
+				
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ConvertPrisoner"]/workType</xpath>
+				<value>
+					<workType>FSFConvert</workType>
+				</value>
+			</li>
+			
+		</operations>
+
+	</Operation>
+	
+	<!-- Enable Merge Worktype -->
+	
+	<Operation Class="VFECore.PatchOperationToggableSequence">
+		<enabled>False</enabled>
+		<label>Enable Merge Worktype</label>
+		<mods>
+			<li>[FSF] Complex Jobs</li>
+		</mods>
+		
+  		<operations>
+		
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+	<WorkTypeDef>
+		<defName>FSFMerge</defName>
+		<labelShort>Merge</labelShort>
+		<pawnLabel>Hauler</pawnLabel>
+		<gerundLabel>merging</gerundLabel>
+		<description>Merge stacks of resources together to prevent clutter.</description>
+		<verb>Merging</verb>
+		<naturalPriority>305</naturalPriority>
+		<alwaysStartActive>true</alwaysStartActive>
+		<requireCapableColonist>true</requireCapableColonist>
+		<workTags>
+			<li>ManualDumb</li>
+			<li>Hauling</li>
+			<li>Commoner</li>
+			<li>AllWork</li>
+		</workTags>
+	</WorkTypeDef>
+				
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "HaulMerge"]/workType</xpath>
+				<value>
+					<workType>FSFMerge</workType>
+				</value>
+			</li>
+			
+		</operations>
+
+	</Operation>
+	
+	<!-- Enable Pruning Worktype -->
+	
+	<Operation Class="VFECore.PatchOperationToggableSequence">
+		<enabled>False</enabled>
+		<label>Enable Pruning Worktype</label>
+		<mods>
+			<li>[FSF] Complex Jobs</li>
+		</mods>
+		
+  		<operations>
+		
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+	<WorkTypeDef>
+		<defName>FSFPruning</defName>
+		<labelShort>Prune</labelShort>
+		<pawnLabel>Pruner</pawnLabel>
+		<gerundLabel>pruning</gerundLabel>
+		<description>Prune trees.</description>
+		<verb>Prune</verb>
+		<naturalPriority>505</naturalPriority>
+		<alwaysStartActive>false</alwaysStartActive>
+		<requireCapableColonist>true</requireCapableColonist>
+		<relevantSkills>
+			<li>Plants</li>
+		</relevantSkills>
+		<workTags>
+			<li>ManualSkilled</li>
+			<li>PlantWork</li>
+			<li>Commoner</li>
+			<li>AllWork</li>
+		</workTags>
+	</WorkTypeDef>
+				
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "PruneGauranlenTree"]/workType</xpath>
+				<value>
+					<workType>FSFPruning</workType>
+				</value>
+			</li>
+			
+		</operations>
+
+	</Operation>
+	
+	<!-- Enable Smoothing Worktype -->
+	
+	<Operation Class="VFECore.PatchOperationToggableSequence">
+		<enabled>False</enabled>
+		<label>Enable Smoothing Worktype</label>
+		<mods>
+			<li>[FSF] Complex Jobs</li>
+		</mods>
+		
+  		<operations>
+		
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+	<WorkTypeDef>
+		<defName>FSFSmoothing</defName>
+		<labelShort>Smooth</labelShort>
+		<pawnLabel>Smoother</pawnLabel>
+		<gerundLabel>smoothing</gerundLabel>
+		<description>Smooth stone floors and walls.</description>
+		<verb>Smooth</verb>
+		<naturalPriority>895</naturalPriority>
+		<alwaysStartActive>false</alwaysStartActive>
+		<requireCapableColonist>true</requireCapableColonist>
+		<relevantSkills>
+			<li>Construction</li>
+		</relevantSkills>
+		<workTags>
+			<li>ManualSkilled</li>
+			<li>Commoner</li>
+			<li>Constructing</li>
+			<li>AllWork</li>
+		</workTags>
+	</WorkTypeDef>
+				
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ConstructSmoothFloors"]/workType</xpath>
+				<value>
+					<workType>FSFSmoothing</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ConstructSmoothWalls"]/workType</xpath>
+				<value>
+					<workType>FSFSmoothing</workType>
+				</value>
+			</li>
+			
+		</operations>
+
+	</Operation>
+	
+	<!-- Enable Taming Worktype -->
+	
+	<Operation Class="VFECore.PatchOperationToggableSequence">
+		<enabled>False</enabled>
+		<label>Enable Taming Worktype</label>
+		<mods>
+			<li>[FSF] Complex Jobs</li>
+		</mods>
+		
+  		<operations>
+		
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+	<WorkTypeDef>
+		<defName>FSFTaming</defName>
+		<labelShort>Tame</labelShort>
+		<pawnLabel>Tamer</pawnLabel>
+		<gerundLabel>Taming</gerundLabel>
+		<description>Tame wild animals.</description>
+		<verb>Tame</verb>
+		<naturalPriority>1055</naturalPriority>
+		<relevantSkills>
+			<li>Animals</li>
+		</relevantSkills>
+		<workTags>
+			<li>Animals</li>
+			<li>Commoner</li>
+			<li>AllWork</li>
+		</workTags>
+	</WorkTypeDef>
+				
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "FSFTraining"]/description</xpath>
+				<value>
+					<description>Train domesticated animals.</description>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "Tame"]/workType</xpath>
+				<value>
+					<workType>FSFTaming</workType>
+				</value>
+			</li>
+			
+		</operations>
+
+	</Operation>
+	
+</Patch>

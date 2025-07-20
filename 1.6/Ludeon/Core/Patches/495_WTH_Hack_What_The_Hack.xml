@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- WTH_Hack 495 (What The Hack) (Default 1250)
+ 
+		Default Priority Order
+
+			What The Hack - WTH_HackRogueAI 150
+			What The Hack - WTH_MaintainMechanoid_Urgent 120
+			What The Hack - WTH_MaintainMechanoid 115
+			What The Hack - WTH_DoBillsMedicalMechanoidOperation 110
+			What The Hack - WTH_DoBillsMechanoidWorkshop 75
+
+	-->
+				
+		<!-- What The Hack - Update Worktype Priority -->
+			
+			<li MayRequire="roolo.whatthehack" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "WTH_Hack"]/naturalPriority</xpath>
+				<value>
+					<naturalPriority>495</naturalPriority>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

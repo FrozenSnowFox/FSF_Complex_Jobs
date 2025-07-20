@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Vanilla Power Expanded -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VPE_DoBillsGasCrematorium"]/workType</xpath>
+				<value>
+					<workType>FSFCremating</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VPE_DoBillsGasCrematorium"]/priorityInType</xpath>
+				<value>
+					<priorityInType>90</priorityInType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VPE_BurnGasCrematorium"]/workType</xpath>
+				<value>
+					<workType>FSFCremating</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VPE_BurnGasCrematorium"]/priorityInType</xpath>
+				<value>
+					<priorityInType>85</priorityInType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VPE_DoBillsGasSmelter"]/workType</xpath>
+				<value>
+					<workType>FSFSmelt</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VPE_DoBillsGasRefinery"]/workType</xpath>
+				<value>
+					<workType>FSFRefining</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VPE_WorkAtGasExcavator"]/workType</xpath>
+				<value>
+					<workType>FSFDrilling</workType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

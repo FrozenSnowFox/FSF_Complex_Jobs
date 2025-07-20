@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Firefighter 1400 (Core)
+ 
+		Default Priority Order
+
+			FSF Complex Jobs - FSFFirefighterRescue 60 (Mod Setting)
+			Core - FightFires 20
+			Save Our Ship 2 - FightMechanites 20
+
+	-->
+				
+</Patch>

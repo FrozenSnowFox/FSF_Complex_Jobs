@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- Warden 1100 (Core)
+ 
+		Default Priority Order
+
+			Dubs Bad Hygiene - WardenRefillWater 500
+			Anomaly DLC - InterrogatePrisoner 120
+			Anomaly DLC - ExecuteEntity 115
+			Save Our Ship 2 - DoArchotechSacrifice 111
+			Core - DoExecution 110
+			Ideology DLC - ExecuteSlave 110
+			Core - ExecuteGuiltyColonist 110
+			Research Reinvented - RR_InterrogatePrisoner 110
+			Ideology DLC - EmancipateSlave 105
+			Core - ReleasePrisoner 100
+			Vanilla Factions Expanded Ancients - VFEA_Interrogate 100
+			Dubs Bad Hygiene - WardenEmptySepticTank 98
+			Ideology DLC - EnslavePrisoner 95
+			Anomaly DLC - ActivitySuppression 95
+			Core - TakePrisonerToBed 90
+			Core - FeedPrisoner 80
+			Alpha Genes - AG_Warden_DeliverMetal 80
+			Dubs Bad Hygiene - DBHAdministerFluidsWarden 79
+			Ideology DLC - ImprisonSlave 75
+			Ideology DLC - ConvertPrisoner 72
+			Biotech DLC - DeliverHemogenToPrisoner 72
+			Core - DeliverFoodToPrisoner 70
+			Ideology DLC - SuppressSlave 65
+			Anomaly DLC - ReleaseEntity 65
+			Core - ChatWithPrisoner 60
+			Snap Out! - SnapOut_CalmPawnDownWorkgiver 18
+
+	-->
+			
+		<!-- Snap Out! - Calm Pawn Down -->
+			
+			<li MayRequire="weilbyte.snapout" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "SnapOut_CalmPawnDownWorkgiver"]/priorityInType</xpath>
+				<value>
+					<priorityInType>9999</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Anomaly DLC - Execute Entity -->
+			
+			<li MayRequire="Ludeon.RimWorld.Anomaly" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ExecuteEntity"]/priorityInType</xpath>
+				<value>
+					<priorityInType>9995</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Anomaly DLC - Suppress Entity -->
+			
+			<li MayRequire="Ludeon.RimWorld.Anomaly" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ActivitySuppression"]/priorityInType</xpath>
+				<value>
+					<priorityInType>9992</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Anomaly DLC - Interrogate Prisoner -->
+			
+			<li MayRequire="Ludeon.RimWorld.Anomaly" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "InterrogatePrisoner"]/priorityInType</xpath>
+				<value>
+					<priorityInType>9991</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Dubs Bad Hygiene - Warden Empty Septic Tank -->
+			
+			<li MayRequire="Dubwise.DubsBadHygiene" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "WardenEmptySepticTank"]/priorityInType</xpath>
+				<value>
+					<priorityInType>445</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Anomaly DLC - Release Entity -->
+			
+			<li MayRequire="Ludeon.RimWorld.Anomaly" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ReleaseEntity"]/priorityInType</xpath>
+				<value>
+					<priorityInType>106</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Core - Deliver Food To Prisoner -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DeliverFoodToPrisoner"]/priorityInType</xpath>
+				<value>
+					<priorityInType>79</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Biotech DLC - Deliver Hemogen to Prisoner -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DeliverHemogenToPrisoner"]/priorityInType</xpath>
+				<value>
+					<priorityInType>78</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Ideology DLC - Imprison Slave -->
+			
+			<li MayRequire="Ludeon.RimWorld.Ideology" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ImprisonSlave"]/priorityInType</xpath>
+				<value>
+					<priorityInType>77</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Ideology DLC - Suppress Slave -->
+			
+			<li MayRequire="Ludeon.RimWorld.Ideology" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "SuppressSlave"]/priorityInType</xpath>
+				<value>
+					<priorityInType>76</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Research Reinvented - Interrogate Prisoners (For Research) -->
+			
+			<li MayRequire="PeteTimesSix.ResearchReinvented" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RR_InterrogatePrisoner"]/priorityInType</xpath>
+				<value>
+					<priorityInType>75</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Factions Expanded Ancients - Interrogate Prisoners (For Locations) -->
+			
+			<li MayRequire="VanillaExpanded.VFEA" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VFEA_Interrogate"]/priorityInType</xpath>
+				<value>
+					<priorityInType>74</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Ideology DLC - Enslave Prisoner -->
+			
+			<li MayRequire="Ludeon.RimWorld.Ideology" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "EnslavePrisoner"]/priorityInType</xpath>
+				<value>
+					<priorityInType>73</priorityInType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

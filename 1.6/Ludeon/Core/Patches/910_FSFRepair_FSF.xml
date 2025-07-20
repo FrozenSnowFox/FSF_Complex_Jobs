@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- FSFRepair 910 (FSF Complex Jobs)
+ 
+		Default Priority Order
+
+			Vanilla Quests Expanded The Generator - VQE_MaintainGenetron 300 (Moved to FSFRepair)
+			Dubs Rimkit - FixBrokenDownBuildingWithKit 130 (Moved to FSFRepair)
+			Core - FixBrokenDownBuilding 120 (Moved to FSFRepair)
+			Vanilla Quests Expanded The Generator - VQE_FixCriticallyBrokenDownBuilding 120 (Moved to FSFRepair)
+			Fluffy Breakdowns - FluffyBreakdowns_Maintenance 85 (Moved to FSFRepair)
+			Vehicle Framework - RepairVehicle 80 (Moved to FSFRepair)
+			Layered Wall Destruction - RestoreWall 45 (Moved to FSFRepair)
+			Core - Repair 40 (Moved to FSFRepair)
+
+	-->
+			
+		<!-- Biotech Mechanoids Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Construction"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Construction"] ]</xpath>
+					<value>
+						<li>FSFRepair</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Construction"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Construction"] ]</xpath>
+					<value>
+						<li>FSFRepair</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Vanilla Quests Expanded The Generator - Maintain Arc -->
+			
+			<li MayRequire="vanillaquestsexpanded.generator" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VQE_MaintainGenetron"]/workType</xpath>
+				<value>
+					<workType>FSFRepair</workType>
+				</value>
+			</li>
+			
+		<!-- Dubs Rimkit - Fix Broken Down Buildings With Kit -->
+			
+			<li MayRequire="Dubwise.DubsRimkit" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "FixBrokenDownBuildingWithKit"]/workType</xpath>
+				<value>
+					<workType>FSFRepair</workType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Quests Expanded The Generator - Fix Critically Broken Down Buildings -->
+			
+			<li MayRequire="vanillaquestsexpanded.generator" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VQE_FixCriticallyBrokenDownBuilding"]/workType</xpath>
+				<value>
+					<workType>FSFRepair</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="vanillaquestsexpanded.generator" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VQE_FixCriticallyBrokenDownBuilding"]/priorityInType</xpath>
+				<value>
+					<priorityInType>129</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Core - Fix Broken Down Buildings -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "FixBrokenDownBuilding"]/workType</xpath>
+				<value>
+					<workType>FSFRepair</workType>
+				</value>
+			</li>
+			
+		<!-- Fluffy Breakdowns - Maintain Buildings -->
+			
+			<li MayRequireAnyOf="Fluffy.FluffyBreakdowns,theeyeofbrows.fluffybreakdowns" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "FluffyBreakdowns_Maintenance"]/workType</xpath>
+				<value>
+					<workType>FSFRepair</workType>
+				</value>
+			</li>
+			
+		<!-- Vehicle Framework - Repair Vehicle -->
+			
+			<li MayRequire="SmashPhil.VehicleFramework" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RepairVehicle"]/workType</xpath>
+				<value>
+					<workType>FSFRepair</workType>
+				</value>
+			</li>
+			
+		<!-- Layered Wall Destruction - Restore Walls -->
+			
+			<li MayRequire="Keshash.LayeredWallDestruction" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RestoreWall"]/workType</xpath>
+				<value>
+					<workType>FSFRepair</workType>
+				</value>
+			</li>
+			
+		<!-- Core - Repair -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "Repair"]/workType</xpath>
+				<value>
+					<workType>FSFRepair</workType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

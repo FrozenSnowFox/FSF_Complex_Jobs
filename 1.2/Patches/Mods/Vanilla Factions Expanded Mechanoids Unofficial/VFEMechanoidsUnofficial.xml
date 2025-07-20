@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- VFE Mechanoids Unofficial -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/ThingDef[defName = "MAO_Mechanoids_MenderBase"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "MAO_Mechanoids_MenderBase"]/comps/li[@Class = "VFE.Mechanoids.CompProperties_MachineChargingStation"]/allowedWorkTypes</xpath>
+				<value>
+					<li>FSFNurse</li>
+					<li>FSFSurgeon</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "MAO_Mechanoids_AssemblerBase"]/comps/li[@Class = "VFE.Mechanoids.CompProperties_MachineChargingStation"]/allowedWorkTypes</xpath>
+				<value>
+					<li>FSFRepair</li>
+					<li>FSFDeconstruct</li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

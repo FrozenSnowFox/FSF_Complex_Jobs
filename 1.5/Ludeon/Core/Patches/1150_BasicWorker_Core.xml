@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- BasicWorker 1150 (Core)
+ 
+		Default Priority Order
+
+			Dubs Bad Hygiene - DrainWaterTank 600
+			Core - Flick 500
+			Dubs Bad Hygiene - TipSewage 500
+			Vanilla Vehicles Expanded - VVE_OpenGarages 500
+			Vanilla Vehicles Expanded - VVE_CloseGarages 500
+			Save Our Ship 2 - InstallConsciousness 211
+			Core - BasicReleasePrisoner 100
+			Altered Carbon 2 - AC_EnterNeuralConnector 90
+			Core - Open 50
+			Altered Carbon 2 - AC_StartGestationProcess 50
+			Altered Carbon 2 - AC_CancelGestationProcess 50
+			Altered Carbon 2 - AC_CancelRepurposingBody 50
+			Alpha Genes - AG_ForceEatMetal 40
+			Ideology DLC - ChangeTreeMode 30
+			Ideology DLC - ExtractSkull 20 (Moved to Cremate)
+			Anima Obelisk - AnimaObelisk_WorkGiverDef_FillPawn 1
+
+	-->
+		
+		<!-- Alpha Genes - Force Pawn to Eat Metal -->
+			
+			<li MayRequire="sarg.alphagenes" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "AG_ForceEatMetal"]/priorityInType</xpath>
+				<value>
+					<priorityInType>9999</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Anima Obelisk - Fill Psyfocus -->
+			
+			<li MayRequire="DimonSever000.AnimaObelisk.Specific" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "AnimaObelisk_WorkGiverDef_FillPawn"]/priorityInType</xpath>
+				<value>
+					<priorityInType>499</priorityInType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

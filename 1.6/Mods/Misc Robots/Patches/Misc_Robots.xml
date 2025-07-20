@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Misc Robots -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>			
+			
+	<!-- Comment this out, it shouldn't be needed and causes errors with Robots++ because it has mechWorkTypePriorities already
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AIRobot_Hauler"]/race</xpath>
+				<value>
+					<mechWorkTypePriorities>
+						<FSFRearming>1</FSFRearming>
+						<FSFRefueling>1</FSFRefueling>
+						<FSFLoading>1</FSFLoading>
+						<FSFCremating>1</FSFCremating>
+						<FSFDeliver>1</FSFDeliver>
+					</mechWorkTypePriorities>
+				</value>
+			</li>
+
+	-->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AIRobot_Hauler"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFRearming</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFTransport</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFCremating</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFHauling</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+	<!-- Add Optional Clear Snow Work Type -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+		
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/WorkTypeDef[defName = "FSFSnow"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AIRobot_Cleaner"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFSnow>1</FSFSnow>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AIRobot_Cleaner"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFSnow</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- FSFSmoothing 895 (FSF Complex Jobs)
+ 
+		Default Priority Order
+
+			Core - ConstructSmoothFloors 20 (Moved to FSFSmoothing)
+			Core - ConstructSmoothWalls 10 (Moved to FSFSmoothing)
+
+	-->
+				
+</Patch>

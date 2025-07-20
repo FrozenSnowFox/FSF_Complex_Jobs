@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Dubs Rimefeller -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "SuperviseDrilling"]/workType</xpath>
+				<value>
+					<workType>FSFDrilling</workType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

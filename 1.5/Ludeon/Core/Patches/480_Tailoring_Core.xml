@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- Tailoring 480 (Core) 450
+ 
+		Default Priority Order
+
+			Core - DoBillsMakeApparel 110
+			Medieval Overhaul - DankPyon_DoBillsMakeApparel 110
+			Primitive Workbenches - DoBillsPrimitiveLoom 66 (Moved to Crafting)
+
+	-->
+			
+		<!-- Core - Update Worktype Priority -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "Tailoring"]/naturalPriority</xpath>
+				<value>
+					<naturalPriority>480</naturalPriority>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

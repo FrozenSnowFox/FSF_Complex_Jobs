@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- FSFDeconstruct 905 (FSF Complex Jobs)
+ 
+		Default Priority Order
+
+			Core - Uninstall 110 (Moved to FSFDeconstruct)
+			Core - RemoveRoofs 90 (Moved to FSFDeconstruct)
+			Core - DeconstructForBlueprint 90 (Moved to FSFDeconstruct)
+			Vehicle Framework - DisassembleVehicle 80 (Moved to FSFDeconstruct)
+			Core - Deconstruct 60 (Moved to FSFDeconstruct)
+			Anomaly DLC - FillIn 51 (Moved to FSFDeconstruct)
+			Core - ConstructRemoveFloors 30 (Moved to FSFDeconstruct)
+
+	-->
+			
+		<!-- Biotech Mechanoids Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Construction"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Construction"] ]</xpath>
+					<value>
+						<li>FSFDeconstruct</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Construction"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Construction"] ]</xpath>
+					<value>
+						<li>FSFDeconstruct</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Anomaly DLC - Fill In Pit -->
+			
+			<li MayRequire="Ludeon.RimWorld.Anomaly" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "FillIn"]/workType</xpath>
+				<value>
+					<workType>FSFDeconstruct</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Anomaly" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "FillIn"]/priorityInType</xpath>
+				<value>
+					<priorityInType>3000</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Core - Uninstall -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "Uninstall"]/workType</xpath>
+				<value>
+					<workType>FSFDeconstruct</workType>
+				</value>
+			</li>
+			
+		<!-- Core - Remove Roofs -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DeconstructForBlueprint"]/workType</xpath>
+				<value>
+					<workType>FSFDeconstruct</workType>
+				</value>
+			</li>
+			
+		<!-- Core - Remove Roofs -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RemoveRoofs"]/workType</xpath>
+				<value>
+					<workType>FSFDeconstruct</workType>
+				</value>
+			</li>
+			
+		<!-- Vehicle Framework - Disassemble Vehicle -->
+			
+			<li MayRequire="SmashPhil.VehicleFramework" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DisassembleVehicle"]/workType</xpath>
+				<value>
+					<workType>FSFDeconstruct</workType>
+				</value>
+			</li>
+			
+		<!-- Core - Deconstruct -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "Deconstruct"]/workType</xpath>
+				<value>
+					<workType>FSFDeconstruct</workType>
+				</value>
+			</li>
+			
+		<!-- Core - Construct Remove Floors -->
+						
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ConstructRemoveFloors"]/workType</xpath>
+				<value>
+					<workType>FSFDeconstruct</workType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Feed The Colonists -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/RecipeDef[defName = "Make4Kibble"]</xpath>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/RecipeDef[defName = "Make4Kibble"]/requiredGiverWorkType</xpath>
+				<value>
+					<requiredGiverWorkType>FSFButcher</requiredGiverWorkType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

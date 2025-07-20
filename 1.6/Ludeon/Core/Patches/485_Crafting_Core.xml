@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- Crafting 485 (Core) 400
+ 
+		Default Priority Order
+
+			Vanilla Races Expanded Androids - VREA_RepairAndroid 200 (Moved to FSFMechanoids if Enabled)
+			Medieval Overhaul - DankPyon_DoBillsMakeTimber 115
+			Medieval Overhaul - DankPyon_DoBillsWorkAlchemy 115 (Moved to FSFDrugs)
+			Medieval Overhaul - DankPyon_DoBillsSpinningWheel 110
+			Medieval Overhaul - DankPyon_DoBillsWorkbench 110
+			Medieval Overhaul - DankPyon_DoBillsMakeApparel 110
+			Dubs Rimatomics - RimatomicsCrafting 105
+			[T] More Floors - DoBillsWeaveWool 105
+			Primitive Workbenches - VBY_DoBillsUseCraftingTable 102
+			Core - DoBillsUseCraftingSpot 100
+			Vanilla Factions Expanded Pirates VFEP_DoWelding 100
+			Vanilla Races Expanded Androids - VREA_DoBillsUseAndroidPartWorkbench 100 (Moved to FSFMechanoids if Enabled)
+			Vanilla Races Expanded Androids - VREA_CreateAndroid 100 (Moved to FSFMechanoids if Enabled)
+			Core - DoBillsRefinery 97 (Moved to FSFRefining)
+			Core - DoBillsProduceDrugs 95 (Moved to FSFDrugs)
+			Core - DoBillsStonecut 90 (Moved to FSFStoneCut)
+			Medieval Overhaul - DankPyon_DoBillsMining 90 (Moved to FSFStoneCut) (Note: Task is misnamed this one is Stonecutting Spot)
+			Save Our Ship 2 - DoBillsRecyclotron 81
+			Core - DoBillsSmelter 80 (Moved to FSFSmelt)
+			Medieval Overhaul - DankPyon_DoBillsCleaningBench 80
+			Anomaly DLC - DoBillsSerumCentrifuge 75 (Moved to FSFDrugs)
+			What The Hack - WTH_DoBillsPortableDisassemblingBench 75
+			Medieval Overhaul - DankPyon_DoBillsTanningRack 70 (??? Task is Obsolete and Unused?)
+			Vanilla Races Expanded Androids - VREA_DoBillsAndroidOperation 70 (Moved to FSFMechanoids if Enabled)
+			Primitive Workbenches - DoBillsPrimitiveLoom 66 (Moved to Crafting)
+			Vanilla Factions Expanded Ancients - VFEA_DoBillsMending 50 (Moved to Crafting)
+			Vanilla Factions Expanded Medieval 2 - VFEM2_DoBillsAlchemyTable 20 (Moved to FSFDrugs)
+			Vanilla Factions Expanded Medieval 2 - VFEM2_DoBillsAlchemyTable_Electric 20 (Moved to FSFDrugs)
+
+	-->
+			
+		<!-- Core - Update Worktype Priority -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "Crafting"]/naturalPriority</xpath>
+				<value>
+					<naturalPriority>485</naturalPriority>
+				</value>
+			</li>
+			
+		<!-- Core - Update Worktype Description -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "Crafting"]/description</xpath>
+				<value>
+					<description>Do general crafting work at crafting work stations.</description>
+				</value>
+			</li>
+			
+		<!-- Vanilla Factions Expanded Pirates - Weld Warcaskets -->
+			
+			<li MayRequire="OskarPotocki.VFE.Pirates" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VFEP_DoWelding"]/priorityInType</xpath>
+				<value>
+					<priorityInType>9999</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Factions Expanded Ancients - Do Bills at Mending Bench -->
+			
+			<li MayRequire="VanillaExpanded.VFEA" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VFEA_DoBillsMending"]/workType</xpath>
+				<value>
+					<workType>Crafting</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="VanillaExpanded.VFEA" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VFEA_DoBillsMending"]/priorityInType</xpath>
+				<value>
+					<priorityInType>500</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Races Expanded Androids - Do Bills Android Operation -->
+			
+			<li MayRequire="vanillaracesexpanded.android" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VREA_DoBillsAndroidOperation"]/priorityInType</xpath>
+				<value>
+					<priorityInType>199</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Races Expanded Androids - Do Bills at Android Park Workbench -->
+			
+			<li MayRequire="vanillaracesexpanded.android" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VREA_DoBillsUseAndroidPartWorkbench"]/priorityInType</xpath>
+				<value>
+					<priorityInType>198</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Races Expanded Androids - Create Android -->
+			
+			<li MayRequire="vanillaracesexpanded.android" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VREA_CreateAndroid"]/priorityInType</xpath>
+				<value>
+					<priorityInType>197</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Primitive Workbenches - Do Bills at Primitive Loom -->
+			
+			<li MayRequire="PrimitiveProduction.velcroboy333" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsPrimitiveLoom"]/workType</xpath>
+				<value>
+					<workType>Crafting</workType>
+				</value>
+			</li>
+			
+		<!-- Medieval Overhaul - Do Bills at Trestle -->
+			
+			<li MayRequire="DankPyon.Medieval.Overhaul" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DankPyon_DoBillsMakeTimber"]/priorityInType</xpath>
+				<value>
+					<priorityInType>50</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Medieval Overhaul - Do Bills at Spinning Wheel -->
+			
+			<li MayRequire="DankPyon.Medieval.Overhaul" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DankPyon_DoBillsSpinningWheel"]/priorityInType</xpath>
+				<value>
+					<priorityInType>45</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Medieval Overhaul - Do Bills at Tanning Rack -->
+			
+			<li MayRequire="DankPyon.Medieval.Overhaul" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DankPyon_DoBillsTanningRack"]/priorityInType</xpath>
+				<value>
+					<priorityInType>40</priorityInType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

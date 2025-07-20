@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- Hauling (Maintenance) 315 (Core) (Default 300)
+
+		Default Priority Order
+
+			Altered Carbon 2 - AC_HaulNeuralStacksToStorage 1000
+			Altered Carbon 2 - AC_HaulCorpseToSleeveGrower 1000
+			ReSplice Core - RS_InsertGenepack 1000
+			ReSplice Core - RS_InsertXenogerm 1000
+			Dubs Bad Hygiene - RefillWater 500
+			Anomaly DLC - TakeEntityToHoldingPlatform 300
+			Dubs Rimatomics - LoadRailgunMagazine 210 (Moved to FSFRearming)
+			Save Our Ship 2 LoadTorpedoTube 210 (Moved to FSFRearming)
+			Dubs Rimatomics - LoadSilo 180 (Moved to FSFRearming)
+			Core - RearmTurrets 150 (Moved to FSFRearming)
+			Ready Those Guns - RTG_Ready 150 (Moved to FSFRearming)
+			Fortification Industrial Citadel - FT_OperateAutoChem 145
+			Core - Refuel 140
+			Medieval Overhaul - DankPyon_RefuelCustom 140
+			Vanilla Races Expanded Sanguophage VRE_RefuelDraincaskets 140
+			Vanilla Quests Expanded The Generator - VQE_Refuel 140
+			Core - UnloadCarriers 130
+			Fortification Industrial Citadel - FT_OperateFurnace 125
+			Core - HelpGatheringItemsForCaravan 120 (Moved to FSFTransport)
+			Biotech DLC - HaulToGeneBank 111
+			Alpha Genes - AG_HaulToAlphaGeneBank 111
+			Alpha Genes - AG_HaulToMixedGeneBank 111
+			Core - LoadTransporters 110 (Moved to FSFTransport)
+			Biotech DLC - EmptyWasteContainer 110
+			Medieval Overhaul - DankPyon_DoBillsWell 110 (Moved to FSFProduction)
+			Medieval Overhaul - DankPyon_DoBillStewDispenser 110
+			What The Hack - WTH_HaulMechanoid 110
+			Ideology DLC - HaulToBiosculpterPod 109
+			Biotech DLC - HaulToGrowthVat 109
+			Combat Extended - ReloadAutoLoader 106
+			Core - HaulToPortal 105 (Moved to FSFHauling)
+			Combat Extended - ReloadTurrets 105 (Moved to FSFRearming)
+			[LTS] Ammunition Framework - LTS_DoStrip 101 (Moved to FSFCremating)
+			Core - Strip 100 (Moved to FSFCremating)
+			Vanilla Expanded Framework - PS_DrainOutOfStorage 100
+			Vanilla Expanded Framework - PS_FillStorage 99
+			Dubs Bad Hygiene - emptySepticTank 98
+			Vanilla Expanded Framework - PS_PickUpProcessor 98  (Moved to FSFProduction)
+			Vanilla Expanded Framework - PS_BringToProcessor 97  (Moved to FSFProduction)
+			Bury On The Spot - Bury 95 (Moved to FSFCremating)
+			Core - HaulCorpses 90
+			Biotech DLC - CarryToGeneExtractor 90
+			Biotech DLC - CarryToGrowthVat 90
+			Biotech DLC - HaulMechsToCharger 90
+			Biotech DLC - CarryToSubcoreScanner 90
+			Biotech DLC - HaulToCarrier 90
+			Biotech DLC - HaulToSubcoreScanner 90
+			Biotech DLC - HaulToWastepackAtomizer 90
+			Altered Carbon 2 - AC_CarryToNeuralConnector 90
+			Vehicle Framework - RefuelVehicle 90 (Moved to FSFTransport)
+			Vanilla Races Expanded Androids - VREA_CarryToSubcorePolyanalyzer 90
+			Vanilla Races Expanded Androids - VREA_CarryToAndroidBehavioristStation 90
+			Vanilla Expanded Framework - VEF_DestroyItems 85
+			Vanilla Animals Expanded Caves - VAE_DestroyCocoons 85
+			Food Pot Perpetual stew - CM_DeliverFoodToPot 80
+			Food Pot Perpetual stew - CM_StirPot 80
+			Vanilla Ideology Expanded Memes and Structures - VME_DeconstructJunk 80
+			Vehicle Framework - PackVehicle 80 (Moved to FSFTransport)
+			Vehicle Framework - HelpPackVehicleCaravan 80 (Moved to FSFTransport)
+			Vehicle Framework - PackVehicleTurret 80 (Moved to FSFTransport)
+			Vanilla Furniture Expanded Security - VFES_RearmTrap 70 (Moved to FSFRearming)
+			Dubs Rimefeller - EmptyAutoclave 66 (Moved to FSFProduction)
+			Dubs Rimefeller - FillAutoclave 65 (Moved to FSFProduction)
+			Anomaly DLC - TransferEntity 64
+			Outer Rim Droid Depot - OuterRim_FillDroidFactory 60
+			Vehicle Framework - LoadUpgradeMaterials 60 (Moved to FSFTransport)
+			Core - CookFillHopper 50 (Moved to Hauling)
+			Destroy item - WorkGiver_DestroyItem 50
+			Dubs Bad Hygiene - ClearBlockage 50 (Duplicated Task)
+			Rimsential Homebound: Continued - PS_WorkGiverRefuelFarm 50
+			Core - DoBillsCremate 40 (Moved to FSFCremating)
+			Dubs Bad Hygiene - DoBillsBurnPit 40
+			Core - DoBillsHaulCampfire 30 (Moved to FSFCremating)
+			Medieval Overhaul - DankPyon_DoBillsHaulHearth 30
+			Dubs Bad Hygiene - UnloadWashing 23
+			Dubs Bad Hygiene - LoadWashing 22
+			Dubs Bad Hygiene - RemoveSewage 21
+			Core - TakeBeerOutOfFermentingBarrel 20 (Moved to FSFProduction)
+			[SYR] Processor Framework - EmptyProcessor 20 (Moved to FSFProduction)
+			Core - EmptyEggBox 20 (Moved to Handling)
+			Anomaly DLC - TakeBioferriteOutOfHarvester 20 (Moved to FSFProduction)
+			Altered Carbon 2 - AC_ExtractStack 20 (Moved to FSFCremating)
+			Dubs Bad Hygiene - UnloadComposter 20 (Moved to FSFProduction)
+			Core - FillFermentingBarrel 19 (Moved to FSFProduction)
+			Dubs Bad Hygiene - FillComposter 19 (Moved to FSFProduction)
+			[SYR] Processor Framework - FillProcessor 19 (Moved to FSFProduction)
+			Pick Up And Haul - HaulToInventory 18 (Moved to FSFHauling)
+			Core - HaulGeneral 15 (Moved to FSFHauling)
+			Core - DeliverResourcesToFrames 10 (Moved to FSFDeliver)
+			Core - DeliverResourcesToBlueprints 9 (Moved to FSFDeliver)
+			Core - HaulMerge 5
+ 
+	-->
+			
+		<!-- Core - Update Worktype Label -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "Hauling"]/labelShort</xpath>
+				<value>
+					<labelShort>Maintenance</labelShort>
+				</value>
+			</li>
+			
+		<!-- Core - Update Worktype Pawn Label -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "Hauling"]/pawnLabel</xpath>
+				<value>
+					<pawnLabel>Maintenance Worker</pawnLabel>
+				</value>
+			</li>
+			
+		<!-- Core - Update Worktype Gerund Label -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "Hauling"]/gerundLabel</xpath>
+				<value>
+					<gerundLabel>Maintaining</gerundLabel>
+				</value>
+			</li>
+			
+		<!-- Core - Update Worktype Description -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "Hauling"]/description</xpath>
+				<value>
+					<description>Perform various tasks to ensure upkeep and maintenance of systems, such as refueling, delivering and overall system care.</description>
+				</value>
+			</li>
+			
+		<!-- Core - Update Worktype Verb -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "Hauling"]/verb</xpath>
+				<value>
+					<verb>Maintain</verb>
+				</value>
+			</li>
+			
+		<!-- Core - (Move Hauling Worktype Priority) -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "Hauling"]/naturalPriority</xpath>
+				<value>
+					<naturalPriority>315</naturalPriority>
+				</value>
+			</li>
+			
+		<!-- Anomaly DLC - Take Entity To Holding Platform -->
+			
+			<li MayRequire="Ludeon.RimWorld.Anomaly" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "TakeEntityToHoldingPlatform"]/priorityInType</xpath>
+				<value>
+					<priorityInType>9994</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Anomaly DLC - Transfer Entity -->
+			
+			<li MayRequire="Ludeon.RimWorld.Anomaly" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "TransferEntity"]/priorityInType</xpath>
+				<value>
+					<priorityInType>9993</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Expanded Framework - Pipe Network Drain From Storage -->
+			
+			<li MayRequire="OskarPotocki.VanillaFactionsExpanded.Core" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "PS_DrainOutOfStorage"]/priorityInType</xpath>
+				<value>
+					<priorityInType>495</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Expanded Framework - Pipe Network Fill Storage -->
+			
+			<li MayRequire="OskarPotocki.VanillaFactionsExpanded.Core" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "PS_FillStorage"]/priorityInType</xpath>
+				<value>
+					<priorityInType>495</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Quests Expanded The Generator - Refuel Fuelable Buildings -->
+			
+			<li MayRequire="vanillaquestsexpanded.generator" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VQE_Refuel"]/priorityInType</xpath>
+				<value>
+					<priorityInType>481</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Core - Refuel Things -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "Refuel"]/priorityInType</xpath>
+				<value>
+					<priorityInType>480</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Medieval Overhaul - Refuel Things -->
+			
+			<li MayRequire="DankPyon.Medieval.Overhaul" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DankPyon_RefuelCustom"]/priorityInType</xpath>
+				<value>
+					<priorityInType>480</priorityInType>
+				</value>
+			</li>
+
+		<!-- Core - Fill Nutrient Hoppers -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "CookFillHopper"]/workType</xpath>
+				<value>
+					<workType>Hauling</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "CookFillHopper"]/priorityInType</xpath>
+				<value>
+					<priorityInType>475</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Biotech DLC - Haul Items To Growth Vat -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "HaulToGrowthVat"]/priorityInType</xpath>
+				<value>
+					<priorityInType>470</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Races Expanded Sanguophage - Refuel Draincasket -->
+			
+			<li MayRequire="vanillaracesexpanded.sanguophage" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VRE_RefuelDraincaskets"]/priorityInType</xpath>
+				<value>
+					<priorityInType>469</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Biotech DLC - Carry Pawns To Growth Vat -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "CarryToGrowthVat"]/priorityInType</xpath>
+				<value>
+					<priorityInType>465</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Ideology DLC - Haul To Biosculpter Pod -->
+			
+			<li MayRequire="Ludeon.RimWorld.Ideology" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "HaulToBiosculpterPod"]/priorityInType</xpath>
+				<value>
+					<priorityInType>460</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Rimsential Homebound: Continued - Haul Food To Farms -->
+			
+			<li MayRequire="Orpheusly.PawnStorages" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "PS_WorkGiverRefuelFarm"]/priorityInType</xpath>
+				<value>
+					<priorityInType>459</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Biotech DLC - Empty Waste Container (Empty Charging Stations?) -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "EmptyWasteContainer"]/priorityInType</xpath>
+				<value>
+					<priorityInType>455</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Biotech DLC - Haul Mechs to Charger -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "HaulMechsToCharger"]/priorityInType</xpath>
+				<value>
+					<priorityInType>450</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Dubs Bad Hygiene - Empty Septic Tank -->
+			
+			<li MayRequire="Dubwise.DubsBadHygiene" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "emptySepticTank"]/priorityInType</xpath>
+				<value>
+					<priorityInType>445</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Dubs Bad Hygiene - Clear Blockage (Duplicated Task) -->
+			
+			<li MayRequire="Dubwise.DubsBadHygiene" Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>					
+					<WorkGiverDef>
+						<defName>FSFClearBlockage</defName>
+						<label>clear blockage</label>
+						<giverClass>DubsBadHygiene.WorkGiver_FixBlockage</giverClass>
+						<workType>Hauling</workType>
+						<verb>clear blockage</verb>
+						<gerund>clearing blockage</gerund>
+						<priorityInType>444</priorityInType>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+					</WorkGiverDef>
+				</value>
+			</li>
+			
+		<!-- Altered Carbon 2 - Haul Stacks to Storage -->
+			
+			<li MayRequire="hlx.UltratechAlteredCarbon" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "AC_HaulNeuralStacksToStorage"]/priorityInType</xpath>
+				<value>
+					<priorityInType>440</priorityInType>
+				</value>
+			</li>
+			
+		<!-- ReSplice Core - Insert Xenogerm Into Duplicator -->
+			
+			<li MayRequire="ReSplice.XOTR.Core" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RS_InsertXenogerm"]/priorityInType</xpath>
+				<value>
+					<priorityInType>439</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Altered Carbon 2 - Haul Corpse To Sleeve Grower -->
+			
+			<li MayRequire="hlx.UltratechAlteredCarbon" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "AC_HaulCorpseToSleeveGrower"]/priorityInType</xpath>
+				<value>
+					<priorityInType>436</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Altered Carbon 2 - Carry to Neural Connector -->
+			
+			<li MayRequire="hlx.UltratechAlteredCarbon" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "AC_CarryToNeuralConnector"]/priorityInType</xpath>
+				<value>
+					<priorityInType>435</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Races Expanded Androids - Carry Android to Behaviorist Station -->
+			
+			<li MayRequire="vanillaracesexpanded.android" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VREA_CarryToAndroidBehavioristStation"]/priorityInType</xpath>
+				<value>
+					<priorityInType>434</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Outer Rim Droid Depot - Haul Resources to Droid Factory -->
+			
+			<li MayRequire="Neronix17.OuterRim.DroidDepot" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "OuterRim_FillDroidFactory"]/priorityInType</xpath>
+				<value>
+					<priorityInType>433</priorityInType>
+				</value>
+			</li>
+			
+		<!-- ReSplice Core - Insert Genepack Into Centrifuge -->
+			
+			<li MayRequire="ReSplice.XOTR.Core" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RS_InsertGenepack"]/priorityInType</xpath>
+				<value>
+					<priorityInType>112</priorityInType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

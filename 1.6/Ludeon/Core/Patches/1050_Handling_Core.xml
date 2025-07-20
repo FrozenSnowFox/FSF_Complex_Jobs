@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- Handling 1050 (Core)
+ 
+		Default Priority Order
+
+			Core - TakeRoamingAnimalsToPen 160
+			Core - HandlingFeedPatientAnimals 150
+			Core - TakeToPen 130
+			Rimsential Homebound: Continued - PS_RopeToFarm 130
+			Core - Slaughter 100
+			Core - ReleaseToWild 100
+			Core - Milk 90
+			Core - Shear 85
+			Vanilla Expanded Framework - VEF_AnimalResource 85
+			LTS Systems - LTSExtract 82
+			Core - Tame 80 (Moved to FSFTraining)
+			Core - Train 70 (Moved to FSFTraining)
+			Core - RebalanceAnimalsInPens 60
+			Core - EmptyEggBox 20 (Moved to Handling)
+			Vanilla Factions Expanded Medieval 2 - VFEM2_TakeHoneyOutOfApiary 20
+			Vanilla Factions Expanded Medieval 2 - VFEM2_TendToTheApiary 20
+			Vanilla Ideology Expanded Memes and Structures - VME_MaintainInsectNest 19
+
+	-->
+			
+		<!-- Core - Update Worktype Description -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "Handling"]/description</xpath>
+				<value>
+					<description>Harvest resources from and slaughter animals.</description>
+				</value>
+			</li>
+			
+		<!-- Core - Slaughter Animals -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "Slaughter"]/priorityInType</xpath>
+				<value>
+					<priorityInType>200</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Core - Release Animals To Wild -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ReleaseToWild"]/priorityInType</xpath>
+				<value>
+					<priorityInType>195</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Core - Take Animals To Pen -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "TakeToPen"]/priorityInType</xpath>
+				<value>
+					<priorityInType>155</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Core - Rebalance Animal Pens -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RebalanceAnimalsInPens"]/priorityInType</xpath>
+				<value>
+					<priorityInType>95</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Core - Empty Egg Boxes -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "EmptyEggBox"]/workType</xpath>
+				<value>
+					<workType>Handling</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "EmptyEggBox"]/priorityInType</xpath>
+				<value>
+					<priorityInType>80</priorityInType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

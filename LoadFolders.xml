@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<loadFolders>
+	
+	<v1.0>	
+
+		<!-- Vanilla -->
+		
+		<li>/</li>
+		<li>1.0</li>
+		
+	</v1.0>
+	
+	<v1.1>	
+
+		<!-- Vanilla -->
+		
+		<li>/</li>
+		<li>1.1</li>
+		
+	</v1.1>
+	
+	<v1.2>	
+
+		<!-- Vanilla -->
+		
+		<li>/</li>
+		<li>1.2</li>
+		
+	</v1.2>
+	
+	<v1.3>	
+
+		<!-- Vanilla -->
+		
+		<li>/</li>
+		
+		<li IfModNotActive="Ogam.Rimedieval">1.3/Core</li>
+		
+		<!-- DLC Ideology -->
+		
+		<li IfModActive="Ludeon.RimWorld.Ideology">1.3/Ideology</li>
+		
+		
+		
+		<!-- Mods -->
+		
+		<!-- Complex Jobs Medieval -->
+		<li IfModActive="Ogam.Rimedieval">1.3/Mods/Complex Jobs Medieval</li>
+		
+
+		<!-- Colony Manager -->
+		<li IfModActive="Fluffy.ColonyManager">1.3/Mods/Colony Manager</li>
+		
+		<!-- Combat Extended -->
+		<li IfModActive="CETeam.CombatExtended">1.3/Mods/Combat Extended</li>
+		
+		<!-- Dubs Bad Hygiene -->
+		<li IfModActive="Dubwise.DubsBadHygiene">1.3/Mods/Dubs Bad Hygiene</li>
+		
+		<!-- Dubs Rimkit -->
+		<li IfModActive="Dubwise.DubsRimkit">1.3/Mods/Dubs Rimkit</li>
+		
+		<!-- Fluffy Breakdowns -->
+		<li IfModActive="fluffy.fluffybreakdowns, theeyeofbrows.fluffybreakdowns">1.3/Mods/Fluffy Breakdowns</li>
+		
+		<!-- Harvest Organs Post Mortem -->
+		<li IfModActive="Smuffle.HarvestOrgansPostMortem">1.3/Mods/Harvest Organs Post Mortem</li>
+		
+		<!-- Hospitality -->
+		<li IfModActive="Orion.Hospitality">1.3/Mods/Hospitality</li>
+		
+		<!-- Meat Blend -->
+		<li IfModActive="sneaks.meatblend">1.3/Mods/Meat Blend</li>
+		
+		<!-- Medical Dissection -->
+		<li IfModActive="Heremeus.MedicalDissection">1.3/Mods/Medical Dissection</li>
+		
+		<!-- Medieval Overhaul -->
+		<li IfModActive="DankPyon.Medieval.Overhaul">1.3/Mods/Medieval Overhaul</li>
+		
+		<!-- Rimefeller -->
+		<li IfModActive="Dubwise.Rimefeller">1.3/Mods/Rimefeller</li>
+		
+		<!-- SYR Processor Framework -->
+		<li IfModActive="syrchalis.processor.framework">1.3/Mods/SYR Processor Framework</li>
+		
+		<!-- SYR Universal Fermenter -->
+		<li IfModActive="syrchalis.universalfermenter">1.3/Mods/SYR Universal Fermenter</li>
+
+		<!-- Ultratech: Altered Carbon Remastered -->
+		<li IfModActive="Hlx.UltratechAlteredCarbon">1.3/Mods/Ultratech Altered Carbon Remastered</li>
+		
+		<!-- Vanilla Expanded Framework -->
+		<li IfModActive="OskarPotocki.VanillaFactionsExpanded.Core">1.3/Mods/Vanilla Expanded Framework</li>
+		
+		<!-- Vanilla Brewing Expanded -->
+		<li IfModActive="VanillaExpanded.VBrewE">1.3/Mods/Vanilla Brewing Expanded</li>
+		
+		<!-- Vanilla Brewing Expanded Coffees and Teas -->
+		<li IfModActive="VanillaExpanded.VBrewECandT">1.3/Mods/Vanilla Brewing Expanded Coffees and Teas</li>
+		
+		<!-- Vanilla Factions Expanded Mechanoids -->
+		<li IfModActive="OskarPotocki.VFE.Mechanoid">1.3/Mods/Vanilla Factions Expanded Mechanoids</li>
+		
+		<!-- Vanilla Factions Expanded Medieval -->
+		<li IfModActive="OskarPotocki.VanillaFactionsExpanded.MedievalModule">1.3/Mods/Vanilla Factions Expanded Medieval</li>
+		
+		<!-- Vanilla Furniture Expanded Security -->
+		<li IfModActive="VanillaExpanded.VFESecurity">1.3/Mods/Vanilla Furniture Expanded Security</li>
+		
+		<!-- Vanilla Genetics Expanded -->
+		<li IfModActive="VanillaExpanded.VGeneticsE">1.3/Mods/Vanilla Genetics Expanded</li>
+		
+		<!-- Vanilla Genetics Expanded More Lab Stuff -->
+		<li IfModActive="VanillaExpanded.VGeneticsEMoreLabStuff">1.3/Mods/Vanilla Genetics Expanded More Lab Stuff</li>
+		
+		<!-- Vanilla Power Expanded -->
+		<li IfModActive="VanillaExpanded.VFEPower">1.3/Mods/Vanilla Power Expanded</li>
+		
+		<!-- Veggie Mix -->
+		<li IfModActive="sneaks.veggiemix">1.3/Mods/Veggie Mix</li>
+		
+		<!-- Vanilla Factions Expanded Mechanoids Unofficial -->
+		<li IfModActive="isorex.mechanoidsaddon">1.3/Mods/Vanilla Factions Expanded Mechanoids Unofficial</li>
+		
+		<!-- What The Hack -->
+		<li IfModActive="roolo.whatthehack">1.3/Mods/What The Hack</li>
+		
+	</v1.3>
+	
+	<v1.4>	
+
+		<!-- Vanilla -->
+		
+		<li>/</li>
+		
+		<li>1.4/Core</li>
+		
+		<!-- DLC Ideology -->
+		
+		<li IfModActive="Ludeon.RimWorld.Ideology">1.4/Ideology</li>
+		
+		<!-- DLC Biotech -->
+		
+		<li IfModActive="Ludeon.RimWorld.Biotech">1.4/Biotech</li>		
+		
+		
+		
+		<!-- Mods -->
+		
+		<!-- Alpha Genes -->
+		<li IfModActive="sarg.alphagenes">1.4/Mods/Alpha Genes</li>
+		
+		<!-- Alpha Mechs -->
+		<li IfModActive="sarg.alphamechs">1.4/Mods/Alpha Mechs</li>
+		
+		<!-- Appliances Expanded -->
+		<li IfModActive="scpchemfuel.appliances">1.4/Mods/Appliances Expanded</li>
+		
+		<!-- Better Humanoid Mechanoid -->
+		<li IfModActive="Better.Humanoid.Mechanoid.CN">1.4/Mods/Better Humanoid Mechanoid</li>
+		
+		<!-- Colony Manager -->
+		<li IfModActive="Fluffy.ColonyManager">1.4/Mods/Colony Manager</li>
+		
+		<!-- Combat Extended -->
+		<li IfModActive="CETeam.CombatExtended">1.4/Mods/Combat Extended</li>
+		
+		<!-- Dubs Bad Hygiene -->
+		<li IfModActive="Dubwise.DubsBadHygiene">1.4/Mods/Dubs Bad Hygiene</li>
+		
+		<!-- Dubs Rimkit -->
+		<li IfModActive="Dubwise.DubsRimkit">1.4/Mods/Dubs Rimkit</li>
+		
+		<!-- Fluffy Breakdowns -->
+		<li IfModActive="fluffy.fluffybreakdowns, theeyeofbrows.fluffybreakdowns">1.4/Mods/Fluffy Breakdowns</li>
+		
+		<!-- Harvest Organs Post Mortem -->
+		<li IfModActive="Smuffle.HarvestOrgansPostMortem">1.4/Mods/Harvest Organs Post Mortem</li>
+		
+		<!-- Hospitality -->
+		<li IfModActive="Orion.Hospitality">1.4/Mods/Hospitality</li>
+		
+		<!-- Meat Blend -->
+		<li IfModActive="sneaks.meatblend">1.4/Mods/Meat Blend</li>
+		
+		<!-- Medical Dissection -->
+		<li IfModActive="Heremeus.MedicalDissection">1.4/Mods/Medical Dissection</li>
+		
+		<!-- Medieval Overhaul -->
+		<li IfModActive="DankPyon.Medieval.Overhaul">1.4/Mods/Medieval Overhaul</li>
+		
+		<!-- Medieval Overhaul Toggleable Stuff -->
+		<li IfModActive="Accurex.MedievalOverhaul.Stuff">1.4/Mods/Medieval Overhaul Toggleable Stuff</li>
+		
+		<!-- Misc Robots -->
+		<li IfModActive="Haplo.Miscellaneous.Robots">1.4/Mods/Misc Robots</li>
+		
+		<!-- Misc Robots Plus Plus -->
+		<li IfModActive="Alaestor.MiscRobots.PlusPlus">1.4/Mods/Misc Robots Plus Plus</li>
+
+		<!-- Rimefeller -->
+		<li IfModActive="MrKociak.DropPodBaitScanner">1.4/Mods/Resource Drop Pod Redirection</li>
+		
+		<!-- Rimefeller -->
+		<li IfModActive="Dubwise.Rimefeller">1.4/Mods/Rimefeller</li>
+		
+		<!-- SYR Processor Framework -->
+		<li IfModActive="syrchalis.processor.framework">1.4/Mods/SYR Processor Framework</li>
+		
+		<!-- SYR Universal Fermenter -->
+		<li IfModActive="syrchalis.universalfermenter">1.4/Mods/SYR Universal Fermenter</li>
+
+		<!-- Ultratech: Altered Carbon -->
+		<li IfModActive="Hlx.UltratechAlteredCarbon">1.4/Mods/Ultratech Altered Carbon</li>
+		
+		<!-- Vanilla Expanded Framework -->
+		<li IfModActive="OskarPotocki.VanillaFactionsExpanded.Core">1.4/Mods/Vanilla Expanded Framework</li>
+		
+		<!-- Vanilla Brewing Expanded -->
+		<li IfModActive="VanillaExpanded.VBrewE">1.4/Mods/Vanilla Brewing Expanded</li>
+		
+		<!-- Vanilla Brewing Expanded Coffees and Teas -->
+		<li IfModActive="VanillaExpanded.VBrewECandT">1.4/Mods/Vanilla Brewing Expanded Coffees and Teas</li>
+		
+		<!-- Vanilla Factions Expanded Mechanoids -->
+		<li IfModActive="OskarPotocki.VFE.Mechanoid">1.4/Mods/Vanilla Factions Expanded Mechanoids</li>
+
+		<!-- Vanilla Factions Expanded Mechanoids Drones -->
+		<li IfModActive="seos.vfe.mechanoids.drones">1.4/Mods/Vanilla Factions Expanded Mechanoids Drones</li>
+		
+		<!-- Vanilla Factions Expanded Medieval -->
+		<li IfModActive="OskarPotocki.VanillaFactionsExpanded.MedievalModule">1.4/Mods/Vanilla Factions Expanded Medieval</li>
+		
+		<!-- Vanilla Furniture Expanded Security -->
+		<li IfModActive="VanillaExpanded.VFESecurity">1.4/Mods/Vanilla Furniture Expanded Security</li>
+		
+		<!-- Vanilla Genetics Expanded -->
+		<li IfModActive="VanillaExpanded.VGeneticsE">1.4/Mods/Vanilla Genetics Expanded</li>
+		
+		<!-- Vanilla Genetics Expanded More Lab Stuff -->
+		<li IfModActive="VanillaExpanded.VGeneticsEMoreLabStuff">1.4/Mods/Vanilla Genetics Expanded More Lab Stuff</li>
+		
+		<!-- Vanilla Power Expanded -->
+		<li IfModActive="VanillaExpanded.VFEPower">1.4/Mods/Vanilla Power Expanded</li>
+		
+		<!-- Veggie Mix -->
+		<li IfModActive="sneaks.veggiemix">1.4/Mods/Veggie Mix</li>
+		
+		<!-- Vanilla Factions Expanded Mechanoids Unofficial -->
+		<li IfModActive="isorex.mechanoidsaddon">1.4/Mods/Vanilla Factions Expanded Mechanoids Unofficial</li>
+		
+		<!-- Vanilla Factions Expanded Tribals -->
+		<li IfModActive="OskarPotocki.VFE.Tribals">1.4/Mods/Vanilla Factions Expanded Tribals</li>
+		
+		<!-- Vehicle Framework -->
+		<li IfModActive="SmashPhil.VehicleFramework">1.4/Mods/Vehicle Framework</li>
+		
+		<!-- What The Hack -->
+		<li IfModActive="roolo.whatthehack">1.4/Mods/What The Hack</li>
+		
+		<!-- WVC Xenotypes and Genes -->
+		<li IfModActive="wvc.sergkart.races.biotech">1.4/Mods/WVC Xenotypes and Genes</li>
+		
+	</v1.4>
+	
+	<v1.5>	
+
+		<!-- Ludeon -->
+		
+		<!-- Core -->
+		
+		<li>/</li>
+		
+		<li>1.5/Ludeon/Core</li>
+		
+		
+		
+		<!-- Frameworks -->
+		
+		<!-- XML Extensions -->
+		<li IfModActive="imranfish.xmlextensions">1.5/Frameworks/XML Extensions</li>
+		
+		
+		
+		<!-- Mods -->
+		
+		<!-- Alpha Mechs -->
+		<li IfModActive="sarg.alphamechs">1.5/Mods/Alpha Mechs</li>
+
+		<!-- Misc Craftable Robots -->
+		<li IfModActive="leion247658.MiscVHCraftableHRobots">1.5/Mods/Misc Craftable Robots</li>
+		
+		<!-- Misc Robots -->
+		<li IfModActive="Haplo.Miscellaneous.Robots">1.5/Mods/Misc Robots</li>
+		
+		<!-- Misc Robots Plus Plus -->
+		<li IfModActive="Alaestor.MiscRobots.PlusPlus">1.5/Mods/Misc Robots Plus Plus</li>
+		
+		<!-- Project Rimfactory Drones -->
+		<li IfModActive="spdskatr.projectrimfactory.drones">1.5/Mods/Project Rimfactory Drones</li>
+		
+		<!-- Project RimFactory Revived -->
+		<li IfModActive="spdskatr.projectrimfactory">1.5/Mods/Project RimFactory Revived</li>
+		
+		<!-- Vanilla Factions Expanded Pirates -->
+		<li IfModActive="OskarPotocki.VFE.Pirates">1.5/Mods/Vanilla Factions Expanded Pirates</li>
+		
+		<!-- Vanilla Factions Expanded Tribals -->
+		<li IfModActive="OskarPotocki.VFE.Tribals">1.5/Mods/Vanilla Factions Expanded Tribals</li>
+		
+		<!-- Vanilla Factions Expanded Mechanoids Unofficial -->
+		<li IfModActive="isorex.mechanoidsaddon">1.5/Mods/Vanilla Factions Expanded Mechanoids Unofficial</li>
+		
+		<!-- What The Hack -->
+		<li IfModActive="roolo.whatthehack">1.5/Mods/What The Hack</li>
+		
+	</v1.5>
+	
+	<v1.6>	
+
+		<!-- Ludeon -->
+		
+		<!-- Core -->
+		
+		<li>/</li>
+		
+		<li>1.6/Ludeon/Core</li>
+		
+		
+		
+		<!-- Frameworks -->
+		
+		<!-- XML Extensions -->
+		<li IfModActive="imranfish.xmlextensions">1.6/Frameworks/XML Extensions</li>
+		
+		
+		
+		<!-- Mods -->
+		
+		<!-- Alpha Mechs -->
+		<li IfModActive="sarg.alphamechs">1.6/Mods/Alpha Mechs</li>
+
+		<!-- Misc Craftable Robots -->
+		<li IfModActive="leion247658.MiscVHCraftableHRobots">1.6/Mods/Misc Craftable Robots</li>
+		
+		<!-- Misc Robots -->
+		<li IfModActive="Haplo.Miscellaneous.Robots">1.6/Mods/Misc Robots</li>
+		
+		<!-- Misc Robots Plus Plus -->
+		<li IfModActive="Alaestor.MiscRobots.PlusPlus">1.6/Mods/Misc Robots Plus Plus</li>
+		
+		<!-- Project Rimfactory Drones -->
+		<li IfModActive="spdskatr.projectrimfactory.drones">1.6/Mods/Project Rimfactory Drones</li>
+		
+		<!-- Project RimFactory Revived -->
+		<li IfModActive="spdskatr.projectrimfactory">1.6/Mods/Project RimFactory Revived</li>
+		
+		<!-- Vanilla Factions Expanded Pirates -->
+		<li IfModActive="OskarPotocki.VFE.Pirates">1.6/Mods/Vanilla Factions Expanded Pirates</li>
+		
+		<!-- Vanilla Factions Expanded Tribals -->
+		<li IfModActive="OskarPotocki.VFE.Tribals">1.6/Mods/Vanilla Factions Expanded Tribals</li>
+		
+		<!-- Vanilla Factions Expanded Mechanoids Unofficial -->
+		<li IfModActive="isorex.mechanoidsaddon">1.6/Mods/Vanilla Factions Expanded Mechanoids Unofficial</li>
+		
+		<!-- What The Hack -->
+		<li IfModActive="roolo.whatthehack">1.6/Mods/What The Hack</li>
+		
+	</v1.6>
+	
+</loadFolders>

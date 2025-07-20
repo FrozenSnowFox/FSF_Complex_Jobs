@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- PlantCutting 710 (Core) (500)
+ 
+		Default Priority Order
+
+			Core - ExtractTree 110
+			Ideology DLC - PruneGauranlenTree 25 (Moved to FSFPruning if Enabled)
+			Core - PlantsCut ??
+			GroundClear - GroundClear 10
+
+	-->
+			
+		<!-- Core - Update Worktype Priority -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "PlantCutting"]/naturalPriority</xpath>
+				<value>
+					<naturalPriority>710</naturalPriority>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

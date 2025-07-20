@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Medical Dissection -->
+
+	<Operation Class="PatchOperationFindMod">
+		
+    	<mods>
+        	<li>Medical Dissection</li>
+    	</mods>
+		
+    	<match Class="PatchOperationSequence">
+        <success>Always</success>
+        <operations>
+
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkTypeDef[defName = "MedicalTraining"]/naturalPriority</xpath>
+				<value>
+					<naturalPriority>1290</naturalPriority>
+				</value>
+			</li>
+			
+        </operations>
+    	</match>
+	
+	</Operation>
+	
+</Patch>

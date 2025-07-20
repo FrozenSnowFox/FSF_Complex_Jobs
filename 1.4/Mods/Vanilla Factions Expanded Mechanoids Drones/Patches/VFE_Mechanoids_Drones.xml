@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Vanilla Factions Expanded Mechanoids Drones -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "VFEMA_Mechanoids_Farmer"]/race/mechEnabledWorkTypes</xpath>
+				<value>
+					<li>FSFHarvesting</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "VFEMA_Mechanoids_Kitchen"]/race/mechEnabledWorkTypes</xpath>
+				<value>
+					<li>FSFButcher</li>
+					<li>FSFBrewing</li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

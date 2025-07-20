@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Craftable Robots - all robots -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+
+			<li Class="PatchOperationTest">
+				<xpath>*/ThingDef[defName = "AIRobot_GardenerBot"]</xpath>
+			</li>
+			
+			
+		
+			<li Class="PatchOperationAdd">
+				<xpath>*/ThingDef[defName = "AIRobot_ConstructionBot"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFRepair</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFDeconstruct</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>*/ThingDef[defName = "AIRobot_CraftingBot"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFMachining</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFFabrication</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFDrugs</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFRefining</workTypeDef><priority>3</priority></li>
+					<li><workTypeDef>FSFSmelt</workTypeDef><priority>3</priority></li>
+					<li><workTypeDef>FSFStoneCut</workTypeDef><priority>3</priority></li>
+				</value>
+			</li>			
+	
+			<li Class="PatchOperationAdd">
+				<xpath>*/ThingDef[defName = "AIRobot_GardenerBot"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFButcher</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFBrewing</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFHarvesting</workTypeDef><priority>2</priority></li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

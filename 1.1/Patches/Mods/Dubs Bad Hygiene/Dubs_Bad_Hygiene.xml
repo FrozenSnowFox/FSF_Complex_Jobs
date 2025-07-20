@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Dubs Bad Hygiene -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/WorkGiverDef[defName = "DBHAdministerFluids"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DBHAdministerFluids"]/workType</xpath>
+				<value>
+					<workType>FSFNurse</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "washPatient"]/workType</xpath>
+				<value>
+					<workType>FSFNurse</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DocCleanBedpan"]/workType</xpath>
+				<value>
+					<workType>FSFNurse</workType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/WorkGiverDef[defName = "RefillTub"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RefillTub"]/workType</xpath>
+				<value>
+					<workType>FSFRefueling</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RefillWater"]/workType</xpath>
+				<value>
+					<workType>FSFRefueling</workType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- FSFProduction 415 (FSF Complex Jobs)
+ 
+		Default Priority Order
+
+			Medieval Overhaul - DankPyon_DoBillsMakeTimber 115 (Duplicated Task)
+			Medieval Overhaul - DankPyon_DoBillsSpinningWheel 110 (Duplicated Task)
+			Medieval Overhaul - DankPyon_DoBillsMillstone 110 (Duplicated Task)
+			Medieval Overhaul - DankPyon_DoBillsWell 110 (Moved to FSFProduction)
+			SeedsPlease Lite ProcessSeeds 105 (Duplicated Task)
+			Vanilla Cooking Expanded - VCE_DoBillsCanning 101 (Duplicated Task)
+			Vanilla Cooking Expanded - VCE_DoBillsPrep 101 (Condiment Bench) (Duplicated Task)
+			Vanilla Brewing Expanded Coffees and Teas - VBE_DoBillsEspressoMachine 100 (Duplicated Task)
+			Vanilla Furniture Expanded Pack - FFE_DoBillsMeatMincer 100 (Duplicated Task)
+			Vanilla Plants Expanded More Plants - VCE_DoBillsVegMilkExtractor 100 (Duplicated Task)
+			Vanilla Expanded Framework - PS_PickUpProcessor 98 (Moved to FSFProduction)
+			Vanilla Expanded Framework - PS_BringToProcessor 97 (Moved to FSFProduction)
+			Dubs Rimefeller - EmptyAutoclave 66 (Moved to FSFProduction)
+			Dubs Rimefeller - FillAutoclave 65 (Moved to FSFProduction)
+			Core - DoBillsBrew 30 (Moved to FSFProduction)
+			Core - TakeBeerOutOfFermentingBarrel 20 (Moved to FSFProduction)
+			Anomaly DLC - TakeBioferriteOutOfHarvester 20 (Moved to FSFProduction)
+			Dubs Bad Hygiene - UnloadComposter 20 (Moved to FSFProduction)
+			[SYR] Processor Framework - EmptyProcessor 20 (Moved to FSFProduction)
+			Core - FillFermentingBarrel 19 (Moved to FSFProduction)
+			Dubs Bad Hygiene - FillComposter 19 (Moved to FSFProduction)
+			[SYR] Processor Framework - FillProcessor 19 (Moved to FSFProduction)
+
+	-->
+			
+		<!-- Biotech Mechanoids Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Hauling"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Hauling"] ]</xpath>
+					<value>
+						<li>FSFProduction</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Hauling"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Hauling"] ]</xpath>
+					<value>
+						<li>FSFProduction</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Medieval Overhaul - Do Bills At Well -->
+			
+			<li MayRequire="DankPyon.Medieval.Overhaul" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DankPyon_DoBillsWell"]/workType</xpath>
+				<value>
+					<workType>FSFProduction</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="DankPyon.Medieval.Overhaul" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DankPyon_DoBillsWell"]/priorityInType</xpath>
+				<value>
+					<priorityInType>210</priorityInType>
+				</value>
+			</li>
+			
+		<!-- SeedsPlease Lite - Process Seeds (Duplicated Task) -->
+			
+			<li MayRequireAnyOf="Owlchemist.SeedsPleaseLite,Evyatar108.SeedsPleaseLiteRedux" Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>					
+					<WorkGiverDef>
+						<defName>FSFProcessSeeds</defName>
+						<label>process seeds</label>
+						<giverClass>WorkGiver_DoBill</giverClass>
+						<workType>FSFProduction</workType>
+						<priorityInType>205</priorityInType>
+						<fixedBillGiverDefs>
+							<li>SeedExtractionSpot</li>
+							<li MayRequire="Evyatar108.SeedsPleaseLiteRedux">SeedExtractionBench</li>
+						</fixedBillGiverDefs>
+						<verb>process</verb>
+						<gerund>processing at</gerund>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+						<prioritizeSustains>true</prioritizeSustains>
+					</WorkGiverDef>
+				</value>
+			</li>
+			
+		<!-- Dubs Bad Hygiene - Unload Composter -->
+			
+			<li MayRequire="Dubwise.DubsBadHygiene" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "UnloadComposter"]/workType</xpath>
+				<value>
+					<workType>FSFProduction</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="Dubwise.DubsBadHygiene" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "UnloadComposter"]/priorityInType</xpath>
+				<value>
+					<priorityInType>200</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Dubs Bad Hygiene - Fill Composter -->
+			
+			<li MayRequire="Dubwise.DubsBadHygiene" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "FillComposter"]/workType</xpath>
+				<value>
+					<workType>FSFProduction</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="Dubwise.DubsBadHygiene" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "FillComposter"]/priorityInType</xpath>
+				<value>
+					<priorityInType>199</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Anomaly DLC - Take Bioferrite Out Of Harvester -->
+			
+			<li MayRequire="Ludeon.RimWorld.Anomaly" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "TakeBioferriteOutOfHarvester"]/workType</xpath>
+				<value>
+					<workType>FSFProduction</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Anomaly" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "TakeBioferriteOutOfHarvester"]/priorityInType</xpath>
+				<value>
+					<priorityInType>195</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Dubs Rimefeller - Empty Autoclave -->
+			
+			<li MayRequire="Dubwise.Rimefeller" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "EmptyAutoclave"]/workType</xpath>
+				<value>
+					<workType>FSFProduction</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="Dubwise.Rimefeller" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "EmptyAutoclave"]/priorityInType</xpath>
+				<value>
+					<priorityInType>150</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Dubs Rimefeller - Fill Autoclave -->
+			
+			<li MayRequire="Dubwise.Rimefeller" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "FillAutoclave"]/workType</xpath>
+				<value>
+					<workType>FSFProduction</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="Dubwise.Rimefeller" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "FillAutoclave"]/priorityInType</xpath>
+				<value>
+					<priorityInType>149</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Core - Take Beer Out of Fermenting Barrel -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "TakeBeerOutOfFermentingBarrel"]/workType</xpath>
+				<value>
+					<workType>FSFProduction</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "TakeBeerOutOfFermentingBarrel"]/priorityInType</xpath>
+				<value>
+					<priorityInType>145</priorityInType>
+				</value>
+			</li>
+			
+		<!-- [SYR] Processor Framework - Empty Processor -->
+			
+			<li MayRequire="syrchalis.processor.framework" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "EmptyProcessor"]/workType</xpath>
+				<value>
+					<workType>FSFProduction</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="syrchalis.processor.framework" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "EmptyProcessor"]/priorityInType</xpath>
+				<value>
+					<priorityInType>145</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Core - Do Bills at Brewery -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsBrew"]/workType</xpath>
+				<value>
+					<workType>FSFProduction</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsBrew"]/priorityInType</xpath>
+				<value>
+					<priorityInType>144</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Core - Fill Fermenting Barrel -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "FillFermentingBarrel"]/workType</xpath>
+				<value>
+					<workType>FSFProduction</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "FillFermentingBarrel"]/priorityInType</xpath>
+				<value>
+					<priorityInType>143</priorityInType>
+				</value>
+			</li>
+			
+		<!-- [SYR] Processor Framework - Fill Processor -->
+			
+			<li MayRequire="syrchalis.processor.framework" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "FillProcessor"]/workType</xpath>
+				<value>
+					<workType>FSFProduction</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="syrchalis.processor.framework" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "FillProcessor"]/priorityInType</xpath>
+				<value>
+					<priorityInType>143</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Expanded Framework - Pipe System Pick Up Processor -->
+			
+			<li MayRequire="syrchalis.processor.framework" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "PS_PickUpProcessor"]/workType</xpath>
+				<value>
+					<workType>FSFProduction</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="syrchalis.processor.framework" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "PS_BringToProcessor"]/workType</xpath>
+				<value>
+					<workType>FSFProduction</workType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Plants Expanded More Plants - Do Bills at Veggie Milk Extractor (Duplicated Task) -->
+			
+			<li MayRequire="VanillaExpanded.VPlantsEMore,VanillaExpanded.VCookE" Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>					
+					<WorkGiverDef>
+						<defName>FSFVCE_DoBillsVegMilkExtractor</defName>
+						<label>extract vegetable milks</label>
+						<giverClass>WorkGiver_DoBill</giverClass>
+						<workType>FSFProduction</workType>
+						<priorityInType>95</priorityInType>
+						<fixedBillGiverDefs>
+							<li>VCE_VegMilkExtractor</li>   
+						</fixedBillGiverDefs>
+						<verb>extract vegetable milk</verb>
+						<gerund>extracting vegetable milk at</gerund>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+						<prioritizeSustains>true</prioritizeSustains>
+					</WorkGiverDef>
+				</value>
+			</li>
+			
+		<!-- Vanilla Cooking Expanded - Do Bills at Canner (Duplicated Task) -->
+			
+			<li MayRequire="VanillaExpanded.VCookE" Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>					
+					<WorkGiverDef>
+						<defName>FSFVCE_DoBillsCanning</defName>
+						<label>work at canning machine</label>
+						<giverClass>WorkGiver_DoBill</giverClass>
+						<workType>FSFProduction</workType>
+						<priorityInType>90</priorityInType>
+						<fixedBillGiverDefs>
+							<li>VCE_CanningMachine</li>   
+						</fixedBillGiverDefs>
+						<verb>can food</verb>
+						<gerund>canning food at</gerund>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+						<prioritizeSustains>true</prioritizeSustains>
+					</WorkGiverDef>
+				</value>
+			</li>
+			
+		<!-- Vanilla Furniture Expanded Pack - Do Bills at Meat Mincer (Duplicated Task) -->
+			
+			<li MayRequire="Farxmai2.VanillaFurnitureExpandedPack" Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					<WorkGiverDef>
+						<defName>FSFFFE_DoBillsMeatMincer</defName>
+						<label>cook on meat mincer</label>
+						<giverClass>WorkGiver_DoBill</giverClass>
+						<workType>FSFProduction</workType>
+						<priorityInType>89</priorityInType>
+						<fixedBillGiverDefs>
+							<li>FFE_MeatMincer</li>
+						</fixedBillGiverDefs>
+						<verb>cook</verb>
+						<gerund>cooking at</gerund>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+						<prioritizeSustains>true</prioritizeSustains>
+					</WorkGiverDef>
+				</value>
+			</li>
+			
+		<!-- Medieval Overhaul - Do Bills at Millstone (Duplicated Task) -->
+			
+			<li MayRequire="DankPyon.Medieval.Overhaul" Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					<WorkGiverDef>
+						<defName>FSFDankPyon_DoBillsMillstone</defName>
+						<label>grind bulk grains</label>
+						<giverClass>WorkGiver_DoBill</giverClass>
+						<workType>FSFProduction</workType>
+						<priorityInType>88</priorityInType>
+						<fixedBillGiverDefs>
+							<li>DankPyon_Millstone</li>
+						</fixedBillGiverDefs>
+						<verb>mill</verb>
+						<gerund>milling at</gerund>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+						<prioritizeSustains>true</prioritizeSustains>
+					</WorkGiverDef>
+				</value>
+			</li>
+			
+		<!-- Vanilla Cooking Expanded - Do Bills at Condiment Bench (Duplicated Task) -->
+			
+			<li MayRequire="VanillaExpanded.VCookE" Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					<WorkGiverDef>
+						<defName>FSFVCE_DoBillsPrep</defName>
+						<label>work on condiments at prep table</label>
+						<giverClass>WorkGiver_DoBill</giverClass>
+						<workType>FSFProduction</workType>
+						<priorityInType>87</priorityInType>
+						<fixedBillGiverDefs>
+							<li>VCE_CondimentPrepTable</li>   
+						</fixedBillGiverDefs>
+						<verb>prep condiments</verb>
+						<gerund>working on condiments at</gerund>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+						<prioritizeSustains>true</prioritizeSustains>
+					</WorkGiverDef>
+				</value>
+			</li>
+			
+		<!-- Medieval Overhaul - Do Bills at Trestle (Duplicated Task) -->
+			
+			<li MayRequire="DankPyon.Medieval.Overhaul" Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					<WorkGiverDef>
+						<defName>FSFDankPyon_DoBillsMakeTimber</defName>
+						<label>make timber</label>
+						<giverClass>WorkGiver_DoBill</giverClass>
+						<workType>FSFProduction</workType>
+						<priorityInType>80</priorityInType>
+						<fixedBillGiverDefs>
+							<li>DankPyon_Trestle</li>
+						</fixedBillGiverDefs>
+						<verb>craft</verb>
+						<gerund>crafting at</gerund>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+						<prioritizeSustains>true</prioritizeSustains>
+					</WorkGiverDef>
+				</value>
+			</li>
+			
+		<!-- Medieval Overhaul - Do Bills at Spinning Wheel (Duplicated Task) -->
+			
+			<li MayRequire="DankPyon.Medieval.Overhaul" Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					<WorkGiverDef>
+						<defName>FSFDankPyon_DoBillsSpinningWheel</defName>
+						<label>spin cotton</label>
+						<giverClass>WorkGiver_DoBill</giverClass>
+						<workType>FSFProduction</workType>
+						<priorityInType>75</priorityInType>
+						<fixedBillGiverDefs>
+							<li>DankPyon_SpinningWheel</li>
+							<li>ElectricTailoringBench</li>
+							<li>HandTailoringBench</li>
+						</fixedBillGiverDefs>
+						<verb>spin</verb>
+						<gerund>spinning at</gerund>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+						<prioritizeSustains>true</prioritizeSustains>
+					</WorkGiverDef>
+				</value>
+			</li>
+			
+		<!-- Vanilla Brewing Expanded Coffees and Teas - Do Bills at Espresso Machine (Duplicated Task) -->
+			
+			<li MayRequire="VanillaExpanded.VBrewECandT" Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					<WorkGiverDef>
+						<defName>FSFVBE_DoBillsEspressoMachine</defName>
+						<label>brew at espresso machine</label>
+						<giverClass>WorkGiver_DoBill</giverClass>
+						<workType>FSFProduction</workType>
+						<priorityInType>70</priorityInType>
+						<fixedBillGiverDefs>
+							<li>VBE_EspressoMachineBuilding</li>   
+						</fixedBillGiverDefs>
+						<verb>brew</verb>
+						<gerund>brew at</gerund>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+						<prioritizeSustains>true</prioritizeSustains>
+					</WorkGiverDef>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

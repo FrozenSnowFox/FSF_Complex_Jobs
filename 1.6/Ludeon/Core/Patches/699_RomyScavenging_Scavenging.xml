@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- RomyScavenging 699 (Scavenging) (Default 399)
+ 
+		Default Priority Order
+
+			Scavenging - RomyScavenge 51
+
+	-->
+				
+		<!-- Scavenging - Update Worktype Priority -->
+			
+			<li MayRequire="Romyashi.Scavenging" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "RomyScavenging"]/naturalPriority</xpath>
+				<value>
+					<naturalPriority>699</naturalPriority>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

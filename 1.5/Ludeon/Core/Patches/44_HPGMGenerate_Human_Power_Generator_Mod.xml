@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- HPGMGenerate 44 (Human Power Generator Mod) (Default 50)
+ 
+		Default Priority Order
+
+		Human Power Generator Mod - HPGMCycle 50
+
+	-->
+	
+		<!-- Human Power Generator Mod - (Change Training Worktype Priority) -->
+			
+			<li MayRequire="FLASHPOINT55.HumanPowerGeneratorMod" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "HPGMGenerate"]/naturalPriority</xpath>
+				<value>
+					<naturalPriority>44</naturalPriority>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

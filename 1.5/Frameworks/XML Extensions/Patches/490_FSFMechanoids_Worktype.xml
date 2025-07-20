@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+	<Operation Class="XmlExtensions.OptionalPatch">
+		<modId>FrozenSnowFox.FrozenSnowFoxComplexJobs</modId>
+		<key>FSFMechanoidsWorktype</key>
+		<defaultValue>false</defaultValue>
+		<caseTrue>
+			
+		<Operation Class="PatchOperationSequence">
+			<success>Normal</success>
+			<operations>
+				
+			<!-- Mechanoids Worktype -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+  <WorkTypeDef>
+    <defName>FSFMechanoids</defName>
+    <labelShort>mechanoids</labelShort>
+    <pawnLabel>Mechanitor</pawnLabel>
+    <gerundLabel>smithing</gerundLabel>
+    <description>Perform tasks relating to mechanoids such as gestating new ones, repairing existing ones and creating subcores.</description>
+    <verb>Smith at</verb>
+    <naturalPriority>490</naturalPriority>
+    <relevantSkills>
+      <li>Crafting</li>
+    </relevantSkills>
+    <workTags>
+      <li>Crafting</li>
+      <li>ManualSkilled</li>
+      <li>Commoner</li>
+      <li>AllWork</li>
+    </workTags>
+  </WorkTypeDef>
+					
+				</value>
+			</li>
+				
+			<!-- Biotech Mechanoids Patch -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Smithing"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Smithing"] ]</xpath>
+					<value>
+						<li>FSFMechanoids</li>
+					</value>
+				</match>
+			</li>
+				
+			<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Smithing"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Smithing"] ]</xpath>
+					<value>
+						<li>FSFMechanoids</li>
+					</value>
+				</match>
+			</li>
+				
+			<!-- Change Task Worktype -->
+				
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RepairMech"]/workType</xpath>
+				<value>
+					<workType>FSFMechanoids</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsMechGestator"]/workType</xpath>
+				<value>
+					<workType>FSFMechanoids</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsSubcoreEncoder"]/workType</xpath>
+				<value>
+					<workType>FSFMechanoids</workType>
+				</value>
+			</li>
+				
+			<!-- Add Worktype to Human for Children -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Human"]/race/lifeStageWorkSettings</xpath>
+				<value>
+					<FSFMechanoids>13</FSFMechanoids> <!-- Default Smithing 13 -->
+				</value>
+			</li>
+				
+			<!-- Vanilla Races Expanded - Archon -->
+				
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationConditional">		
+				<xpath>/Defs/GeneDef[defName="VRE_EarlyMaturity"]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/GeneDef[defName = "VRE_EarlyMaturity"]/modExtensions/li[@Class = "VREArchon.LifeStageWorkSettingsExtension"]/lifeStageWorkSettings</xpath>
+					<value>
+						<FSFMechanoids>10</FSFMechanoids> <!-- VRE_EarlyMaturity Smithing 10 -->
+					</value>
+				</match>
+			</li>
+				
+			<!-- The Dead Man's Switch - Do Bills at Automatroid Constructor -->
+				
+			<li MayRequire="Ludeon.RimWorld.Biotech,Aoba.DeadManSwitch.Core" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DMS_DoBillsMechConstructor"]/workType</xpath>
+				<value>
+					<workType>FSFMechanoids</workType>
+				</value>
+			</li>
+				
+			<!-- Vanilla Races Expanded Android - Do Bills Android Operation -->
+				
+			<li MayRequire="Ludeon.RimWorld.Biotech,vanillaracesexpanded.android" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VREA_DoBillsAndroidOperation"]/workType</xpath>
+				<value>
+					<workType>FSFMechanoids</workType>
+				</value>
+			</li>
+				
+			<!-- Vanilla Races Expanded Android - Do Bills at Android Park Workbench -->
+				
+			<li MayRequire="Ludeon.RimWorld.Biotech,vanillaracesexpanded.android" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VREA_DoBillsUseAndroidPartWorkbench"]/workType</xpath>
+				<value>
+					<workType>FSFMechanoids</workType>
+				</value>
+			</li>
+				
+			<!-- Vanilla Races Expanded Android - Create Android -->
+				
+			<li MayRequire="Ludeon.RimWorld.Biotech,vanillaracesexpanded.android" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VREA_CreateAndroid"]/workType</xpath>
+				<value>
+					<workType>FSFMechanoids</workType>
+				</value>
+			</li>
+				
+			<!-- Vanilla Races Expanded Android - Repair Android -->
+				
+			<li MayRequire="Ludeon.RimWorld.Biotech,vanillaracesexpanded.android" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VREA_RepairAndroid"]/workType</xpath>
+				<value>
+					<workType>FSFMechanoids</workType>
+				</value>
+			</li>
+				
+			</operations>
+		</Operation>
+			
+		</caseTrue>
+	</Operation>
+
+</Patch>

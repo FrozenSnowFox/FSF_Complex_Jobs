@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+
+	<!-- Nurse -->		
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "FeedHemogen"]/workType</xpath>
+				<value>
+					<workType>FSFNurse</workType>
+				</value>
+			</li>
+			
+	<!-- Refuel -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "HaulToGeneBank"]/workType</xpath>
+				<value>
+					<workType>FSFRefueling</workType>
+				</value>
+			</li>
+			
+	<!-- Make Xenogerm Creation Higher Priority -->		
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "CreateXenogerm"]/priorityInType</xpath>
+				<value>
+					<priorityInType>200</priorityInType>
+				</value>
+			</li>
+			
+	<!-- Refuel -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "CarryToGeneExtractor"]/workType</xpath>
+				<value>
+					<workType>FSFRefueling</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "CarryToGrowthVat"]/workType</xpath>
+				<value>
+					<workType>FSFRefueling</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "HaulToGrowthVat"]/workType</xpath>
+				<value>
+					<workType>FSFRefueling</workType>
+				</value>
+			</li>
+			
+	<!-- Reorder Mechanoid Tasks -->		
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RepairMech"]/priorityInType</xpath>
+				<value>
+					<priorityInType>210</priorityInType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsMechGestator"]/priorityInType</xpath>
+				<value>
+					<priorityInType>220</priorityInType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsSubcoreEncoder"]/priorityInType</xpath>
+				<value>
+					<priorityInType>200</priorityInType>
+				</value>
+			</li>
+			
+	<!-- Refuel Wastepack Atomizer -->		
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/WorkGiverDef[defName = "HaulToWastepackAtomizer"]</xpath>
+				<value>
+					<workType>FSFRefueling</workType>
+				</value>
+			</li>
+			
+	<!-- Mechanoids Light -->
+			
+			<li Class="PatchOperationInsert">
+				<xpath>/Defs/ThingDef[defName = "Mech_Lifter"]/race/mechEnabledWorkTypes/li</xpath>
+				<value>
+					<li>FSFRearming</li>
+					<li>FSFRefueling</li>
+					<li>FSFLoading</li>
+					<li>FSFCremating</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationInsert">
+				<xpath>/Defs/ThingDef[defName = "Mech_Constructoid"]/race/mechEnabledWorkTypes/li</xpath>
+				<value>
+					<li>FSFRepair</li>
+					<li>FSFDeconstruct</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationInsert">
+				<xpath>/Defs/ThingDef[defName = "Mech_Fabricor"]/race/mechEnabledWorkTypes/li</xpath>
+				<value>
+					<li>FSFButcher</li>
+					<li>FSFBrewing</li>
+					<li>FSFDrugs</li>
+					<li>FSFFabrication</li>
+					<li>FSFMachining</li>
+					<li>FSFRefining</li>
+					<li>FSFSmelt</li>
+					<li>FSFStoneCut</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationInsert">
+				<xpath>/Defs/ThingDef[defName = "Mech_Agrihand"]/race/mechEnabledWorkTypes/li</xpath>
+				<value>
+					<li>FSFHarvesting</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationInsert">
+				<xpath>/Defs/ThingDef[defName = "Mech_Paramedic"]/race/mechEnabledWorkTypes/li</xpath>
+				<value>
+					<li>FSFNurse</li>
+					<li>FSFSurgeon</li>
+				</value>
+			</li>
+			
+	<!-- Mechanoids Heavy -->
+			
+			<li Class="PatchOperationInsert">
+				<xpath>/Defs/ThingDef[defName = "Mech_Tunneler"]/race/mechEnabledWorkTypes/li</xpath>
+				<value>
+					<li>FSFDrilling</li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

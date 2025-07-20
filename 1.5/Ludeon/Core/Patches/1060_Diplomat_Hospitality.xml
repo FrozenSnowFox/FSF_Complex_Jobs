@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- Diplomat 1060 (Hospitality) (1050)
+
+		Default Priority Order
+
+			Hospitality - Recruiter ??
+			Hospitality - Diplomat ??
+			Hospitality - Hospitality_WithdrawVendingMachineEarnings 18
+
+	-->
+			
+		<!-- Hospitality - (Move Diplomat Worktype Priority) -->
+			
+			<li MayRequire="Orion.Hospitality" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "Diplomat"]/naturalPriority</xpath>
+				<value>
+					<naturalPriority>1060</naturalPriority>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

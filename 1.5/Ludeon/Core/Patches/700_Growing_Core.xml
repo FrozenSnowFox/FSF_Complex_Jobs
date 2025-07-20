@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- Growing 700 (Core)
+ 
+		Default Priority Order
+
+			Core - GrowerHarvest 100 (Moved to FSFHarvesting)
+			Vanilla Plants Expanded More Plants - VCE_HarvestAquatic 100 (Moved to FSFHarvesting)
+			Vanilla Plants Expanded More Plants - VCE_HarvestSandy 100 (Moved to FSFHarvesting)
+			Vanilla Plants Expanded More Plants - VCE_HarvestFlowerGarden 100 (Moved to FSFHarvesting)
+			Vanilla Plants Expanded Mushrooms - VPE_HarvestMushroom 100 (Moved to FSFHarvesting)
+			Core - PlantSeed 80
+			Vanilla Plants Expanded VPE_TillSoilWorkDeliverBp 80
+			Vanilla Plants Expanded VPE_TillSoilWorkBuild 70
+			Core - Replant 60
+			Vanilla Plants Expanded VPE_TillSoilWorkDeliverFr 60
+			Core - GrowerSow 50
+			Vanilla Plants Expanded More Plants - VCE_SowAquatic 50
+			Vanilla Plants Expanded More Plants - VCE_SowSandy 50
+			Vanilla Plants Expanded More Plants - VCE_SowFlowerGarden 50
+			Dubs Bad Hygiene - PlaceFertilizer 20
+
+	-->
+			
+		<!-- Core - Update Worktype Description -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "Growing"]/description</xpath>
+				<value>
+					<description>Prepare soil for growing and plant seeds.</description>
+				</value>
+			</li>
+			
+		<!-- Vanilla Plants Expanded - VPE_TillSoilWorkDeliverBp -->
+			
+			<li MayRequire="VanillaExpanded.VPlantsE" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VPE_TillSoilWorkDeliverBp"]/priorityInType</xpath>
+				<value>
+					<priorityInType>200</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Plants Expanded - VPE_TillSoilWorkDeliverFr -->
+			
+			<li MayRequire="VanillaExpanded.VPlantsE" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VPE_TillSoilWorkDeliverFr"]/priorityInType</xpath>
+				<value>
+					<priorityInType>199</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Plants Expanded - VPE_TillSoilWorkBuild -->
+			
+			<li MayRequire="VanillaExpanded.VPlantsE" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VPE_TillSoilWorkBuild"]/priorityInType</xpath>
+				<value>
+					<priorityInType>198</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Dubs Bad Hygiene - PlaceFertilizer -->
+			
+			<li MayRequire="Dubwise.DubsBadHygiene" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "PlaceFertilizer"]/priorityInType</xpath>
+				<value>
+					<priorityInType>190</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Core - Replant Tree -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "Replant"]/priorityInType</xpath>
+				<value>
+					<priorityInType>85</priorityInType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

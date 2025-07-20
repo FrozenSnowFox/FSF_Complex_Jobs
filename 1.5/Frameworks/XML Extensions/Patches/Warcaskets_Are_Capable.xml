@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+	<Operation Class="XmlExtensions.OptionalPatch">
+		<modId>FrozenSnowFox.FrozenSnowFoxComplexJobs</modId>
+		<key>FSFWarcasketsAreCapable</key>
+		<defaultValue>false</defaultValue>
+		<caseTrue>
+			
+		<Operation Class="PatchOperationSequence">
+			<success>Normal</success>
+			<operations>
+				
+			<!-- Warcaskets Are Capable -->
+				
+			<li MayRequire="OskarPotocki.VFE.Pirates" Class="PatchOperationRemove">
+				<xpath>/Defs/TraitDef[defName = "VFEP_WarcasketTrait"]/disabledWorkTags</xpath>
+			</li>
+				
+			<li MayRequire="Ludeon.RimWorld.Biotech,OskarPotocki.VFE.Pirates,sarg.alphamechs" Class="PatchOperationRemove">
+				<xpath>/Defs/TraitDef[defName = "VFEP_WarcasketTrait_Mech"]/disabledWorkTags</xpath>
+			</li>
+				
+			</operations>
+		</Operation>
+			
+		</caseTrue>
+	</Operation>
+
+</Patch>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+	<!-- Cremating -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ExtractSkull"]/workType</xpath>
+				<value>
+					<workType>FSFCremating</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ExtractSkull"]/priorityInType</xpath>
+				<value>
+					<priorityInType>95</priorityInType>
+				</value>
+			</li>
+			
+	<!-- Refueling -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "HaulToBiosculpterPod"]/workType</xpath>
+				<value>
+					<workType>FSFRefueling</workType>
+				</value>
+			</li>
+			
+			</operations>
+	</Operation>
+	
+</Patch>

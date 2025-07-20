@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Colony Manager -->
+
+	<Operation Class="PatchOperationFindMod">
+		
+    	<mods>
+        	<li>Colony Manager</li>
+    	</mods>
+		
+    	<match Class="PatchOperationSequence">
+        <success>Always</success>
+        <operations>
+
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "Managing"]/naturalPriority</xpath>
+				<value>
+					<naturalPriority>105</naturalPriority>
+				</value>
+			</li>
+			
+        </operations>
+    	</match>
+	
+	</Operation>
+	
+</Patch>

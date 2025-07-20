@@ -1,0 +1,1026 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Misc Robots++ -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+			
+	<!-- Exclude Lvl 1 it's in Misc Robots instead -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AIRobot_Hauler_II"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFRearming>1</FSFRearming>
+					<FSFTransport>1</FSFTransport>
+					<FSFCremating>1</FSFCremating>
+					<FSFHauling>1</FSFHauling>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AIRobot_Hauler_II"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFRearming</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFTransport</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFCremating</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFHauling</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AIRobot_Hauler_III"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFRearming>1</FSFRearming>
+					<FSFTransport>1</FSFTransport>
+					<FSFCremating>1</FSFCremating>
+					<FSFHauling>1</FSFHauling>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AIRobot_Hauler_III"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFRearming</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFTransport</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFCremating</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFHauling</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AIRobot_Hauler_IV"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFRearming>1</FSFRearming>
+					<FSFTransport>1</FSFTransport>
+					<FSFCremating>1</FSFCremating>
+					<FSFHauling>1</FSFHauling>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AIRobot_Hauler_IV"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFRearming</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFTransport</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFCremating</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFHauling</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AIRobot_Hauler_V"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFRearming>1</FSFRearming>
+					<FSFTransport>1</FSFTransport>
+					<FSFCremating>1</FSFCremating>
+					<FSFHauling>1</FSFHauling>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AIRobot_Hauler_V"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFRearming</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFTransport</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFCremating</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFHauling</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+			
+			
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Builder_I"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFRepair>1</FSFRepair>
+					<FSFDeconstruct>1</FSFDeconstruct>
+					<FSFDrilling>3</FSFDrilling>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Builder_I"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFRepair</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFDeconstruct</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFDrilling</workTypeDef><priority>3</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Builder_II"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFRepair>1</FSFRepair>
+					<FSFDeconstruct>1</FSFDeconstruct>
+					<FSFDrilling>3</FSFDrilling>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Builder_II"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFRepair</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFDeconstruct</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFDrilling</workTypeDef><priority>3</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Builder_III"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFRepair>1</FSFRepair>
+					<FSFDeconstruct>1</FSFDeconstruct>
+					<FSFDrilling>3</FSFDrilling>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Builder_III"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFRepair</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFDeconstruct</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFDrilling</workTypeDef><priority>3</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Builder_IV"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFRepair>1</FSFRepair>
+					<FSFDeconstruct>1</FSFDeconstruct>
+					<FSFDrilling>3</FSFDrilling>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Builder_IV"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFRepair</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFDeconstruct</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFDrilling</workTypeDef><priority>3</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Builder_V"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFRepair>1</FSFRepair>
+					<FSFDeconstruct>1</FSFDeconstruct>
+					<FSFDrilling>3</FSFDrilling>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Builder_V"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFRepair</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFDeconstruct</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFDrilling</workTypeDef><priority>3</priority></li>
+				</value>
+			</li>
+
+
+
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Crafter_I"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFMachining>1</FSFMachining>
+					<FSFFabrication>1</FSFFabrication>
+					<FSFDrugs>2</FSFDrugs>
+					<FSFRefining>3</FSFRefining>
+					<FSFSmelt>3</FSFSmelt>
+					<FSFStoneCut>3</FSFStoneCut>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Crafter_I"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFMachining</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFFabrication</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFDrugs</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFRefining</workTypeDef><priority>3</priority></li>
+					<li><workTypeDef>FSFSmelt</workTypeDef><priority>3</priority></li>
+					<li><workTypeDef>FSFStoneCut</workTypeDef><priority>3</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Crafter_II"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFMachining>1</FSFMachining>
+					<FSFFabrication>1</FSFFabrication>
+					<FSFDrugs>2</FSFDrugs>
+					<FSFRefining>3</FSFRefining>
+					<FSFSmelt>3</FSFSmelt>
+					<FSFStoneCut>3</FSFStoneCut>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Crafter_II"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFMachining</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFFabrication</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFDrugs</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFRefining</workTypeDef><priority>3</priority></li>
+					<li><workTypeDef>FSFSmelt</workTypeDef><priority>3</priority></li>
+					<li><workTypeDef>FSFStoneCut</workTypeDef><priority>3</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Crafter_III"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFMachining>1</FSFMachining>
+					<FSFFabrication>1</FSFFabrication>
+					<FSFDrugs>2</FSFDrugs>
+					<FSFRefining>3</FSFRefining>
+					<FSFSmelt>3</FSFSmelt>
+					<FSFStoneCut>3</FSFStoneCut>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Crafter_III"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFMachining</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFFabrication</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFDrugs</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFRefining</workTypeDef><priority>3</priority></li>
+					<li><workTypeDef>FSFSmelt</workTypeDef><priority>3</priority></li>
+					<li><workTypeDef>FSFStoneCut</workTypeDef><priority>3</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Crafter_IV"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFMachining>1</FSFMachining>
+					<FSFFabrication>1</FSFFabrication>
+					<FSFDrugs>2</FSFDrugs>
+					<FSFRefining>3</FSFRefining>
+					<FSFSmelt>3</FSFSmelt>
+					<FSFStoneCut>3</FSFStoneCut>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Crafter_IV"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFMachining</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFFabrication</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFDrugs</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFRefining</workTypeDef><priority>3</priority></li>
+					<li><workTypeDef>FSFSmelt</workTypeDef><priority>3</priority></li>
+					<li><workTypeDef>FSFStoneCut</workTypeDef><priority>3</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Crafter_V"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFMachining>1</FSFMachining>
+					<FSFFabrication>1</FSFFabrication>
+					<FSFDrugs>2</FSFDrugs>
+					<FSFRefining>3</FSFRefining>
+					<FSFSmelt>3</FSFSmelt>
+					<FSFStoneCut>3</FSFStoneCut>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Crafter_V"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFMachining</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFFabrication</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFDrugs</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFRefining</workTypeDef><priority>3</priority></li>
+					<li><workTypeDef>FSFSmelt</workTypeDef><priority>3</priority></li>
+					<li><workTypeDef>FSFStoneCut</workTypeDef><priority>3</priority></li>
+				</value>
+			</li>
+			
+
+
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_ER_I"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFNurse>1</FSFNurse>
+					<FSFSurgeon>1</FSFSurgeon>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_ER_I"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFNurse</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFSurgeon</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_ER_II"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFNurse>1</FSFNurse>
+					<FSFSurgeon>1</FSFSurgeon>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_ER_II"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFNurse</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFSurgeon</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_ER_III"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFNurse>1</FSFNurse>
+					<FSFSurgeon>1</FSFSurgeon>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_ER_III"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFNurse</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFSurgeon</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_ER_IV"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFNurse>1</FSFNurse>
+					<FSFSurgeon>1</FSFSurgeon>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_ER_IV"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFNurse</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFSurgeon</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_ER_V"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFNurse>1</FSFNurse>
+					<FSFSurgeon>1</FSFSurgeon>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_ER_V"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFNurse</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFSurgeon</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+			
+
+
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Kitchen_I"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFButcher>1</FSFButcher>
+					<FSFProduction>1</FSFProduction>
+					<FSFHarvesting>2</FSFHarvesting>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Kitchen_I"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFButcher</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFProduction</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFHarvesting</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+		
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Kitchen_II"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFButcher>1</FSFButcher>
+					<FSFProduction>1</FSFProduction>
+					<FSFHarvesting>2</FSFHarvesting>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Kitchen_II"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFButcher</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFProduction</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFHarvesting</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Kitchen_III"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFButcher>1</FSFButcher>
+					<FSFProduction>1</FSFProduction>
+					<FSFHarvesting>2</FSFHarvesting>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Kitchen_III"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFButcher</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFProduction</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFHarvesting</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Kitchen_IV"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFButcher>1</FSFButcher>
+					<FSFProduction>1</FSFProduction>
+					<FSFHarvesting>2</FSFHarvesting>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Kitchen_IV"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFButcher</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFProduction</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFHarvesting</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Kitchen_V"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFButcher>2</FSFButcher>
+					<FSFProduction>2</FSFProduction>
+					<FSFHarvesting>2</FSFHarvesting>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Kitchen_V"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFButcher</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFProduction</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFHarvesting</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_I"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFRearming>2</FSFRearming>
+					<FSFTransport>2</FSFTransport>
+					<FSFCremating>2</FSFCremating>
+					<FSFHauling>2</FSFHauling>
+					<FSFRepair>2</FSFRepair>
+					<FSFDeconstruct>2</FSFDeconstruct>
+					<FSFDrilling>2</FSFDrilling>
+					<FSFMachining>2</FSFMachining>
+					<FSFFabrication>2</FSFFabrication>
+					<FSFDrugs>2</FSFDrugs>
+					<FSFRefining>2</FSFRefining>
+					<FSFSmelt>2</FSFSmelt>
+					<FSFStoneCut>2</FSFStoneCut>
+					<FSFNurse>1</FSFNurse>
+					<FSFSurgeon>1</FSFSurgeon>
+					<FSFButcher>2</FSFButcher>
+					<FSFProduction>2</FSFProduction>
+					<FSFHarvesting>2</FSFHarvesting>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_I"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFRearming</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFTransport</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFCremating</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFHauling</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFRepair</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFDeconstruct</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFDrilling</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFMachining</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFFabrication</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFDrugs</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFRefining</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFSmelt</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFStoneCut</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFNurse</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFSurgeon</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFButcher</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFProduction</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFHarvesting</workTypeDef><priority>2</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_II"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFRearming>2</FSFRearming>
+					<FSFTransport>2</FSFTransport>
+					<FSFCremating>2</FSFCremating>
+					<FSFHauling>2</FSFHauling>
+					<FSFRepair>2</FSFRepair>
+					<FSFDeconstruct>2</FSFDeconstruct>
+					<FSFDrilling>2</FSFDrilling>
+					<FSFMachining>2</FSFMachining>
+					<FSFFabrication>2</FSFFabrication>
+					<FSFDrugs>2</FSFDrugs>
+					<FSFRefining>2</FSFRefining>
+					<FSFSmelt>2</FSFSmelt>
+					<FSFStoneCut>2</FSFStoneCut>
+					<FSFNurse>1</FSFNurse>
+					<FSFSurgeon>1</FSFSurgeon>
+					<FSFButcher>2</FSFButcher>
+					<FSFProduction>2</FSFProduction>
+					<FSFHarvesting>2</FSFHarvesting>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_II"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFRearming</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFTransport</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFCremating</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFHauling</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFRepair</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFDeconstruct</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFDrilling</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFMachining</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFFabrication</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFDrugs</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFRefining</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFSmelt</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFStoneCut</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFNurse</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFSurgeon</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFButcher</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFProduction</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFHarvesting</workTypeDef><priority>2</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_III"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFRearming>2</FSFRearming>
+					<FSFTransport>2</FSFTransport>
+					<FSFCremating>2</FSFCremating>
+					<FSFHauling>2</FSFHauling>
+					<FSFRepair>2</FSFRepair>
+					<FSFDeconstruct>2</FSFDeconstruct>
+					<FSFDrilling>2</FSFDrilling>
+					<FSFMachining>2</FSFMachining>
+					<FSFFabrication>2</FSFFabrication>
+					<FSFDrugs>2</FSFDrugs>
+					<FSFRefining>2</FSFRefining>
+					<FSFSmelt>2</FSFSmelt>
+					<FSFStoneCut>2</FSFStoneCut>
+					<FSFNurse>1</FSFNurse>
+					<FSFSurgeon>1</FSFSurgeon>
+					<FSFButcher>2</FSFButcher>
+					<FSFProduction>2</FSFProduction>
+					<FSFHarvesting>2</FSFHarvesting>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_III"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFRearming</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFTransport</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFCremating</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFHauling</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFRepair</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFDeconstruct</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFDrilling</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFMachining</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFFabrication</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFDrugs</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFRefining</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFSmelt</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFStoneCut</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFNurse</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFSurgeon</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFButcher</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFProduction</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFHarvesting</workTypeDef><priority>2</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_IV"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFRearming>2</FSFRearming>
+					<FSFTransport>2</FSFTransport>
+					<FSFCremating>2</FSFCremating>
+					<FSFHauling>2</FSFHauling>
+					<FSFRepair>2</FSFRepair>
+					<FSFDeconstruct>2</FSFDeconstruct>
+					<FSFDrilling>2</FSFDrilling>
+					<FSFMachining>2</FSFMachining>
+					<FSFFabrication>2</FSFFabrication>
+					<FSFDrugs>2</FSFDrugs>
+					<FSFRefining>2</FSFRefining>
+					<FSFSmelt>2</FSFSmelt>
+					<FSFStoneCut>2</FSFStoneCut>
+					<FSFNurse>1</FSFNurse>
+					<FSFSurgeon>1</FSFSurgeon>
+					<FSFButcher>2</FSFButcher>
+					<FSFProduction>2</FSFProduction>
+					<FSFHarvesting>2</FSFHarvesting>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_IV"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFRearming</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFTransport</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFCremating</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFHauling</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFRepair</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFDeconstruct</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFDrilling</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFMachining</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFFabrication</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFDrugs</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFRefining</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFSmelt</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFStoneCut</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFNurse</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFSurgeon</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFButcher</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFProduction</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFHarvesting</workTypeDef><priority>2</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_V"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFRearming>2</FSFRearming>
+					<FSFTransport>2</FSFTransport>
+					<FSFCremating>2</FSFCremating>
+					<FSFHauling>2</FSFHauling>
+					<FSFRepair>2</FSFRepair>
+					<FSFDeconstruct>2</FSFDeconstruct>
+					<FSFDrilling>2</FSFDrilling>
+					<FSFMachining>2</FSFMachining>
+					<FSFFabrication>2</FSFFabrication>
+					<FSFDrugs>2</FSFDrugs>
+					<FSFRefining>2</FSFRefining>
+					<FSFSmelt>2</FSFSmelt>
+					<FSFStoneCut>2</FSFStoneCut>
+					<FSFNurse>1</FSFNurse>
+					<FSFSurgeon>1</FSFSurgeon>
+					<FSFButcher>2</FSFButcher>
+					<FSFProduction>2</FSFProduction>
+					<FSFHarvesting>2</FSFHarvesting>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_V"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFRearming</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFTransport</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFCremating</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFHauling</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFRepair</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFDeconstruct</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFDrilling</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFMachining</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFFabrication</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFDrugs</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFRefining</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFSmelt</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFStoneCut</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFNurse</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFSurgeon</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFButcher</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFProduction</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFHarvesting</workTypeDef><priority>2</priority></li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+	<!-- Add Optional Clear Snow Work Type -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+		
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/WorkTypeDef[defName = "FSFSnow"]</xpath>
+			</li>
+			
+			<!-- Exclude Lvl 1 it's in Misc Robots instead -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AIRobot_Cleaner_II"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFSnow>1</FSFSnow>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AIRobot_Cleaner_II"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFSnow</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AIRobot_Cleaner_III"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFSnow>1</FSFSnow>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AIRobot_Cleaner_III"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFSnow</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AIRobot_Cleaner_IV"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFSnow>1</FSFSnow>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AIRobot_Cleaner_IV"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFSnow</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AIRobot_Cleaner_V"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFSnow>1</FSFSnow>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AIRobot_Cleaner_V"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFSnow</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_I"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFSnow>3</FSFSnow>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_I"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFSnow</workTypeDef><priority>3</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_II"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFSnow>3</FSFSnow>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_II"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFSnow</workTypeDef><priority>3</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_III"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFSnow>3</FSFSnow>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_III"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFSnow</workTypeDef><priority>3</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_IV"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFSnow>3</FSFSnow>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_IV"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFSnow</workTypeDef><priority>3</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_V"]/race/mechEnabledWorkTypes</xpath>
+				<value>
+					<li>FSFSnow</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_V"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFSnow>3</FSFSnow>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_V"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFSnow</workTypeDef><priority>3</priority></li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+	<!-- Add Optional Smoothing Work Type -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+		
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/WorkTypeDef[defName = "FSFSmoothing"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Builder_I"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFSmoothing>1</FSFSmoothing>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Builder_I"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFSmoothing</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Builder_II"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFSmoothing>1</FSFSmoothing>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Builder_II"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFSmoothing</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Builder_III"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFSmoothing>1</FSFSmoothing>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Builder_III"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFSmoothing</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Builder_IV"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFSmoothing>1</FSFSmoothing>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Builder_IV"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFSmoothing</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Builder_V"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFSmoothing>1</FSFSmoothing>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Builder_V"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFSmoothing</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_I"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFSmoothing>2</FSFSmoothing>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_I"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFSmoothing</workTypeDef><priority>2</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_II"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFSmoothing>2</FSFSmoothing>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_II"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFSmoothing</workTypeDef><priority>2</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_III"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFSmoothing>2</FSFSmoothing>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_III"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFSmoothing</workTypeDef><priority>2</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_IV"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFSmoothing>2</FSFSmoothing>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_IV"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFSmoothing</workTypeDef><priority>2</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_V"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFSmoothing>2</FSFSmoothing>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RPP_Bot_Omni_V"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFSmoothing</workTypeDef><priority>2</priority></li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- FSFTransport 325 (FSF Complex Jobs)
+ 
+		Default Priority Order
+
+			Core - UnloadCarriers 130 (Moved to FSFTransport)
+			Core - HelpGatheringItemsForCaravan 120 (Moved to FSFTransport)
+			Core - LoadTransporters 110 (Moved to FSFTransport)
+			Vehicle Framework - RefuelVehicle 90 (Moved to FSFTransport)
+			Vehicle Framework - PackVehicle 80 (Moved to FSFTransport)
+			Vehicle Framework - HelpPackVehicleCaravan 80 (Moved to FSFTransport)
+			Vehicle Framework - PackVehicleTurret 80 (Moved to FSFTransport)
+			Vehicle Framework - LoadUpgradeMaterials 60 (Moved to FSFTransport)
+
+	-->
+			
+		<!-- Biotech Mechanoids Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Hauling"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Hauling"] ]</xpath>
+					<value>
+						<li>FSFTransport</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Hauling"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Hauling"] ]</xpath>
+					<value>
+						<li>FSFTransport</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Core - Unload Carriers -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "UnloadCarriers"]/workType</xpath>
+				<value>
+					<workType>FSFTransport</workType>
+				</value>
+			</li>
+			
+		<!-- Core - Help Gathering Items for Caravans -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "HelpGatheringItemsForCaravan"]/workType</xpath>
+				<value>
+					<workType>FSFTransport</workType>
+				</value>
+			</li>
+			
+		<!-- Core - Load Transport Pods -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "LoadTransporters"]/workType</xpath>
+				<value>
+					<workType>FSFTransport</workType>
+				</value>
+			</li>
+			
+		<!-- Vehicle Framework - Pack Vehicle -->
+			
+			<li MayRequire="SmashPhil.VehicleFramework" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "PackVehicle"]/workType</xpath>
+				<value>
+					<workType>FSFTransport</workType>
+				</value>
+			</li>
+			
+		<!-- Vehicle Framework - Help Gathering Items For Vehicle Caravan -->
+			
+			<li MayRequire="SmashPhil.VehicleFramework" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "HelpPackVehicleCaravan"]/workType</xpath>
+				<value>
+					<workType>FSFTransport</workType>
+				</value>
+			</li>
+			
+		<!-- Vehicle Framework - Pack Vehicle Turret -->
+			
+			<li MayRequire="SmashPhil.VehicleFramework" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "PackVehicleTurret"]/workType</xpath>
+				<value>
+					<workType>FSFTransport</workType>
+				</value>
+			</li>
+			
+		<!-- Vehicle Framework - Load Vehicle Upgrade Materials -->
+			
+			<li MayRequire="SmashPhil.VehicleFramework" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "LoadUpgradeMaterials"]/workType</xpath>
+				<value>
+					<workType>FSFTransport</workType>
+				</value>
+			</li>
+			
+		<!-- Vehicle Framework - Refuel Vehicle -->
+			
+			<li MayRequire="SmashPhil.VehicleFramework" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RefuelVehicle"]/workType</xpath>
+				<value>
+					<workType>FSFTransport</workType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

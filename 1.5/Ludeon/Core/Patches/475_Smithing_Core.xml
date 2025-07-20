@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- Smithing 475 (Core) (470)
+ 
+		Default Priority Order
+
+			Biotech DLC - DoBillsSubcoreEncoder 220 (Moved to FSFMechanoids if Enabled)
+			Biotech DLC - DoBillsMechGestator 210 (Moved to FSFMechanoids if Enabled)
+			Biotech DLC - RepairMech 200 (Moved to FSFMechanoids if Enabled)
+			The Dead Man's Switch - DMS_DoBillsMechConstructor 200 (Moved to FSFMechanoids if Enabled)
+			Primitive Workbenches - VBY_DoBillsMakeRangedWeapons 117
+			Primitive Workbenches - VBY_DoBillsMakeMeleeWeapons 116
+			Core - DoBillsMakeWeapons 115
+			Medieval Overhaul - DankPyon_DoBillsMakeJewelry 115
+			Medieval Overhaul - DoBillMakesMending 115
+			[SYR] Prosthetic Table DoBillsProstheticsTable 100 (Moved to FSFFabrication)
+			Combat Extended - ModifyWeapons 80
+			Vanilla Vehicles Expanded - VVE_DoBillsGarageBench 80
+			Dubs Rimatomics - DoBillsTableNuclear 77
+			Core - DoBillsMachiningTable 75 (Moved to FSFMachining)
+			Anomaly DLC - DoBillsBioferriteShaper 75
+			Project RimFactory Revived - DoBillsRoboticMachiningTable 75
+			SYR Prosthetic Table - DoBillsProstheticsTable 75 (Moved to FSFFabrication)
+			Combat Extended - DoBillsAmmoBench 60
+			Core - DoBillsFabricationBench 50 (Moved to FSFFabrication)
+			Rimsential Homebound: Continued - PS_DoBillsDigitalBench 50
+			Vanilla Factions Expanded Ancients - VFEA_DoBillsAncientWorkshop 50
+			Vanilla Factions Expanded Ancients - VFEA_DoBillsMending 50 (Moved to Crafting)
+
+	-->
+			
+		<!-- Core - Update Worktype Priority -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "Smithing"]/naturalPriority</xpath>
+				<value>
+					<naturalPriority>475</naturalPriority>
+				</value>
+			</li>
+			
+		<!-- Core - Update Worktype Description -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "Smithing"]/description</xpath>
+				<value>
+					<description>Create weapons and tools from raw materials as a blacksmith.</description>
+				</value>
+			</li>
+			
+		<!-- Biotech DLC - Do Bills at Mech Gestators -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsMechGestator"]/priorityInType</xpath>
+				<value>
+					<priorityInType>220</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Biotech DLC - Repair Mechanoids -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RepairMech"]/priorityInType</xpath>
+				<value>
+					<priorityInType>210</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Biotech DLC - Do Bills at Subcore Encoder -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsSubcoreEncoder"]/priorityInType</xpath>
+				<value>
+					<priorityInType>200</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Combat Extended - Do Bills at Ammo Bench -->
+			
+			<li MayRequire="CETeam.CombatExtended" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsAmmoBench"]/priorityInType</xpath>
+				<value>
+					<priorityInType>195</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Medival Overhaul - Do Bills at Mending Bench -->
+			
+			<li MayRequire="DankPyon.Medieval.Overhaul" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillMakesMending"]/priorityInType</xpath>
+				<value>
+					<priorityInType>190</priorityInType>
+				</value>
+			</li>
+			
+		<!-- The Dead Man's Switch - Create new Workgiver for Smithing -->
+
+			<li MayRequire="Aoba.DeadManSwitch.Core" Class="PatchOperationRemove">
+				<xpath>/Defs/WorkGiverDef[defName = "DMS_Operate"]/fixedBillGiverDefs/li[text()="DMS_TableMachinePrinter"]</xpath>
+			</li>
+			
+			<li MayRequire="Aoba.DeadManSwitch.Core" Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					<WorkGiverDef>
+						<defName>FSFDMS_TableMachinePrinter</defName>
+						<label>Operate machinery printer</label>
+						<giverClass>WorkGiver_DoBill</giverClass>
+						<workType>Smithing</workType>
+						<priorityInType>140</priorityInType>
+						<fixedBillGiverDefs>
+							<li>DMS_TableMachinePrinter</li>
+						</fixedBillGiverDefs>
+						<verb>Operate</verb>
+						<gerund>Operating at</gerund>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+						<prioritizeSustains>true</prioritizeSustains>
+					</WorkGiverDef>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<!-- Delivery Tasks Under Hauling For Lifters -->
+	
+  <WorkGiverDef>
+    <defName>FSFLifterDeliverResourcesToFrames</defName>
+    <label>deliver resources to frames</label>
+    <giverClass>WorkGiver_ConstructDeliverResourcesToFrames</giverClass>
+    <workType>Hauling</workType>
+    <priorityInType>10</priorityInType>
+    <verb>deliver to</verb>
+    <gerund>delivering to</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <nonColonistsCanDo>true</nonColonistsCanDo>
+    <prioritizeSustains>true</prioritizeSustains>
+    <equivalenceGroup>AssistInConstruction</equivalenceGroup>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>FSFLifterDeliverResourcesToBlueprints</defName>
+    <label>deliver resources to blueprints</label>
+    <giverClass>WorkGiver_ConstructDeliverResourcesToBlueprints</giverClass>
+    <workType>Hauling</workType>
+    <priorityInType>9</priorityInType>
+    <verb>deliver to</verb>
+    <gerund>delivering to</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <nonColonistsCanDo>true</nonColonistsCanDo>
+    <prioritizeSustains>true</prioritizeSustains>
+    <equivalenceGroup>AssistInConstruction</equivalenceGroup>
+  </WorkGiverDef>
+
+</Defs>

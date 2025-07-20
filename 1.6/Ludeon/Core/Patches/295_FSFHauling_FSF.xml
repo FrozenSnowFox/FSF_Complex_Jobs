@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- FSFHauling 295 (FSF Complex Jobs)
+ 
+		Default Priority Order
+
+			Core - HaulToPortal 105 (Moved to FSFHauling)
+			Core - HaulCorpses 90 (Moved to FSFHauling)
+			Pick Up And Haul - HaulToInventory 18 (Moved to FSFHauling)
+			Core - HaulGeneral 15 (Moved to FSFHauling)
+			Core - DeliverResourcesToFrames 10 (Duplicated Task)
+			Core - DeliverResourcesToBlueprints 9 (Duplicated Task)
+			Core - HaulMerge 5 (Duplicated Task)
+
+	-->
+			
+		<!-- Biotech Mechanoids Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Hauling"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Hauling"] ]</xpath>
+					<value>
+						<li>FSFHauling</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Hauling"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Hauling"] ]</xpath>
+					<value>
+						<li>FSFHauling</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Core - Haul To Portal -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "HaulToPortal"]/workType</xpath>
+				<value>
+					<workType>FSFHauling</workType>
+				</value>
+			</li>
+			
+		<!-- Core - Haul Corpses -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "HaulCorpses"]/workType</xpath>
+				<value>
+					<workType>FSFHauling</workType>
+				</value>
+			</li>
+			
+		<!-- Pick Up And Haul - Haul To Inventory -->
+			
+			<li MayRequire="Mehni.PickUpAndHaul" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "HaulToInventory"]/workType</xpath>
+				<value>
+					<workType>FSFHauling</workType>
+				</value>
+			</li>
+			
+		<!-- Core - Haul General -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "HaulGeneral"]/workType</xpath>
+				<value>
+					<workType>FSFHauling</workType>
+				</value>
+			</li>
+			
+		<!-- Core - Deliver Resources To Frames (Duplicated Task) -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>					
+					<WorkGiverDef>
+						<defName>FSFDeliverResourcesToFrames</defName>
+						<label>deliver resources to frames</label>
+						<giverClass>WorkGiver_ConstructDeliverResourcesToFrames</giverClass>
+						<workType>FSFHauling</workType>
+						<priorityInType>10</priorityInType>
+						<verb>deliver to</verb>
+						<gerund>delivering to</gerund>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+						<nonColonistsCanDo>true</nonColonistsCanDo>
+						<prioritizeSustains>true</prioritizeSustains>
+						<equivalenceGroup>AssistInConstruction</equivalenceGroup>
+					</WorkGiverDef>
+				</value>
+			</li>
+			
+		<!-- Core - Deliver Resources To Blueprints (Duplicated Task) -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					<WorkGiverDef>
+						<defName>FSFDeliverResourcesToBlueprints</defName>
+						<label>deliver resources to blueprints</label>
+						<giverClass>WorkGiver_ConstructDeliverResourcesToBlueprints</giverClass>
+						<workType>FSFHauling</workType>
+						<priorityInType>9</priorityInType>
+						<verb>deliver to</verb>
+						<gerund>delivering to</gerund>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+						<nonColonistsCanDo>true</nonColonistsCanDo>
+						<prioritizeSustains>true</prioritizeSustains>
+						<equivalenceGroup>AssistInConstruction</equivalenceGroup>
+					</WorkGiverDef>
+				</value>
+			</li>
+			
+		<!-- Core - Haul Merge Stacks -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "HaulMerge"]/workType</xpath>
+				<value>
+					<workType>FSFHauling</workType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

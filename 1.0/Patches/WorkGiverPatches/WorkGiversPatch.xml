@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+
+	<!-- Tooltip Updates -->		
+
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkTypeDef[defName = "Doctor"]/description</xpath>
+				<value>
+					<description>Treat the sick, bring them food and cheer them up. Doctors will care for both colonists and prisoners.</description>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkTypeDef[defName = "Handling"]/description</xpath>
+				<value>
+					<description>Harvest resources from and slaughter animals.</description>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkTypeDef[defName = "Cooking"]/description</xpath>
+				<value>
+					<description>Prepare meals.</description>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkTypeDef[defName = "Construction"]/description</xpath>
+				<value>
+					<description>Build things that you've designated.</description>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkTypeDef[defName = "Growing"]/description</xpath>
+				<value>
+					<description>Plant seeds.</description>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkTypeDef[defName = "Mining"]/description</xpath>
+				<value>
+					<description>Digging.</description>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkTypeDef[defName = "Smithing"]/description</xpath>
+				<value>
+					<description>Create weapons and tools from raw materials as a blacksmith.</description>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkTypeDef[defName = "Crafting"]/description</xpath>
+				<value>
+					<description>Do general low-skilled labor at work stations.</description>
+				</value>
+			</li>
+
+	<!-- Surgeon -->		
+			
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "DoBillsMedicalHumanOperation"]/workType</xpath>
+				<value>
+					<workType>FSFSurgeon</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "DoBillsMedicalAnimalOperation"]/workType</xpath>
+				<value>
+					<workType>FSFSurgeon</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "TakeToBedToOperate"]/workType</xpath>
+				<value>
+					<workType>FSFSurgeon</workType>
+				</value>
+			</li>
+
+	<!-- Rearming -->
+
+	<!-- Rearm Traps NO LONGER EXISTS
+
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "RearmTraps"]/workType</xpath>
+				<value>
+					<workType>FSFRearming</workType>
+				</value>
+			</li>
+			
+	 -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "RearmTurrets"]/workType</xpath>
+				<value>
+					<workType>FSFRearming</workType>
+				</value>
+			</li>
+
+	<!-- Refueling -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "Refuel"]/workType</xpath>
+				<value>
+					<workType>FSFRefueling</workType>
+				</value>
+			</li>
+			
+	<!-- Training -->
+	
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "Tame"]/workType</xpath>
+				<value>
+					<workType>FSFTraining</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "Train"]/workType</xpath>
+				<value>
+					<workType>FSFTraining</workType>
+				</value>
+			</li>
+
+	<!-- Butcher -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "DoBillsButcherFlesh"]/workType</xpath>
+				<value>
+					<workType>FSFButcher</workType>
+				</value>
+			</li>
+			
+	<!-- Brewing -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "DoBillsBrew"]/workType</xpath>
+				<value>
+					<workType>FSFBrewing</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "TakeBeerOutOfFermentingBarrel"]/workType</xpath>
+				<value>
+					<workType>FSFBrewing</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "FillFermentingBarrel"]/workType</xpath>
+				<value>
+					<workType>FSFBrewing</workType>
+				</value>
+			</li>
+			
+	<!-- Repair -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "FixBrokenDownBuilding"]/workType</xpath>
+				<value>
+					<workType>FSFRepair</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "Repair"]/workType</xpath>
+				<value>
+					<workType>FSFRepair</workType>
+				</value>
+			</li>
+			
+	<!-- Deconstruct -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "RemoveRoofs"]/workType</xpath>
+				<value>
+					<workType>FSFDeconstruct</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "Deconstruct"]/workType</xpath>
+				<value>
+					<workType>FSFDeconstruct</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "Uninstall"]/workType</xpath>
+				<value>
+					<workType>FSFDeconstruct</workType>
+				</value>
+			</li>
+						
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "ConstructRemoveFloors"]/workType</xpath>
+				<value>
+					<workType>FSFDeconstruct</workType>
+				</value>
+			</li>
+
+	<!-- Harvesting -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "GrowerHarvest"]/workType</xpath>
+				<value>
+					<workType>FSFHarvesting</workType>
+				</value>
+			</li>
+
+	<!-- Drilling -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "Drill"]/workType</xpath>
+				<value>
+					<workType>FSFDrilling</workType>
+				</value>
+			</li>
+			
+	<!-- Craft Drugs -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "DoBillsProduceDrugs"]/workType</xpath>
+				<value>
+					<workType>FSFDrugs</workType>
+				</value>
+			</li>
+			
+	<!-- Fabrication -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "DoBillsFabricationBench"]/workType</xpath>
+				<value>
+					<workType>FSFFabrication</workType>
+				</value>
+			</li>
+	
+	<!-- Machining -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "DoBillsMachiningTable"]/workType</xpath>
+				<value>
+					<workType>FSFMachining</workType>
+				</value>
+			</li>
+
+	<!-- Refining -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "DoBillsRefinery"]/workType</xpath>
+				<value>
+					<workType>FSFRefining</workType>
+				</value>
+			</li>
+			
+	<!-- Smelt -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "DoBillsSmelter"]/workType</xpath>
+				<value>
+					<workType>FSFSmelt</workType>
+				</value>
+			</li>
+	
+	<!-- Stone Cut -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "DoBillsStonecut"]/workType</xpath>
+				<value>
+					<workType>FSFStoneCut</workType>
+				</value>
+			</li>
+
+	<!-- Loading -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "UnloadCarriers"]/workType</xpath>
+				<value>
+					<workType>FSFLoading</workType>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "LoadTransporters"]/workType</xpath>
+				<value>
+					<workType>FSFLoading</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "HelpGatheringItemsForCaravan"]/workType</xpath>
+				<value>
+					<workType>FSFLoading</workType>
+				</value>
+			</li>
+
+	<!-- Delivering -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "DeliverResourcesToFrames"]/workType</xpath>
+				<value>
+					<workType>FSFDeliver</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "DeliverResourcesToBlueprints"]/workType</xpath>
+				<value>
+					<workType>FSFDeliver</workType>
+				</value>
+			</li>
+			
+	<!-- Scanning -->
+	
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "Scan"]/workType</xpath>
+				<value>
+					<workType>FSFScan</workType>
+				</value>
+			</li>
+			
+	<!-- Cremating -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "DoBillsCremate"]/workType</xpath>
+				<value>
+					<workType>FSFCremating</workType>
+				</value>
+			</li>
+	
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkGiverDef[defName = "DoBillsHaulCampfire"]/workType</xpath>
+				<value>
+					<workType>FSFCremating</workType>
+				</value>
+			</li>
+			
+			</operations>
+	</Operation>
+
+	<!-- Cremating Bills Update -->
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/RecipeDef[defName = "BurnApparel"]/requiredGiverWorkType</xpath>
+		<value>
+			<requiredGiverWorkType>FSFCremating</requiredGiverWorkType>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/RecipeDef[defName = "BurnDrugs"]/requiredGiverWorkType</xpath>
+		<value>
+			<requiredGiverWorkType>FSFCremating</requiredGiverWorkType>
+		</value>
+	</Operation>
+	
+</Patch>

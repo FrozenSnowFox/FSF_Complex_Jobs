@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Surgeon -->
+
+  <FSFSurgeon.label>Cirugía</FSFSurgeon.label>
+  <FSFSurgeon.description>Cirugía en personas o animales.</FSFSurgeon.description>
+  <FSFSurgeon.labelShort>Cirugía</FSFSurgeon.labelShort>
+  <FSFSurgeon.pawnLabel>Cirujano</FSFSurgeon.pawnLabel>
+  <FSFSurgeon.gerundLabel>Cirugía</FSFSurgeon.gerundLabel>
+  <FSFSurgeon.verb>Cirugía en</FSFSurgeon.verb>
+
+
+  <!-- Rearming -->
+
+  <FSFRearming.label>Recargar</FSFRearming.label>
+  <FSFRearming.description>Recargar la torreta.</FSFRearming.description>
+  <FSFRearming.labelShort>Recargar</FSFRearming.labelShort>
+  <FSFRearming.pawnLabel>Cargador</FSFRearming.pawnLabel>
+  <FSFRearming.gerundLabel>Recargar</FSFRearming.gerundLabel>
+  <FSFRearming.verb>Recargar</FSFRearming.verb>
+
+
+  <!-- Refueling -->
+
+  <FSFRefueling.label>Llenar combustible</FSFRefueling.label>
+  <FSFRefueling.description>Relleno de madera o tintes químicos.</FSFRefueling.description>
+  <FSFRefueling.labelShort>Llenar combustible</FSFRefueling.labelShort>
+  <FSFRefueling.pawnLabel>Trabajador de combustible de relleno</FSFRefueling.pawnLabel>
+  <FSFRefueling.gerundLabel>Llenado</FSFRefueling.gerundLabel>
+  <FSFRefueling.verb>Llenar de combustible</FSFRefueling.verb>
+
+
+  <!-- Training -->
+
+  <FSFTraining.label>Domador</FSFTraining.label>
+  <FSFTraining.description>Domesticar animales salvajes y entrenar animales domésticos.</FSFTraining.description>
+  <FSFTraining.labelShort>Domador</FSFTraining.labelShort>
+  <FSFTraining.pawnLabel>Entrenador de bestias</FSFTraining.pawnLabel>
+  <FSFTraining.gerundLabel>Domador</FSFTraining.gerundLabel>
+  <FSFTraining.verb>Domar a la bestia</FSFTraining.verb>
+
+
+  <!-- Butcher -->
+
+  <FSFButcher.label>Carnicero</FSFButcher.label>
+  <FSFButcher.description>Hacer masacre y trituración simple.</FSFButcher.description>
+  <FSFButcher.labelShort>Carnicero</FSFButcher.labelShort>
+  <FSFButcher.pawnLabel>Carnicero</FSFButcher.pawnLabel>
+  <FSFButcher.gerundLabel>Masacre</FSFButcher.gerundLabel>
+  <FSFButcher.verb>Masacre</FSFButcher.verb>
+
+
+  <!-- Brewing -->
+
+  <FSFBrewing.label>Cerveza</FSFBrewing.label>
+  <FSFBrewing.description>Preparar mosto con lúpulo, llenar y vaciar el tanque de fermentación.</FSFBrewing.description>
+  <FSFBrewing.labelShort>Cerveza</FSFBrewing.labelShort>
+  <FSFBrewing.pawnLabel>Enólogo</FSFBrewing.pawnLabel>
+  <FSFBrewing.gerundLabel>Cerveza</FSFBrewing.gerundLabel>
+  <FSFBrewing.verb>Elaborado en</FSFBrewing.verb>
+
+
+  <!-- Repair -->
+
+  <FSFRepair.label>Reparación</FSFRepair.label>
+  <FSFRepair.description>Repara objetos o estructuras dañadas.</FSFRepair.description>
+  <FSFRepair.labelShort>Reparación</FSFRepair.labelShort>
+  <FSFRepair.pawnLabel>Trabajador de reparacion</FSFRepair.pawnLabel>
+  <FSFRepair.gerundLabel>Reparación</FSFRepair.gerundLabel>
+  <FSFRepair.verb>Reparado</FSFRepair.verb>
+
+
+  <!-- Deconstruct -->
+
+  <FSFDeconstruct.label>Desmontar</FSFDeconstruct.label>
+  <FSFDeconstruct.description>Descargar o eliminar objetos, estructuras.</FSFDeconstruct.description>
+  <FSFDeconstruct.labelShort>Desmontar</FSFDeconstruct.labelShort>
+  <FSFDeconstruct.pawnLabel>Descargar trabajadores</FSFDeconstruct.pawnLabel>
+  <FSFDeconstruct.gerundLabel>Desmontar</FSFDeconstruct.gerundLabel>
+  <FSFDeconstruct.verb>Independiente de</FSFDeconstruct.verb>
+
+
+  <!-- Harvesting -->
+
+  <FSFHarvesting.label>Cosecha</FSFHarvesting.label>
+  <FSFHarvesting.description>Recolectando plantas y cultivos.</FSFHarvesting.description>
+  <FSFHarvesting.labelShort>Cosecha</FSFHarvesting.labelShort>
+  <FSFHarvesting.pawnLabel>Cosechadora</FSFHarvesting.pawnLabel>
+  <FSFHarvesting.gerundLabel>Cosecha</FSFHarvesting.gerundLabel>
+  <FSFHarvesting.verb>Cosechado de</FSFHarvesting.verb>
+
+
+  <!-- Drilling -->
+
+  <FSFDrilling.label>Aparejo</FSFDrilling.label>
+  <FSFDrilling.description>Use pozos profundos para perforar recursos.</FSFDrilling.description>
+  <FSFDrilling.labelShort>Plataforma de operación</FSFDrilling.labelShort>
+  <FSFDrilling.pawnLabel>Operador de la plataforma</FSFDrilling.pawnLabel>
+  <FSFDrilling.gerundLabel>Taladro</FSFDrilling.gerundLabel>
+  <FSFDrilling.verb>Perforar</FSFDrilling.verb>
+
+
+  <!-- Craft Drugs -->
+
+  <FSFDrugs.label>Farmacéutica</FSFDrugs.label>
+  <FSFDrugs.description>Hacer medicina.</FSFDrugs.description>
+  <FSFDrugs.labelShort>Farmacéutica</FSFDrugs.labelShort>
+  <FSFDrugs.pawnLabel>Farmacéutico</FSFDrugs.pawnLabel>
+  <FSFDrugs.gerundLabel>Farmacéutica</FSFDrugs.gerundLabel>
+  <FSFDrugs.verb>Farmacéutica en</FSFDrugs.verb>
+
+
+  <!-- Fabrication -->
+
+  <FSFFabrication.label>Ensamblador</FSFFabrication.label>
+  <FSFFabrication.description>Haz armas, armaduras, piezas y órganos biónicos en mesas de montaje de precisión.</FSFFabrication.description>
+  <FSFFabrication.labelShort>Ensamblador</FSFFabrication.labelShort>
+  <FSFFabrication.pawnLabel>Ensamblador</FSFFabrication.pawnLabel>
+  <FSFFabrication.gerundLabel>Ensamblador</FSFFabrication.gerundLabel>
+  <FSFFabrication.verb>Montado en</FSFFabrication.verb>
+
+
+  <!-- Machining -->
+
+  <FSFMachining.label>Procesamiento</FSFMachining.label>
+  <FSFMachining.description>Forjando armas y herramientas en la mesa de mecanizado.</FSFMachining.description>
+  <FSFMachining.labelShort>Procesamiento</FSFMachining.labelShort>
+  <FSFMachining.pawnLabel>Trabajadores de procesamiento</FSFMachining.pawnLabel>
+  <FSFMachining.gerundLabel>Procesamiento</FSFMachining.gerundLabel>
+  <FSFMachining.verb>Procesado en</FSFMachining.verb>
+
+
+  <!-- Refine -->
+
+  <FSFRefining.label>Refinar</FSFRefining.label>
+  <FSFRefining.description>Refinar las materias primas en combustibles químicos en una refinería de petróleo.</FSFRefining.description>
+  <FSFRefining.labelShort>Refinar</FSFRefining.labelShort>
+  <FSFRefining.pawnLabel>Trabajador refinado</FSFRefining.pawnLabel>
+  <FSFRefining.gerundLabel>Refinar</FSFRefining.gerundLabel>
+  <FSFRefining.verb>Refinado en</FSFRefining.verb>
+
+
+  <!-- Smelt -->
+
+  <FSFSmelt.label>Fundición</FSFSmelt.label>
+  <FSFSmelt.description>Operación de escoria de acero fundido o armas.</FSFSmelt.description>
+  <FSFSmelt.labelShort>Fundición</FSFSmelt.labelShort>
+  <FSFSmelt.pawnLabel>Trabajador de fundición</FSFSmelt.pawnLabel>
+  <FSFSmelt.gerundLabel>Fundición</FSFSmelt.gerundLabel>
+  <FSFSmelt.verb>Fundirse en</FSFSmelt.verb>
+
+
+  <!-- Stone Cut -->
+
+  <FSFStoneCut.label>Cantero</FSFStoneCut.label>
+  <FSFStoneCut.description>Cortar bloques de roca en piedra.</FSFStoneCut.description>
+  <FSFStoneCut.labelShort>Cantero</FSFStoneCut.labelShort>
+  <FSFStoneCut.pawnLabel>Albañil</FSFStoneCut.pawnLabel>
+  <FSFStoneCut.gerundLabel>Cantero</FSFStoneCut.gerundLabel>
+  <FSFStoneCut.verb>Cantero</FSFStoneCut.verb>
+
+
+  <!-- Loading -->
+
+  <FSFLoading.label>Carga y descarga</FSFLoading.label>
+  <FSFLoading.description>Carga y descarga de cabinas de transporte y caravanas..</FSFLoading.description>
+  <FSFLoading.labelShort>Carga y descarga</FSFLoading.labelShort>
+  <FSFLoading.pawnLabel>Carga y descarga de trabajadores</FSFLoading.pawnLabel>
+  <FSFLoading.gerundLabel>Carga y descarga</FSFLoading.gerundLabel>
+  <FSFLoading.verb>Carga y descarga</FSFLoading.verb>
+
+
+  <!-- Cremating -->
+
+  <FSFCremating.label>Cremación</FSFCremating.label>
+  <FSFCremating.description>Operación de cremación o hoguera para quemar ropa, drogas y cadáveres.</FSFCremating.description>
+  <FSFCremating.labelShort>Cremación</FSFCremating.labelShort>
+  <FSFCremating.pawnLabel>Químico de fuego</FSFCremating.pawnLabel>
+  <FSFCremating.gerundLabel>Cremación</FSFCremating.gerundLabel>
+  <FSFCremating.verb>Cremación</FSFCremating.verb>
+
+
+  <!-- Delivering -->
+
+  <FSFDeliver.label>Ayudante de material</FSFDeliver.label>
+  <FSFDeliver.description>Transporte materias primas a planos para reducir la mano de obra de los fabricantes.</FSFDeliver.description>
+  <FSFDeliver.labelShort>Ayudante de material</FSFDeliver.labelShort>
+  <FSFDeliver.pawnLabel>Ayudante de material</FSFDeliver.pawnLabel>
+  <FSFDeliver.gerundLabel>Ayudante de material</FSFDeliver.gerundLabel>
+  <FSFDeliver.verb>Contribuido a</FSFDeliver.verb>
+
+
+  <!-- Scanning -->
+
+  <FSFScan.label>Exploración</FSFScan.label>
+  <FSFScan.description>Escanee nodos de recursos en escáneres remotos de minerales y opere escáneres penetrantes.</FSFScan.description>
+  <FSFScan.labelShort>Exploración</FSFScan.labelShort>
+  <FSFScan.pawnLabel>Trabajador de exploración</FSFScan.pawnLabel>
+  <FSFScan.gerundLabel>Exploración</FSFScan.gerundLabel>
+  <FSFScan.verb>Explorado en</FSFScan.verb>
+
+
+</LanguageData>

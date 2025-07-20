@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Vanilla Factions Expanded Medieval -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/WorkGiverDef[defName = "VFEM_TakeBeerOutOfWineBarrel"]</xpath>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VFEM_TakeBeerOutOfWineBarrel"]/workType</xpath>
+				<value>
+					<workType>FSFBrewing</workType>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VFEM_FillWineBarrel"]/workType</xpath>
+				<value>
+					<workType>FSFBrewing</workType>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	
+</Patch>

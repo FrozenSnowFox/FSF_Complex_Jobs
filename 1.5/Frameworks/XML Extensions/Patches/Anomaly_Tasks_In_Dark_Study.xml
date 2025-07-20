@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+	<Operation Class="XmlExtensions.OptionalPatch">
+		<modId>FrozenSnowFox.FrozenSnowFoxComplexJobs</modId>
+		<key>FSFAnomalyTasksInDarkStudy</key>
+		<defaultValue>false</defaultValue>
+		<caseTrue>
+			
+		<Operation Class="PatchOperationSequence">
+			<success>Normal</success>
+			<operations>
+				
+		<!-- Anomaly - Execute Entity -->
+
+			<li MayRequire="Ludeon.RimWorld.Anomaly" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ExecuteEntity"]/workType</xpath>
+				<value>
+					<workType>DarkStudy</workType>
+				</value>
+			</li>
+				
+		<!-- Anomaly DLC - Take Entity To Holding Platform -->
+				
+			<li MayRequire="Ludeon.RimWorld.Anomaly" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "TakeEntityToHoldingPlatform"]/workType</xpath>
+				<value>
+					<workType>DarkStudy</workType>
+				</value>
+			</li>
+				
+		<!-- Anomaly DLC - Transfer Entity -->
+				
+			<li MayRequire="Ludeon.RimWorld.Anomaly" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "TransferEntity"]/workType</xpath>
+				<value>
+					<workType>DarkStudy</workType>
+				</value>
+			</li>
+				
+		<!-- Anomaly DLC - Suppress Entity -->
+				
+			<li MayRequire="Ludeon.RimWorld.Anomaly" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ActivitySuppression"]/workType</xpath>
+				<value>
+					<workType>DarkStudy</workType>
+				</value>
+			</li>
+				
+		<!-- Anomaly DLC - Interrogate Prisoner -->
+				
+			<li MayRequire="Ludeon.RimWorld.Anomaly" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "InterrogatePrisoner"]/workType</xpath>
+				<value>
+					<workType>DarkStudy</workType>
+				</value>
+			</li>
+				
+		<!-- Anomaly DLC - Release Entity -->
+				
+			<li MayRequire="Ludeon.RimWorld.Anomaly" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ReleaseEntity"]/workType</xpath>
+				<value>
+					<workType>DarkStudy</workType>
+				</value>
+			</li>
+				
+		<!-- Anomaly DLC - Study Interact -->
+			
+			<li MayRequire="Ludeon.RimWorld.Anomaly" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "StudyInteract"]/priorityInType</xpath>
+				<value>
+					<priorityInType>50</priorityInType>
+				</value>
+			</li>
+				
+		<!-- Anomaly DLC - Change Dark Study Requirements -->
+			
+			<li MayRequire="Ludeon.RimWorld.Anomaly" Class="PatchOperationAdd">
+				<xpath>/Defs/WorkTypeDef[defName = "DarkStudy"]/relevantSkills</xpath>
+				<value>
+					<li>Social</li>
+				</value>
+			</li>
+				
+			<li MayRequire="Ludeon.RimWorld.Anomaly" Class="PatchOperationAdd">
+				<xpath>/Defs/WorkTypeDef[defName = "DarkStudy"]/workTags</xpath>
+				<value>
+					<li>Social</li>
+				</value>
+			</li>
+				
+			</operations>
+		</Operation>
+			
+		</caseTrue>
+	</Operation>
+
+</Patch>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- WVC Xenotypes and Genes -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "WVC_Golem_Liftoid"]/race/mechEnabledWorkTypes</xpath>
+				<value>
+					<li>FSFRearming</li>
+					<li>FSFRefueling</li>
+					<li>FSFLoading</li>
+					<li>FSFCremating</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "WVC_Golem_Constructoid"]/race/mechEnabledWorkTypes</xpath>
+				<value>
+					<li>FSFHarvesting</li>
+					<li>FSFRepair</li>
+					<li>FSFDeconstruct</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "WVC_Golem_Crafter"]/race/mechEnabledWorkTypes</xpath>
+				<value>
+					<li>FSFNurse</li>
+					<li>FSFSurgeon</li>
+					<li>FSFButcher</li>
+					<li>FSFBrewing</li>
+					<li>FSFDrugs</li>
+					<li>FSFFabrication</li>
+					<li>FSFMachining</li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+	<!-- Patch For Optional Worktypes -->
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/WorkTypeDef[defName = "FSFSnow"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "WVC_Golem_Liftoid"]/race/mechEnabledWorkTypes</xpath>
+				<value>
+					<li>FSFSnow</li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/WorkTypeDef[defName = "FSFMerge"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "WVC_Golem_Liftoid"]/race/mechEnabledWorkTypes</xpath>
+				<value>
+					<li>FSFMerge</li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

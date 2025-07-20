@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- FSFPaint 435 (FSF Complex Jobs)
+ 
+		Default Priority Order
+
+			Core - RemovePaintBuilding 202 (Moved to FSFPaint if Enabled)
+			Core - RemovePaintFloor 202 (Moved to FSFPaint if Enabled)
+			Core - PaintBuilding 200 (Moved to FSFPaint if Enabled)
+			Core - PaintFloor 200 (Moved to FSFPaint if Enabled)
+			Vehicle Framework - PaintVehicle 80 (Moved to FSFPaint if Enabled)
+
+	-->
+				
+</Patch>

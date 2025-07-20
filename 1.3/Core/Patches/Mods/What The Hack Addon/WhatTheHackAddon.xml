@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- What The Hack -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/HediffDef[defName = "WTHaddon_CraftModule"]</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "WTHaddon_CraftModule"]/modExtensions/li[@Class = "WhatTheHack.DefModExtension_Hediff_WorkModule"]/workTypes</xpath>
+				<value>
+					<li>FSFDrugs</li>
+					<li>FSFFabrication</li>
+					<li>FSFMachining</li>
+					<li>FSFRefining</li>
+					<li>FSFSmelt</li>
+					<li>FSFStoneCut</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/HediffDef[defName = "WTHaddon_MiningModule"]</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "WTHaddon_MiningModule"]/modExtensions/li[@Class = "WhatTheHack.DefModExtension_Hediff_WorkModule"]/workTypes</xpath>
+				<value>
+					<li>FSFDrilling</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/HediffDef[defName = "WTHaddon_NursingArm"]</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "WTHaddon_NursingArm"]/modExtensions/li[@Class = "WhatTheHack.DefModExtension_Hediff_WorkModule"]/workTypes</xpath>
+				<value>
+					<li>FSFNurse</li>
+					<li>FSFSurgeon</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/HediffDef[defName = "WTHaddon_MaintainingArm"]</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "WTHaddon_MaintainingArm"]/modExtensions/li[@Class = "WhatTheHack.DefModExtension_Hediff_WorkModule"]/workTypes</xpath>
+				<value>
+					<li>FSFRepair</li>
+					<li>FSFDeconstruct</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	
+</Patch>

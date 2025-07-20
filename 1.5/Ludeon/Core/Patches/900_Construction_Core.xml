@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- Construction 900 (Core)
+ 
+		Default Priority Order
+
+			Vanilla Quests Expanded The Generator - VQE_MaintainGenetron 300 (Moved to FSFRepair)
+			Core - FixBrokenDownBuilding 120 (Moved to FSFRepair)
+			Vanilla Quests Expanded The Generator - VQE_FixCriticallyBrokenDownBuilding 120 (Moved to FSFRepair)
+			Core - Uninstall 110 (Moved to FSFDeconstruct)
+			Core - BuildRoofs 100
+			Vehicle Framework - PaintVehicle 100
+			Dubs Rimatomics - RimatomicsConstruction 100
+			Core - RemoveRoofs 90 (Moved to FSFDeconstruct)
+			Fluffy Breakdowns - FluffyBreakdowns_Maintenance 85 (Moved to FSFRepair)
+			Core - ConstructFinishFrames 80
+			Vehicle Framework - DisassembleVehicle 80 (Moved to FSFDeconstruct)
+			Vehicle Framework - RepairVehicle 80 (Moved to FSFRepair)
+			Vehicle Framework - PaintVehicle 80 (Moved to FSFPaint if Enabled)
+			Dubs Rimatomics - UpgradeBuilding 75
+			Core - ConstructDeliverResourcesToFrames 70
+			Vanilla Furniture Expanded Security - VFES_ConstructRearmTrap 70 (Moved to FSFRearming)
+			Vanilla Vehicles Expanded - VVE_RestoreWreck 70
+			Vehicle Framework - WorkOnUpgrade 70
+			Core - ConstructDeliverResourcesToBlueprints 60
+			Core - Deconstruct 60 (Moved to FSFDeconstruct)
+			Anomaly DLC - FillIn 51 (Moved to FSFDeconstruct)
+			Layered Wall Destruction - RestoreWall 45 (Moved to FSFRepair)
+			Core - Repair 40 (Moved to FSFRepair)
+			Core - ConstructRemoveFloors 30
+			Core - ConstructSmoothFloors 20
+			Core - ConstructSmoothWalls 10
+
+	-->
+			
+		<!-- Core - Update Worktype Description -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "Construction"]/description</xpath>
+				<value>
+					<description>Build things that you've designated.</description>
+				</value>
+			</li>
+			
+		<!-- Core - Smooth Walls -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ConstructSmoothWalls"]/priorityInType</xpath>
+				<value>
+					<priorityInType>20</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Core - Smooth Floors -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ConstructSmoothFloors"]/priorityInType</xpath>
+				<value>
+					<priorityInType>10</priorityInType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Vanilla Genetics Expanded More Lab Stuff -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "GR_DoBillsGenetrainerBench"]/priorityInType</xpath>
+				<value>
+					<priorityInType>165</priorityInType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

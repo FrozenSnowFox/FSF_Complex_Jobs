@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+	<XmlExtensions.SettingsMenuDef>
+		<defName>FrozenSnowFoxComplexJobsSettings</defName> <!--Can be anything unique with no periods-->
+		<modId>FrozenSnowFox.FrozenSnowFoxComplexJobs</modId> <!--MUST be the same as the one entered earlier-->    
+		<label>FrozenSnowFox Complex Jobs</label> <!-- This is what displays as your mod's name-->    
+		<settings> <!--This is where you define what settings are in the settings menu-->
+
+			<li Class="XmlExtensions.Setting.SetColor">
+				<color>(187,0,0)</color>
+			</li>
+			<li Class="XmlExtensions.Setting.Text">
+				<text>For any changed settings to take effect the game must be restarted.\nIf you enable new Worktypes midsave you must replace your existing mechanoids for them to get the new Worktypes.</text>
+				<font>Medium</font>
+				<anchor>Middle</anchor>
+				<tKey>FSFComplexJobsModWarning</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor"/>
+			<li Class="XmlExtensions.Setting.GapLine">
+			</li>
+			
+			<li Class="XmlExtensions.Setting.Text">
+				<text>Complex Jobs Settings</text>
+				<font>Medium</font>
+				<anchor>Middle</anchor>
+				<tKey>FSFComplexJobsSettingsTitle</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.GapLine">
+			</li>
+			
+			<!-- Anomaly Tasks In Dark Study -->
+			
+			<li MayRequire="Ludeon.RimWorld.Anomaly" Class="XmlExtensions.Setting.Checkbox">
+				<label>Anomaly Tasks In Dark Study</label>
+				<key>FSFAnomalyTasksInDarkStudy</key>
+				<defaultValue>false</defaultValue>
+				<tKey>FSFComplexJobsAnomalyTasksInDarkStudyTitle</tKey>
+			</li>
+			<li MayRequire="Ludeon.RimWorld.Anomaly" Class="XmlExtensions.Setting.SetColor">
+				<color>(163,177,188)</color>
+			</li>
+			<li MayRequire="Ludeon.RimWorld.Anomaly" Class="XmlExtensions.Setting.Text">
+				<text>Moves all the Anomaly related tasks from other worktypes into Dark Study and changes the worktype requirements to include Social.</text>
+				<tKey>FSFComplexJobsAnomalyTasksInDarkStudyDesc</tKey>
+			</li>
+			<li MayRequire="Ludeon.RimWorld.Anomaly" Class="XmlExtensions.Setting.SetColor"/>
+			<li MayRequire="Ludeon.RimWorld.Anomaly" Class="XmlExtensions.Setting.GapLine">
+				<spacing>12</spacing>
+			</li>
+			
+			<!-- Drafted Work Tasks -->
+			
+			<li Class="XmlExtensions.Setting.Checkbox">
+				<label>Drafted Work Tasks</label>
+				<key>FSFDraftedWorkTasks</key>
+				<defaultValue>false</defaultValue>
+				<tKey>FSFComplexJobsDraftedWorkTasksTitle</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor">
+				<color>(163,177,188)</color>
+			</li>
+			<li Class="XmlExtensions.Setting.Text">
+				<text>Changes all work tasks so they can be done while drafted.  Making it so you no longer need to undraft and redraft pawns to perform a task.\nNote: A few tasks may still not be usable while being drafted and some tasks may forcibly undraft a pawn to perform them.</text>
+				<tKey>FSFComplexJobsDraftedWorkTasksDesc</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor"/>
+			<li Class="XmlExtensions.Setting.GapLine">
+				<spacing>12</spacing>
+			</li>
+			
+			<!-- Rescue In Firefighting -->
+			
+			<li Class="XmlExtensions.Setting.Checkbox">
+				<label>Rescue In Firefighting</label>
+				<key>FSFRescueInFirefighting</key>
+				<defaultValue>false</defaultValue>
+				<tKey>FSFComplexJobsRescueInFirefightingTitle</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor">
+				<color>(163,177,188)</color>
+			</li>
+			<li Class="XmlExtensions.Setting.Text">
+				<text>Adds a duplicated task of Rescue to Firefighting.  This will cause people on the firefighting worktype to first rescue downed allies before attempting to fight fires.\nNote: Although this is intended to be an alternative to the Rescue worktype both options can be enabled without issue.</text>
+				<tKey>FSFComplexJobsRescueInFirefightingDesc</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor"/>
+			<li Class="XmlExtensions.Setting.GapLine">
+				<spacing>12</spacing>
+			</li>
+			
+			<!-- Ideoligion Roles Are Capable -->
+			
+			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.Setting.Checkbox">
+				<label>Ideoligion Roles Are Capable</label>
+				<key>FSFIdeoRolesAreCapable</key>
+				<defaultValue>false</defaultValue>
+				<tKey>FSFComplexJobsIdeoRolesAreCapableTitle</tKey>
+			</li>
+			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.Setting.SetColor">
+				<color>(163,177,188)</color>
+			</li>
+			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.Setting.Text">
+				<text>Removes all the disabled worktypes from all ideoligion roles.</text>
+				<tKey>FSFComplexJobsIdeoRolesAreCapableDesc</tKey>
+			</li>
+			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.Setting.SetColor"/>
+			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.Setting.GapLine">
+				<spacing>12</spacing>
+			</li>
+			
+			<!-- Mechanoids Are Capable -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="XmlExtensions.Setting.Checkbox">
+				<label>Mechanoids Are Capable</label>
+				<key>FSFMechanoidsAreCapable</key>
+				<defaultValue>false</defaultValue>
+				<tKey>FSFComplexJobsMechanoidsAreCapableTitle</tKey>
+			</li>
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="XmlExtensions.Setting.SetColor">
+				<color>(163,177,188)</color>
+			</li>
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="XmlExtensions.Setting.Text">
+				<text>Changes the canBeDoneByMechs field on all work type tasks from false to true.\nNote: Some tasks break the game without code to further patch the task.  These tasks are not included for obvious reasons.</text>
+				<tKey>FSFComplexJobsMechanoidsAreCapableDesc</tKey>
+			</li>
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="XmlExtensions.Setting.SetColor"/>
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="XmlExtensions.Setting.GapLine">
+				<spacing>12</spacing>
+			</li>
+			
+			<!-- Slaves Are Capable -->
+			
+			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.Setting.Checkbox">
+				<label>Slaves Are Capable</label>
+				<key>FSFSlavesAreCapable</key>
+				<defaultValue>false</defaultValue>
+				<tKey>FSFComplexJobsSlavesAreCapableTitle</tKey>
+			</li>
+			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.Setting.SetColor">
+				<color>(163,177,188)</color>
+			</li>
+			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.Setting.Text">
+				<text>Allows Slaves to do all Worktypes except for Warden.</text>
+				<tKey>FSFComplexJobsSlavesAreCapableDesc</tKey>
+			</li>
+			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.Setting.SetColor"/>
+			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.Setting.GapLine">
+				<spacing>12</spacing>
+			</li>
+			
+			<!-- Warcaskets Are Capable -->
+			
+			<li MayRequire="OskarPotocki.VFE.Pirates" Class="XmlExtensions.Setting.Checkbox">
+				<label>Warcaskets Are Capable</label>
+				<key>FSFWarcasketsAreCapable</key>
+				<defaultValue>false</defaultValue>
+				<tKey>FSFComplexJobsWarcasketsAreCapableTitle</tKey>
+			</li>
+			<li MayRequire="OskarPotocki.VFE.Pirates" Class="XmlExtensions.Setting.SetColor">
+				<color>(163,177,188)</color>
+			</li>
+			<li MayRequire="OskarPotocki.VFE.Pirates" Class="XmlExtensions.Setting.Text">
+				<text>Allows Warcaskets to do all Worktypes.</text>
+				<tKey>FSFComplexJobsWarcasketsAreCapableDesc</tKey>
+			</li>
+			<li MayRequire="OskarPotocki.VFE.Pirates" Class="XmlExtensions.Setting.SetColor"/>
+			<li MayRequire="OskarPotocki.VFE.Pirates" Class="XmlExtensions.Setting.GapLine">
+				<spacing>12</spacing>
+			</li>
+			
+			<!-- Clear Pollution Worktype -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="XmlExtensions.Setting.Checkbox">
+				<label>Clear Pollution Worktype</label>
+				<key>FSFClearPollutionWorktype</key>
+				<defaultValue>false</defaultValue>
+				<tKey>FSFComplexJobsClearPollutionWorktypeTitle</tKey>
+			</li>
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="XmlExtensions.Setting.SetColor">
+				<color>(163,177,188)</color>
+			</li>
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="XmlExtensions.Setting.Text">
+				<text>Enables the Clear Pollution Worktype which moves the Clear Pollution task to its own Worktype.</text>
+				<tKey>FSFComplexJobsClearPollutionWorktypeDesc</tKey>
+			</li>
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="XmlExtensions.Setting.SetColor"/>
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="XmlExtensions.Setting.GapLine">
+				<spacing>12</spacing>
+			</li>
+			
+			<!-- Clear Snow Worktype -->
+			
+			<li Class="XmlExtensions.Setting.Checkbox">
+				<label>Clear Snow Worktype</label>
+				<key>FSFClearSnowWorktype</key>
+				<defaultValue>false</defaultValue>
+				<tKey>FSFComplexJobsClearSnowWorktypeTitle</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor">
+				<color>(163,177,188)</color>
+			</li>
+			<li Class="XmlExtensions.Setting.Text">
+				<text>Enables the Clear Snow Worktype which moves the Clear Snow task to its own Worktype.</text>
+				<tKey>FSFComplexJobsClearSnowWorktypeDesc</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor"/>
+			<li Class="XmlExtensions.Setting.GapLine">
+				<spacing>12</spacing>
+			</li>
+			
+			<!-- Convert Worktype -->
+			
+			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.Setting.Checkbox">
+				<label>Convert Worktype</label>
+				<key>FSFConvertWorktype</key>
+				<defaultValue>false</defaultValue>
+				<tKey>FSFComplexJobsConvertWorktypeTitle</tKey>
+			</li>
+			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.Setting.SetColor">
+				<color>(163,177,188)</color>
+			</li>
+			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.Setting.Text">
+				<text>Enables the Convert Worktype which focuses around converting prisoners to your Ideologion.</text>
+				<tKey>FSFComplexJobsConvertWorktypeDesc</tKey>
+			</li>
+			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.Setting.SetColor"/>
+			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.Setting.GapLine">
+				<spacing>12</spacing>
+			</li>
+			
+			<!-- Mechanoids Worktype -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="XmlExtensions.Setting.Checkbox">
+				<label>Mechanoids Worktype</label>
+				<key>FSFMechanoidsWorktype</key>
+				<defaultValue>false</defaultValue>
+				<tKey>FSFComplexJobsMechanoidsWorktypeTitle</tKey>
+			</li>
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="XmlExtensions.Setting.SetColor">
+				<color>(163,177,188)</color>
+			</li>
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="XmlExtensions.Setting.Text">
+				<text>Enables the Mechanoids Worktype which focuses around everything to do with Mechanoids.</text>
+				<tKey>FSFComplexJobsMechanoidsWorktypeDesc</tKey>
+			</li>
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="XmlExtensions.Setting.SetColor"/>
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="XmlExtensions.Setting.GapLine">
+				<spacing>12</spacing>
+			</li>
+			
+			<!-- Merge Worktype -->
+			
+			<li Class="XmlExtensions.Setting.Checkbox">
+				<label>Merge Worktype</label>
+				<key>FSFMergeWorktype</key>
+				<defaultValue>false</defaultValue>
+				<tKey>FSFComplexJobsMergeWorktypeTitle</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor">
+				<color>(163,177,188)</color>
+			</li>
+			<li Class="XmlExtensions.Setting.Text">
+				<text>Enables the Merge Worktype which moves the Merge task from Hauling to its own Worktype.</text>
+				<tKey>FSFComplexJobsMergeWorktypeDesc</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor"/>
+			<li Class="XmlExtensions.Setting.GapLine">
+				<spacing>12</spacing>
+			</li>
+			
+			<!-- Paint Worktype -->
+			
+			<li Class="XmlExtensions.Setting.Checkbox">
+				<label>Paint Worktype</label>
+				<key>FSFPaintWorktype</key>
+				<defaultValue>false</defaultValue>
+				<tKey>FSFComplexJobsPaintWorktypeTitle</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor">
+				<color>(163,177,188)</color>
+			</li>
+			<li Class="XmlExtensions.Setting.Text">
+				<text>Enables the Paint Worktype which moves all Paint related tasks to its own Worktype.</text>
+				<tKey>FSFComplexJobsPaintWorktypeDesc</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor"/>
+			<li Class="XmlExtensions.Setting.GapLine">
+				<spacing>12</spacing>
+			</li>
+			
+			<!-- Prison Care Worktype -->
+			
+			<li Class="XmlExtensions.Setting.Checkbox">
+				<label>Prison Care Worktype</label>
+				<key>FSFPrisonCareWorktype</key>
+				<defaultValue>false</defaultValue>
+				<tKey>FSFComplexJobsPrisonCareWorktypeTitle</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor">
+				<color>(163,177,188)</color>
+			</li>
+			<li Class="XmlExtensions.Setting.Text">
+				<text>Enables the Prison Care Worktype which focuses around delivering food and caring for prisoners.</text>
+				<tKey>FSFComplexJobsPrisonCareWorktypeDesc</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor"/>
+			<li Class="XmlExtensions.Setting.GapLine">
+				<spacing>12</spacing>
+			</li>
+			
+			<!-- Pruning Worktype -->
+			
+			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.Setting.Checkbox">
+				<label>Pruning Worktype</label>
+				<key>FSFPruningWorktype</key>
+				<defaultValue>false</defaultValue>
+				<tKey>FSFComplexJobsPruningWorktypeTitle</tKey>
+			</li>
+			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.Setting.SetColor">
+				<color>(163,177,188)</color>
+			</li>
+			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.Setting.Text">
+				<text>Enables the Pruning Worktype which focuses around pruning trees.</text>
+				<tKey>FSFComplexJobsPruningWorktypeDesc</tKey>
+			</li>
+			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.Setting.SetColor"/>
+			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.Setting.GapLine">
+				<spacing>12</spacing>
+			</li>
+			
+			<!-- Rescue Worktype -->
+			
+			<li Class="XmlExtensions.Setting.Checkbox">
+				<label>Rescue Worktype</label>
+				<key>FSFRescueWorktype</key>
+				<defaultValue>false</defaultValue>
+				<tKey>FSFComplexJobsRescueWorktypeTitle</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor">
+				<color>(163,177,188)</color>
+			</li>
+			<li Class="XmlExtensions.Setting.Text">
+				<text>Enables the Rescue Worktype which focuses on rescuing downed allies.</text>
+				<tKey>FSFComplexJobsRescueWorktypeDesc</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor"/>
+			<li Class="XmlExtensions.Setting.GapLine">
+				<spacing>12</spacing>
+			</li>
+			
+			<!-- Slaughter Worktype -->
+			
+			<li Class="XmlExtensions.Setting.Checkbox">
+				<label>Slaughter Worktype</label>
+				<key>FSFSlaughterWorktype</key>
+				<defaultValue>false</defaultValue>
+				<tKey>FSFComplexJobsSlaughterWorktypeTitle</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor">
+				<color>(163,177,188)</color>
+			</li>
+			<li Class="XmlExtensions.Setting.Text">
+				<text>Enables the Slaughter Worktype which focuses on slaughtering designated animals.</text>
+				<tKey>FSFComplexJobsSlaughterWorktypeDesc</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor"/>
+			<li Class="XmlExtensions.Setting.GapLine">
+				<spacing>12</spacing>
+			</li>
+			
+			<!-- Smoothing Worktype -->
+			
+			<li Class="XmlExtensions.Setting.Checkbox">
+				<label>Smoothing Worktype</label>
+				<key>FSFSmoothingWorktype</key>
+				<defaultValue>false</defaultValue>
+				<tKey>FSFComplexJobsSmoothingWorktypeTitle</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor">
+				<color>(163,177,188)</color>
+			</li>
+			<li Class="XmlExtensions.Setting.Text">
+				<text>Enables the Smoothing Worktype which focuses around smoothing surfaces for a nicer look.</text>
+				<tKey>FSFComplexJobsSmoothingWorktypeDesc</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor"/>
+			<li Class="XmlExtensions.Setting.GapLine">
+				<spacing>12</spacing>
+			</li>
+			
+			<!-- Taming Worktype -->
+			
+			<li Class="XmlExtensions.Setting.Checkbox">
+				<label>Taming Worktype</label>
+				<key>FSFTamingWorktype</key>
+				<defaultValue>false</defaultValue>
+				<tKey>FSFComplexJobsTamingWorktypeTitle</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor">
+				<color>(163,177,188)</color>
+			</li>
+			<li Class="XmlExtensions.Setting.Text">
+				<text>Enables the Taming Worktype which focuses around taming animals.</text>
+				<tKey>FSFComplexJobsTamingWorktypeDesc</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor"/>
+			<li Class="XmlExtensions.Setting.GapLine">
+				<spacing>12</spacing>
+			</li>
+			
+			<!-- Teach Worktype -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="XmlExtensions.Setting.Checkbox">
+				<label>Teach Worktype</label>
+				<key>FSFTeachWorktype</key>
+				<defaultValue>false</defaultValue>
+				<tKey>FSFComplexJobsTeachWorktypeTitle</tKey>
+			</li>
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="XmlExtensions.Setting.SetColor">
+				<color>(163,177,188)</color>
+			</li>
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="XmlExtensions.Setting.Text">
+				<text>Enables the Teach Worktype which moves the Teach Children task from Childcare to its own Worktype.</text>
+				<tKey>FSFComplexJobsTeachWorktypeDesc</tKey>
+			</li>
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="XmlExtensions.Setting.SetColor"/>
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="XmlExtensions.Setting.GapLine">
+			</li>
+			
+		</settings>
+	</XmlExtensions.SettingsMenuDef>
+
+</Defs>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+			
+			<!-- Remove misused instances of requiredGiverWorkType from Recipes as they are unnecessary -->
+			
+			<!-- Meat Blend -->
+			
+			<li MayRequire="sneaks.meatblend" Class="PatchOperationRemove">
+				<xpath>/Defs/RecipeDef[
+					defName = "MeatBlend5" or 
+					defName = "MeatblendTwenty" or 
+					defName = "MeatBlend50" or 
+					defName = "MeatBlend75" or 
+					defName = "MeatBlend100"
+					]/requiredGiverWorkType</xpath>
+			</li>
+			
+			<!-- Veggie Mix -->
+			
+			<li MayRequire="sneaks.veggiemix" Class="PatchOperationRemove">
+				<xpath>/Defs/RecipeDef[
+					defName = "VeggieMix5" or 
+					defName = "VeggieMixTwenty" or 
+					defName = "VeggieMix50" or 
+					defName = "VeggieMix75" or 
+					defName = "VeggieMix100"
+					]/requiredGiverWorkType</xpath>
+			</li>
+			
+			<li MayRequire="daylight.RLEsExpansionProductPS" Class="PatchOperationRemove">
+				<xpath>/Defs/RecipeDef[@Name = "RLEMake_RawBlendedMeat"]/requiredGiverWorkType</xpath>
+			</li>
+			
+			</operations>
+	</Operation>
+	
+</Patch>

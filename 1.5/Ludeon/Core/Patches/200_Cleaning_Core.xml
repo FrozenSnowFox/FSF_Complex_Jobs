@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Cleaning 200 (Core)
+
+		Default Priority Order
+
+			Dubs Rimefeller - CleanOil 150
+			Dubs Bad Hygiene - ClearBlockage 50
+			Dubs Bad Hygiene - cleanBedpan 50
+			Core - CleanClearSnow 10
+			Dubs Bad Hygiene - CleanFilthIndoors 6
+			Core - CleanFilth 5
+			Biotech DLC - CleanClearPollution ?? (Not listed?)
+ 
+	-->
+				
+</Patch>

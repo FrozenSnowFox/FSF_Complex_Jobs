@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Misc Robots++ Tier 5 -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+		
+			<li Class="PatchOperationTest">
+				<xpath>*/ThingDef[defName = "RPP_Bot_Builder_V"]</xpath>
+			</li>
+			
+			
+			
+			<li Class="PatchOperationAdd">
+				<xpath>*/ThingDef[defName = "RPP_Bot_Builder_V"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFRepair</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFDeconstruct</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFDrilling</workTypeDef><priority>3</priority></li>
+				</value>
+			</li>
+
+
+
+			<li Class="PatchOperationAdd">
+				<xpath>*/ThingDef[defName = "RPP_Bot_Crafter_V"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFMachining</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFFabrication</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFDrugs</workTypeDef><priority>2</priority></li>
+					<li><workTypeDef>FSFRefining</workTypeDef><priority>3</priority></li>
+					<li><workTypeDef>FSFSmelt</workTypeDef><priority>3</priority></li>
+					<li><workTypeDef>FSFStoneCut</workTypeDef><priority>3</priority></li>
+				</value>
+			</li>
+			
+
+
+			<li Class="PatchOperationAdd">
+				<xpath>*/ThingDef[defName = "RPP_Bot_ER_V"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFSurgeon</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+			
+
+
+			<li Class="PatchOperationAdd">
+				<xpath>*/ThingDef[defName = "RPP_Bot_Kitchen_V"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFButcher</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFBrewing</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFHarvesting</workTypeDef><priority>2</priority></li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

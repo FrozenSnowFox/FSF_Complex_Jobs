@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- FSFCremating 320 (FSF Complex Jobs)
+ 
+		Default Priority Order
+
+			[LTS] Ammunition Framework - LTS_DoStrip 101 (Moved to FSFCremating)
+			Core - Strip 100 (Moved to FSFCremating)
+			Bury On The Spot - Bury 95 (Moved to FSFCremating)
+			Core - DoBillsCremate 40 (Moved to FSFCremating)
+			Core - DoBillsHaulCampfire 30 (Moved to FSFCremating)
+			Core - ExtractSkull 20 (Moved to Cremate)
+			Altered Carbon 2 - AC_ExtractStack 20 (Moved to FSFCremating)
+			Zombieland - DoubleTap -5 (Duplicated Task)
+
+	-->
+			
+		<!-- Biotech Mechanoids Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Hauling"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Hauling"] ]</xpath>
+					<value>
+						<li>FSFCremating</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Hauling"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Hauling"] ]</xpath>
+					<value>
+						<li>FSFCremating</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Core - Update RecipeDefs for Campfire/Crematorium to use FSFCremating worktype
+			Note: This worktype is required so the bill can't be done when uing Cooking at a Campfire.
+		-->
+	
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/RecipeDef[defName = "BurnApparel"]/requiredGiverWorkType</xpath>
+				<value>
+					<requiredGiverWorkType>FSFCremating</requiredGiverWorkType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/RecipeDef[defName = "BurnWeapon"]/requiredGiverWorkType</xpath>
+				<value>
+					<requiredGiverWorkType>FSFCremating</requiredGiverWorkType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/RecipeDef[defName = "BurnDrugs"]/requiredGiverWorkType</xpath>
+				<value>
+					<requiredGiverWorkType>FSFCremating</requiredGiverWorkType>
+				</value>
+			</li>
+			
+		<!-- Zombieland - DoubleTap -->
+			
+			<li MayRequire="brrainz.zombieland" Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>					
+					<WorkGiverDef>
+						<defName>FSFDoubleTap</defName>
+						<label>double tap corpses</label>
+						<giverClass>ZombieLand.WorkGiver_DoubleTap</giverClass>
+						<workType>FSFCremating</workType>
+						<verb>double tap</verb>
+						<gerund>double tapping</gerund>
+						<priorityInType>9999</priorityInType>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+						<canBeDoneWhileDrafted>true</canBeDoneWhileDrafted>
+					</WorkGiverDef>
+				</value>
+			</li>
+			
+		<!-- [LTS] Ammunition Framework - LTS_DoStrip (Moved to FSFCremating) -->
+			
+			<li MayRequire="LimeTreeSnake.Ammunition" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "LTS_DoStrip"]/workType</xpath>
+				<value>
+					<workType>FSFCremating</workType>
+				</value>
+			</li>
+			
+		<!-- Core - Strip Bodies -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "Strip"]/workType</xpath>
+				<value>
+					<workType>FSFCremating</workType>
+				</value>
+			</li>
+			
+		<!-- Ideology DLC - Extract Skull -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ExtractSkull"]/workType</xpath>
+				<value>
+					<workType>FSFCremating</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ExtractSkull"]/priorityInType</xpath>
+				<value>
+					<priorityInType>99</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Altered Carbon 2 - Extract Stack -->
+			
+			<li MayRequire="hlx.UltratechAlteredCarbon" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "AC_ExtractStack"]/workType</xpath>
+				<value>
+					<workType>FSFCremating</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="hlx.UltratechAlteredCarbon" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "AC_ExtractStack"]/priorityInType</xpath>
+				<value>
+					<priorityInType>99</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Bury On The Spot - Bury Bodies On The Spot -->
+			
+			<li MayRequire="dhultgren.buryonthespot" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "Bury"]/workType</xpath>
+				<value>
+					<workType>FSFCremating</workType>
+				</value>
+			</li>
+			
+		<!-- Core - Do Bills at Crematorium -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsCremate"]/workType</xpath>
+				<value>
+					<workType>FSFCremating</workType>
+				</value>
+			</li>
+			
+		<!-- Core - Bo Bills Haul Campfire -->
+	
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsHaulCampfire"]/workType</xpath>
+				<value>
+					<workType>FSFCremating</workType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

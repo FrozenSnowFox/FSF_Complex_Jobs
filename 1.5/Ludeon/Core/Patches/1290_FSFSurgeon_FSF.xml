@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- FSFSurgeon 1290 (FSF Complex Jobs)
+ 
+		Default Priority Order
+
+			Harvest Organs Post Mortem - DoBillsMedicalHumanOperationOrgans 75 (Moved to FSFSurgeon)
+			Core - DoBillsMedicalHumanOperation 70 (Moved to FSFSurgeon)
+			Core - DoBillsMedicalAnimalOperation 30 (Moved to FSFSurgeon)
+			Core - TakeToBedToOperate 20 (Moved to FSFSurgeon)
+
+	-->
+			
+		<!-- Biotech Mechanoids Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Doctor"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Doctor"] ]</xpath>
+					<value>
+						<li>FSFSurgeon</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Doctor"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Doctor"] ]</xpath>
+					<value>
+						<li>FSFSurgeon</li>
+					</value>
+				</match>
+			</li>
+			
+	<!-- Core - Take To Bed To Operate -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "TakeToBedToOperate"]/workType</xpath>
+				<value>
+					<workType>FSFSurgeon</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "TakeToBedToOperate"]/priorityInType</xpath>
+				<value>
+					<priorityInType>100</priorityInType>
+				</value>
+			</li>
+			
+	<!-- Core - Do Bills Medical Human Operation -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsMedicalHumanOperation"]/workType</xpath>
+				<value>
+					<workType>FSFSurgeon</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsMedicalHumanOperation"]/priorityInType</xpath>
+				<value>
+					<priorityInType>95</priorityInType>
+				</value>
+			</li>
+			
+	<!-- Core - Do Bills Medical Animal Operation -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsMedicalAnimalOperation"]/workType</xpath>
+				<value>
+					<workType>FSFSurgeon</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsMedicalAnimalOperation"]/priorityInType</xpath>
+				<value>
+					<priorityInType>90</priorityInType>
+				</value>
+			</li>
+			
+	<!-- Harvest Organs Post Mortem - Do Bills Harvest Organs From Dead -->
+			
+			<li MayRequire="Smuffle.HarvestOrgansPostMortem" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsMedicalHumanOperationOrgans"]/workType</xpath>
+				<value>
+					<workType>FSFSurgeon</workType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

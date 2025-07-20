@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+ 
+  <!-- Nurse -->
+ 
+  <FSFNurse.label>護理</FSFNurse.label>
+  <FSFNurse.description>照顧，餵食，探望病人，包括殖民者，囚犯和動物</FSFNurse.description>
+  <FSFNurse.labelShort>護理</FSFNurse.labelShort>
+  <FSFNurse.pawnLabel>護士</FSFNurse.pawnLabel>
+  <FSFNurse.gerundLabel>護理</FSFNurse.gerundLabel>
+  <FSFNurse.verb>護理</FSFNurse.verb>
+ 
+  <!-- Surgeon -->
+ 
+  <FSFSurgeon.label>手術</FSFSurgeon.label>
+  <FSFSurgeon.description>給人或動物做手術.</FSFSurgeon.description>
+  <FSFSurgeon.labelShort>手術</FSFSurgeon.labelShort>
+  <FSFSurgeon.pawnLabel>外科醫生</FSFSurgeon.pawnLabel>
+  <FSFSurgeon.gerundLabel>手術</FSFSurgeon.gerundLabel>
+  <FSFSurgeon.verb>手術</FSFSurgeon.verb>
+ 
+ 
+  <!-- Rearming -->
+ 
+  <FSFRearming.label>裝彈</FSFRearming.label>
+  <FSFRearming.description>給炮塔裝彈.</FSFRearming.description>
+  <FSFRearming.labelShort>裝彈</FSFRearming.labelShort>
+  <FSFRearming.pawnLabel>裝彈兵</FSFRearming.pawnLabel>
+  <FSFRearming.gerundLabel>裝彈</FSFRearming.gerundLabel>
+  <FSFRearming.verb>裝彈</FSFRearming.verb>
+ 
+ 
+  <!-- Refueling -->
+ 
+  <FSFRefueling.label>填裝燃料</FSFRefueling.label>
+  <FSFRefueling.description>填裝木材或化學染料.</FSFRefueling.description>
+  <FSFRefueling.labelShort>填裝燃料</FSFRefueling.labelShort>
+  <FSFRefueling.pawnLabel>填裝燃料工人</FSFRefueling.pawnLabel>
+  <FSFRefueling.gerundLabel>填裝</FSFRefueling.gerundLabel>
+  <FSFRefueling.verb>填裝燃料</FSFRefueling.verb>
+ 
+ 
+  <!-- Training -->
+ 
+  <FSFTraining.label>馴獸</FSFTraining.label>
+  <FSFTraining.description>馴服野生動物和訓練家養動物.</FSFTraining.description>
+  <FSFTraining.labelShort>馴獸</FSFTraining.labelShort>
+  <FSFTraining.pawnLabel>馴獸師</FSFTraining.pawnLabel>
+  <FSFTraining.gerundLabel>馴獸</FSFTraining.gerundLabel>
+  <FSFTraining.verb>馴獸</FSFTraining.verb>
+ 
+  <!-- Tame -->
+ 
+  <Handling.label>飼養</Handling.label>
+  <Handling.description>飼養看顧和宰殺家養動物，收穫畜牧產品.</Handling.description>
+  <Handling.labelShort>飼養</Handling.labelShort>
+  <Handling.pawnLabel>飼養員</Handling.pawnLabel>
+  <Handling.gerundLabel>飼養</Handling.gerundLabel>
+  <Handling.verb>飼養</Handling.verb>
+ 
+ 
+  <!-- Butcher -->
+ 
+  <FSFButcher.label>屠夫</FSFButcher.label>
+  <FSFButcher.description>做屠宰和簡單的切碎工作.</FSFButcher.description>
+  <FSFButcher.labelShort>屠夫</FSFButcher.labelShort>
+  <FSFButcher.pawnLabel>屠夫</FSFButcher.pawnLabel>
+  <FSFButcher.gerundLabel>屠宰</FSFButcher.gerundLabel>
+  <FSFButcher.verb>屠宰</FSFButcher.verb>
+ 
+ 
+  <!-- Brewing -->
+ 
+  <FSFBrewing.label>釀造</FSFBrewing.label>
+  <FSFBrewing.description>用啤酒花釀製麥汁,裝滿並清空發酵桶.</FSFBrewing.description>
+  <FSFBrewing.labelShort>釀造</FSFBrewing.labelShort>
+  <FSFBrewing.pawnLabel>釀酒師</FSFBrewing.pawnLabel>
+  <FSFBrewing.gerundLabel>釀造</FSFBrewing.gerundLabel>
+  <FSFBrewing.verb>釀造</FSFBrewing.verb>
+ 
+ 
+  <!-- Repair -->
+ 
+  <FSFRepair.label>修繕</FSFRepair.label>
+  <FSFRepair.description>修繕損壞的物體或結構.</FSFRepair.description>
+  <FSFRepair.labelShort>修繕</FSFRepair.labelShort>
+  <FSFRepair.pawnLabel>修繕工人</FSFRepair.pawnLabel>
+  <FSFRepair.gerundLabel>修繕</FSFRepair.gerundLabel>
+  <FSFRepair.verb>修繕</FSFRepair.verb>
+ 
+ 
+  <!-- Deconstruct -->
+ 
+  <FSFDeconstruct.label>卸除</FSFDeconstruct.label>
+  <FSFDeconstruct.description>卸載或拆除物體,結構.</FSFDeconstruct.description>
+  <FSFDeconstruct.labelShort>卸除</FSFDeconstruct.labelShort>
+  <FSFDeconstruct.pawnLabel>卸除工人</FSFDeconstruct.pawnLabel>
+  <FSFDeconstruct.gerundLabel>卸除</FSFDeconstruct.gerundLabel>
+  <FSFDeconstruct.verb>卸除</FSFDeconstruct.verb>
+ 
+ 
+  <!-- Harvesting -->
+ 
+  <FSFHarvesting.label>收穫</FSFHarvesting.label>
+  <FSFHarvesting.description>收穫植物和農作物.</FSFHarvesting.description>
+  <FSFHarvesting.labelShort>收穫</FSFHarvesting.labelShort>
+  <FSFHarvesting.pawnLabel>收穫者</FSFHarvesting.pawnLabel>
+  <FSFHarvesting.gerundLabel>收穫</FSFHarvesting.gerundLabel>
+  <FSFHarvesting.verb>收穫</FSFHarvesting.verb>
+ 
+ 
+  <!-- Drilling -->
+ 
+  <FSFDrilling.label>鑽機</FSFDrilling.label>
+  <FSFDrilling.description>利用深井鑽取資源.</FSFDrilling.description>
+  <FSFDrilling.labelShort>操作鑽機</FSFDrilling.labelShort>
+  <FSFDrilling.pawnLabel>鑽機操作員</FSFDrilling.pawnLabel>
+  <FSFDrilling.gerundLabel>鑽取</FSFDrilling.gerundLabel>
+  <FSFDrilling.verb>鑽取</FSFDrilling.verb>
+ 
+ 
+  <!-- Craft Drugs -->
+ 
+  <FSFDrugs.label>製藥</FSFDrugs.label>
+  <FSFDrugs.description>製作藥物.</FSFDrugs.description>
+  <FSFDrugs.labelShort>製藥</FSFDrugs.labelShort>
+  <FSFDrugs.pawnLabel>藥劑師</FSFDrugs.pawnLabel>
+  <FSFDrugs.gerundLabel>製藥</FSFDrugs.gerundLabel>
+  <FSFDrugs.verb>製藥</FSFDrugs.verb>
+ 
+ 
+  <!-- Fabrication -->
+ 
+  <FSFFabrication.label>裝配</FSFFabrication.label>
+  <FSFFabrication.description>在精密裝配台上製作武器,裝甲,零件和仿生器官.</FSFFabrication.description>
+  <FSFFabrication.labelShort>裝配</FSFFabrication.labelShort>
+  <FSFFabrication.pawnLabel>裝配員</FSFFabrication.pawnLabel>
+  <FSFFabrication.gerundLabel>裝配</FSFFabrication.gerundLabel>
+  <FSFFabrication.verb>裝配</FSFFabrication.verb>
+ 
+ 
+  <!-- Machining -->
+ 
+  <FSFMachining.label>加工</FSFMachining.label>
+  <FSFMachining.description>在機械加工台上鍛造武器和工具.</FSFMachining.description>
+  <FSFMachining.labelShort>加工</FSFMachining.labelShort>
+  <FSFMachining.pawnLabel>加工工人</FSFMachining.pawnLabel>
+  <FSFMachining.gerundLabel>加工</FSFMachining.gerundLabel>
+  <FSFMachining.verb>加工</FSFMachining.verb>
+ 
+ 
+  <!-- Refine -->
+ 
+  <FSFRefining.label>精煉</FSFRefining.label>
+  <FSFRefining.description>在煉油廠把原料提煉成化學燃料.</FSFRefining.description>
+  <FSFRefining.labelShort>精煉</FSFRefining.labelShort>
+  <FSFRefining.pawnLabel>精煉工人</FSFRefining.pawnLabel>
+  <FSFRefining.gerundLabel>精煉</FSFRefining.gerundLabel>
+  <FSFRefining.verb>精煉</FSFRefining.verb>
+ 
+ 
+  <!-- Smelt -->
+ 
+  <FSFSmelt.label>熔煉</FSFSmelt.label>
+  <FSFSmelt.description>操作熔煉鋼渣或武器.</FSFSmelt.description>
+  <FSFSmelt.labelShort>熔煉</FSFSmelt.labelShort>
+  <FSFSmelt.pawnLabel>熔煉工人</FSFSmelt.pawnLabel>
+  <FSFSmelt.gerundLabel>熔煉</FSFSmelt.gerundLabel>
+  <FSFSmelt.verb>熔煉</FSFSmelt.verb>
+ 
+ 
+  <!-- Stone Cut -->
+ 
+  <FSFStoneCut.label>切石</FSFStoneCut.label>
+  <FSFStoneCut.description>將岩石塊切成石材.</FSFStoneCut.description>
+  <FSFStoneCut.labelShort>切石</FSFStoneCut.labelShort>
+  <FSFStoneCut.pawnLabel>石匠</FSFStoneCut.pawnLabel>
+  <FSFStoneCut.gerundLabel>切石</FSFStoneCut.gerundLabel>
+  <FSFStoneCut.verb>切石</FSFStoneCut.verb>
+ 
+ 
+  <!-- Loading -->
+ 
+  <FSFLoading.label>裝卸</FSFLoading.label>
+  <FSFLoading.description>裝卸運輸艙和商隊.</FSFLoading.description>
+  <FSFLoading.labelShort>裝卸</FSFLoading.labelShort>
+  <FSFLoading.pawnLabel>裝卸工人</FSFLoading.pawnLabel>
+  <FSFLoading.gerundLabel>裝卸</FSFLoading.gerundLabel>
+  <FSFLoading.verb>裝卸</FSFLoading.verb>
+ 
+ 
+  <!-- Cremating -->
+ 
+  <FSFCremating.label>火化</FSFCremating.label>
+  <FSFCremating.description>操作火化或篝火焚燒衣服,毒品和屍體.</FSFCremating.description>
+  <FSFCremating.labelShort>火化</FSFCremating.labelShort>
+  <FSFCremating.pawnLabel>火化工人</FSFCremating.pawnLabel>
+  <FSFCremating.gerundLabel>火化</FSFCremating.gerundLabel>
+  <FSFCremating.verb>火化</FSFCremating.verb>
+ 
+ 
+  <!-- Delivering -->
+ 
+  <FSFDeliver.label>供材</FSFDeliver.label>
+  <FSFDeliver.description>給藍圖運輸原材料以減少製造者的勞動量.</FSFDeliver.description>
+  <FSFDeliver.labelShort>供材</FSFDeliver.labelShort>
+  <FSFDeliver.pawnLabel>供材搬運工</FSFDeliver.pawnLabel>
+  <FSFDeliver.gerundLabel>供材</FSFDeliver.gerundLabel>
+  <FSFDeliver.verb>供材</FSFDeliver.verb>
+ 
+ 
+  <!-- Scanning -->
+ 
+  <FSFScan.label>勘探</FSFScan.label>
+  <FSFScan.description>在遠程礦物掃描器上掃描資源節點並操作探地掃描器.</FSFScan.description>
+  <FSFScan.labelShort>勘探</FSFScan.labelShort>
+  <FSFScan.pawnLabel>勘探工人</FSFScan.pawnLabel>
+  <FSFScan.gerundLabel>勘探</FSFScan.gerundLabel>
+  <FSFScan.verb>勘探</FSFScan.verb>
+ 
+ 
+</LanguageData>

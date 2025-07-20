@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+	<!-- Patch Children Worktypes -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Human"]/race/lifeStageWorkSettings</xpath>
+				<value>
+					<FSFNurse>7</FSFNurse> <!-- Default Doctor 10 Recommended 7 -->
+					<FSFSurgeon>10</FSFSurgeon> <!-- Default Doctor 10 -->
+					<FSFRearming>3</FSFRearming> <!-- Default Hauling 3 Recommended 7 -->
+					<FSFRefueling>3</FSFRefueling> <!-- Default Hauling 3 Recommended 7 -->
+					<FSFTraining>7</FSFTraining> <!-- Default Handling 7 -->
+					<FSFButcher>7</FSFButcher> <!-- Default Cooking 7 -->
+					<FSFBrewing>7</FSFBrewing> <!-- Default Cooking 7 -->
+					<FSFRepair>10</FSFRepair> <!-- Default Construction 10 -->
+					<FSFDeconstruct>10</FSFDeconstruct> <!-- Default Construction 10 -->
+					<FSFHarvesting>7</FSFHarvesting> <!-- Default Growing 7 -->
+					<FSFDrilling>7</FSFDrilling> <!-- Default Mining 7 -->
+					<FSFDrugs>7</FSFDrugs> <!-- Default Crafting 7 -->
+					<FSFFabrication>13</FSFFabrication> <!-- Default Smithing 13 -->
+					<FSFMachining>13</FSFMachining> <!-- Default Smithing 13 -->
+					<FSFRefining>7</FSFRefining> <!-- Default Crafting 7 -->
+					<FSFSmelt>7</FSFSmelt> <!-- Default Crafting 7 Recommended 10 -->
+					<FSFStoneCut>7</FSFStoneCut> <!-- Default Crafting 7 -->
+					<FSFLoading>3</FSFLoading> <!-- Default Hauling 3 Recommended 7 -->
+					<FSFCremating>3</FSFCremating> <!-- Default Hauling 3 Recommended 10 -->
+					<FSFDeliver>3</FSFDeliver> <!-- Default Hauling 3 -->
+					<FSFScan>7</FSFScan> <!-- Default Research 13 Recommended 7 -->
+				</value>
+			</li>
+			
+			</operations>
+	</Operation>
+	
+</Patch>

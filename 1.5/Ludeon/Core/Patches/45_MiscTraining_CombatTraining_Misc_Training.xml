@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- MiscTraining_CombatTraining 45 (Misc Training) (Default 435)
+ 
+		Default Priority Order
+
+		Misc Training - MiscTraining_CombatTraining 50
+
+	-->
+	
+		<!-- Misc Training - (Change Training Worktype Priority) -->
+			
+			<li MayRequire="Haplo.Miscellaneous.Training" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "MiscTraining_CombatTraining"]/naturalPriority</xpath>
+				<value>
+					<naturalPriority>45</naturalPriority>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

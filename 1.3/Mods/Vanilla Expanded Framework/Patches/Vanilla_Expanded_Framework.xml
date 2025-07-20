@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Vanilla Expanded Framework -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "IP_InsertFirstIngredient"]/workType</xpath>
+				<value>
+					<workType>FSFBrewing</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "IP_InsertSecondIngredient"]/workType</xpath>
+				<value>
+					<workType>FSFBrewing</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "IP_InsertThirdIngredient"]/workType</xpath>
+				<value>
+					<workType>FSFBrewing</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "IP_RemoveProduct"]/workType</xpath>
+				<value>
+					<workType>FSFBrewing</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "IP_RemoveProduct"]/priorityInType</xpath>
+				<value>
+					<priorityInType>35</priorityInType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

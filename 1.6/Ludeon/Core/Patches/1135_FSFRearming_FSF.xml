@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- FSFRearming 1135 (FSF Complex Jobs)
+ 
+		Default Priority Order
+
+			Dubs Rimatomics - LoadRailgunMagazine 210 (Moved to FSFRearming)
+			Save Our Ship 2 - LoadTorpedoTube 210 (Moved to FSFRearming)
+			Dubs Rimatomics - LoadSilo 180 (Moved to FSFRearming)
+			Core - RearmTurrets 150 (Moved to FSFRearming)
+			Ready Those Guns - RTG_Ready 150 (Moved to FSFRearming)
+			Combat Extended - ReloadTurrets 105 (Moved to FSFRearming)
+			Vanilla Furniture Expanded Security - VFES_ConstructRearmTrap 70 (Moved to FSFRearming)
+			Vanilla Furniture Expanded Security - VFES_RearmTrap 70 (Moved to FSFRearming)
+			Keep Mortars Ready - ReadyMortar 40
+
+	-->
+			
+		<!-- Biotech Mechanoids Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Hauling"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Hauling"] ]</xpath>
+					<value>
+						<li>FSFRearming</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Hauling"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Hauling"] ]</xpath>
+					<value>
+						<li>FSFRearming</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Dubs Rimatomics - Load Sabot Rounds -->
+			
+			<li MayRequire="Dubwise.Rimatomics" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "LoadRailgunMagazine"]/workType</xpath>
+				<value>
+					<workType>FSFRearming</workType>
+				</value>
+			</li>
+			
+		<!-- Save Our Ship 2 - Load Torpedo Tube -->
+	
+			<li MayRequire="kentington.saveourship2" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "LoadTorpedoTube"]/workType</xpath>
+				<value>
+					<workType>FSFRearming</workType>
+				</value>
+			</li>
+			
+		<!-- Dubs Rimatomics - Load Silo -->
+			
+			<li MayRequire="Dubwise.Rimatomics" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "LoadSilo"]/workType</xpath>
+				<value>
+					<workType>FSFRearming</workType>
+				</value>
+			</li>
+			
+		<!-- Core - Rearm Turrets -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RearmTurrets"]/workType</xpath>
+				<value>
+					<workType>FSFRearming</workType>
+				</value>
+			</li>
+			
+		<!-- Combat Extended - Reload Turrets -->
+			
+			<li MayRequire="CETeam.CombatExtended" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ReloadTurrets"]/workType</xpath>
+				<value>
+					<workType>FSFRearming</workType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Furniture Expanded Security - Construction Rearm Traps -->
+			
+			<li MayRequire="VanillaExpanded.VFESecurity" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VFES_ConstructRearmTrap"]/workType</xpath>
+				<value>
+					<workType>FSFRearming</workType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Furniture Expanded Security - Rearm Traps -->
+			
+			<li MayRequire="VanillaExpanded.VFESecurity" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VFES_RearmTrap"]/workType</xpath>
+				<value>
+					<workType>FSFRearming</workType>
+				</value>
+			</li>
+			
+		<!-- Keep Mortars Ready - Ready Mortar -->
+			
+			<li MayRequire="keepmortarsready.1trickPwnyta" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ReadyMortar"]/workType</xpath>
+				<value>
+					<workType>FSFRearming</workType>
+				</value>
+			</li>
+			
+		<!-- Ready Those Guns - Ready Mortars -->
+			
+			<li MayRequire="Mlie.ReadyThoseGuns" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RTG_Ready"]/workType</xpath>
+				<value>
+					<workType>FSFRearming</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="Mlie.ReadyThoseGuns" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RTG_Ready"]/priorityInType</xpath>
+				<value>
+					<priorityInType>40</priorityInType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

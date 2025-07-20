@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Hospitality -->
+
+	<Operation Class="PatchOperationFindMod">
+		
+    	<mods>
+        	<li>Hospitality</li>
+    	</mods>
+		
+    	<match Class="PatchOperationSequence">
+        <success>Always</success>
+        <operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>*/WorkTypeDef[defName = "Diplomat"]/naturalPriority</xpath>
+				<value>
+					<naturalPriority>1060</naturalPriority>
+				</value>
+			</li>
+			
+        </operations>
+    	</match>
+	
+	</Operation>
+	
+</Patch>

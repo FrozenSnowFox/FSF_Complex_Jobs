@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- What The Hack -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName = "WTH_HaulingModule"]/modExtensions/li[@Class = "WhatTheHack.DefModExtension_Hediff_WorkModule"]/workTypes</xpath>
+				<value>
+					<li>FSFRearming</li>
+					<li>FSFRefueling</li>
+					<li>FSFLoading</li>
+					<li>FSFDeliver</li>
+					<li>FSFCremating</li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

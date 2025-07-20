@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- GR_Genetics 105 (Vanilla Genetics Expanded) (Default 101)
+
+		Default Priority Order
+
+			Vanilla Genetics Expanded - GR_DoBillsGenetics 100
+			Vanilla Genetics Expanded - GR_DoBillsTissueGrinder 100
+			Vanilla Genetics Expanded - GR_DoBillsGeneticsTinkeringTable 100
+			Vanilla Genetics Expanded - GR_DoBillsGeneRecombinator 100
+			Vanilla Genetics Expanded - GR_DoBillsVat 100
+			Vanilla Genetics Expanded More Lab Stuff - GR_DoBillsGenetrainerBench 100
+			Vanilla Genetics Expanded - GR_InsertIngredients 20
+			Vanilla Genetics Expanded - GR_ArchotechDNAExtraction 20
+			Vanilla Genetics Expanded - GR_ParagonConversion 20
+
+	-->
+			
+		<!-- Vanilla Genetics Expanded - (Change Genetics Worktype Priority) -->
+			
+			<li MayRequire="VanillaExpanded.VGeneticsE" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "GR_Genetics"]/naturalPriority</xpath>
+				<value>
+					<naturalPriority>105</naturalPriority>
+				</value>
+			</li>
+			
+		<!-- Vanilla Genetics Expanded - ParagonConversion -->
+			
+			<li MayRequire="VanillaExpanded.VGeneticsE" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "GR_ParagonConversion"]/priorityInType</xpath>
+				<value>
+					<priorityInType>200</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Genetics Expanded - Archotech DNA Extraction -->
+			
+			<li MayRequire="VanillaExpanded.VGeneticsE" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "GR_ArchotechDNAExtraction"]/priorityInType</xpath>
+				<value>
+					<priorityInType>195</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Genetics Expanded - Insert Ingredients -->
+			
+			<li MayRequire="VanillaExpanded.VGeneticsE" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "GR_InsertIngredients"]/priorityInType</xpath>
+				<value>
+					<priorityInType>190</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Genetics Expanded - Do Bills Genetics Tinkering Table -->
+			
+			<li MayRequire="VanillaExpanded.VGeneticsE" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "GR_DoBillsGeneticsTinkeringTable"]/priorityInType</xpath>
+				<value>
+					<priorityInType>185</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Genetics Expanded - Do Bills Gene Recombinator -->
+			
+			<li MayRequire="VanillaExpanded.VGeneticsE" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "GR_DoBillsGeneRecombinator"]/priorityInType</xpath>
+				<value>
+					<priorityInType>180</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Genetics Expanded - Do Bills Genetics -->
+			
+			<li MayRequire="VanillaExpanded.VGeneticsE" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "GR_DoBillsGenetics"]/priorityInType</xpath>
+				<value>
+					<priorityInType>175</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Genetics Expanded - Do Bills Vats -->
+			
+			<li MayRequire="VanillaExpanded.VGeneticsE" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "GR_DoBillsVat"]/priorityInType</xpath>
+				<value>
+					<priorityInType>170</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Genetics Expanded More Lab Stuff - Do Bills Genetrainer Bench -->
+			
+			<li MayRequire="VanillaExpanded.VGeneticsEMoreLabStuff" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "GR_DoBillsGenetrainerBench"]/priorityInType</xpath>
+				<value>
+					<priorityInType>165</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Genetics Expanded - Do Bills Tissue Grinder -->
+			
+			<li MayRequire="VanillaExpanded.VGeneticsE" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "GR_DoBillsTissueGrinder"]/priorityInType</xpath>
+				<value>
+					<priorityInType>160</priorityInType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

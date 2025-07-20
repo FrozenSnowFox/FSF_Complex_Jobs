@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<!-- Tame -->
+	
+  <WorkGiverDef>
+    <defName>Tame</defName>
+    <label>tame animals</label>
+    <giverClass>WorkGiver_Tame</giverClass>
+    <workType>FSFTraining</workType>
+    <verb>tame</verb>
+    <gerund>taming</gerund>
+    <priorityInType>80</priorityInType>
+    <tagToGive>Fieldwork</tagToGive>
+    <requiredCapacities>
+      <li>Talking</li>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+</Defs>

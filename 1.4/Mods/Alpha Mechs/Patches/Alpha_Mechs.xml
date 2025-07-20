@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Alpha Genes -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AM_Mech_MasterChef"]/race/mechEnabledWorkTypes</xpath>
+				<value>
+					<li>FSFButcher</li>
+					<li>FSFBrewing</li>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AM_Mech_MasterChef"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFButcher>1</FSFButcher>
+					<FSFBrewing>1</FSFBrewing>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AM_PristineStrider"]/race/mechEnabledWorkTypes</xpath>
+				<value>
+					<li>FSFRearming</li>
+					<li>FSFRefueling</li>
+					<li>FSFLoading</li>
+					<li>FSFCremating</li>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AM_PristineStrider"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFRearming>1</FSFRearming>
+					<FSFRefueling>1</FSFRefueling>
+					<FSFLoading>1</FSFLoading>
+					<FSFCremating>1</FSFCremating>
+				</value>
+			</li>			
+			
+		</operations>
+	</Operation>
+			
+	<!-- Patch For Optional Worktypes -->
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/WorkTypeDef[defName = "FSFSnow"]</xpath>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AM_Mech_TurboCleaner"]/race/mechEnabledWorkTypes</xpath>
+				<value>
+					<li>FSFSnow</li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+			
+	<!-- Patch For Optional Worktypes -->
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/WorkTypeDef[defName = "FSFMerge"]</xpath>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AM_PristineStrider"]/race/mechEnabledWorkTypes</xpath>
+				<value>
+					<li>FSFMerge</li>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AM_PristineStrider"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFMerge>1</FSFMerge>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

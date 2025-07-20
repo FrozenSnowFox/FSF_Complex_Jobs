@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- FSFRefining 425 (FSF Complex Jobs)
+ 
+		Default Priority Order
+
+			Fortification Industrial Citadel - FT_OperateAutoChem 145
+			Core - DoBillsRefinery 97 (Moved to FSFRefining)
+
+	-->
+			
+		<!-- Biotech Mechanoids Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Crafting"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Crafting"] ]</xpath>
+					<value>
+						<li>FSFRefining</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Crafting"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Crafting"] ]</xpath>
+					<value>
+						<li>FSFRefining</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Fortification Industrial Citadel - Do Bills at Pyrolysis Plant -->
+			
+			<li MayRequire="Aoba.Fortress.Industrial.Citadel" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "FT_OperateAutoChem"]/workType</xpath>
+				<value>
+					<workType>FSFRefining</workType>
+				</value>
+			</li>
+			
+		<!-- The Dead Man's Switch - Create new Workgiver for FSFRefining -->
+
+			<li MayRequire="Aoba.DeadManSwitch.Core" Class="PatchOperationRemove">
+				<xpath>/Defs/WorkGiverDef[defName = "DMS_Operate"]/fixedBillGiverDefs/li[text()="DMS_ReactionChamber"]</xpath>
+			</li>
+			
+			<li MayRequire="Aoba.DeadManSwitch.Core" Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					<WorkGiverDef>
+						<defName>FSFDMS_ReactionChamber</defName>
+						<label>Operate pressure chamber</label>
+						<giverClass>WorkGiver_DoBill</giverClass>
+						<workType>FSFRefining</workType>
+						<priorityInType>140</priorityInType>
+						<fixedBillGiverDefs>
+							<li>DMS_ReactionChamber</li>
+						</fixedBillGiverDefs>
+						<verb>Operate</verb>
+						<gerund>Operating at</gerund>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+						<prioritizeSustains>true</prioritizeSustains>
+					</WorkGiverDef>
+				</value>
+			</li>
+			
+		<!-- Core - Do Bills at Refinery -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsRefinery"]/workType</xpath>
+				<value>
+					<workType>FSFRefining</workType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

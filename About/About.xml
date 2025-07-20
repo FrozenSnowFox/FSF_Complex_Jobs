@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ModMetaData>
+	
+	<name>[FSF] Complex Jobs</name>
+	<author>FrozenSnowFox</author>
+	<packageId>FrozenSnowFox.ComplexJobs</packageId>
+	<modIconPath IgnoreIfNoMatchingField="True">ModIcon/FSFModIcon</modIconPath>
+	<supportedVersions>
+		<li>1.0</li>
+		<li>1.1</li>
+		<li>1.2</li>
+		<li>1.3</li>
+		<li>1.4</li>
+		<li>1.5</li>
+		<li>1.6</li>
+	</supportedVersions>
+	<description>Overhauls the worktypes and workgivers in the work tab splitting existing jobs into smaller jobs and streamlining tasks so things run more efficiently.
+		
+		Load this mod at the end of your mod list.</description>
+	<loadAfter>
+		<li>Accurex.MedievalOverhaul.Stuff</li>
+		<li>AmCh.Eragon.HCGeneFabrication</li>
+		<li>Aoba.DeadManSwitch.Core</li>
+		<li>Aoba.Fortress.Industrial.Citadel</li>
+		<li>bambaryla.beyondaotc</li>
+		<li>Better.Humanoid.Mechanoid.CN</li>
+		<li>CETeam.CombatExtended</li>
+		<li>DankPyon.Medieval.Overhaul</li>
+		<li>daylight.RLEsExpansionProductPS</li>
+		<li>dhultgren.buryonthespot</li>
+		<li>Dubwise.DubsBadHygiene</li>
+		<li>Dubwise.DubsPaintShop</li>
+		<li>Dubwise.Rimefeller</li>
+		<li>Dubwise.Rimatomics</li>
+		<li>Dubwise.DubsRimkit</li>
+		<li>Farxmai2.VanillaFurnitureExpandedPack</li>
+		<li>FLASHPOINT55.HumanPowerGeneratorMod</li>
+		<li>Fluffy.FluffyBreakdowns</li>
+		<li>fluffy.colonymanager</li>
+		<li>FrozenSnowFox.SimpleEducation</li>
+		<li>Haplo.Miscellaneous.Robots</li>
+		<li>Haplo.Miscellaneous.Training</li>
+		<li>Alaestor.MiscRobots.PlusPlus</li>
+		<li>Heremeus.MedicalDissection</li>
+		<li>imranfish.xmlextensions</li>
+		<li>isorex.mechanoidsaddon</li>
+		<li>keepmortarsready.1trickPwnyta</li>
+		<li>kentington.saveourship2</li>
+		<li>Keshash.LayeredWallDestruction</li>
+		<li>leion247658.MiscVHCraftableHRobots</li>
+		<li>LimeTreeSnake.Ammunition</li>
+		<li>Mehni.PickUpAndHaul</li>
+		<li>Mlie.OmniCoreDrill</li>
+		<li>Mlie.ReadyThoseGuns</li>
+		<li>Mlie.RecycleThis</li>
+		<li>n7huntsman.ceramics</li>
+		<li>Neronix17.Asimov</li>
+		<li>Neronix17.OuterRim.DroidDepot</li>
+		<li>Pal5k.LogisticsMechanoid</li>
+		<li>postrobcore.feedthecolonists</li>
+		<li>PrimitiveProduction.velcroboy333</li>		
+		<li>Orion.Hospitality</li>
+		<li>Orpheusly.PawnStorages</li>
+		<li>ReSplice.XOTR.Core</li>
+		<li>Romyashi.Scavenging</li>
+		<li>roolo.whatthehack</li>
+		<li>RusticFox.BulkStoneCutting</li>
+		<li>sarg.alphagenes</li>
+		<li>sarg.alphamechs</li>
+		<li>sarg.rimbees</li>
+		<li>scpchemfuel.appliances</li>
+		<li>seos.vfe.mechanoids.drones</li>
+		<li>Sielfyr.WTHaddon</li>
+		<li>Smuffle.HarvestOrgansPostMortem</li>
+		<li>SmashPhil.VehicleFramework</li>
+		<li>sneaks.meatblend</li>
+		<li>sneaks.veggiemix</li>
+		<li>spdskatr.projectrimfactory</li>
+		<li>spdskatr.projectrimfactory.drones</li>
+		<li>sumghai.MousekinRace</li>
+		<li>syrchalis.processor.framework</li>
+		<li>syrchalis.prosthetictable</li>
+		<li>syrchalis.universalfermenter</li>
+		<li>temmie3754.berrypicker</li>
+		<li>theeyeofbrows.fluffybreakdowns</li>
+		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+		<li>OskarPotocki.VanillaFactionsExpanded.MedievalModule</li>
+		<li>OskarPotocki.VFE.Mechanoid</li>
+		<li>OskarPotocki.VFE.Medieval2</li>
+		<li>OskarPotocki.VFE.Pirates</li>
+		<li>OskarPotocki.VFE.Tribals</li>
+		<li>Owlchemist.SeedsPleaseLite</li>
+		<li>UnlimitedHugs.AllowTool</li>
+		<li>Ushanka.BiologicalWarfare</li>
+		<li>VanillaExpanded.VBooksE</li>
+		<li>VanillaExpanded.VBrewE</li>
+		<li>VanillaExpanded.VBrewECandT</li>
+		<li>VanillaExpanded.VCookE</li>
+		<li>VanillaExpanded.VCookESushi</li>
+		<li>VanillaExpanded.VCEF</li>
+		<li>VanillaExpanded.VGeneticsE</li>
+		<li>VanillaExpanded.VGeneticsEMoreLabStuff</li>
+		<li>VanillaExpanded.HelixienGas</li>
+		<li>VanillaExpanded.VFEA</li>
+		<li>VanillaExpanded.VFEPower</li>
+		<li>VanillaExpanded.VFESecurity</li>
+		<li>VanillaExpanded.VPlantsEMore</li>
+		<li>VanillaExpanded.VPlantsEMushrooms</li>
+		<li>vanillaracesexpanded.android</li>
+		<li>vanillaracesexpanded.sanguophage</li>
+		<li>vanillaquestsexpanded.generator</li>
+		<li>weilbyte.snapout</li>
+		<li>wvc.sergkart.races.biotech</li>
+		<li>XMB.AncientMiningIndustry.MO</li>
+		<li>zal.advanceddeepdrill</li>
+	</loadAfter>
+	<incompatibleWith>
+		<li>CodeOptimist.JobSplitter</li>
+		<li>DarthSergeant.NurseJob</li>
+		<li>FrozenSnowFox.ComplexJobsLegacy</li>
+	</incompatibleWith>
+	
+</ModMetaData>

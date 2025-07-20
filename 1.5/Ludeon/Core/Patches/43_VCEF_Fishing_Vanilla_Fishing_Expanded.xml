@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- VCEF_Fishing 43 (Vanilla Fishing Expanded) (Default 90)
+ 
+		Default Priority Order
+
+		Vanilla Fishing Expanded - VCEF_Fish 100
+
+	-->
+			
+		<!-- Vanilla Fishing Expanded - (Change Training Worktype Priority) -->
+			
+			<li MayRequire="VanillaExpanded.VCEF" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "VCEF_Fishing"]/naturalPriority</xpath>
+				<value>
+					<naturalPriority>43</naturalPriority>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Nurse -->
+
+  <FSFNurse.label>Pflegen</FSFNurse.label>
+  <FSFNurse.description>Kolonisten, Gefangene und Tiere pflegen, sie füttern und aufheitern.</FSFNurse.description>
+  <FSFNurse.labelShort>Pflegen</FSFNurse.labelShort>
+  <FSFNurse.pawnLabel>Pfleger</FSFNurse.pawnLabel>
+  <FSFNurse.gerundLabel>Pflegen</FSFNurse.gerundLabel>
+  <FSFNurse.verb>Pflegen</FSFNurse.verb>
+
+  <!-- Surgeon -->
+
+  <FSFSurgeon.label>Chirurgie</FSFSurgeon.label>
+  <FSFSurgeon.description>Operationen an Menschen oder Tieren durchführen.</FSFSurgeon.description>
+  <FSFSurgeon.labelShort>Chirurgie</FSFSurgeon.labelShort>
+  <FSFSurgeon.pawnLabel>Chirurg</FSFSurgeon.pawnLabel>
+  <FSFSurgeon.gerundLabel>Chirurgie</FSFSurgeon.gerundLabel>
+  <FSFSurgeon.verb>Operieren an</FSFSurgeon.verb>
+
+
+  <!-- Rearming -->
+
+  <FSFRearming.label>Bewaffnen</FSFRearming.label>
+  <FSFRearming.description>Türme und Fallen wiederbewaffnen.</FSFRearming.description>
+  <FSFRearming.labelShort>Bewaffnen</FSFRearming.labelShort>
+  <FSFRearming.pawnLabel>Bewaffner</FSFRearming.pawnLabel>
+  <FSFRearming.gerundLabel>Bewaffnen</FSFRearming.gerundLabel>
+  <FSFRearming.verb>Bewaffnen</FSFRearming.verb>
+
+
+  <!-- Refueling -->
+
+  <FSFRefueling.label>Befüllen</FSFRefueling.label>
+  <FSFRefueling.description>Dinge wiederbefüllen, die Holz oder Kraftstoff benötigen.</FSFRefueling.description>
+  <FSFRefueling.labelShort>Befüllen</FSFRefueling.labelShort>
+  <FSFRefueling.pawnLabel>Befüller</FSFRefueling.pawnLabel>
+  <FSFRefueling.gerundLabel>Befüllen</FSFRefueling.gerundLabel>
+  <FSFRefueling.verb>Befüllen</FSFRefueling.verb>
+
+
+  <!-- Training -->
+
+  <FSFTraining.label>Trainieren</FSFTraining.label>
+  <FSFTraining.description>Wilde Tiere zähmen und zahme Tiere trainieren.</FSFTraining.description>
+  <FSFTraining.labelShort>Trainieren</FSFTraining.labelShort>
+  <FSFTraining.pawnLabel>Trainer</FSFTraining.pawnLabel>
+  <FSFTraining.gerundLabel>Trainieren</FSFTraining.gerundLabel>
+  <FSFTraining.verb>Trainieren</FSFTraining.verb>
+
+
+  <!-- Butcher -->
+
+  <FSFButcher.label>Schlachten</FSFButcher.label>
+  <FSFButcher.description>Schlachte Tiere und stelle Trockenfutter her.</FSFButcher.description>
+  <FSFButcher.labelShort>Schlachten</FSFButcher.labelShort>
+  <FSFButcher.pawnLabel>Schlachter</FSFButcher.pawnLabel>
+  <FSFButcher.gerundLabel>Schlachten</FSFButcher.gerundLabel>
+  <FSFButcher.verb>Schlachten</FSFButcher.verb>
+
+
+  <!-- Brewing -->
+
+  <FSFBrewing.label>Brauen</FSFBrewing.label>
+  <FSFBrewing.description>Würze aus Hopfen herstellen, Gärbottiche füllen und leeren.</FSFBrewing.description>
+  <FSFBrewing.labelShort>Brauen</FSFBrewing.labelShort>
+  <FSFBrewing.pawnLabel>Brauer</FSFBrewing.pawnLabel>
+  <FSFBrewing.gerundLabel>Brauen</FSFBrewing.gerundLabel>
+  <FSFBrewing.verb>Brauen</FSFBrewing.verb>
+
+
+  <!-- Repair -->
+
+  <FSFRepair.label>Reparieren</FSFRepair.label>
+  <FSFRepair.description>Beschädigte oder defekte Strukturen/Objekte reparieren.</FSFRepair.description>
+  <FSFRepair.labelShort>Reparieren</FSFRepair.labelShort>
+  <FSFRepair.pawnLabel>Reparierer</FSFRepair.pawnLabel>
+  <FSFRepair.gerundLabel>Reparieren</FSFRepair.gerundLabel>
+  <FSFRepair.verb>Reparieren</FSFRepair.verb>
+
+
+  <!-- Deconstruct -->
+
+  <FSFDeconstruct.label>Abreißen</FSFDeconstruct.label>
+  <FSFDeconstruct.description>Strukturen/Objekte abreißen und demontieren.</FSFDeconstruct.description>
+  <FSFDeconstruct.labelShort>Abreißen</FSFDeconstruct.labelShort>
+  <FSFDeconstruct.pawnLabel>Abreißer</FSFDeconstruct.pawnLabel>
+  <FSFDeconstruct.gerundLabel>Abreißen</FSFDeconstruct.gerundLabel>
+  <FSFDeconstruct.verb>Abreißen</FSFDeconstruct.verb>
+
+
+  <!-- Harvesting -->
+
+  <FSFHarvesting.label>Ernten</FSFHarvesting.label>
+  <FSFHarvesting.description>Pflanzen ernten.</FSFHarvesting.description>
+  <FSFHarvesting.labelShort>Ernten</FSFHarvesting.labelShort>
+  <FSFHarvesting.pawnLabel>Ernter</FSFHarvesting.pawnLabel>
+  <FSFHarvesting.gerundLabel>Ernten</FSFHarvesting.gerundLabel>
+  <FSFHarvesting.verb>Ernten</FSFHarvesting.verb>
+
+
+  <!-- Drilling -->
+
+  <FSFDrilling.label>Bohren</FSFDrilling.label>
+  <FSFDrilling.description>Tiefenbohrer zum Bohren nach Ressourcen verwenden.</FSFDrilling.description>
+  <FSFDrilling.labelShort>Bohren</FSFDrilling.labelShort>
+  <FSFDrilling.pawnLabel>Bohrer</FSFDrilling.pawnLabel>
+  <FSFDrilling.gerundLabel>Bohren</FSFDrilling.gerundLabel>
+  <FSFDrilling.verb>Bohren</FSFDrilling.verb>
+
+
+  <!-- Craft Drugs -->
+
+  <FSFDrugs.label>Drogen herstellen</FSFDrugs.label>
+  <FSFDrugs.description>Drogen im Drogenlabor herstellen.</FSFDrugs.description>
+  <FSFDrugs.labelShort>Drogen</FSFDrugs.labelShort>
+  <FSFDrugs.pawnLabel>Drogenkoch</FSFDrugs.pawnLabel>
+  <FSFDrugs.gerundLabel>Drogen</FSFDrugs.gerundLabel>
+  <FSFDrugs.verb>Drogen herstellen</FSFDrugs.verb>
+
+
+  <!-- Fabrication -->
+
+  <FSFFabrication.label>Fabrizieren</FSFFabrication.label>
+  <FSFFabrication.description>Waffen, Rüstungen, Prothesen und Komponenten aus Rohmaterialien am Fabrikationstisch herstellen.</FSFFabrication.description>
+  <FSFFabrication.labelShort>Fabrizieren</FSFFabrication.labelShort>
+  <FSFFabrication.pawnLabel>Fabrizierer</FSFFabrication.pawnLabel>
+  <FSFFabrication.gerundLabel>Fabrizieren</FSFFabrication.gerundLabel>
+  <FSFFabrication.verb>Fabrizieren</FSFFabrication.verb>
+
+
+  <!-- Machining -->
+
+  <FSFMachining.label>Mechaniker</FSFMachining.label>
+  <FSFMachining.description>Waffen und Werkzeuge aus Rohmaterialien an der Mechanikerwerkbank herstellen.</FSFMachining.description>
+  <FSFMachining.labelShort>Mechaniker</FSFMachining.labelShort>
+  <FSFMachining.pawnLabel>Mechaniker</FSFMachining.pawnLabel>
+  <FSFMachining.gerundLabel>Mechaniker</FSFMachining.gerundLabel>
+  <FSFMachining.verb>Werken</FSFMachining.verb>
+
+
+  <!-- Refine -->
+
+  <FSFRefining.label>Raffinieren</FSFRefining.label>
+  <FSFRefining.description>Materialien zu Kraftstoff veredeln.</FSFRefining.description>
+  <FSFRefining.labelShort>Raffinieren</FSFRefining.labelShort>
+  <FSFRefining.pawnLabel>Raffinierer</FSFRefining.pawnLabel>
+  <FSFRefining.gerundLabel>Raffinieren</FSFRefining.gerundLabel>
+  <FSFRefining.verb>Raffinieren</FSFRefining.verb>
+
+
+  <!-- Smelt -->
+
+  <FSFSmelt.label>Schmelzen</FSFSmelt.label>
+  <FSFSmelt.description>Schmelzofen zum Einschmelzen von Waffen oder Metallschrott bedienen.</FSFSmelt.description>
+  <FSFSmelt.labelShort>Schmelzen</FSFSmelt.labelShort>
+  <FSFSmelt.pawnLabel>Schmelzer</FSFSmelt.pawnLabel>
+  <FSFSmelt.gerundLabel>Schmelzen</FSFSmelt.gerundLabel>
+  <FSFSmelt.verb>Schmelzen</FSFSmelt.verb>
+
+
+  <!-- Stone Cut -->
+
+  <FSFStoneCut.label>Steinmetz</FSFStoneCut.label>
+  <FSFStoneCut.description>Steinblöcke aus Steinbrocken herstellen.</FSFStoneCut.description>
+  <FSFStoneCut.labelShort>Steinmetz</FSFStoneCut.labelShort>
+  <FSFStoneCut.pawnLabel>Steinmetz</FSFStoneCut.pawnLabel>
+  <FSFStoneCut.gerundLabel>Steinmetz</FSFStoneCut.gerundLabel>
+  <FSFStoneCut.verb>Schneiden</FSFStoneCut.verb>
+
+
+  <!-- Loading -->
+
+  <FSFLoading.label>Beladen</FSFLoading.label>
+  <FSFLoading.description>Transportkapseln und Karavanen be- und entladen.</FSFLoading.description>
+  <FSFLoading.labelShort>Laden</FSFLoading.labelShort>
+  <FSFLoading.pawnLabel>Träger</FSFLoading.pawnLabel>
+  <FSFLoading.gerundLabel>Beladen</FSFLoading.gerundLabel>
+  <FSFLoading.verb>Beladen</FSFLoading.verb>
+
+
+  <!-- Cremating -->
+
+  <FSFCremating.label>Einäschern</FSFCremating.label>
+  <FSFCremating.description>Leichen, Kleidung und Drogen am Krematorium oder Lagerfeuer einäschern.</FSFCremating.description>
+  <FSFCremating.labelShort>Einäschern</FSFCremating.labelShort>
+  <FSFCremating.pawnLabel>Einäscherer</FSFCremating.pawnLabel>
+  <FSFCremating.gerundLabel>Einäschern</FSFCremating.gerundLabel>
+  <FSFCremating.verb>Einäschern</FSFCremating.verb>
+
+
+  <!-- Delivering -->
+
+  <FSFDeliver.label>Liefern</FSFDeliver.label>
+  <FSFDeliver.description>Ressourcen zu Bauprojekten liefern.</FSFDeliver.description>
+  <FSFDeliver.labelShort>Liefern</FSFDeliver.labelShort>
+  <FSFDeliver.pawnLabel>Bote</FSFDeliver.pawnLabel>
+  <FSFDeliver.gerundLabel>Liefern</FSFDeliver.gerundLabel>
+  <FSFDeliver.verb>Liefern</FSFDeliver.verb>
+
+
+  <!-- Scanning -->
+
+  <FSFScan.label>Scannen</FSFScan.label>
+  <FSFScan.description>Scanne die Umgebung mit dem Langstreckenscanner oder den Boden mit dem Tiefenscanner.</FSFScan.description>
+  <FSFScan.labelShort>Scannen</FSFScan.labelShort>
+  <FSFScan.pawnLabel>Scanner</FSFScan.pawnLabel>
+  <FSFScan.gerundLabel>Scannen</FSFScan.gerundLabel>
+  <FSFScan.verb>Scannen</FSFScan.verb>
+
+
+</LanguageData>

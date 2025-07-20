@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- FSFHarvesting 705 (FSF Complex Jobs)
+ 
+		Default Priority Order
+
+			Core - GrowerHarvest 100 (Moved to FSFHarvesting)
+			Vanilla Plants Expanded More Plants - VCE_HarvestAquatic 100 (Moved to FSFHarvesting)
+			Vanilla Plants Expanded More Plants - VCE_HarvestSandy 100 (Moved to FSFHarvesting)
+			Vanilla Plants Expanded More Plants - VCE_HarvestFlowerGarden 100 (Moved to FSFHarvesting)
+			Vanilla Plants Expanded Mushrooms - VPE_HarvestMushroom 100 (Moved to FSFHarvesting)
+
+	-->
+			
+		<!-- Biotech Mechanoids Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="PlantCutting"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="PlantCutting"] ]</xpath>
+					<value>
+						<li>FSFHarvesting</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="PlantCutting"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="PlantCutting"] ]</xpath>
+					<value>
+						<li>FSFHarvesting</li>
+					</value>
+				</match>
+			</li>
+	
+		<!-- Core - Harvest Plants -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "GrowerHarvest"]/workType</xpath>
+				<value>
+					<workType>FSFHarvesting</workType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Plants Expanded More Plants - Harvest Aquatic Plants -->
+			
+			<li MayRequire="VanillaExpanded.VPlantsEMore" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VCE_HarvestAquatic"]/workType</xpath>
+				<value>
+					<workType>FSFHarvesting</workType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Plants Expanded More Plants - Harvest Sandy Plants -->
+			
+			<li MayRequire="VanillaExpanded.VPlantsEMore" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VCE_HarvestSandy"]/workType</xpath>
+				<value>
+					<workType>FSFHarvesting</workType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Plants Expanded More Plants - Harvest Flower Gardens -->
+			
+			<li MayRequire="VanillaExpanded.VPlantsEMore" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VCE_HarvestFlowerGarden"]/workType</xpath>
+				<value>
+					<workType>FSFHarvesting</workType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Plants Expanded Mushrooms - Harvest Mushrooms -->
+			
+			<li MayRequire="VanillaExpanded.VPlantsEMushrooms" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VPE_HarvestMushroom"]/workType</xpath>
+				<value>
+					<workType>FSFHarvesting</workType>
+				</value>
+			</li>
+	
+		</operations>
+	</Operation>
+				
+</Patch>

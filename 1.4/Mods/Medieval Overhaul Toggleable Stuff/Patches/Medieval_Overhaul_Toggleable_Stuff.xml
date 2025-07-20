@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Medieval Overhaul Toggleable Stuff -->
+	
+	<Operation Class="PatchOperationConditional">
+		<success>Normal</success>
+		
+		<xpath>/Defs/WorkGiverDef[defName="LongRangeScanMO"]</xpath>
+		<match Class="PatchOperationReplace">
+			<xpath>/Defs/WorkGiverDef[defName = "LongRangeScanMO"]/workType</xpath>
+			<value>
+				<workType>FSFScan</workType>
+			</value>
+		</match>
+
+	</Operation>
+	
+</Patch>

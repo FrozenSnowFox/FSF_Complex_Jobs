@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- FSFDeliver 310 (FSF Complex Jobs)
+ 
+		Default Priority Order
+
+			Core - DeliverResourcesToFrames 10 (Moved to FSFDeliver)
+			Core - DeliverResourcesToBlueprints 9 (Moved to FSFDeliver)
+
+	-->
+			
+		<!-- Core - Deliver Resources To Frames -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DeliverResourcesToFrames"]/workType</xpath>
+				<value>
+					<workType>FSFDeliver</workType>
+				</value>
+			</li>
+			
+		<!-- Core - Deliver Resources To Blueprints -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DeliverResourcesToBlueprints"]/workType</xpath>
+				<value>
+					<workType>FSFDeliver</workType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

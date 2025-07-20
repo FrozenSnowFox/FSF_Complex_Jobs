@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Vanilla Power Expanded -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "GR_DoBillsGenetics"]/priorityInType</xpath>
+				<value>
+					<priorityInType>175</priorityInType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "GR_DoBillsTissueGrinder"]/priorityInType</xpath>
+				<value>
+					<priorityInType>160</priorityInType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "GR_DoBillsGeneticsTinkeringTable"]/priorityInType</xpath>
+				<value>
+					<priorityInType>185</priorityInType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "GR_DoBillsGeneRecombinator"]/priorityInType</xpath>
+				<value>
+					<priorityInType>180</priorityInType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "GR_DoBillsVat"]/priorityInType</xpath>
+				<value>
+					<priorityInType>170</priorityInType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "GR_InsertIngredients"]/priorityInType</xpath>
+				<value>
+					<priorityInType>190</priorityInType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "GR_ArchotechDNAExtraction"]/priorityInType</xpath>
+				<value>
+					<priorityInType>195</priorityInType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "GR_ParagonConversion"]/priorityInType</xpath>
+				<value>
+					<priorityInType>200</priorityInType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

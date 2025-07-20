@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- Mining 600 (Core)
+ 
+		Default Priority Order
+
+			Medieval Overhaul - DankPyon_DoBillsMineshaft 110
+			Dubs Rimefeller - SuperviseDrilling 110 (Moved to FSFDrilling)
+			Core - Mine 100
+			Medieval Overhaul - DankPyon_DoMine_Golem 100
+			Medieval Overhaul - DankPyon_DoBillsDigging 90
+			Omni Core Drill (Continued) - DoBillsCoreMine 90 (Moved to FSFDrilling)
+			GarlicSauce's Advanced Deep Drill (Continued) - TRAHS_DoBillsAdvancedDeepDrill 80 (Moved to FSFDrilling)
+			Project RimFactory Revived - DoBillsPRF_MineShaft 75
+			Core - Drill 50 (Moved to FSFDrilling)
+			Medieval Overhaul - DankPyon_WorkGatherIce 6
+
+	-->
+	
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "Mining"]/description</xpath>
+				<value>
+					<description>Digging.</description>
+				</value>
+			</li>
+			
+		<!-- Medieval Overhaul - Do Bills at Mineshaft -->
+			
+			<li MayRequire="DankPyon.Medieval.Overhaul" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DankPyon_DoBillsMineshaft"]/priorityInType</xpath>
+				<value>
+					<priorityInType>95</priorityInType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

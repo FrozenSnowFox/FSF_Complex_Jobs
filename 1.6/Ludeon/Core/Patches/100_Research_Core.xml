@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- Research 100 (Core)
+
+		Default Priority Order
+
+			RIMSPR: Craftable Genepacks - ResearchAtRIMSPRLab 200
+			Research Reinvented - RR_Analyse 152
+			Research Reinvented - RR_AnalyseInPlace 151
+			Research Reinvented - RR_AnalyseTerrain 150
+			Core - Hack 130
+			Biotech DLC - CreateXenogerm 120
+			Dubs Rimatomics - RimatomicsSuperviseResearch 120
+			Research Reinvented - RR_LearnRemotely 120
+			Core - StudyArchotechStructures 110
+			Dubs Rimatomics - RimatomicsResearch 110
+			Medieval Overhaul - DankPyon_DoBillsScribeTable 110 (Moved to VBE_Writing with Vanilla Books Expanded)
+			Planetside Politics - Politics_DoBillsWritePolemicSpot 110 (Moved to VBE_Writing with Vanilla Books Expanded)
+			Planetside Politics - Politics_DoBillsWritePolemicDesk 110 (Moved to VBE_Writing with Vanilla Books Expanded)
+			Research Reinvented - RR_ResearchRR 110
+			Vanilla Quests Expanded The Generator - VFE_StudyBuilding 101
+			Core - Research 100
+			Gene Fabrication - GeneFab_DoBillsGeneBench 100
+			Ushankas Biological Warfare - USH_VaccineResearch 100
+			Vanilla Races Expanded Androids - VREA_ModifyAndroid 100
+			Medieval Overhaul - DankPyon_OperateQuest 80 (Moved to FSFScan)
+			Save Our Ship 2 - ScanSpace 69 (Moved to FSFScan)
+			Core - LongRangeScan 50 (Moved to FSFScan)
+			Core - GroundPenetratingScan 50 (Moved to FSFScan)
+			Altered Carbon 2 - AC_DoNeuralEditing 50
+			Ancient Mining Industry - BreadMo_QuestScan 50 (Moved to FSFScan)
+			Medieval Overhaul Toggleable Stuff - LongRangeScanMO 50 (Moved to FSFScan)
+			Resource Drop Pod Redirection - PodHackScan 40 (Moved to FSFScan)
+ 
+	-->
+			
+		<!-- Core - Hack Buildings -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "Hack"]/priorityInType</xpath>
+				<value>
+					<priorityInType>1000</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Biotech DLC - Xenogerm Creation -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "CreateXenogerm"]/priorityInType</xpath>
+				<value>
+					<priorityInType>200</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Races Expanded Androids - Modify Android -->
+			
+			<li MayRequire="vanillaracesexpanded.android" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VREA_ModifyAndroid"]/priorityInType</xpath>
+				<value>
+					<priorityInType>199</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Gene Fabrication - Do Bills at Gene Fabrication Bench -->
+			
+			<li MayRequire="AmCh.Eragon.HCGeneFabrication" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "GeneFab_DoBillsGeneBench"]/priorityInType</xpath>
+				<value>
+					<priorityInType>198</priorityInType>
+				</value>
+			</li>
+
+		<!-- Core - Study Archotech Structures -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "StudyArchotechStructures"]/priorityInType</xpath>
+				<value>
+					<priorityInType>160</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Expanded Framework - Study A Building -->
+			
+			<li MayRequire="OskarPotocki.VanillaFactionsExpanded.Core" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VFE_StudyBuilding"]/priorityInType</xpath>
+				<value>
+					<priorityInType>160</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Altered Carbon 2 - Do Bills Decryption Bench -->
+			
+			<li MayRequire="hlx.UltratechAlteredCarbon" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "AC_DoNeuralEditing"]/priorityInType</xpath>
+				<value>
+					<priorityInType>159</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Research Reinvented - Learn From Allies -->
+			
+			<li MayRequire="PeteTimesSix.ResearchReinvented" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RR_LearnRemotely"]/priorityInType</xpath>
+				<value>
+					<priorityInType>155</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Ushankas Biological Warfare - Vaccine Research -->
+			
+			<li MayRequire="Ushanka.BiologicalWarfare" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "USH_VaccineResearch"]/priorityInType</xpath>
+				<value>
+					<priorityInType>154</priorityInType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Meat Blend -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/RecipeDef[defName = "MeatBlend5"]/requiredGiverWorkType</xpath>
+				<value>
+					<requiredGiverWorkType>FSFButcher</requiredGiverWorkType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/RecipeDef[defName = "MeatblendTwenty"]/requiredGiverWorkType</xpath>
+				<value>
+					<requiredGiverWorkType>FSFButcher</requiredGiverWorkType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/RecipeDef[defName = "MeatBlend50"]/requiredGiverWorkType</xpath>
+				<value>
+					<requiredGiverWorkType>FSFButcher</requiredGiverWorkType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/RecipeDef[defName = "MeatBlend75"]/requiredGiverWorkType</xpath>
+				<value>
+					<requiredGiverWorkType>FSFButcher</requiredGiverWorkType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/RecipeDef[defName = "MeatBlend100"]/requiredGiverWorkType</xpath>
+				<value>
+					<requiredGiverWorkType>FSFButcher</requiredGiverWorkType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

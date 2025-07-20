@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Alpha Genes -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AM_Mech_MasterChef"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFButcher>1</FSFButcher>
+					<FSFProduction>1</FSFProduction>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AM_PristineStrider"]/race/mechWorkTypePriorities</xpath>
+				<value>
+					<FSFRearming>1</FSFRearming>
+					<FSFTransport>1</FSFTransport>
+					<FSFCremating>1</FSFCremating>
+					<FSFHauling>1</FSFHauling>
+				</value>
+			</li>			
+			
+		</operations>
+	</Operation>
+	
+</Patch>

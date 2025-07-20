@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+	
+	<!-- Enable Prison Care Worktype -->
+	
+	<Operation Class="VFECore.PatchOperationToggableSequence">
+		<enabled>False</enabled>
+		<label>Enable Prison Care Worktype</label>
+		<mods>
+			<li>[FSF] Complex Jobs</li>
+		</mods>
+		
+  		<operations>
+		
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+  <WorkTypeDef>
+    <defName>FSFPrisonCare</defName>
+    <labelShort>Prison Care</labelShort>
+    <pawnLabel>Warden</pawnLabel>
+    <gerundLabel>wardening</gerundLabel>
+    <description>Feed prisoners.</description>
+    <verb>Handle</verb>
+    <naturalPriority>1110</naturalPriority>
+    <requireCapableColonist>true</requireCapableColonist>
+    <disabledForSlaves>true</disabledForSlaves>
+    <relevantSkills>
+      <li>Social</li>
+    </relevantSkills>
+    <workTags>
+      <li>Social</li>
+      <li>AllWork</li>
+    </workTags>
+  </WorkTypeDef>
+				
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "FeedPrisoner"]/workType</xpath>
+				<value>
+					<workType>FSFPrisonCare</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DeliverFoodToPrisoner"]/workType</xpath>
+				<value>
+					<workType>FSFPrisonCare</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Human"]/race/lifeStageWorkSettings</xpath>
+				<value>
+					<FSFPrisonCare>10</FSFPrisonCare> <!-- Default Warden 10 -->
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "Warden"]/description</xpath>
+				<value>
+					<description>Manage, chat with, and recruit prisoners.</description>
+				</value>
+			</li>
+			
+		</operations>
+
+	</Operation>
+	
+	<!-- Enable Convert Worktype -->
+	
+	<Operation Class="VFECore.PatchOperationToggableSequence">
+		<enabled>False</enabled>
+		<label>Enable Convert Worktype</label>
+		<mods>
+			<li>[FSF] Complex Jobs</li>
+		</mods>
+		
+  		<operations>
+		
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+  <WorkTypeDef>
+    <defName>FSFConvert</defName>
+    <labelShort>Convert</labelShort>
+    <pawnLabel>Warden</pawnLabel>
+    <gerundLabel>converting</gerundLabel>
+    <description>Convert prisoners to your Ideologion.</description>
+    <verb>Handle</verb>
+    <naturalPriority>1105</naturalPriority>
+    <requireCapableColonist>true</requireCapableColonist>
+    <disabledForSlaves>true</disabledForSlaves>
+    <relevantSkills>
+      <li>Social</li>
+    </relevantSkills>
+    <workTags>
+      <li>Social</li>
+      <li>AllWork</li>
+    </workTags>
+  </WorkTypeDef>
+				
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ConvertPrisoner"]/workType</xpath>
+				<value>
+					<workType>FSFConvert</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Human"]/race/lifeStageWorkSettings</xpath>
+				<value>
+					<FSFConvert>10</FSFConvert> <!-- Default Warden 10 -->
+				</value>
+			</li>
+			
+		</operations>
+
+	</Operation>
+	
+	<!-- Enable Merge Worktype -->
+	
+	<Operation Class="VFECore.PatchOperationToggableSequence">
+		<enabled>False</enabled>
+		<label>Enable Merge Worktype</label>
+		<mods>
+			<li>[FSF] Complex Jobs</li>
+		</mods>
+		
+  		<operations>
+		
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+	<WorkTypeDef>
+		<defName>FSFMerge</defName>
+		<labelShort>Merge</labelShort>
+		<pawnLabel>Hauler</pawnLabel>
+		<gerundLabel>merging</gerundLabel>
+		<description>Merge stacks of resources together to prevent clutter.</description>
+		<verb>Merging</verb>
+		<naturalPriority>305</naturalPriority>
+		<alwaysStartActive>true</alwaysStartActive>
+		<requireCapableColonist>true</requireCapableColonist>
+		<workTags>
+			<li>ManualDumb</li>
+			<li>Hauling</li>
+			<li>Commoner</li>
+			<li>AllWork</li>
+		</workTags>
+	</WorkTypeDef>
+				
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "HaulMerge"]/workType</xpath>
+				<value>
+					<workType>FSFMerge</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Human"]/race/lifeStageWorkSettings</xpath>
+				<value>
+					<FSFMerge>3</FSFMerge> <!-- Default Hauling 3 Recommended 7 -->
+				</value>
+			</li>
+			
+			<li Class="PatchOperationInsert" MayRequire="Ludeon.RimWorld.Biotech">
+				<xpath>/Defs/ThingDef[defName = "Mech_Lifter"]/race/mechEnabledWorkTypes/li</xpath>
+				<value>
+					<li>FSFMerge</li>
+				</value>
+			</li>
+			
+		</operations>
+
+	</Operation>
+	
+	<!-- Enable Paint Worktype -->
+	
+	<Operation Class="VFECore.PatchOperationToggableSequence">
+		<enabled>False</enabled>
+		<label>Enable Paint Worktype</label>
+		<mods>
+			<li>[FSF] Complex Jobs</li>
+		</mods>
+		
+  		<operations>
+		
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+  <WorkTypeDef>
+    <defName>FSFPaint</defName>
+    <labelShort>Paint</labelShort>
+    <pawnLabel>Painter</pawnLabel>
+    <gerundLabel>painting</gerundLabel>
+    <description>Paint floors, walls and items.</description>
+    <verb>Paint</verb>
+    <naturalPriority>435</naturalPriority>
+    <disabledForSlaves>true</disabledForSlaves>
+    <relevantSkills>
+      <li>Artistic</li>
+    </relevantSkills>
+    <workTags>
+      <li>Artistic</li>
+      <li>Commoner</li>
+      <li>AllWork</li>
+    </workTags>
+  </WorkTypeDef>
+				
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "PaintBuilding"]/workType</xpath>
+				<value>
+					<workType>FSFPaint</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "PaintFloor"]/workType</xpath>
+				<value>
+					<workType>FSFPaint</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RemovePaintBuilding"]/workType</xpath>
+				<value>
+					<workType>FSFPaint</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RemovePaintFloor"]/workType</xpath>
+				<value>
+					<workType>FSFPaint</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Human"]/race/lifeStageWorkSettings</xpath>
+				<value>
+					<FSFPaint>7</FSFPaint> <!-- Default Art 10 Recommended 7 -->
+				</value>
+			</li>
+			
+		</operations>
+
+	</Operation>
+	
+	<!-- Enable Clear Snow Worktype -->
+	
+	<Operation Class="VFECore.PatchOperationToggableSequence">
+		<enabled>False</enabled>
+		<label>Enable Clear Snow Worktype</label>
+		<mods>
+			<li>[FSF] Complex Jobs</li>
+		</mods>
+		
+  		<operations>
+		
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+	<WorkTypeDef>
+		<defName>FSFSnow</defName>
+		<labelShort>Clear Snow</labelShort>
+		<pawnLabel>Shoveller</pawnLabel>
+		<gerundLabel>clearing</gerundLabel>
+		<description>Clear snow in the home area.</description>
+		<verb>Clear</verb>
+		<naturalPriority>205</naturalPriority>
+    	<alwaysStartActive>false</alwaysStartActive>
+    	<requireCapableColonist>true</requireCapableColonist>
+    	<workTags>
+      		<li>ManualDumb</li>
+      		<li>Cleaning</li>
+      		<li>Commoner</li>
+      		<li>AllWork</li>
+    	</workTags>
+	</WorkTypeDef>
+				
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "CleanClearSnow"]/workType</xpath>
+				<value>
+					<workType>FSFSnow</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "Cleaning"]/description</xpath>
+				<value>
+					<description>Clean the floor in the home area.</description>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Human"]/race/lifeStageWorkSettings</xpath>
+				<value>
+					<FSFSnow>3</FSFSnow> <!-- Default Cleaning 3 -->
+				</value>
+			</li>
+			
+			<li Class="PatchOperationInsert" MayRequire="Ludeon.RimWorld.Biotech">
+				<xpath>/Defs/ThingDef[defName = "Mech_Cleansweeper"]/race/mechEnabledWorkTypes/li</xpath>
+				<value>
+					<li>FSFSnow</li>
+				</value>
+			</li>
+			
+		</operations>
+
+	</Operation>
+	
+	<!-- Enable Clear Pollution Worktype -->
+	
+	<Operation Class="VFECore.PatchOperationToggableSequence">
+		<enabled>False</enabled>
+		<label>Enable Clear Pollution Worktype</label>
+		<mods>
+			<li>[FSF] Complex Jobs</li>
+		</mods>
+		
+  		<operations>
+		
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+	<WorkTypeDef>
+		<defName>FSFPollution</defName>
+		<labelShort>Clear Pollution</labelShort>
+		<pawnLabel>Cleaner</pawnLabel>
+		<gerundLabel>clearing</gerundLabel>
+		<description>Clear pollution in the clear pollution area.</description>
+		<verb>Clear</verb>
+		<naturalPriority>195</naturalPriority>
+    	<alwaysStartActive>false</alwaysStartActive>
+    	<requireCapableColonist>true</requireCapableColonist>
+    	<workTags>
+      		<li>ManualDumb</li>
+      		<li>Cleaning</li>
+      		<li>Commoner</li>
+      		<li>AllWork</li>
+    	</workTags>
+	</WorkTypeDef>
+				
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "CleanClearPollution"]/workType</xpath>
+				<value>
+					<workType>FSFPollution</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Human"]/race/lifeStageWorkSettings</xpath>
+				<value>
+					<FSFPollution>3</FSFPollution> <!-- Default Cleaning 3 -->
+				</value>
+			</li>
+			
+			<li Class="PatchOperationInsert" MayRequire="Ludeon.RimWorld.Biotech">
+				<xpath>/Defs/ThingDef[defName = "Mech_Cleansweeper"]/race/mechEnabledWorkTypes/li</xpath>
+				<value>
+					<li>FSFPollution</li>
+				</value>
+			</li>
+			
+		</operations>
+
+	</Operation>
+	
+	<!-- Enable Smoothing Worktype -->
+	
+	<Operation Class="VFECore.PatchOperationToggableSequence">
+		<enabled>False</enabled>
+		<label>Enable Smoothing Worktype</label>
+		<mods>
+			<li>[FSF] Complex Jobs</li>
+		</mods>
+		
+  		<operations>
+		
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+	<WorkTypeDef>
+		<defName>FSFSmoothing</defName>
+		<labelShort>Smooth</labelShort>
+		<pawnLabel>Smoother</pawnLabel>
+		<gerundLabel>smoothing</gerundLabel>
+		<description>Smooth stone floors and walls.</description>
+		<verb>Smooth</verb>
+		<naturalPriority>895</naturalPriority>
+		<alwaysStartActive>false</alwaysStartActive>
+		<requireCapableColonist>true</requireCapableColonist>
+		<relevantSkills>
+			<li>Construction</li>
+		</relevantSkills>
+		<workTags>
+			<li>ManualSkilled</li>
+			<li>Commoner</li>
+			<li>Constructing</li>
+			<li>AllWork</li>
+		</workTags>
+	</WorkTypeDef>
+				
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ConstructSmoothFloors"]/workType</xpath>
+				<value>
+					<workType>FSFSmoothing</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ConstructSmoothWalls"]/workType</xpath>
+				<value>
+					<workType>FSFSmoothing</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Human"]/race/lifeStageWorkSettings</xpath>
+				<value>
+					<FSFSmoothing>7</FSFSmoothing> <!-- Default Construction 10 Recommended 7 -->
+				</value>
+			</li>
+			
+			<li Class="PatchOperationInsert" MayRequire="Ludeon.RimWorld.Biotech">
+				<xpath>/Defs/ThingDef[defName = "Mech_Constructoid"]/race/mechEnabledWorkTypes/li</xpath>
+				<value>
+					<li>FSFSmoothing</li>
+				</value>
+			</li>
+			
+		</operations>
+
+	</Operation>
+	
+	<!-- Enable Taming Worktype -->
+	
+	<Operation Class="VFECore.PatchOperationToggableSequence">
+		<enabled>False</enabled>
+		<label>Enable Taming Worktype</label>
+		<mods>
+			<li>[FSF] Complex Jobs</li>
+		</mods>
+		
+  		<operations>
+		
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+	<WorkTypeDef>
+		<defName>FSFTaming</defName>
+		<labelShort>Tame</labelShort>
+		<pawnLabel>Tamer</pawnLabel>
+		<gerundLabel>Taming</gerundLabel>
+		<description>Tame wild animals.</description>
+		<verb>Tame</verb>
+		<naturalPriority>1055</naturalPriority>
+		<relevantSkills>
+			<li>Animals</li>
+		</relevantSkills>
+		<workTags>
+			<li>Animals</li>
+			<li>Commoner</li>
+			<li>AllWork</li>
+		</workTags>
+	</WorkTypeDef>
+				
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "FSFTraining"]/description</xpath>
+				<value>
+					<description>Train domesticated animals.</description>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "Tame"]/workType</xpath>
+				<value>
+					<workType>FSFTaming</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Human"]/race/lifeStageWorkSettings</xpath>
+				<value>
+					<FSFTaming>7</FSFTaming> <!-- Default Handling 7 -->
+				</value>
+			</li>
+			
+		</operations>
+
+	</Operation>
+	
+	<!-- Enable Pruning Worktype -->
+	
+	<Operation Class="VFECore.PatchOperationToggableSequence">
+		<enabled>False</enabled>
+		<label>Enable Pruning Worktype</label>
+		<mods>
+			<li>[FSF] Complex Jobs</li>
+		</mods>
+		
+  		<operations>
+		
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+	<WorkTypeDef>
+		<defName>FSFPruning</defName>
+		<labelShort>Prune</labelShort>
+		<pawnLabel>Pruner</pawnLabel>
+		<gerundLabel>pruning</gerundLabel>
+		<description>Prune trees.</description>
+		<verb>Prune</verb>
+		<naturalPriority>505</naturalPriority>
+		<alwaysStartActive>false</alwaysStartActive>
+		<requireCapableColonist>true</requireCapableColonist>
+		<relevantSkills>
+			<li>Plants</li>
+		</relevantSkills>
+		<workTags>
+			<li>ManualSkilled</li>
+			<li>PlantWork</li>
+			<li>Commoner</li>
+			<li>AllWork</li>
+		</workTags>
+	</WorkTypeDef>
+				
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "PruneGauranlenTree"]/workType</xpath>
+				<value>
+					<workType>FSFPruning</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Human"]/race/lifeStageWorkSettings</xpath>
+				<value>
+					<FSFPruning>7</FSFPruning> <!-- Default Growing 7 -->
+				</value>
+			</li>
+			
+			<li Class="PatchOperationInsert" MayRequire="Ludeon.RimWorld.Biotech">
+				<xpath>/Defs/ThingDef[defName = "Mech_Agrihand"]/race/mechEnabledWorkTypes/li</xpath>
+				<value>
+					<li>FSFPruning</li>
+				</value>
+			</li>
+			
+		</operations>
+
+	</Operation>
+	
+	<!-- Enable Mechanoids Worktype -->
+	
+	<Operation Class="VFECore.PatchOperationToggableSequence">
+		<enabled>False</enabled>
+		<label>Enable Mechanoids Worktype</label>
+		<mods>
+			<li>[FSF] Complex Jobs</li>
+		</mods>
+		
+  		<operations>
+		
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+  <WorkTypeDef>
+    <defName>FSFMechanoids</defName>
+    <labelShort>mechanoids</labelShort>
+    <pawnLabel>Mechanitor</pawnLabel>
+    <gerundLabel>smithing</gerundLabel>
+    <description>Perform tasks relating to mechanoids such as gestating new ones, repairing existing ones and creating subcores.</description>
+    <verb>Smith at</verb>
+    <naturalPriority>490</naturalPriority>
+    <relevantSkills>
+      <li>Crafting</li>
+    </relevantSkills>
+    <workTags>
+      <li>Crafting</li>
+      <li>ManualSkilled</li>
+      <li>Commoner</li>
+      <li>AllWork</li>
+    </workTags>
+  </WorkTypeDef>
+				
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RepairMech"]/workType</xpath>
+				<value>
+					<workType>FSFMechanoids</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsMechGestator"]/workType</xpath>
+				<value>
+					<workType>FSFMechanoids</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsSubcoreEncoder"]/workType</xpath>
+				<value>
+					<workType>FSFMechanoids</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Human"]/race/lifeStageWorkSettings</xpath>
+				<value>
+					<FSFMechanoids>13</FSFMechanoids> <!-- Default Smithing 13 -->
+				</value>
+			</li>
+			
+			<li Class="PatchOperationInsert" MayRequire="Ludeon.RimWorld.Biotech">
+				<xpath>/Defs/ThingDef[defName = "Mech_Fabricor"]/race/mechEnabledWorkTypes/li</xpath>
+				<value>
+					<li>FSFMechanoids</li>
+				</value>
+			</li>
+			
+		</operations>
+
+	</Operation>
+	
+</Patch>

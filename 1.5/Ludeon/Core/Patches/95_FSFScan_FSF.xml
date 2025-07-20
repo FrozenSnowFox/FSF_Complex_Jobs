@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- FSFScan 95 (FSF Complex Jobs)
+
+		Default Priority Order
+
+			Medieval Overhaul - DankPyon_OperateQuest 80 (Moved to FSFScan)
+			Save Our Ship 2 - ScanSpace 69 (Moved to FSFScan)
+			Core - LongRangeScan 50 (Moved to FSFScan)
+			Core - GroundPenetratingScan 50 (Moved to FSFScan)
+			Ancient Mining Industry - BreadMo_QuestScan 50 (Moved to FSFScan)
+			Medieval Overhaul Toggleable Stuff - LongRangeScanMO 50 (Moved to FSFScan)
+			Resource Drop Pod Redirection - PodHackScan 40 (Moved to FSFScan)
+ 
+	-->
+			
+		<!-- Biotech Mechanoids Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Research"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Research"] ]</xpath>
+					<value>
+						<li>FSFScan</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Research"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Research"] ]</xpath>
+					<value>
+						<li>FSFScan</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Medieval Overhaul - Operate Quest Finder -->
+	
+			<li MayRequire="DankPyon.Medieval.Overhaul" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DankPyon_OperateQuest"]/workType</xpath>
+				<value>
+					<workType>FSFScan</workType>
+				</value>
+			</li>
+			
+		<!-- Save Our Ship 2 - Scan Space -->
+	
+			<li MayRequire="kentington.saveourship2" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ScanSpace"]/workType</xpath>
+				<value>
+					<workType>FSFScan</workType>
+				</value>
+			</li>
+			
+		<!-- Core - Ground Penetrating Scanner -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "GroundPenetratingScan"]/workType</xpath>
+				<value>
+					<workType>FSFScan</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "GroundPenetratingScan"]/priorityInType</xpath>
+				<value>
+					<priorityInType>55</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Core - Long Range Mineral Scanner -->
+	
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "LongRangeScan"]/workType</xpath>
+				<value>
+					<workType>FSFScan</workType>
+				</value>
+			</li>
+			
+		<!-- Ancient Mining Industry - Mining Site Scanner -->
+			
+			<li MayRequire="Ludeon.RimWorld.Ideology,XMB.AncientMiningIndustry.MO" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "BreadMo_QuestScan"]/workType</xpath>
+				<value>
+					<workType>FSFScan</workType>
+				</value>
+			</li>
+			
+		<!-- Medieval Overhaul Toggleable Stuff - Scribe Table Long Range Mineral Scanner -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/WorkGiverDef[defName="LongRangeScanMO"]</xpath>
+				<match Class="PatchOperationReplace">
+					<xpath>/Defs/WorkGiverDef[defName = "LongRangeScanMO"]/workType</xpath>
+					<value>
+						<workType>FSFScan</workType>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Resource Drop Pod Redirection - Hack Drop Pods -->
+			
+			<li MayRequire="MrKociak.DropPodBaitScanner" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "PodHackScan"]/workType</xpath>
+				<value>
+					<workType>FSFScan</workType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

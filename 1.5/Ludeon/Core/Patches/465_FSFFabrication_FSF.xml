@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- FSFFabrication 465 (FSF Complex Jobs)
+ 
+		Default Priority Order
+
+			SYR Prosthetic Table - DoBillsProstheticsTable 75 (Moved to FSFFabrication)
+			Core - DoBillsFabricationBench 50 (Moved to FSFFabrication)
+
+	-->
+			
+		<!-- Biotech Mechanoids Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Smithing"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Smithing"] ]</xpath>
+					<value>
+						<li>FSFFabrication</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Smithing"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Smithing"] ]</xpath>
+					<value>
+						<li>FSFFabrication</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- The Dead Man's Switch - Do Bills at Artifuscle Chamber.  Note: This is the original workgiver and the remaining bench. -->
+
+			<li MayRequire="Aoba.DeadManSwitch.Core" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DMS_Operate"]/workType</xpath>
+				<value>
+					<workType>FSFFabrication</workType>
+				</value>
+			</li>
+			
+		<!-- SYR Prosthetic Table - Do Bills at Prosthetics Table -->
+			
+			<li MayRequire="syrchalis.prosthetictable" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsProstheticsTable"]/workType</xpath>
+				<value>
+					<workType>FSFFabrication</workType>
+				</value>
+			</li>
+			
+		<!-- Core - Do Bills at Fabrication Bench -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsFabricationBench"]/workType</xpath>
+				<value>
+					<workType>FSFFabrication</workType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

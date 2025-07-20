@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Bulk Stone Cutting -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/WorkGiverDef[defName = "RF_BSC_DoBillsBulkCutStone"]</xpath>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RF_BSC_DoBillsBulkCutStone"]/workType</xpath>
+				<value>
+					<workType>FSFStoneCut</workType>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RF_BSC_DoBillsBulkCutStoneElec"]/workType</xpath>
+				<value>
+					<workType>FSFStoneCut</workType>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	
+</Patch>

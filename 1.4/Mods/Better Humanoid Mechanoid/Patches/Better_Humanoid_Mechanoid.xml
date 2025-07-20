@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Better Humanoid Mechanoid -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Mech_CNMaid"]/race/mechEnabledWorkTypes</xpath>
+				<value>
+					<li>FSFButcher</li>
+					<li>FSFBrewing</li>
+					<li>FSFRearming</li>
+					<li>FSFRefueling</li>
+					<li>FSFLoading</li>
+					<li>FSFCremating</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Mech_CNNurse"]/race/mechEnabledWorkTypes</xpath>
+				<value>
+					<li>FSFNurse</li>
+					<li>FSFSurgeon</li>
+					<li>FSFRearming</li>
+					<li>FSFRefueling</li>
+					<li>FSFLoading</li>
+					<li>FSFCremating</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Mech_CNCentipede"]/race/mechEnabledWorkTypes</xpath>
+				<value>
+					<li>FSFRearming</li>
+					<li>FSFRefueling</li>
+					<li>FSFLoading</li>
+					<li>FSFCremating</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Mech_CNSwordsGirl"]/race/mechEnabledWorkTypes</xpath>
+				<value>
+					<li>FSFRearming</li>
+					<li>FSFRefueling</li>
+					<li>FSFLoading</li>
+					<li>FSFCremating</li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+	<!-- Patch For Optional Worktypes -->
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/WorkTypeDef[defName = "FSFSnow"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Mech_CNMaid"]/race/mechEnabledWorkTypes</xpath>
+				<value>
+					<li>FSFSnow</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Mech_CNNurse"]/race/mechEnabledWorkTypes</xpath>
+				<value>
+					<li>FSFSnow</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Mech_CNCentipede"]/race/mechEnabledWorkTypes</xpath>
+				<value>
+					<li>FSFSnow</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Mech_CNSwordsGirl"]/race/mechEnabledWorkTypes</xpath>
+				<value>
+					<li>FSFSnow</li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/WorkTypeDef[defName = "FSFMerge"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Mech_CNMaid"]/race/mechEnabledWorkTypes</xpath>
+				<value>
+					<li>FSFMerge</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Mech_CNNurse"]/race/mechEnabledWorkTypes</xpath>
+				<value>
+					<li>FSFMerge</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Mech_CNCentipede"]/race/mechEnabledWorkTypes</xpath>
+				<value>
+					<li>FSFMerge</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Mech_CNSwordsGirl"]/race/mechEnabledWorkTypes</xpath>
+				<value>
+					<li>FSFMerge</li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

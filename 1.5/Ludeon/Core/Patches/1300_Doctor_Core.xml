@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- Doctor 1300 (Core)
+ 
+		Default Priority Order
+
+			Core - DoctorTendEmergency 110
+			Core - DoctorTendToHumanlikes 100
+			Core - DoctorTendToSelfEmergency 95
+			Anomaly DLC - DoctorTendToEntities 95
+			Core - DoctorTendToSelf 90
+			Alpha Genes - AG_AdministerMetal 81 (Moved to FSFNurse)
+			Core - DoctorFeedHumanlikes 80 (Moved to FSFNurse)
+			Dubs Bad Hygiene - DBHAdministerFluids 79 (Moved to FSFNurse)
+			Harvest Organs Post Mortem - DoBillsMedicalHumanOperationOrgans 75 (Moved to FSFSurgeon)
+			Core - DoBillsMedicalHumanOperation 70 (Moved to FSFSurgeon)
+			Biotech DLC - FeedHemogen 72 (Moved to FSFNurse)
+			Core - DoctorRescue 60 (Moved to FSFNurse)
+			Dubs Bad Hygiene - washPatient 52 (Moved to FSFNurse)
+			Dubs Bad Hygiene - DocCleanBedpan 51 (Moved to FSFNurse)
+			Core - DoctorTendToAnimals 50
+			Core - DoctorFeedAnimals 40 (Moved to FSFNurse)
+			Core - DoBillsMedicalAnimalOperation 30 (Moved to FSFSurgeon)
+			Core - TakeToBedToOperate 20 (Moved to FSFSurgeon)
+			Core - VisitSickPawn 10 (Moved to FSFNurse)
+			Anomaly DLC - ExtractBioferrite 10
+
+	-->
+			
+		<!-- Core - Update Worktype Description -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "Doctor"]/description</xpath>
+				<value>
+					<description>Treat the sick. Doctors will care for colonists, prisoners and animals.</description>
+				</value>
+			</li>
+			
+		<!-- Core - Doctor Tend to Self Emergency -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoctorTendToSelfEmergency"]/priorityInType</xpath>
+				<value>
+					<priorityInType>500</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Core - Doctor Tend to Self -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoctorTendToSelf"]/priorityInType</xpath>
+				<value>
+					<priorityInType>495</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Core - Doctor Tend to Animals -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoctorTendToAnimals"]/priorityInType</xpath>
+				<value>
+					<priorityInType>99</priorityInType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

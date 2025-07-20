@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- FSFDrugs 500 (FSF Complex Jobs)
+ 
+		Default Priority Order
+
+			Medieval Overhaul - DankPyon_DoBillsWorkAlchemy 115 (Moved to FSFDrugs)
+			Core - DoBillsProduceDrugs 95 (Moved to FSFDrugs)
+			Anomaly DLC - DoBillsSerumCentrifuge 75 (Moved to FSFDrugs)
+			Vanilla Factions Expanded Medieval 2 - VFEM2_DoBillsAlchemyTable 20 (Moved to FSFDrugs)
+			Vanilla Factions Expanded Medieval 2 - VFEM2_DoBillsAlchemyTable_Electric 20 (Moved to FSFDrugs)
+
+	-->
+			
+		<!-- Biotech Mechanoids Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Crafting"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Crafting"] ]</xpath>
+					<value>
+						<li>FSFDrugs</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Crafting"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Crafting"] ]</xpath>
+					<value>
+						<li>FSFDrugs</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Core - Do Bills At Drug Bench -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsProduceDrugs"]/workType</xpath>
+				<value>
+					<workType>FSFDrugs</workType>
+				</value>
+			</li>
+			
+		<!-- Anomaly DLC - Do Bills at Serum Centrifuge -->
+			
+			<li MayRequire="Ludeon.RimWorld.Anomaly" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsSerumCentrifuge"]/workType</xpath>
+				<value>
+					<workType>FSFDrugs</workType>
+				</value>
+			</li>
+			
+		<!-- Medieval Overhaul - Do Bills at Alchemy Bench -->
+			
+			<li MayRequire="DankPyon.Medieval.Overhaul" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DankPyon_DoBillsWorkAlchemy"]/workType</xpath>
+				<value>
+					<workType>FSFDrugs</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="DankPyon.Medieval.Overhaul" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DankPyon_DoBillsWorkAlchemy"]/priorityInType</xpath>
+				<value>
+					<priorityInType>70</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Factions Expanded Medieval 2 - Do Bills at Alchemy Table -->
+			
+			<li MayRequire="OskarPotocki.VFE.Medieval2" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VFEM2_DoBillsAlchemyTable"]/workType</xpath>
+				<value>
+					<workType>FSFDrugs</workType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Factions Expanded Medieval 2 - Do Bills at Alchemy Table Electric -->
+			
+			<li MayRequire="OskarPotocki.VFE.Medieval2" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VFEM2_DoBillsAlchemyTable_Electric"]/workType</xpath>
+				<value>
+					<workType>FSFDrugs</workType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

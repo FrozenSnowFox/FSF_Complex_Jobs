@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- Hunting 950 (Core)
+ 
+		Default Priority Order
+
+			Core - HunterHunt 100
+			Odyssey DLC - Fish 50
+			Zombieland - DoubleTap -5 (Duplicated Task)
+
+	-->
+			
+		<!-- Zombieland - Double Tap -->
+			
+			<li MayRequire="brrainz.zombieland" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoubleTap"]/priorityInType</xpath>
+				<value>
+					<priorityInType>9999</priorityInType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>
