@@ -37,7 +37,7 @@
 			
 		<!-- Asimov Automation Patch -->
 			
-			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+			<li MayRequire="Neronix17.Asimov,UnlimitedHugs.AllowTool" Class="PatchOperationConditional">		
 				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Hauling"] ]</xpath>
 				<match Class="PatchOperationAdd">
 					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Hauling"] ]</xpath>
