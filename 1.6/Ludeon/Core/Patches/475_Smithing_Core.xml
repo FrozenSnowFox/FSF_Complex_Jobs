@@ -98,31 +98,33 @@
 				</value>
 			</li>
 			
-		<!-- The Dead Man's Switch - Create new Workgiver for Smithing -->
-
-			<li MayRequire="Aoba.DeadManSwitch.Core" Class="PatchOperationRemove">
-				<xpath>/Defs/WorkGiverDef[defName = "DMS_Operate"]/fixedBillGiverDefs/li[text()="DMS_TableMachinePrinter"]</xpath>
+		<!-- The Dead Man's Switch - Relabel Workgiver for Smithing -->
+			
+			<li MayRequire="Aoba.DeadManSwitch.Core" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DMS_DoBill"]/label</xpath>
+				<value>
+					<label>Operate artifuscle chamber</label>
+				</value>
 			</li>
 			
-			<li MayRequire="Aoba.DeadManSwitch.Core" Class="PatchOperationAdd">
-				<xpath>/Defs</xpath>
+			<li MayRequire="Aoba.DeadManSwitch.Core" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DMS_DoBill"]/workType</xpath>
 				<value>
-					<WorkGiverDef>
-						<defName>FSFDMS_TableMachinePrinter</defName>
-						<label>Operate machinery printer</label>
-						<giverClass>WorkGiver_DoBill</giverClass>
-						<workType>Smithing</workType>
-						<priorityInType>140</priorityInType>
-						<fixedBillGiverDefs>
-							<li>DMS_TableMachinePrinter</li>
-						</fixedBillGiverDefs>
-						<verb>Operate</verb>
-						<gerund>Operating at</gerund>
-						<requiredCapacities>
-							<li>Manipulation</li>
-						</requiredCapacities>
-						<prioritizeSustains>true</prioritizeSustains>
-					</WorkGiverDef>
+					<workType>Smithing</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="Aoba.DeadManSwitch.Core" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DMS_Operate"]/label</xpath>
+				<value>
+					<label>Operate machinery printer</label>
+				</value>
+			</li>
+			
+			<li MayRequire="Aoba.DeadManSwitch.Core" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DMS_Operate"]/workType</xpath>
+				<value>
+					<workType>Smithing</workType>
 				</value>
 			</li>
 			

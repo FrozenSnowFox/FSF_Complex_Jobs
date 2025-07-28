@@ -51,11 +51,37 @@
 					<WorkGiverDef>
 						<defName>FSFDMS_Furnace</defName>
 						<label>Operate sintering furnace</label>
-						<giverClass>WorkGiver_DoBill</giverClass>
+						<giverClass>Fortified.WorkGiver_DoAutonomousBill</giverClass>
 						<workType>FSFSmelt</workType>
 						<priorityInType>140</priorityInType>
 						<fixedBillGiverDefs>
 							<li>DMS_Furnace</li>
+						</fixedBillGiverDefs>
+						<verb>Operate</verb>
+						<gerund>Operating at</gerund>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+						<prioritizeSustains>true</prioritizeSustains>
+					</WorkGiverDef>
+				</value>
+			</li>
+			
+			<li MayRequire="Aoba.DeadManSwitch.Core" Class="PatchOperationRemove">
+				<xpath>/Defs/WorkGiverDef[defName = "DMS_DoBill"]/fixedBillGiverDefs/li[text()="DMS_LabFurnace"]</xpath>
+			</li>
+			
+			<li MayRequire="Aoba.DeadManSwitch.Core" Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					<WorkGiverDef>
+						<defName>FSFDMS_LabFurnace</defName>
+						<label>Operate lab furnace</label>
+						<giverClass>WorkGiver_DoBill</giverClass>
+						<workType>FSFSmelt</workType>
+						<priorityInType>139</priorityInType>
+						<fixedBillGiverDefs>
+							<li>DMS_LabFurnace</li>
 						</fixedBillGiverDefs>
 						<verb>Operate</verb>
 						<gerund>Operating at</gerund>

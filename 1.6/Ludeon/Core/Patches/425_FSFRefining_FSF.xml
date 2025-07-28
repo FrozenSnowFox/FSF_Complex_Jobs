@@ -60,11 +60,37 @@
 					<WorkGiverDef>
 						<defName>FSFDMS_ReactionChamber</defName>
 						<label>Operate pressure chamber</label>
-						<giverClass>WorkGiver_DoBill</giverClass>
+						<giverClass>Fortified.WorkGiver_DoAutonomousBill</giverClass>
 						<workType>FSFRefining</workType>
 						<priorityInType>140</priorityInType>
 						<fixedBillGiverDefs>
 							<li>DMS_ReactionChamber</li>
+						</fixedBillGiverDefs>
+						<verb>Operate</verb>
+						<gerund>Operating at</gerund>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+						<prioritizeSustains>true</prioritizeSustains>
+					</WorkGiverDef>
+				</value>
+			</li>
+			
+			<li MayRequire="Aoba.DeadManSwitch.Core" Class="PatchOperationRemove">
+				<xpath>/Defs/WorkGiverDef[defName = "DMS_DoBill"]/fixedBillGiverDefs/li[text()="DMS_LabReactor"]</xpath>
+			</li>
+			
+			<li MayRequire="Aoba.DeadManSwitch.Core" Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					<WorkGiverDef>
+						<defName>FSFDMS_LabReactor</defName>
+						<label>Operate lab reactor</label>
+						<giverClass>WorkGiver_DoBill</giverClass>
+						<workType>FSFRefining</workType>
+						<priorityInType>139</priorityInType>
+						<fixedBillGiverDefs>
+							<li>DMS_LabReactor</li>
 						</fixedBillGiverDefs>
 						<verb>Operate</verb>
 						<gerund>Operating at</gerund>
