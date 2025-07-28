@@ -26,6 +26,19 @@
 				</match>
 			</li>
 			
+			<li MayRequire="imranfish.xmlextensions" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Smithing"] ]</xpath>
+				<match Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+					<xpath>/Defs/ThingDef/race</xpath>
+					<compare>Both</compare>
+					<value>
+						<mechWorkTypePriorities>
+							<FSFMachining>3</FSFMachining>
+						</mechWorkTypePriorities>
+					</value>
+				</match>
+			</li>
+			
 		<!-- Asimov Automation Patch -->
 			
 			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
