@@ -53,7 +53,7 @@
 			<li MayRequire="imranfish.xmlextensions" Class="PatchOperationConditional">		
 				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Handling"] ]</xpath>
 				<match Class="XmlExtensions.PatchOperationSafeAddOrReplace">
-					<xpath>/Defs/ThingDef/race</xpath>
+					<xpath>/Defs/ThingDef/race [mechEnabledWorkTypes/li [text()="Handling"] ]</xpath>
 					<compare>Both</compare>
 					<value>
 						<mechWorkTypePriorities>
