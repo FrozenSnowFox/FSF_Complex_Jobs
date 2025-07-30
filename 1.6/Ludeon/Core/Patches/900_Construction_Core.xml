@@ -35,6 +35,7 @@
 			Layered Wall Destruction - RestoreWall 45 (Moved to FSFRepair)
 			Core - Repair 40 (Moved to FSFRepair)
 			Core - ConstructRemoveFloors 30
+			Core - ConstructRemoveFoundations 30 (Moved to FSFDeconstruct)
 			Core - ConstructSmoothFloors 20
 			Core - ConstructSmoothWalls 10
 

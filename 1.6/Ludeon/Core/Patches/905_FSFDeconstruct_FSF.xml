@@ -17,6 +17,7 @@
 			Core - Deconstruct 60 (Moved to FSFDeconstruct)
 			Anomaly DLC - FillIn 51 (Moved to FSFDeconstruct)
 			Core - ConstructRemoveFloors 30 (Moved to FSFDeconstruct)
+			Core - ConstructRemoveFoundations 30 (Moved to FSFDeconstruct)
 
 	-->
 			
@@ -122,6 +123,15 @@
 						
 			<li Class="PatchOperationReplace">
 				<xpath>/Defs/WorkGiverDef[defName = "ConstructRemoveFloors"]/workType</xpath>
+				<value>
+					<workType>FSFDeconstruct</workType>
+				</value>
+			</li>
+			
+		<!-- Core - Construct Remove Foundations -->
+						
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ConstructRemoveFoundations"]/workType</xpath>
 				<value>
 					<workType>FSFDeconstruct</workType>
 				</value>
