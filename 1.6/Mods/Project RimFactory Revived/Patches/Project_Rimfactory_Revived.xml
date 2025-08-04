@@ -272,26 +272,7 @@
 	
 	
 	<!-- Mini Fishing Station -->
-	<!--
-	<Operation Class="PatchOperationSequence">
-		<success>Normal</success>
-		<operations>			
-			
-			<li MayRequire="VanillaExpanded.VCEF" Class="PatchOperationAdd">
-				<xpath>/Defs/ThingDef[defName = "PRF_MiniHelperFishing"]/modExtensions/li[@Class = "ProjectRimFactory.Drones.DefModExtension_DroneStation"]/workTypes</xpath>
-				<value>
-					<li>FSFRearming</li>
-					<li>FSFTransport</li>
-					<li>FSFCremating</li>
-					<li>FSFHauling</li>
-				</value>
-			</li>
-			
-		</operations>
-	</Operation>
-	-->
 	
-	<!-- PRF 1.6 update -->
 	<Operation Class="PatchOperationFindMod">
 		<mods>
 			<li>Odyssey</li>
@@ -313,4 +294,5 @@
 			</operations>
 		</nomatch>
 	</Operation>
+	
 </Patch>
