@@ -58,6 +58,16 @@
 				</match>
 			</li>
 			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Construction"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Construction"] ]</xpath>
+					<value>
+						<li>FSFRepair</li>
+					</value>
+				</match>
+			</li>
+			
 		<!-- Asimov Automation Patch -->
 			
 			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		

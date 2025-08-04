@@ -11,7 +11,7 @@
 			<success>Normal</success>
 			<operations>
 				
-			<!-- Clear Snow Worktype -->
+			<!-- Fishing Worktype -->
 			
 			<li Class="PatchOperationAdd">
 				<xpath>/Defs</xpath>
@@ -63,6 +63,28 @@
 						<mechWorkTypePriorities>
 							<FSFFishing>3</FSFFishing>
 						</mechWorkTypePriorities>
+					</value>
+				</match>
+			</li>
+				
+		<!-- ABF Artificial Beings Framework Patch -->
+			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Hunting"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Hunting"] ]</xpath>
+					<value>
+						<li>FSFFishing</li>
+					</value>
+				</match>
+			</li>
+			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Hunting"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Hunting"] ]</xpath>
+					<value>
+						<li>FSFFishing</li>
 					</value>
 				</match>
 			</li>
