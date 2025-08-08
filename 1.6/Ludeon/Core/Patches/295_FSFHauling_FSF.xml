@@ -99,7 +99,7 @@
 			
 		<!-- Pick Up And Haul - Haul To Inventory -->
 			
-			<li MayRequire="Mehni.PickUpAndHaul" Class="PatchOperationReplace">
+			<li MayRequireAnyOf="Mehni.PickUpAndHaul,Teemo.PickUpAndHaulForked" Class="PatchOperationReplace">
 				<xpath>/Defs/WorkGiverDef[defName = "HaulToInventory"]/workType</xpath>
 				<value>
 					<workType>FSFHauling</workType>
