@@ -14,6 +14,7 @@
 			Core - Strip 100 (Moved to FSFCremating)
 			Bury On The Spot - Bury 95 (Moved to FSFCremating)
 			Core - DoBillsCremate 40 (Moved to FSFCremating)
+			Dubs Bad Hygiene - DoBillsBurnPit 40 (Moved to FSFCremating)
 			Core - DoBillsHaulCampfire 30 (Moved to FSFCremating)
 			Core - ExtractSkull 20 (Moved to Cremate)
 			Altered Carbon 2 - AC_ExtractStack 20 (Moved to FSFCremating)
@@ -189,6 +190,15 @@
 
 			<li Class="PatchOperationReplace">
 				<xpath>/Defs/WorkGiverDef[defName = "DoBillsCremate"]/workType</xpath>
+				<value>
+					<workType>FSFCremating</workType>
+				</value>
+			</li>
+			
+		<!-- Dubs Bad Hygiene - Bo Bills Burn Pit -->
+	
+			<li MayRequire="Dubwise.DubsBadHygiene" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsBurnPit"]/workType</xpath>
 				<value>
 					<workType>FSFCremating</workType>
 				</value>
