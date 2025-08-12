@@ -23,18 +23,17 @@
 		<pawnLabel>Fisher</pawnLabel>
 		<gerundLabel>fishing</gerundLabel>  
 		<description>Fish in designated fishing zones.</description>
-		<verb>Hunt</verb>
+		<verb>Fish</verb>
 		<naturalPriority>949</naturalPriority>
 		<disabledForSlaves>true</disabledForSlaves>
 		<relevantSkills>
-			<li>Shooting</li>
 			<li>Animals</li>
 		</relevantSkills>
 		<workTags>
     		<li>Violent</li>
 			<li>Hunting</li>
 			<li>Commoner</li>
-			<li>Shooting</li>
+			<li>Animals</li>
 			<li>AllWork</li>
 		</workTags>
 	</WorkTypeDef>
