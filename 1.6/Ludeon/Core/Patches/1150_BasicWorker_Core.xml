@@ -27,7 +27,7 @@
 			Alpha Genes - AG_ForceEatMetal 40
 			Ideology DLC - ChangeTreeMode 30
 			Ideology DLC - ExtractSkull 20 (Moved to Cremate)
-			Anima Obelisk - AnimaObelisk_WorkGiverDef_FillPawn 1
+			Anima Obelisk - FillPawn 1
 
 	-->
 		
@@ -43,7 +43,7 @@
 		<!-- Anima Obelisk - Fill Psyfocus -->
 			
 			<li MayRequire="DimonSever000.AnimaObelisk.Specific" Class="PatchOperationReplace">
-				<xpath>/Defs/WorkGiverDef[defName = "AnimaObelisk_WorkGiverDef_FillPawn"]/priorityInType</xpath>
+				<xpath>/Defs/WorkGiverDef[defName = "FillPawn"]/priorityInType</xpath>
 				<value>
 					<priorityInType>499</priorityInType>
 				</value>
