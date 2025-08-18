@@ -294,14 +294,14 @@
 			
 		<!-- Vanilla Expanded Framework - Pipe System Pick Up Processor -->
 			
-			<li MayRequire="syrchalis.processor.framework" Class="PatchOperationReplace">
+			<li MayRequire="OskarPotocki.VanillaFactionsExpanded.Core" Class="PatchOperationReplace">
 				<xpath>/Defs/WorkGiverDef[defName = "PS_PickUpProcessor"]/workType</xpath>
 				<value>
 					<workType>FSFProduction</workType>
 				</value>
 			</li>
 			
-			<li MayRequire="syrchalis.processor.framework" Class="PatchOperationReplace">
+			<li MayRequire="OskarPotocki.VanillaFactionsExpanded.Core" Class="PatchOperationReplace">
 				<xpath>/Defs/WorkGiverDef[defName = "PS_BringToProcessor"]/workType</xpath>
 				<value>
 					<workType>FSFProduction</workType>

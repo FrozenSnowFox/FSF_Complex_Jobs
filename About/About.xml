@@ -116,6 +116,7 @@
 		<li>wvc.sergkart.races.biotech</li>
 		<li>XMB.AncientMiningIndustry.MO</li>
 		<li>zal.advanceddeepdrill</li>
+		<li>zal.ceramics</li>
 	</loadAfter>
 	<incompatibleWith>
 		<li>CodeOptimist.JobSplitter</li>
