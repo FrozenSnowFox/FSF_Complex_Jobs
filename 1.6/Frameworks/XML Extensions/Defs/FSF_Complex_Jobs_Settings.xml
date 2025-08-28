@@ -229,26 +229,6 @@
 				<spacing>12</spacing>
 			</li>
 			
-			<!-- Fishing Worktype -->
-			
-			<li MayRequire="Ludeon.RimWorld.Odyssey" Class="XmlExtensions.Setting.Checkbox">
-				<label>Fishing Worktype</label>
-				<key>FSFFishingWorktype</key>
-				<defaultValue>false</defaultValue>
-				<tKey>FSFComplexJobsFishingWorktypeTitle</tKey>
-			</li>
-			<li MayRequire="Ludeon.RimWorld.Odyssey" Class="XmlExtensions.Setting.SetColor">
-				<color>(163,177,188)</color>
-			</li>
-			<li MayRequire="Ludeon.RimWorld.Odyssey" Class="XmlExtensions.Setting.Text">
-				<text>Enables the Fishing Worktype which moves the fishing task from Hunting to its own Worktype.</text>
-				<tKey>FSFComplexJobsFishingWorktypeDesc</tKey>
-			</li>
-			<li MayRequire="Ludeon.RimWorld.Odyssey" Class="XmlExtensions.Setting.SetColor"/>
-			<li MayRequire="Ludeon.RimWorld.Odyssey" Class="XmlExtensions.Setting.GapLine">
-				<spacing>12</spacing>
-			</li>
-			
 			<!-- Mechanoids Worktype -->
 			
 			<li MayRequire="Ludeon.RimWorld.Biotech" Class="XmlExtensions.Setting.Checkbox">
