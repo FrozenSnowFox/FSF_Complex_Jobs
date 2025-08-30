@@ -16,7 +16,7 @@
 	
 		<!-- Odyssey DLC - Update Worktype Priority -->
 			
-			<li Class="PatchOperationReplace">
+			<li MayRequire="Ludeon.RimWorld.Odyssey" Class="PatchOperationReplace">
 				<xpath>/Defs/WorkTypeDef[defName = "Fishing"]/naturalPriority</xpath>
 				<value>
 					<naturalPriority>949</naturalPriority>
