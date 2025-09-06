@@ -14,6 +14,7 @@
 				<xpath>/Defs/ThingDef[defName = "CaretakerDroneStation"]/modExtensions/li[@Class = "ProjectRimFactory.Drones.DefModExtension_DroneStation"]/workTypes</xpath>
 				<value>
 					<li>FSFRearming</li>
+					<li>FSFProduction</li>
 					<li>FSFTransport</li>
 					<li>FSFCremating</li>
 					<li>FSFHauling</li>
