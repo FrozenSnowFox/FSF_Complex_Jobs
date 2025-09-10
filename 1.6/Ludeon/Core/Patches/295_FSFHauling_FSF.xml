@@ -10,6 +10,8 @@
  
 		Default Priority Order
 
+			MultiFloors - MF_HaulDesignatedToDestMap 152 (Moved to FSFHauling)
+			MultiFloors - MF_DeliverResourcesAcrossLevel 151 (Duplicated Task)
 			Core - HaulToPortal 105 (Moved to FSFHauling)
 			Core - HaulCorpses 90 (Moved to FSFHauling)
 			Pick Up And Haul - HaulToInventory 18 (Moved to FSFHauling)
@@ -77,6 +79,37 @@
 						<li>FSFHauling</li>
 					</value>
 				</match>
+			</li>
+			
+		<!-- MultiFloors - Haul Designated Thing Across Level -->
+			
+			<li MayRequire="telardo.MultiFloorsDev" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "MF_HaulDesignatedToDestMap"]/workType</xpath>
+				<value>
+					<workType>FSFHauling</workType>
+				</value>
+			</li>
+			
+		<!-- MultiFloors - Deliver Resources Across Level (Duplicated Task) -->
+			
+			<li MayRequire="telardo.MultiFloorsDev" Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>					
+					<WorkGiverDef>
+						<defName>FSFMF_DeliverResourcesAcrossLevel</defName>
+						<label>deliver resources across level</label>
+						<giverClass>MultiFloors.Jobs.WorkGiver_ConstructDeliverResourcesAcrossLevel</giverClass>
+						<workType>Hauling</workType>
+						<verb>deliver</verb>
+						<gerund>delivering</gerund>
+						<!-- later than MF_HaulDesignatedToDestMap -->
+						<priorityInType>151</priorityInType>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+						<directOrderable>false</directOrderable>
+					</WorkGiverDef>
+				</value>
 			</li>
 			
 		<!-- Core - Haul To Portal -->

@@ -11,6 +11,7 @@
 		Default Priority Order
 
 			Vanilla Quests Expanded The Generator - VQE_MaintainGenetron 300 (Moved to FSFRepair)
+			MultiFloors - MF_FixBrokenDownBuildingAcrossLevel 121 (Moved to FSFRepair)
 			Core - FixBrokenDownBuilding 120 (Moved to FSFRepair)
 			Vanilla Quests Expanded The Generator - VQE_FixCriticallyBrokenDownBuilding 120 (Moved to FSFRepair)
 			Core - Uninstall 110 (Moved to FSFDeconstruct)

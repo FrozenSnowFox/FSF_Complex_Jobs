@@ -16,6 +16,7 @@
 			Dubs Bad Hygiene - DBHAdministerFluids 79 (Moved to FSFNurse)
 			Biotech DLC - FeedHemogen 72 (Moved to FSFNurse)
 			Core - DoctorRescue 60 (Moved to FSFNurse)
+			MultiFloors - MF_RescueDownedAcrossLevel 59 (Moved to FSFNurse)
 			Dubs Bad Hygiene - washChild 53 (Duplicated Task)
 			Dubs Bad Hygiene - washPatient 52 (Moved to FSFNurse)
 			Dubs Bad Hygiene - DocCleanBedpan 51 (Moved to FSFNurse)
@@ -96,6 +97,22 @@
 				<xpath>/Defs/WorkGiverDef[defName = "DoctorRescue"]/priorityInType</xpath>
 				<value>
 					<priorityInType>500</priorityInType>
+				</value>
+			</li>
+			
+		<!-- MultiFloors - Rescue Downed Pawns Across Level -->
+			
+			<li MayRequire="telardo.MultiFloorsDev" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "MF_RescueDownedAcrossLevel"]/workType</xpath>
+				<value>
+					<workType>FSFNurse</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="telardo.MultiFloorsDev" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "MF_RescueDownedAcrossLevel"]/priorityInType</xpath>
+				<value>
+					<priorityInType>499</priorityInType>
 				</value>
 			</li>
 			

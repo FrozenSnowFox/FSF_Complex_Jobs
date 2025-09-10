@@ -10,10 +10,20 @@
  
 		Default Priority Order
 
+			MultiFloors - MF_DeliverResourcesAcrossLevel 151 (Moved to FSFDeliver)
 			Core - DeliverResourcesToFrames 10 (Moved to FSFDeliver)
 			Core - DeliverResourcesToBlueprints 9 (Moved to FSFDeliver)
 
 	-->
+			
+		<!-- MultiFloors - Deliver Resources Across Level -->
+			
+			<li MayRequire="telardo.MultiFloorsDev" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "MF_DeliverResourcesAcrossLevel"]/workType</xpath>
+				<value>
+					<workType>FSFDeliver</workType>
+				</value>
+			</li>
 			
 		<!-- Core - Deliver Resources To Frames -->
 			
