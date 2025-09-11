@@ -43,7 +43,7 @@
 				
 			<!-- MultiFloors Duplicated Task -->
 				
-			<li MayRequire="telardo.MultiFloorsDev" Class="PatchOperationAdd">
+			<li MayRequireAnyOf="telardo.MultiFloors,telardo.MultiFloorsDev" Class="PatchOperationAdd">
 				<xpath>/Defs</xpath>
 				<value>
 					<WorkGiverDef>

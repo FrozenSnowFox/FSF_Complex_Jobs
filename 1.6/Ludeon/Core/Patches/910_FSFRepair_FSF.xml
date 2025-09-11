@@ -101,7 +101,7 @@
 			
 		<!-- MultiFloors - Fix Broken Down Building Across Level -->
 			
-			<li MayRequire="telardo.MultiFloorsDev" Class="PatchOperationReplace">
+			<li MayRequireAnyOf="telardo.MultiFloors,telardo.MultiFloorsDev" Class="PatchOperationReplace">
 				<xpath>/Defs/WorkGiverDef[defName = "MF_FixBrokenDownBuildingAcrossLevel"]/workType</xpath>
 				<value>
 					<workType>FSFRepair</workType>

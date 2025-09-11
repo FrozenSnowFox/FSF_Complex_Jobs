@@ -102,14 +102,14 @@
 			
 		<!-- MultiFloors - Rescue Downed Pawns Across Level -->
 			
-			<li MayRequire="telardo.MultiFloorsDev" Class="PatchOperationReplace">
+			<li MayRequireAnyOf="telardo.MultiFloors,telardo.MultiFloorsDev" Class="PatchOperationReplace">
 				<xpath>/Defs/WorkGiverDef[defName = "MF_RescueDownedAcrossLevel"]/workType</xpath>
 				<value>
 					<workType>FSFNurse</workType>
 				</value>
 			</li>
 			
-			<li MayRequire="telardo.MultiFloorsDev" Class="PatchOperationReplace">
+			<li MayRequireAnyOf="telardo.MultiFloors,telardo.MultiFloorsDev" Class="PatchOperationReplace">
 				<xpath>/Defs/WorkGiverDef[defName = "MF_RescueDownedAcrossLevel"]/priorityInType</xpath>
 				<value>
 					<priorityInType>499</priorityInType>

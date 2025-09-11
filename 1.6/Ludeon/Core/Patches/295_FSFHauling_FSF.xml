@@ -83,7 +83,7 @@
 			
 		<!-- MultiFloors - Haul Designated Thing Across Level -->
 			
-			<li MayRequire="telardo.MultiFloorsDev" Class="PatchOperationReplace">
+			<li MayRequireAnyOf="telardo.MultiFloors,telardo.MultiFloorsDev" Class="PatchOperationReplace">
 				<xpath>/Defs/WorkGiverDef[defName = "MF_HaulDesignatedToDestMap"]/workType</xpath>
 				<value>
 					<workType>FSFHauling</workType>
@@ -92,7 +92,7 @@
 			
 		<!-- MultiFloors - Deliver Resources Across Level (Duplicated Task) -->
 			
-			<li MayRequire="telardo.MultiFloorsDev" Class="PatchOperationAdd">
+			<li MayRequireAnyOf="telardo.MultiFloors,telardo.MultiFloorsDev" Class="PatchOperationAdd">
 				<xpath>/Defs</xpath>
 				<value>					
 					<WorkGiverDef>
