@@ -14,7 +14,10 @@
 			MultiFloors - MF_DeliverResourcesAcrossLevel 151 (Duplicated Task)
 			Core - HaulToPortal 105 (Moved to FSFHauling)
 			Core - HaulCorpses 90 (Moved to FSFHauling)
+			Please Haul Perishables - HaulPerishables 35 (Moved to FSFHauling)
+			Please Haul Perishables - HaulFoods 19 (Moved to FSFHauling)
 			Pick Up And Haul - HaulToInventory 18 (Moved to FSFHauling)
+			Please Haul Perishables - HaulBigStacks 17 (Moved to FSFHauling)
 			Core - HaulGeneral 15 (Moved to FSFHauling)
 			Core - DeliverResourcesToFrames 10 (Duplicated Task)
 			Core - DeliverResourcesToBlueprints 9 (Duplicated Task)
@@ -130,10 +133,37 @@
 				</value>
 			</li>
 			
+		<!-- Please Haul Perishables - Haul Perishables -->
+			
+			<li MayRequireAnyOf="Mlie.PleaseHaulPerishables" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "HaulPerishables"]/workType</xpath>
+				<value>
+					<workType>FSFHauling</workType>
+				</value>
+			</li>
+			
+		<!-- Please Haul Perishables - Haul Perishables -->
+			
+			<li MayRequireAnyOf="Mlie.PleaseHaulPerishables" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "HaulFoods"]/workType</xpath>
+				<value>
+					<workType>FSFHauling</workType>
+				</value>
+			</li>
+			
 		<!-- Pick Up And Haul - Haul To Inventory -->
 			
 			<li MayRequireAnyOf="Mehni.PickUpAndHaul,Teemo.PickUpAndHaulForked" Class="PatchOperationReplace">
 				<xpath>/Defs/WorkGiverDef[defName = "HaulToInventory"]/workType</xpath>
+				<value>
+					<workType>FSFHauling</workType>
+				</value>
+			</li>
+			
+		<!-- Please Haul Perishables - Haul Big Stacks -->
+			
+			<li MayRequireAnyOf="Mlie.PleaseHaulPerishables" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "HaulBigStacks"]/workType</xpath>
 				<value>
 					<workType>FSFHauling</workType>
 				</value>
