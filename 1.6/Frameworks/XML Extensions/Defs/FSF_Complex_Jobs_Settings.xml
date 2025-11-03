@@ -229,6 +229,26 @@
 				<spacing>12</spacing>
 			</li>
 			
+			<!-- Hack Worktype -->
+			
+			<li Class="XmlExtensions.Setting.Checkbox">
+				<label>Hack Worktype</label>
+				<key>FSFHackWorktype</key>
+				<defaultValue>false</defaultValue>
+				<tKey>FSFComplexJobsHackWorktypeTitle</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor">
+				<color>(163,177,188)</color>
+			</li>
+			<li Class="XmlExtensions.Setting.Text">
+				<text>Enables the Hack Worktype which focuses on hacking items in the world.</text>
+				<tKey>FSFComplexJobsHackWorktypeDesc</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor"/>
+			<li Class="XmlExtensions.Setting.GapLine">
+				<spacing>12</spacing>
+			</li>
+			
 			<!-- Mechanoids Worktype -->
 			
 			<li MayRequire="Ludeon.RimWorld.Biotech" Class="XmlExtensions.Setting.Checkbox">
