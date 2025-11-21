@@ -19,6 +19,7 @@
 			Core - DoBillsMakeWeapons 115
 			Medieval Overhaul - DankPyon_DoBillsMakeJewelry 115
 			Medieval Overhaul - DoBillMakesMending 115
+			Vanilla Gravship Expanded - VGE_DoBillsMakeWeapons 115
 			[SYR] Prosthetic Table DoBillsProstheticsTable 100 (Moved to FSFFabrication)
 			Combat Extended - ModifyWeapons 80
 			Vanilla Vehicles Expanded - VVE_DoBillsGarageBench 80
@@ -27,8 +28,10 @@
 			Anomaly DLC - DoBillsBioferriteShaper 75
 			Project RimFactory Revived - DoBillsRoboticMachiningTable 75
 			SYR Prosthetic Table - DoBillsProstheticsTable 75 (Moved to FSFFabrication)
+			Vanilla Gravship Expanded - VGE_DoBillsMachiningTable 75 (Moved to FSFMachining)
 			Combat Extended - DoBillsAmmoBench 60
 			Core - DoBillsFabricationBench 50 (Moved to FSFFabrication)
+			Vanilla Gravship Expanded - VGE_DoBillsFabricationBench 50 (Moved to FSFFabrication)
 			Rimsential Homebound: Continued - PS_DoBillsDigitalBench 50
 			Vanilla Factions Expanded Ancients - VFEA_DoBillsAncientWorkshop 50
 			Vanilla Factions Expanded Ancients - VFEA_DoBillsMending 50 (Moved to Crafting)

@@ -12,6 +12,7 @@
 
 			Medieval Overhaul - DankPyon_DoBillsWorkAlchemy 115 (Moved to FSFDrugs)
 			Core - DoBillsProduceDrugs 95 (Moved to FSFDrugs)
+			Vanilla Gravship Expanded - VGE_DoBillsProduceDrugs 95 (Moved to FSFDrugs)
 			Anomaly DLC - DoBillsSerumCentrifuge 75 (Moved to FSFDrugs)
 			Vanilla Factions Expanded Medieval 2 - VFEM2_DoBillsAlchemyTable 20 (Moved to FSFDrugs)
 			Vanilla Factions Expanded Medieval 2 - VFEM2_DoBillsAlchemyTable_Electric 20 (Moved to FSFDrugs)
@@ -81,6 +82,15 @@
 
 			<li Class="PatchOperationReplace">
 				<xpath>/Defs/WorkGiverDef[defName = "DoBillsProduceDrugs"]/workType</xpath>
+				<value>
+					<workType>FSFDrugs</workType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Gravship Expanded - Do Bills At Mini Drug Bench -->
+
+			<li MayRequire="vanillaexpanded.gravship" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VGE_DoBillsProduceDrugs"]/workType</xpath>
 				<value>
 					<workType>FSFDrugs</workType>
 				</value>

@@ -12,6 +12,7 @@
 
 			SYR Prosthetic Table - DoBillsProstheticsTable 75 (Moved to FSFFabrication)
 			Core - DoBillsFabricationBench 50 (Moved to FSFFabrication)
+			Vanilla Gravship Expanded - VGE_DoBillsFabricationBench 50 (Moved to FSFFabrication)
 
 	-->
 			
@@ -96,6 +97,15 @@
 
 			<li Class="PatchOperationReplace">
 				<xpath>/Defs/WorkGiverDef[defName = "DoBillsFabricationBench"]/workType</xpath>
+				<value>
+					<workType>FSFFabrication</workType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Gravship Expanded - Do Bills At Mini Fabrication Bench -->
+
+			<li MayRequire="vanillaexpanded.gravship" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VGE_DoBillsFabricationBench"]/workType</xpath>
 				<value>
 					<workType>FSFFabrication</workType>
 				</value>

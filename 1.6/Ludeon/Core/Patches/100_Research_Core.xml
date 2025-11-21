@@ -14,6 +14,7 @@
 			Research Reinvented - RR_Analyse 152
 			Research Reinvented - RR_AnalyseInPlace 151
 			Research Reinvented - RR_AnalyseTerrain 150
+			Vanilla Gravship Expanded - VGE_CollectGravdata 150
 			Core - Hack 130
 			Biotech DLC - CreateXenogerm 120
 			Dubs Rimatomics - RimatomicsSuperviseResearch 120
@@ -39,6 +40,15 @@
 			Resource Drop Pod Redirection - PodHackScan 40 (Moved to FSFScan)
  
 	-->
+	
+		<!-- Vanilla Gravship Expanded - Collect Gravdata -->
+			
+			<li MayRequire="vanillaexpanded.gravship" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VGE_CollectGravdata"]/priorityInType</xpath>
+				<value>
+					<priorityInType>1005</priorityInType>
+				</value>
+			</li>
 			
 		<!-- Core - Hack Buildings -->
 			

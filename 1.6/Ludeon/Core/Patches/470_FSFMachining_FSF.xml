@@ -11,6 +11,7 @@
 		Default Priority Order
 
 			Core - DoBillsMachiningTable 75 (Moved to FSFMachining)
+			Vanilla Gravship Expanded - VGE_DoBillsMachiningTable 75 (Moved to FSFMachining)
 
 	-->
 			
@@ -77,6 +78,15 @@
 
 			<li Class="PatchOperationReplace">
 				<xpath>/Defs/WorkGiverDef[defName = "DoBillsMachiningTable"]/workType</xpath>
+				<value>
+					<workType>FSFMachining</workType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Gravship Expanded - Do Bills At Mini Machining Table -->
+
+			<li MayRequire="vanillaexpanded.gravship" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VGE_DoBillsMachiningTable"]/workType</xpath>
 				<value>
 					<workType>FSFMachining</workType>
 				</value>

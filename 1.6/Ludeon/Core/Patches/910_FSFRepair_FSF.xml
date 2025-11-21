@@ -10,6 +10,7 @@
  
 		Default Priority Order
 
+			Vanilla Gravship Expanded - VGE_MaintainGrav 300 (Moved to FSFRepair)
 			Vanilla Quests Expanded The Generator - VQE_MaintainGenetron 300 (Moved to FSFRepair)
 			Dubs Rimkit - FixBrokenDownBuildingWithKit 130 (Moved to FSFRepair)
 			MultiFloors - MF_FixBrokenDownBuildingAcrossLevel 121 (Moved to FSFRepair)
@@ -79,6 +80,15 @@
 						<li>FSFRepair</li>
 					</value>
 				</match>
+			</li>
+			
+		<!-- Vanilla Gravship Expanded - Maintain Gravship Structure -->
+
+			<li MayRequire="vanillaexpanded.gravship" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VGE_MaintainGrav"]/workType</xpath>
+				<value>
+					<workType>FSFRepair</workType>
+				</value>
 			</li>
 			
 		<!-- Vanilla Quests Expanded The Generator - Maintain Arc -->

@@ -12,6 +12,7 @@
 
 			Fortification Industrial Citadel - FT_OperateAutoChem 145
 			Core - DoBillsRefinery 97 (Moved to FSFRefining)
+			Vanilla Gravship Expanded - VGE_DoBillsRefinery 97 (Moved to FSFRefining)
 
 	-->
 			
@@ -141,6 +142,15 @@
 
 			<li Class="PatchOperationReplace">
 				<xpath>/Defs/WorkGiverDef[defName = "DoBillsRefinery"]/workType</xpath>
+				<value>
+					<workType>FSFRefining</workType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Gravship Expanded - Do Bills At Mini Refinery -->
+
+			<li MayRequire="vanillaexpanded.gravship" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VGE_DoBillsRefinery"]/workType</xpath>
 				<value>
 					<workType>FSFRefining</workType>
 				</value>

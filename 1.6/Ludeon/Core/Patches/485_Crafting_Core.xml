@@ -24,7 +24,9 @@
 			Vanilla Races Expanded Androids - VREA_DoBillsUseAndroidPartWorkbench 100 (Moved to FSFMechanoids if Enabled)
 			Vanilla Races Expanded Androids - VREA_CreateAndroid 100 (Moved to FSFMechanoids if Enabled)
 			Core - DoBillsRefinery 97 (Moved to FSFRefining)
+			Vanilla Gravship Expanded - VGE_DoBillsRefinery 97 (Moved to FSFRefining)
 			Core - DoBillsProduceDrugs 95 (Moved to FSFDrugs)
+			Vanilla Gravship Expanded - VGE_DoBillsProduceDrugs 95 (Moved to FSFDrugs)
 			Core - DoBillsStonecut 90 (Moved to FSFStoneCut)
 			Medieval Overhaul - DankPyon_DoBillsMining 90 (Moved to FSFStoneCut) (Note: Task is misnamed this one is Stonecutting Spot)
 			Save Our Ship 2 - DoBillsRecyclotron 81
