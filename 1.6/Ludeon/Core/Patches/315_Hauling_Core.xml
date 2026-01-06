@@ -64,6 +64,8 @@
 			Vehicle Framework - RefuelVehicle 90 (Moved to FSFTransport)
 			Vanilla Races Expanded Androids - VREA_CarryToSubcorePolyanalyzer 90
 			Vanilla Races Expanded Androids - VREA_CarryToAndroidBehavioristStation 90
+			Vanilla Quests Expanded Ancients - VQEA_CarryToArchogenInjector 90
+			Vanilla Quests Expanded Ancients - VQEA_CarryToAncientWonderdoc 90
 			Vanilla Expanded Framework - VEF_DestroyItems 85
 			Vanilla Animals Expanded Caves - VAE_DestroyCocoons 85
 			Food Pot Perpetual stew - CM_DeliverFoodToPot 80
@@ -272,6 +274,15 @@
 		<!-- Ideology DLC - Haul To Biosculpter Pod -->
 			
 			<li MayRequire="Ludeon.RimWorld.Ideology" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "HaulToBiosculpterPod"]/priorityInType</xpath>
+				<value>
+					<priorityInType>460</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Quests Expanded Ancients - Carry To Ancient Wonderdoc -->
+			
+			<li MayRequire="vanillaquestsexpanded.ancients" Class="PatchOperationReplace">
 				<xpath>/Defs/WorkGiverDef[defName = "HaulToBiosculpterPod"]/priorityInType</xpath>
 				<value>
 					<priorityInType>460</priorityInType>
