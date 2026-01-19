@@ -13,6 +13,7 @@
 			Vanilla Gravship Expanded - VGE_MaintainGrav 300 (Moved to FSFRepair)
 			Vanilla Quests Expanded The Generator - VQE_MaintainGenetron 300 (Moved to FSFRepair)
 			Dubs Rimkit - FixBrokenDownBuildingWithKit 130 (Moved to FSFRepair)
+			Mashed's Ashlands - Mashed_Ashlands_Restore 130 (Moved to FSFRepair)
 			MultiFloors - MF_FixBrokenDownBuildingAcrossLevel 121 (Moved to FSFRepair)
 			Core - FixBrokenDownBuilding 120 (Moved to FSFRepair)
 			Vanilla Quests Expanded The Generator - VQE_FixCriticallyBrokenDownBuilding 120 (Moved to FSFRepair)
@@ -104,6 +105,15 @@
 			
 			<li MayRequire="Dubwise.DubsRimkit" Class="PatchOperationReplace">
 				<xpath>/Defs/WorkGiverDef[defName = "FixBrokenDownBuildingWithKit"]/workType</xpath>
+				<value>
+					<workType>FSFRepair</workType>
+				</value>
+			</li>
+			
+		<!-- Mashed's Ashlands - Restore Structures -->
+			
+			<li MayRequire="SirMashedPotato.Ashlands" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "Mashed_Ashlands_Restore"]/workType</xpath>
 				<value>
 					<workType>FSFRepair</workType>
 				</value>

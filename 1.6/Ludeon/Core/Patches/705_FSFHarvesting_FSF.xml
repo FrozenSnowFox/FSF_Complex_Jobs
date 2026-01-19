@@ -10,6 +10,7 @@
  
 		Default Priority Order
 
+			Mashed's Ashlands - Mashed_Ashlands_GrowerHarvestAsh 101 (Moved to FSFHarvesting)
 			Core - GrowerHarvest 100 (Moved to FSFHarvesting)
 			Vanilla Plants Expanded More Plants - VCE_HarvestAquatic 100 (Moved to FSFHarvesting)
 			Vanilla Plants Expanded More Plants - VCE_HarvestSandy 100 (Moved to FSFHarvesting)
@@ -75,6 +76,15 @@
 						<li>FSFHarvesting</li>
 					</value>
 				</match>
+			</li>
+			
+		<!-- Mashed's Ashlands - Harvest Ash Crops -->
+
+			<li MayRequire="SirMashedPotato.Ashlands" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "Mashed_Ashlands_GrowerHarvestAsh"]/workType</xpath>
+				<value>
+					<workType>FSFHarvesting</workType>
+				</value>
 			</li>
 	
 		<!-- Core - Harvest Plants -->

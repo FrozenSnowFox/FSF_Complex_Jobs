@@ -10,6 +10,7 @@
  
 		Default Priority Order
 
+			Mashed's Ashlands - Mashed_Ashlands_GrowerHarvestAsh 101 (Moved to FSFHarvesting)
 			Core - GrowerHarvest 100 (Moved to FSFHarvesting)
 			Vanilla Plants Expanded More Plants - VCE_HarvestAquatic 100 (Moved to FSFHarvesting)
 			Vanilla Plants Expanded More Plants - VCE_HarvestSandy 100 (Moved to FSFHarvesting)
@@ -20,6 +21,7 @@
 			Vanilla Plants Expanded VPE_TillSoilWorkBuild 70
 			Core - Replant 60
 			Vanilla Plants Expanded VPE_TillSoilWorkDeliverFr 60
+			Mashed's Ashlands - Mashed_Ashlands_GrowerSowAsh 51
 			Core - GrowerSow 50
 			Vanilla Plants Expanded More Plants - VCE_SowAquatic 50
 			Vanilla Plants Expanded More Plants - VCE_SowSandy 50
