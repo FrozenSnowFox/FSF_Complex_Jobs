@@ -283,7 +283,7 @@
 		<!-- Vanilla Quests Expanded Ancients - Carry To Ancient Wonderdoc -->
 			
 			<li MayRequire="vanillaquestsexpanded.ancients" Class="PatchOperationReplace">
-				<xpath>/Defs/WorkGiverDef[defName = "HaulToBiosculpterPod"]/priorityInType</xpath>
+				<xpath>/Defs/WorkGiverDef[defName = "VQEA_CarryToAncientWonderdoc"]/priorityInType</xpath>
 				<value>
 					<priorityInType>460</priorityInType>
 				</value>
