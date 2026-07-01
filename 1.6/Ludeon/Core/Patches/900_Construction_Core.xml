@@ -20,6 +20,7 @@
 			Core - BuildRoofs 100
 			Vehicle Framework - PaintVehicle 100
 			Dubs Rimatomics - RimatomicsConstruction 100
+			Vanilla Gravship Expanded - VGE_BuildVacBarrierRoofs 100
 			Core - RemoveRoofs 90 (Moved to FSFDeconstruct)
 			Core - DeconstructForBlueprint 90 (Moved to FSFDeconstruct)
 			Fluffy Breakdowns - FluffyBreakdowns_Maintenance 85 (Moved to FSFRepair)
@@ -50,6 +51,33 @@
 				<xpath>/Defs/WorkTypeDef[defName = "Construction"]/description</xpath>
 				<value>
 					<description>Build things that you've designated.</description>
+				</value>
+			</li>
+			
+		<!-- Vanilla Gravship Expanded - Build Vac Barrier Roofs -->
+			
+			<li MayRequire="vanillaexpanded.gravship" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VGE_BuildVacBarrierRoofs"]/priorityInType</xpath>
+				<value>
+					<priorityInType>101</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Vehicles Expanded - Restore Wreck -->
+			
+			<li MayRequire="OskarPotocki.VanillaVehiclesExpanded" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VVE_RestoreWreck"]/priorityInType</xpath>
+				<value>
+					<priorityInType>96</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vehicle Framework - Work On Upgrade -->
+			
+			<li MayRequire="SmashPhil.VehicleFramework" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "WorkOnUpgrade"]/priorityInType</xpath>
+				<value>
+					<priorityInType>95</priorityInType>
 				</value>
 			</li>
 			

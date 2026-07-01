@@ -99,6 +99,13 @@
 			</li>
 				
 			<!-- Change Task Worktype -->
+			
+			<li MayRequire="Euterpe.MilkyTitfuck" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "SEX_WorkGiver_WardenMilkPrisoner"]/workType</xpath>
+				<value>
+					<workType>FSFPrisonCare</workType>
+				</value>
+			</li>
 				
 			<li Class="PatchOperationReplace">
 				<xpath>/Defs/WorkGiverDef[defName = "FeedPrisoner"]/workType</xpath>

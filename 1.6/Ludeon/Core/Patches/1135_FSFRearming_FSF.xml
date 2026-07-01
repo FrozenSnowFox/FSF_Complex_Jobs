@@ -18,6 +18,7 @@
 			Combat Extended - ReloadTurrets 105 (Moved to FSFRearming)
 			Vanilla Furniture Expanded Security - VFES_ConstructRearmTrap 70 (Moved to FSFRearming)
 			Vanilla Furniture Expanded Security - VFES_RearmTrap 70 (Moved to FSFRearming)
+			Vanilla Gravship Expanded - VEF_RefuelSecondary 70 (Moved to FSFRearming)
 			Keep Mortars Ready - ReadyMortar 40
 
 	-->
@@ -139,6 +140,15 @@
 			
 			<li MayRequire="VanillaExpanded.VFESecurity" Class="PatchOperationReplace">
 				<xpath>/Defs/WorkGiverDef[defName = "VFES_RearmTrap"]/workType</xpath>
+				<value>
+					<workType>FSFRearming</workType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Gravship Expanded - Refuel Ammunition -->
+			
+			<li MayRequire="vanillaexpanded.gravship" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VEF_RefuelSecondary"]/workType</xpath>
 				<value>
 					<workType>FSFRearming</workType>
 				</value>

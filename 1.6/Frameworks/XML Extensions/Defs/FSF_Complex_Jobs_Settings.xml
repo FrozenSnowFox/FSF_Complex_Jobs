@@ -221,7 +221,7 @@
 				<color>(163,177,188)</color>
 			</li>
 			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.Setting.Text">
-				<text>Enables the Convert Worktype which focuses around converting prisoners to your Ideologion.</text>
+				<text>Enables the Convert Worktype which moves the Convert task to its own Worktype.</text>
 				<tKey>FSFComplexJobsConvertWorktypeDesc</tKey>
 			</li>
 			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.Setting.SetColor"/>
@@ -241,7 +241,7 @@
 				<color>(163,177,188)</color>
 			</li>
 			<li Class="XmlExtensions.Setting.Text">
-				<text>Enables the Hack Worktype which focuses on hacking items in the world.</text>
+				<text>Enables the Hack Worktype which moves all Hack related tasks to their own Worktype.</text>
 				<tKey>FSFComplexJobsHackWorktypeDesc</tKey>
 			</li>
 			<li Class="XmlExtensions.Setting.SetColor"/>
@@ -261,7 +261,7 @@
 				<color>(163,177,188)</color>
 			</li>
 			<li MayRequire="Ludeon.RimWorld.Biotech" Class="XmlExtensions.Setting.Text">
-				<text>Enables the Mechanoids Worktype which focuses around everything to do with Mechanoids.</text>
+				<text>Enables the Mechanoids Worktype which moves all Mechanoid related tasks to their own Worktype.</text>
 				<tKey>FSFComplexJobsMechanoidsWorktypeDesc</tKey>
 			</li>
 			<li MayRequire="Ludeon.RimWorld.Biotech" Class="XmlExtensions.Setting.SetColor"/>
@@ -321,7 +321,7 @@
 				<color>(163,177,188)</color>
 			</li>
 			<li Class="XmlExtensions.Setting.Text">
-				<text>Enables the Prison Care Worktype which focuses around delivering food and caring for prisoners.</text>
+				<text>Enables the Prison Care Worktype which moves all Prison Care related tasks to its own Worktype.</text>
 				<tKey>FSFComplexJobsPrisonCareWorktypeDesc</tKey>
 			</li>
 			<li Class="XmlExtensions.Setting.SetColor"/>
@@ -341,7 +341,7 @@
 				<color>(163,177,188)</color>
 			</li>
 			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.Setting.Text">
-				<text>Enables the Pruning Worktype which focuses around pruning trees.</text>
+				<text>Enables the Pruning Worktype which moves all Pruning related tasks to its own Worktype.</text>
 				<tKey>FSFComplexJobsPruningWorktypeDesc</tKey>
 			</li>
 			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.Setting.SetColor"/>
@@ -361,7 +361,7 @@
 				<color>(163,177,188)</color>
 			</li>
 			<li Class="XmlExtensions.Setting.Text">
-				<text>Enables the Rescue Worktype which focuses on rescuing downed allies.</text>
+				<text>Enables the Rescue Worktype which adds its own unique tasks focused on rescuing downed allies.</text>
 				<tKey>FSFComplexJobsRescueWorktypeDesc</tKey>
 			</li>
 			<li Class="XmlExtensions.Setting.SetColor"/>
@@ -381,7 +381,7 @@
 				<color>(163,177,188)</color>
 			</li>
 			<li Class="XmlExtensions.Setting.Text">
-				<text>Enables the Slaughter Worktype which focuses on slaughtering designated animals.</text>
+				<text>Enables the Slaughter Worktype which moves all animal slaughtering related tasks to its own Worktype.</text>
 				<tKey>FSFComplexJobsSlaughterWorktypeDesc</tKey>
 			</li>
 			<li Class="XmlExtensions.Setting.SetColor"/>
@@ -401,7 +401,7 @@
 				<color>(163,177,188)</color>
 			</li>
 			<li Class="XmlExtensions.Setting.Text">
-				<text>Enables the Smoothing Worktype which focuses around smoothing surfaces for a nicer look.</text>
+				<text>Enables the Smoothing Worktype which moves all smoothing surfaces related tasks to its own Worktype.</text>
 				<tKey>FSFComplexJobsSmoothingWorktypeDesc</tKey>
 			</li>
 			<li Class="XmlExtensions.Setting.SetColor"/>
@@ -421,7 +421,7 @@
 				<color>(163,177,188)</color>
 			</li>
 			<li Class="XmlExtensions.Setting.Text">
-				<text>Enables the Taming Worktype which focuses around taming animals.</text>
+				<text>Enables the Taming Worktype which moves all animal taming related tasks to its own Worktype.</text>
 				<tKey>FSFComplexJobsTamingWorktypeDesc</tKey>
 			</li>
 			<li Class="XmlExtensions.Setting.SetColor"/>

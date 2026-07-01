@@ -108,16 +108,16 @@
 		<!-- Core - Remove Roofs -->
 
 			<li Class="PatchOperationReplace">
-				<xpath>/Defs/WorkGiverDef[defName = "DeconstructForBlueprint"]/workType</xpath>
+				<xpath>/Defs/WorkGiverDef[defName = "RemoveRoofs"]/workType</xpath>
 				<value>
 					<workType>FSFDeconstruct</workType>
 				</value>
 			</li>
 			
-		<!-- Core - Remove Roofs -->
+		<!-- Core - Deconstruct For Blueprint -->
 
 			<li Class="PatchOperationReplace">
-				<xpath>/Defs/WorkGiverDef[defName = "RemoveRoofs"]/workType</xpath>
+				<xpath>/Defs/WorkGiverDef[defName = "DeconstructForBlueprint"]/workType</xpath>
 				<value>
 					<workType>FSFDeconstruct</workType>
 				</value>

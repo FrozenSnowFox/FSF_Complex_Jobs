@@ -47,6 +47,7 @@
 			[LTS] Ammunition Framework - LTS_DoStrip 101 (Moved to FSFCremating)
 			Core - Strip 100 (Moved to FSFCremating)
 			Vanilla Expanded Framework - PS_DrainOutOfStorage 100
+			Vehicle Framework - RemoveFuelFromVehicle 100 (Moved to FSFTransport)
 			Vanilla Expanded Framework - PS_FillStorage 99
 			Dubs Bad Hygiene - emptySepticTank 98
 			Vanilla Expanded Framework - PS_PickUpProcessor 98  (Moved to FSFProduction)

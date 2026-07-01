@@ -16,7 +16,9 @@
 			Core - GroundPenetratingScan 50 (Moved to FSFScan)
 			Ancient Mining Industry - BreadMo_QuestScan 50 (Moved to FSFScan)
 			Medieval Overhaul Toggleable Stuff - LongRangeScanMO 50 (Moved to FSFScan)
+			Vanilla Gravship Expanded - VGE_OperateScannerCluster 50 (Moved to FSFScan)
 			Resource Drop Pod Redirection - PodHackScan 40 (Moved to FSFScan)
+			Worksites Expanded - OperatePulseEmitter 40 (Moved to FSFScan)
  
 	-->
 			
@@ -97,6 +99,15 @@
 				</value>
 			</li>
 			
+		<!-- Vanilla Gravship Expanded - Operate Gravship Scanner Cluster -->
+	
+			<li MayRequire="vanillaexpanded.gravship" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VGE_OperateScannerCluster"]/workType</xpath>
+				<value>
+					<workType>FSFScan</workType>
+				</value>
+			</li>
+			
 		<!-- Core - Ground Penetrating Scanner -->
 			
 			<li Class="PatchOperationReplace">
@@ -147,6 +158,15 @@
 			
 			<li MayRequire="MrKociak.DropPodBaitScanner" Class="PatchOperationReplace">
 				<xpath>/Defs/WorkGiverDef[defName = "PodHackScan"]/workType</xpath>
+				<value>
+					<workType>FSFScan</workType>
+				</value>
+			</li>
+			
+		<!-- Worksites Expanded - Operate Pulse Emitter -->
+			
+			<li MayRequire="godsfathermixtape.worksitesexpanded" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "OperatePulseEmitter"]/workType</xpath>
 				<value>
 					<workType>FSFScan</workType>
 				</value>

@@ -13,6 +13,7 @@
 			Core - UnloadCarriers 130 (Moved to FSFTransport)
 			Core - HelpGatheringItemsForCaravan 120 (Moved to FSFTransport)
 			Core - LoadTransporters 110 (Moved to FSFTransport)
+			Vehicle Framework - RemoveFuelFromVehicle 100 (Moved to FSFTransport)
 			Vehicle Framework - RefuelVehicle 90 (Moved to FSFTransport)
 			Vehicle Framework - PackVehicle 80 (Moved to FSFTransport)
 			Vehicle Framework - HelpPackVehicleCaravan 80 (Moved to FSFTransport)
@@ -107,6 +108,24 @@
 				</value>
 			</li>
 			
+		<!-- Vehicle Framework - Remove Fuel From Vehicle -->
+			
+			<li MayRequire="SmashPhil.VehicleFramework" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RemoveFuelFromVehicle"]/workType</xpath>
+				<value>
+					<workType>FSFTransport</workType>
+				</value>
+			</li>
+			
+		<!-- Vehicle Framework - Refuel Vehicle -->
+			
+			<li MayRequire="SmashPhil.VehicleFramework" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RefuelVehicle"]/workType</xpath>
+				<value>
+					<workType>FSFTransport</workType>
+				</value>
+			</li>
+			
 		<!-- Vehicle Framework - Pack Vehicle -->
 			
 			<li MayRequire="SmashPhil.VehicleFramework" Class="PatchOperationReplace">
@@ -138,15 +157,6 @@
 			
 			<li MayRequire="SmashPhil.VehicleFramework" Class="PatchOperationReplace">
 				<xpath>/Defs/WorkGiverDef[defName = "LoadUpgradeMaterials"]/workType</xpath>
-				<value>
-					<workType>FSFTransport</workType>
-				</value>
-			</li>
-			
-		<!-- Vehicle Framework - Refuel Vehicle -->
-			
-			<li MayRequire="SmashPhil.VehicleFramework" Class="PatchOperationReplace">
-				<xpath>/Defs/WorkGiverDef[defName = "RefuelVehicle"]/workType</xpath>
 				<value>
 					<workType>FSFTransport</workType>
 				</value>
