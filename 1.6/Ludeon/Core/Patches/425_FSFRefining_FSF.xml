@@ -75,6 +75,18 @@
 				</match>
 			</li>
 			
+		<!-- VQE Drone Factory Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThinkTreeDef[defName = "VQE_Drone"]/thinkRoot/subNodes/li[@Class = "VanillaQuestsExpandedDroneFactory.ThinkNode_ConditionalPawnKindList"]/subNodes/li[@Class = "VanillaQuestsExpandedDroneFactory.JobGiver_DoWork"]/workTypes [li [text()="Crafting"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThinkTreeDef[defName = "VQE_Drone"]/thinkRoot/subNodes/li[@Class = "VanillaQuestsExpandedDroneFactory.ThinkNode_ConditionalPawnKindList"]/subNodes/li[@Class = "VanillaQuestsExpandedDroneFactory.JobGiver_DoWork"]/workTypes [li [text()="Crafting"] ]</xpath>
+					<value>
+						<li>FSFRefining</li>
+					</value>
+				</match>
+			</li>
+			
 		<!-- Fortification Industrial Citadel - Do Bills at Pyrolysis Plant -->
 			
 			<li MayRequire="Aoba.Fortress.Industrial.Citadel" Class="PatchOperationReplace">

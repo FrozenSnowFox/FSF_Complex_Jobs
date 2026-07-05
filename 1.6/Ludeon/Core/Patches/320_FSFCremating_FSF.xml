@@ -81,6 +81,18 @@
 				</match>
 			</li>
 			
+		<!-- VQE Drone Factory Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThinkTreeDef[defName = "VQE_Drone"]/thinkRoot/subNodes/li[@Class = "VanillaQuestsExpandedDroneFactory.ThinkNode_ConditionalPawnKindList"]/subNodes/li[@Class = "VanillaQuestsExpandedDroneFactory.JobGiver_DoWork"]/workTypes [li [text()="Hauling"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThinkTreeDef[defName = "VQE_Drone"]/thinkRoot/subNodes/li[@Class = "VanillaQuestsExpandedDroneFactory.ThinkNode_ConditionalPawnKindList"]/subNodes/li[@Class = "VanillaQuestsExpandedDroneFactory.JobGiver_DoWork"]/workTypes [li [text()="Hauling"] ]</xpath>
+					<value>
+						<li>FSFCremating</li>
+					</value>
+				</match>
+			</li>
+			
 		<!-- Core - Update RecipeDefs for Campfire/Crematorium to use FSFCremating worktype
 			Note: This worktype is required so the bill can't be done when uing Cooking at a Campfire.
 		-->
