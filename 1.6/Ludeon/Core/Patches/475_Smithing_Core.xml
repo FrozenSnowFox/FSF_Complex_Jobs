@@ -11,7 +11,9 @@
 		Default Priority Order
 
 			Biotech DLC - DoBillsSubcoreEncoder 220 (Moved to FSFMechanoids if Enabled)
+			Fantasy Biotech - VR_DoBillsSubcoreEncoder 220 (Moved to FSFMechanoids if Enabled)
 			Biotech DLC - DoBillsMechGestator 210 (Moved to FSFMechanoids if Enabled)
+			Fantasy Biotech - VR_DoBillsMechGestator 210 (Moved to FSFMechanoids if Enabled)
 			Biotech DLC - RepairMech 200 (Moved to FSFMechanoids if Enabled)
 			The Dead Man's Switch - DMS_DoBillsMechConstructor 200 (Moved to FSFMechanoids if Enabled)
 			Primitive Workbenches - VBY_DoBillsMakeRangedWeapons 117

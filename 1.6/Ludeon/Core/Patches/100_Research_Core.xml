@@ -18,6 +18,7 @@
 			Core - Hack 130
 			Biotech DLC - CreateXenogerm 120
 			Dubs Rimatomics - RimatomicsSuperviseResearch 120
+			Fantasy Biotech - VR_CreateXenogerm 120
 			Research Reinvented - RR_LearnRemotely 120
 			Core - StudyArchotechStructures 110
 			Dubs Rimatomics - RimatomicsResearch 110
@@ -65,6 +66,15 @@
 			
 			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
 				<xpath>/Defs/WorkGiverDef[defName = "CreateXenogerm"]/priorityInType</xpath>
+				<value>
+					<priorityInType>200</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Fantasy Biotech - Xenogerm Creation -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech,vr.fantasy.biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VR_CreateXenogerm"]/priorityInType</xpath>
 				<value>
 					<priorityInType>200</priorityInType>
 				</value>

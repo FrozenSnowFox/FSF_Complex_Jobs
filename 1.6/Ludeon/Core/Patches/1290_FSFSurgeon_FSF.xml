@@ -10,6 +10,7 @@
  
 		Default Priority Order
 
+			Fantasy Biotech - VR_ExtractGeneOnPawn 80 (Moved to FSFSurgeon)
 			Harvest Organs Post Mortem - DoBillsMedicalHumanOperationOrgans 75 (Moved to FSFSurgeon)
 			Core - DoBillsMedicalHumanOperation 70 (Moved to FSFSurgeon)
 			Core - DoBillsMedicalAnimalOperation 30 (Moved to FSFSurgeon)
@@ -121,6 +122,15 @@
 				<xpath>/Defs/WorkGiverDef[defName = "DoBillsMedicalAnimalOperation"]/priorityInType</xpath>
 				<value>
 					<priorityInType>90</priorityInType>
+				</value>
+			</li>
+			
+	<!-- Fantasy Biotech - Extract Gene On Pawn -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech,vr.fantasy.biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VR_ExtractGeneOnPawn"]/workType</xpath>
+				<value>
+					<workType>FSFSurgeon</workType>
 				</value>
 			</li>
 			

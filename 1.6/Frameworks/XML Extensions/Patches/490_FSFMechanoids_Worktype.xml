@@ -108,14 +108,28 @@
 			</li>
 			
 			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
-				<xpath>/Defs/WorkGiverDef[defName = "DoBillsMechGestator"]/workType</xpath>
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsSubcoreEncoder"]/workType</xpath>
+				<value>
+					<workType>FSFMechanoids</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech,vr.fantasy.biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VR_DoBillsSubcoreEncoder"]/workType</xpath>
 				<value>
 					<workType>FSFMechanoids</workType>
 				</value>
 			</li>
 			
 			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
-				<xpath>/Defs/WorkGiverDef[defName = "DoBillsSubcoreEncoder"]/workType</xpath>
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsMechGestator"]/workType</xpath>
+				<value>
+					<workType>FSFMechanoids</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech,vr.fantasy.biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VR_DoBillsMechGestator"]/workType</xpath>
 				<value>
 					<workType>FSFMechanoids</workType>
 				</value>
