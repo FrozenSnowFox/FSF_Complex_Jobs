@@ -15,6 +15,8 @@
 			Core - HaulToPortal 105 (Moved to FSFHauling)
 			Core - HaulCorpses 90 (Moved to FSFHauling)
 			Vanilla Gravship Expanded - VEF_RefuelSecondary 70 (Moved to FSFRearming)
+			Deep And Deeper - ShashlichnikGoDownIfJobUnderground_Haul 43 (Moved to FSFHauling)
+			Deep And Deeper - ShashlichnikGoDownIfJobUnderground_HaulToPortal 43 (Moved to FSFHauling)
 			Please Haul Perishables - HaulPerishables 35 (Moved to FSFHauling)
 			Please Haul Perishables - HaulFoods 19 (Moved to FSFHauling)
 			Pick Up And Haul - HaulToInventory 18 (Moved to FSFHauling)
@@ -141,6 +143,24 @@
 			
 			<li Class="PatchOperationReplace">
 				<xpath>/Defs/WorkGiverDef[defName = "HaulCorpses"]/workType</xpath>
+				<value>
+					<workType>FSFHauling</workType>
+				</value>
+			</li>
+			
+		<!-- Deep And Deeper - Go Down If Job Underground Haul -->
+			
+			<li MayRequireAnyOf="Shashlichnik.DeepAndDeeper" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ShashlichnikGoDownIfJobUnderground_Haul"]/workType</xpath>
+				<value>
+					<workType>FSFHauling</workType>
+				</value>
+			</li>
+			
+		<!-- Deep And Deeper - Go Down If Job Underground Haul To Portal -->
+			
+			<li MayRequireAnyOf="Shashlichnik.DeepAndDeeper" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ShashlichnikGoDownIfJobUnderground_HaulToPortal"]/workType</xpath>
 				<value>
 					<workType>FSFHauling</workType>
 				</value>

@@ -240,7 +240,7 @@
 
 	<WorkTypeDef>
 		<defName>FSFFabrication</defName>
-		<labelShort>Fabrication</labelShort>
+		<labelShort>Fabricate</labelShort>
 		<pawnLabel>Fabricator</pawnLabel>
 		<gerundLabel>Fabricating</gerundLabel>
 		<description>Create weapons, armour, bionics and components from raw materials at a fabrication bench.</description>

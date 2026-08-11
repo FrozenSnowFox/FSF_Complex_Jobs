@@ -83,21 +83,35 @@
 				</match>
 			</li>
 			
-		<!-- Vanilla Gravship Expanded - Maintain Gravship Structure -->
-
-			<li MayRequire="vanillaexpanded.gravship" Class="PatchOperationReplace">
-				<xpath>/Defs/WorkGiverDef[defName = "VGE_MaintainGrav"]/workType</xpath>
-				<value>
-					<workType>FSFRepair</workType>
-				</value>
-			</li>
-			
 		<!-- Vanilla Quests Expanded The Generator - Maintain Arc -->
 			
 			<li MayRequire="vanillaquestsexpanded.generator" Class="PatchOperationReplace">
 				<xpath>/Defs/WorkGiverDef[defName = "VQE_MaintainGenetron"]/workType</xpath>
 				<value>
 					<workType>FSFRepair</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="vanillaquestsexpanded.generator" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VQE_MaintainGenetron"]/priorityInType</xpath>
+				<value>
+					<priorityInType>500</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Quests Expanded The Generator - Fix Critically Broken Down Buildings -->
+			
+			<li MayRequire="vanillaquestsexpanded.generator" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VQE_FixCriticallyBrokenDownBuilding"]/workType</xpath>
+				<value>
+					<workType>FSFRepair</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="vanillaquestsexpanded.generator" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VQE_FixCriticallyBrokenDownBuilding"]/priorityInType</xpath>
+				<value>
+					<priorityInType>499</priorityInType>
 				</value>
 			</li>
 			
@@ -125,22 +139,6 @@
 				<xpath>/Defs/WorkGiverDef[defName = "MF_FixBrokenDownBuildingAcrossLevel"]/workType</xpath>
 				<value>
 					<workType>FSFRepair</workType>
-				</value>
-			</li>
-			
-		<!-- Vanilla Quests Expanded The Generator - Fix Critically Broken Down Buildings -->
-			
-			<li MayRequire="vanillaquestsexpanded.generator" Class="PatchOperationReplace">
-				<xpath>/Defs/WorkGiverDef[defName = "VQE_FixCriticallyBrokenDownBuilding"]/workType</xpath>
-				<value>
-					<workType>FSFRepair</workType>
-				</value>
-			</li>
-			
-			<li MayRequire="vanillaquestsexpanded.generator" Class="PatchOperationReplace">
-				<xpath>/Defs/WorkGiverDef[defName = "VQE_FixCriticallyBrokenDownBuilding"]/priorityInType</xpath>
-				<value>
-					<priorityInType>129</priorityInType>
 				</value>
 			</li>
 			
@@ -186,6 +184,22 @@
 				<xpath>/Defs/WorkGiverDef[defName = "Repair"]/workType</xpath>
 				<value>
 					<workType>FSFRepair</workType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Gravship Expanded - Maintain Gravship Structure -->
+
+			<li MayRequire="vanillaexpanded.gravship" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VGE_MaintainGrav"]/workType</xpath>
+				<value>
+					<workType>FSFRepair</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="vanillaexpanded.gravship" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VGE_MaintainGrav"]/priorityInType</xpath>
+				<value>
+					<priorityInType>35</priorityInType>
 				</value>
 			</li>
 			

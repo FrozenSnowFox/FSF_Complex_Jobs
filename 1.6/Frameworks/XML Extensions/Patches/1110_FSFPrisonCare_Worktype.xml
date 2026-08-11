@@ -20,19 +20,20 @@
   <WorkTypeDef>
     <defName>FSFPrisonCare</defName>
     <labelShort>Prison Care</labelShort>
-    <pawnLabel>Warden</pawnLabel>
-    <gerundLabel>wardening</gerundLabel>
-    <description>Feed prisoners.</description>
-    <verb>Handle</verb>
+    <pawnLabel>Prison Nurse</pawnLabel>
+    <gerundLabel>prison nursing</gerundLabel>
+    <description>Care for prisoners, bring them food, and perform assigned duties</description>
+    <verb>Care for</verb>
     <naturalPriority>1110</naturalPriority>
     <requireCapableColonist>true</requireCapableColonist>
     <disabledForSlaves>true</disabledForSlaves>
     <relevantSkills>
-      <li>Social</li>
+      <li>Medicine</li>
     </relevantSkills>
     <workTags>
-      <li>Social</li>
-      <li>AllWork</li>
+		<li>Caring</li>
+		<li>Commoner</li>
+		<li>AllWork</li>
     </workTags>
   </WorkTypeDef>
 					
@@ -106,16 +107,23 @@
 					<workType>FSFPrisonCare</workType>
 				</value>
 			</li>
-				
-			<li Class="PatchOperationReplace">
-				<xpath>/Defs/WorkGiverDef[defName = "FeedPrisoner"]/workType</xpath>
+			
+			<li MayRequire="Dubwise.DubsBadHygiene" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DBHAdministerFluidsWarden"]/workType</xpath>
+				<value>
+					<workType>FSFPrisonCare</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="sarg.alphagenes" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "AG_Warden_DeliverMetal"]/workType</xpath>
 				<value>
 					<workType>FSFPrisonCare</workType>
 				</value>
 			</li>
 				
-			<li MayRequire="sarg.alphagenes" Class="PatchOperationReplace">
-				<xpath>/Defs/WorkGiverDef[defName = "AG_Warden_DeliverMetal"]/workType</xpath>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "FeedPrisoner"]/workType</xpath>
 				<value>
 					<workType>FSFPrisonCare</workType>
 				</value>
@@ -128,36 +136,8 @@
 				</value>
 			</li>
 			
-			<li Class="PatchOperationReplace">
-				<xpath>/Defs/WorkTypeDef[defName = "Warden"]/description</xpath>
-				<value>
-					<description>Manage, chat with, and recruit prisoners.</description>
-				</value>
-			</li>
-				
 			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
 				<xpath>/Defs/WorkGiverDef[defName = "DeliverHemogenToPrisoner"]/workType</xpath>
-				<value>
-					<workType>FSFPrisonCare</workType>
-				</value>
-			</li>
-				
-			<li MayRequire="Dubwise.DubsBadHygiene" Class="PatchOperationReplace">
-				<xpath>/Defs/WorkGiverDef[defName = "WardenRefillWater"]/workType</xpath>
-				<value>
-					<workType>FSFPrisonCare</workType>
-				</value>
-			</li>
-				
-			<li MayRequire="Dubwise.DubsBadHygiene" Class="PatchOperationReplace">
-				<xpath>/Defs/WorkGiverDef[defName = "WardenEmptySepticTank"]/workType</xpath>
-				<value>
-					<workType>FSFPrisonCare</workType>
-				</value>
-			</li>
-				
-			<li MayRequire="Dubwise.DubsBadHygiene" Class="PatchOperationReplace">
-				<xpath>/Defs/WorkGiverDef[defName = "DBHAdministerFluidsWarden"]/workType</xpath>
 				<value>
 					<workType>FSFPrisonCare</workType>
 				</value>

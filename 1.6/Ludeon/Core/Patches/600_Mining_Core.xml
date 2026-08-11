@@ -19,6 +19,8 @@
 			GarlicSauce's Advanced Deep Drill (Continued) - TRAHS_DoBillsAdvancedDeepDrill 80 (Moved to FSFDrilling)
 			Project RimFactory Revived - DoBillsPRF_MineShaft 75
 			Core - Drill 50 (Moved to FSFDrilling)
+			Deep And Deeper - ShashlichnikDigCaveEntrance 45
+			Deep And Deeper - ShashlichnikGoDownIfJobUnderground_Miner 43
 			Medieval Overhaul - DankPyon_WorkGatherIce 6
 
 	-->
@@ -27,6 +29,15 @@
 				<xpath>/Defs/WorkTypeDef[defName = "Mining"]/description</xpath>
 				<value>
 					<description>Digging.</description>
+				</value>
+			</li>
+			
+		<!-- Deep And Deeper - Dig Cave Entrance -->
+			
+			<li MayRequireAnyOf="Shashlichnik.DeepAndDeeper" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ShashlichnikDigCaveEntrance"]/priorityInType</xpath>
+				<value>
+					<priorityInType>115</priorityInType>
 				</value>
 			</li>
 			

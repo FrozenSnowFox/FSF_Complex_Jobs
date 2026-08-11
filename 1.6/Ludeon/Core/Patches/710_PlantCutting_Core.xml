@@ -10,7 +10,9 @@
  
 		Default Priority Order
 
+			Vanilla Expanded Framework - VEF_RemoveWeeds 111
 			Core - ExtractTree 110
+			Vanilla Expanded Framework - VEF_ExtractFlower 110
 			Ideology DLC - PruneGauranlenTree 25 (Moved to FSFPruning if Enabled)
 			Core - PlantsCut ??
 			GroundClear - GroundClear 10

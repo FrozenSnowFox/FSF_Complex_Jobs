@@ -10,7 +10,7 @@
  
 		Default Priority Order
 
-			Dubs Bad Hygiene - WardenRefillWater 500
+			Dubs Bad Hygiene - WardenRefillWater 500 (Moved to Hauling)
 			Anomaly DLC - InterrogatePrisoner 120
 			Anomaly DLC - ExecuteEntity 115
 			Save Our Ship 2 - DoArchotechSacrifice 111
@@ -20,25 +20,34 @@
 			Research Reinvented - RR_InterrogatePrisoner 110
 			Ideology DLC - EmancipateSlave 105
 			Core - ReleasePrisoner 100
-			Lactation Expansion - SEX_WorkGiver_WardenMilkPrisoner 100
+			Lactation Expansion - SEX_WorkGiver_WardenMilkPrisoner 100 (Moved to FSFNurse)
 			Vanilla Factions Expanded Ancients - VFEA_Interrogate 100
-			Dubs Bad Hygiene - WardenEmptySepticTank 98
+			Dubs Bad Hygiene - WardenEmptySepticTank 98 (Moved to Hauling)
 			Ideology DLC - EnslavePrisoner 95
 			Anomaly DLC - ActivitySuppression 95
 			Core - TakePrisonerToBed 90
-			Core - FeedPrisoner 80
-			Alpha Genes - AG_Warden_DeliverMetal 80
-			Dubs Bad Hygiene - DBHAdministerFluidsWarden 79
+			Core - FeedPrisoner 80 (Moved to FSFNurse)
+			Alpha Genes - AG_Warden_DeliverMetal 80 (Moved to FSFNurse)
+			Dubs Bad Hygiene - DBHAdministerFluidsWarden 79 (Moved to FSFNurse)
 			Ideology DLC - ImprisonSlave 75
 			Ideology DLC - ConvertPrisoner 72
-			Biotech DLC - DeliverHemogenToPrisoner 72
-			Core - DeliverFoodToPrisoner 70
+			Biotech DLC - DeliverHemogenToPrisoner 72 (Moved to FSFNurse)
+			Core - DeliverFoodToPrisoner 70 (Moved to FSFNurse)
 			Ideology DLC - SuppressSlave 65
 			Anomaly DLC - ReleaseEntity 65
 			Core - ChatWithPrisoner 60
 			Snap Out! - SnapOut_CalmPawnDownWorkgiver 18
 
 	-->
+	
+		<!-- Core - Update Worktype Label -->
+		
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "Warden"]/description</xpath>
+				<value>
+					<description>Manage, chat with, and recruit prisoners.</description>
+				</value>
+			</li>
 			
 		<!-- Snap Out! - Calm Pawn Down -->
 			
@@ -91,24 +100,6 @@
 				<xpath>/Defs/WorkGiverDef[defName = "ReleaseEntity"]/priorityInType</xpath>
 				<value>
 					<priorityInType>106</priorityInType>
-				</value>
-			</li>
-			
-		<!-- Core - Deliver Food To Prisoner -->
-			
-			<li Class="PatchOperationReplace">
-				<xpath>/Defs/WorkGiverDef[defName = "DeliverFoodToPrisoner"]/priorityInType</xpath>
-				<value>
-					<priorityInType>79</priorityInType>
-				</value>
-			</li>
-			
-		<!-- Biotech DLC - Deliver Hemogen to Prisoner -->
-			
-			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
-				<xpath>/Defs/WorkGiverDef[defName = "DeliverHemogenToPrisoner"]/priorityInType</xpath>
-				<value>
-					<priorityInType>78</priorityInType>
 				</value>
 			</li>
 			

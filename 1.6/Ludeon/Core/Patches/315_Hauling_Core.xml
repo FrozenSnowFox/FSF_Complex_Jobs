@@ -15,6 +15,7 @@
 			ReSplice Core - RS_InsertGenepack 1000
 			ReSplice Core - RS_InsertXenogerm 1000
 			Dubs Bad Hygiene - RefillWater 500
+			Dubs Bad Hygiene - WardenRefillWater 500 (Moved to Hauling)
 			Anomaly DLC - TakeEntityToHoldingPlatform 300
 			Dubs Rimatomics - LoadRailgunMagazine 210 (Moved to FSFRearming)
 			Save Our Ship 2 LoadTorpedoTube 210 (Moved to FSFRearming)
@@ -50,9 +51,11 @@
 			Vehicle Framework - RemoveFuelFromVehicle 100 (Moved to FSFTransport)
 			Vanilla Expanded Framework - PS_FillStorage 99
 			Dubs Bad Hygiene - emptySepticTank 98
+			Dubs Bad Hygiene - WardenEmptySepticTank 98 (Moved to Hauling)
 			Vanilla Expanded Framework - PS_PickUpProcessor 98  (Moved to FSFProduction)
 			Vanilla Expanded Framework - PS_BringToProcessor 97  (Moved to FSFProduction)
 			Bury On The Spot - Bury 95 (Moved to FSFCremating)
+			Replimat - LoadReplimatCorpseRecycler 91
 			Core - HaulCorpses 90
 			Biotech DLC - CarryToGeneExtractor 90
 			Biotech DLC - CarryToGrowthVat 90
@@ -86,6 +89,8 @@
 			Destroy item - WorkGiver_DestroyItem 50
 			Dubs Bad Hygiene - ClearBlockage 50 (Duplicated Task)
 			Rimsential Homebound: Continued - PS_WorkGiverRefuelFarm 50
+			Deep And Deeper - ShashlichnikGoDownIfJobUnderground_Haul 43 (Moved to FSFHauling)
+			Deep And Deeper - ShashlichnikGoDownIfJobUnderground_HaulToPortal 43 (Moved to FSFHauling)
 			Core - DoBillsCremate 40 (Moved to FSFCremating)
 			Dubs Bad Hygiene - DoBillsBurnPit 40 (Moved to FSFCremating)
 			Please Haul Perishables - HaulPerishables 35 (Moved to FSFHauling)
@@ -182,6 +187,15 @@
 				<xpath>/Defs/WorkGiverDef[defName = "TransferEntity"]/priorityInType</xpath>
 				<value>
 					<priorityInType>9993</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Dubs Bad Hygiene - Warden Refill Water -->
+			
+			<li MayRequire="Dubwise.DubsBadHygiene" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "WardenRefillWater"]/workType</xpath>
+				<value>
+					<workType>Hauling</workType>
 				</value>
 			</li>
 			
@@ -327,6 +341,22 @@
 				</value>
 			</li>
 			
+		<!-- Dubs Bad Hygiene - Warden Empty Septic Tank -->
+			
+			<li MayRequire="Dubwise.DubsBadHygiene" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "WardenEmptySepticTank"]/workType</xpath>
+				<value>
+					<workType>Hauling</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="Dubwise.DubsBadHygiene" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "WardenEmptySepticTank"]/priorityInType</xpath>
+				<value>
+					<priorityInType>444</priorityInType>
+				</value>
+			</li>
+			
 		<!-- Dubs Bad Hygiene - Clear Blockage (Duplicated Task) -->
 			
 			<li MayRequire="Dubwise.DubsBadHygiene" Class="PatchOperationAdd">
@@ -339,7 +369,7 @@
 						<workType>Hauling</workType>
 						<verb>clear blockage</verb>
 						<gerund>clearing blockage</gerund>
-						<priorityInType>444</priorityInType>
+						<priorityInType>443</priorityInType>
 						<requiredCapacities>
 							<li>Manipulation</li>
 						</requiredCapacities>
