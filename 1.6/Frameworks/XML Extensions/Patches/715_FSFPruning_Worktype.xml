@@ -52,7 +52,7 @@
 				</match>
 			</li>
 				
-			<li MayRequire="imranfish.xmlextensions" Class="PatchOperationConditional">		
+			<li MayRequire="Ludeon.RimWorld.Ideology,imranfish.xmlextensions" Class="PatchOperationConditional">		
 				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="PlantCutting"] ]</xpath>
 				<match Class="XmlExtensions.PatchOperationSafeAddOrReplace">
 					<xpath>/Defs/ThingDef/race [mechEnabledWorkTypes/li [text()="PlantCutting"] ]</xpath>
@@ -67,7 +67,7 @@
 				
 		<!-- ABF Artificial Beings Framework Patch -->
 			
-			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+			<li MayRequire="Ludeon.RimWorld.Ideology,Killathon.ArtificialBeings" Class="PatchOperationConditional">		
 				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="PlantCutting"] ]</xpath>
 				<match Class="PatchOperationAdd">
 					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="PlantCutting"] ]</xpath>
@@ -77,7 +77,7 @@
 				</match>
 			</li>
 			
-			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+			<li MayRequire="Ludeon.RimWorld.Ideology,Killathon.ArtificialBeings" Class="PatchOperationConditional">		
 				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="PlantCutting"] ]</xpath>
 				<match Class="PatchOperationAdd">
 					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="PlantCutting"] ]</xpath>
@@ -89,7 +89,7 @@
 				
 			<!-- Asimov Automation Patch -->
 			
-			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+			<li MayRequire="Ludeon.RimWorld.Ideology,Neronix17.Asimov" Class="PatchOperationConditional">		
 				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="PlantCutting"] ]</xpath>
 				<match Class="PatchOperationAdd">
 					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="PlantCutting"] ]</xpath>

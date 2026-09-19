@@ -11,7 +11,7 @@
 			<success>Normal</success>
 			<operations>
 				
-			<li Class="XmlExtensions.PatchOperationSafeRemove">
+			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.PatchOperationSafeRemove">
 				<xpath>/Defs/PreceptDef/roleDisabledWorkTags</xpath>
 			</li>
 				
