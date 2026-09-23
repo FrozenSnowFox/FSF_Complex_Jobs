@@ -178,15 +178,6 @@
 				</value>
 			</li>
 			
-		<!-- Core - Repair -->
-			
-			<li Class="PatchOperationReplace">
-				<xpath>/Defs/WorkGiverDef[defName = "Repair"]/workType</xpath>
-				<value>
-					<workType>FSFRepair</workType>
-				</value>
-			</li>
-			
 		<!-- Vanilla Gravship Expanded - Maintain Gravship Structure -->
 
 			<li MayRequire="vanillaexpanded.gravship" Class="PatchOperationReplace">
@@ -199,7 +190,16 @@
 			<li MayRequire="vanillaexpanded.gravship" Class="PatchOperationReplace">
 				<xpath>/Defs/WorkGiverDef[defName = "VGE_MaintainGrav"]/priorityInType</xpath>
 				<value>
-					<priorityInType>35</priorityInType>
+					<priorityInType>41</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Core - Repair -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "Repair"]/workType</xpath>
+				<value>
+					<workType>FSFRepair</workType>
 				</value>
 			</li>
 			
