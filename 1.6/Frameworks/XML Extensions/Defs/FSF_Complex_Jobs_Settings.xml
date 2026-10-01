@@ -369,6 +369,26 @@
 				<spacing>12</spacing>
 			</li>
 			
+			<!-- Self Tend Worktype -->
+			
+			<li Class="XmlExtensions.Setting.Checkbox">
+				<label>Self Tend Worktype</label>
+				<key>FSFSelfTendWorktype</key>
+				<defaultValue>false</defaultValue>
+				<tKey>FSFComplexJobsSelfTendWorktypeTitle</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor">
+				<color>(163,177,188)</color>
+			</li>
+			<li Class="XmlExtensions.Setting.Text">
+				<text>Enables the Self Tend Worktype which moves all self tending related tasks to its own Worktype.  For pawns to Self Tend they must still have the Self Tend option enabled.  This worktype is intended to allow pawns to Self Tend without doing Doctoring work on others.</text>
+				<tKey>FSFComplexJobsSelfTendWorktypeDesc</tKey>
+			</li>
+			<li Class="XmlExtensions.Setting.SetColor"/>
+			<li Class="XmlExtensions.Setting.GapLine">
+				<spacing>12</spacing>
+			</li>
+			
 			<!-- Slaughter Worktype -->
 			
 			<li Class="XmlExtensions.Setting.Checkbox">

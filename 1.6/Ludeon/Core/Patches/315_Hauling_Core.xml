@@ -25,6 +25,7 @@
 			Core - RearmTurrets 150 (Moved to FSFRearming)
 			Ready Those Guns - RTG_Ready 150 (Moved to FSFRearming)
 			Fortification Industrial Citadel - FT_OperateAutoChem 145
+			Ancient hydroponic farm facilities - BMAF_WorkGiver_FillNutrientFermenter 141 (Moved to Hauling)
 			Core - Refuel 140
 			Medieval Overhaul - DankPyon_RefuelCustom 140
 			Vanilla Races Expanded Sanguophage VRE_RefuelDraincaskets 140
@@ -311,6 +312,22 @@
 				<xpath>/Defs/WorkGiverDef[defName = "PS_WorkGiverRefuelFarm"]/priorityInType</xpath>
 				<value>
 					<priorityInType>459</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Ancient Hydroponic Farm Facilities - Fill Nutrient Fermenter -->
+
+			<li MayRequire="XMB.AncientHydroponicFarmFacilities.MO" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "BMAF_WorkGiver_FillNutrientFermenter"]/workType</xpath>
+				<value>
+					<workType>Hauling</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="XMB.AncientHydroponicFarmFacilities.MO" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "BMAF_WorkGiver_FillNutrientFermenter"]/priorityInType</xpath>
+				<value>
+					<priorityInType>458</priorityInType>
 				</value>
 			</li>
 			
