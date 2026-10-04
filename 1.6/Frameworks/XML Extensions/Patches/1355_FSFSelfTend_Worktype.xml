@@ -13,7 +13,7 @@
 				
 			<!-- Self Tend Worktype -->
 			
-			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationAdd">
+			<li Class="PatchOperationAdd">
 				<xpath>/Defs</xpath>
 				<value>
 					
