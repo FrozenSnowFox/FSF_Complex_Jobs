@@ -12,6 +12,7 @@
 
 			Fortification Industrial Citadel - FT_OperateAutoChem 145
 			Core - DoBillsRefinery 97 (Moved to FSFRefining)
+			Archotech Crefinery - DoBills_ArchotetchCrefinery 97 (Moved to FSFRefining)
 			Vanilla Gravship Expanded - VGE_DoBillsRefinery 97 (Moved to FSFRefining)
 
 	-->
@@ -154,6 +155,15 @@
 
 			<li Class="PatchOperationReplace">
 				<xpath>/Defs/WorkGiverDef[defName = "DoBillsRefinery"]/workType</xpath>
+				<value>
+					<workType>FSFRefining</workType>
+				</value>
+			</li>
+			
+		<!-- Archotech Crefinery - Do Bills at Crefinery -->
+
+			<li MayRequire="rpgwanderer.archotechcrefinery" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBills_ArchotetchCrefinery"]/workType</xpath>
 				<value>
 					<workType>FSFRefining</workType>
 				</value>

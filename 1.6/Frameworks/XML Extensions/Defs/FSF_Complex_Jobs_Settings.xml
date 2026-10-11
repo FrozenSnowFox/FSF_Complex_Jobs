@@ -101,7 +101,7 @@
 				<color>(163,177,188)</color>
 			</li>
 			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.Setting.Text">
-				<text>Removes all the disabled worktypes from all ideoligion roles.</text>
+				<text>Removes all the disabled worktypes and weapon restrictions from all ideoligion roles.</text>
 				<tKey>FSFComplexJobsIdeoRolesAreCapableDesc</tKey>
 			</li>
 			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.Setting.SetColor"/>

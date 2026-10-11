@@ -14,6 +14,7 @@
 			Core - Strip 100 (Moved to FSFCremating)
 			Bury On The Spot - Bury 95 (Moved to FSFCremating)
 			Core - DoBillsCremate 40 (Moved to FSFCremating)
+			Archotech Crefinery - DoBills_ArchotetchCrefineryCremate 40 (Moved to FSFCremating)
 			Dubs Bad Hygiene - DoBillsBurnPit 40 (Moved to FSFCremating)
 			Core - DoBillsHaulCampfire 30 (Moved to FSFCremating)
 			Core - ExtractSkull 20 (Moved to Cremate)
@@ -202,6 +203,15 @@
 
 			<li Class="PatchOperationReplace">
 				<xpath>/Defs/WorkGiverDef[defName = "DoBillsCremate"]/workType</xpath>
+				<value>
+					<workType>FSFCremating</workType>
+				</value>
+			</li>
+			
+		<!-- Archotech Crefinery - Do Cremation Bills at Crefinery -->
+
+			<li MayRequire="rpgwanderer.archotechcrefinery" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBills_ArchotetchCrefineryCremate"]/workType</xpath>
 				<value>
 					<workType>FSFCremating</workType>
 				</value>
