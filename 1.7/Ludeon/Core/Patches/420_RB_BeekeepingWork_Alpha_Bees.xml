@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- RB_BeekeepingWork 420 (Alpha Bees) (Default 320)
+
+		Skills - Crafting, Cooking, Intellectual
+ 
+		Default Priority Order
+
+		Alpha Bees - RB_DoBillsHoneyCentrifuge 100
+		Alpha Bees - RB_DoBillsBeeResearchTable 100
+		Alpha Bees - RB_DoBillsAdvancedHoneyCentrifuge 100
+		Alpha Bees - RB_DoBillsBeekeepingWorkbench 100
+		Alpha Bees - RB_InsertQueenInBeehouse 21
+		Alpha Bees - RB_InsertDroneInBeehouse 20
+		Alpha Bees - RB_TakeThingsOutOfHybridizationChamber 14
+		Alpha Bees - RB_TakeThingsOutOfBroodChamber 13
+		Alpha Bees - RB_TakeThingsOutOfBeehouse 10
+
+	-->
+	
+		<!-- Alpha Bees - (Move RB_BeekeepingWork Worktype Priority) -->
+			
+			<li MayRequire="sarg.rimbees" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "RB_BeekeepingWork"]/naturalPriority</xpath>
+				<value>
+					<naturalPriority>420</naturalPriority>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

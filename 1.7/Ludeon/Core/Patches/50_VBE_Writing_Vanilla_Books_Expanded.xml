@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- VBE_Writing 50 (Vanilla Books Expanded)
+ 
+		Default Priority Order
+
+		Medieval Overhaul - DankPyon_DoBillsScribeTable 110 (Moved to VBE_Writing with Vanilla Books Expanded)
+		Planetside Politics - Politics_DoBillsWritePolemicSpot 110 (Moved to VBE_Writing with Vanilla Books Expanded)
+		Planetside Politics - Politics_DoBillsWritePolemicDesk 110 (Moved to VBE_Writing with Vanilla Books Expanded)
+		Vanilla Books Expanded - VBE_DoBillsWrite 100
+
+	-->
+			
+		<!-- Medieval Overhaul - Do Bills at Scribe Table -->
+	
+			<li MayRequire="DankPyon.Medieval.Overhaul,VanillaExpanded.VBooksE" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DankPyon_DoBillsScribeTable"]/workType</xpath>
+				<value>
+					<workType>VBE_Writing</workType>
+				</value>
+			</li>
+			
+		<!-- Planetside Politics - Do Bills Write Polemic Spot -->
+	
+			<li MayRequire="LegendaryMinuteman.PlanetsidePolitics,VanillaExpanded.VBooksE" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "Politics_DoBillsWritePolemicSpot"]/workType</xpath>
+				<value>
+					<workType>VBE_Writing</workType>
+				</value>
+			</li>
+			
+		<!-- Planetside Politics - Do Bills Write Polemic Desk -->
+	
+			<li MayRequire="LegendaryMinuteman.PlanetsidePolitics,VanillaExpanded.VBooksE" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "Politics_DoBillsWritePolemicDesk"]/workType</xpath>
+				<value>
+					<workType>VBE_Writing</workType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

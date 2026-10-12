@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+			
+			<!-- Biotech DLC Patch Children Worktypes -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Human"]/race/lifeStageWorkSettings</xpath>
+				<value>
+					<FSFNurse>7</FSFNurse> <!-- Default Doctor 10 Recommended 7 -->
+					<FSFSurgeon>10</FSFSurgeon> <!-- Default Doctor 10 -->
+					<FSFRearming>3</FSFRearming> <!-- Default Hauling 3 Recommended 7 -->
+					<FSFTraining>7</FSFTraining> <!-- Default Handling 7 -->
+					<FSFButcher>7</FSFButcher> <!-- Default Cooking 7 -->
+					<FSFRepair>10</FSFRepair> <!-- Default Construction 10 -->
+					<FSFDeconstruct>10</FSFDeconstruct> <!-- Default Construction 10 -->
+					<FSFHarvesting>7</FSFHarvesting> <!-- Default Growing 7 -->
+					<FSFDrilling>7</FSFDrilling> <!-- Default Mining 7 -->
+					<FSFDrugs>7</FSFDrugs> <!-- Default Crafting 7 -->
+					<FSFFabrication>13</FSFFabrication> <!-- Default Smithing 13 -->
+					<FSFMachining>13</FSFMachining> <!-- Default Smithing 13 -->
+					<FSFProduction>3</FSFProduction> <!-- Default Hauling 3 Recommended 7 -->
+					<FSFRefining>7</FSFRefining> <!-- Default Crafting 7 -->
+					<FSFSmelt>7</FSFSmelt> <!-- Default Crafting 7 Recommended 10 -->
+					<FSFStoneCut>7</FSFStoneCut> <!-- Default Crafting 7 -->
+					<FSFTransport>3</FSFTransport> <!-- Default Hauling 3 Recommended 7 -->
+					<FSFCremating>3</FSFCremating> <!-- Default Hauling 3 Recommended 10 -->
+					<FSFDeliver>3</FSFDeliver> <!-- Default Hauling 3 -->
+					<FSFHauling>3</FSFHauling> <!-- Default Hauling 3 -->
+					<FSFScan>7</FSFScan> <!-- Default Research 13 Recommended 7 -->
+				</value>
+			</li>
+			
+			<!-- Vanilla Races Expanded - Archon -->
+			
+			<li MayRequire="vanillaracesexpanded.archon" Class="PatchOperationAdd">
+				<xpath>/Defs/GeneDef[defName = "VRE_EarlyMaturity"]/modExtensions/li[@Class = "VREArchon.LifeStageWorkSettingsExtension"]/lifeStageWorkSettings</xpath>
+				<value>
+					<FSFNurse>4</FSFNurse> <!-- VRE_EarlyMaturity Doctor 7 Recommended 4 -->
+					<FSFSurgeon>7</FSFSurgeon> <!-- VRE_EarlyMaturity Doctor 7 -->
+					<FSFRearming>3</FSFRearming> <!-- VRE_EarlyMaturity Hauling 3 Recommended 4 -->
+					<FSFTraining>4</FSFTraining> <!-- VRE_EarlyMaturity Handling 4 -->
+					<FSFButcher>4</FSFButcher> <!-- VRE_EarlyMaturity Cooking 4 -->
+					<FSFRepair>7</FSFRepair> <!-- VRE_EarlyMaturity Construction 7 -->
+					<FSFDeconstruct>7</FSFDeconstruct> <!-- VRE_EarlyMaturity Construction 7 -->
+					<FSFHarvesting>4</FSFHarvesting> <!-- VRE_EarlyMaturity Growing 4 -->
+					<FSFDrilling>4</FSFDrilling> <!-- VRE_EarlyMaturity Mining 4 -->
+					<FSFDrugs>4</FSFDrugs> <!-- VRE_EarlyMaturity Crafting 7 Recommended 4 -->
+					<FSFFabrication>10</FSFFabrication> <!-- VRE_EarlyMaturity Smithing 10 -->
+					<FSFMachining>10</FSFMachining> <!-- VRE_EarlyMaturity Smithing 10 -->
+					<FSFProduction>3</FSFProduction> <!-- VRE_EarlyMaturity Hauling 3 Recommended 4 -->
+					<FSFRefining>4</FSFRefining> <!-- VRE_EarlyMaturity Crafting 7 Recommended 4 -->
+					<FSFSmelt>4</FSFSmelt> <!-- VRE_EarlyMaturity Crafting 7 Recommended 7 -->
+					<FSFStoneCut>4</FSFStoneCut> <!-- VRE_EarlyMaturity Crafting 7 -->
+					<FSFTransport>3</FSFTransport> <!-- VRE_EarlyMaturity Hauling 3 Recommended 4 -->
+					<FSFCremating>3</FSFCremating> <!-- VRE_EarlyMaturity Hauling 3 Recommended 7 -->
+					<FSFDeliver>3</FSFDeliver> <!-- VRE_EarlyMaturity Hauling 3 -->
+					<FSFHauling>3</FSFHauling> <!-- VRE_EarlyMaturity Hauling 3 -->
+					<FSFScan>4</FSFScan> <!-- VRE_EarlyMaturity Research 10 Recommended 4 -->
+				</value>
+			</li>
+			
+			</operations>
+	</Operation>
+	
+</Patch>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+	
+	<Operation Class="XmlExtensions.OptionalPatch">
+		<modId>FrozenSnowFox.FrozenSnowFoxComplexJobs</modId>
+		<key>FSFDraftedWorkTasks</key>
+		<defaultValue>false</defaultValue>
+		<caseTrue>
+				
+		<!-- Drafted Work Tasks -->
+			
+		<Operation Class="PatchOperationConditional">
+			<success>Normal</success>
+		
+			<xpath>/Defs/WorkGiverDef/canBeDoneWhileDrafted</xpath>
+			<nomatch Class="PatchOperationAdd">
+				<xpath>/Defs/WorkGiverDef</xpath>
+				<value>
+					<canBeDoneWhileDrafted>true</canBeDoneWhileDrafted>
+				</value>
+			</nomatch>
+
+		</Operation>
+			
+		</caseTrue>
+	</Operation>
+
+</Patch>

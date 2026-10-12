@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+	<Operation Class="XmlExtensions.OptionalPatch">
+		<modId>FrozenSnowFox.FrozenSnowFoxComplexJobs</modId>
+		<key>FSFTamingWorktype</key>
+		<defaultValue>false</defaultValue>
+		<caseTrue>
+			
+		<Operation Class="PatchOperationSequence">
+			<success>Normal</success>
+			<operations>
+				
+			<!-- Taming Worktype -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+	<WorkTypeDef>
+		<defName>FSFTaming</defName>
+		<labelShort>Tame</labelShort>
+		<pawnLabel>Tamer</pawnLabel>
+		<gerundLabel>Taming</gerundLabel>
+		<description>Tame wild animals.</description>
+		<verb>Tame</verb>
+		<naturalPriority>1055</naturalPriority>
+		<relevantSkills>
+			<li>Animals</li>
+		</relevantSkills>
+		<workTags>
+			<li>Animals</li>
+			<li>Commoner</li>
+			<li>AllWork</li>
+		</workTags>
+	</WorkTypeDef>
+					
+				</value>
+			</li>
+				
+			<!-- Biotech Mechanoids Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Handling"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Handling"] ]</xpath>
+					<value>
+						<li>FSFTaming</li>
+					</value>
+				</match>
+			</li>
+				
+			<li MayRequire="imranfish.xmlextensions" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Handling"] ]</xpath>
+				<match Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+					<xpath>/Defs/ThingDef/race [mechEnabledWorkTypes/li [text()="Handling"] ]</xpath>
+					<compare>Both</compare>
+					<value>
+						<mechWorkTypePriorities>
+							<FSFTaming>3</FSFTaming>
+						</mechWorkTypePriorities>
+					</value>
+				</match>
+			</li>
+				
+		<!-- ABF Artificial Beings Framework Patch -->
+			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Handling"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Handling"] ]</xpath>
+					<value>
+						<li>FSFTaming</li>
+					</value>
+				</match>
+			</li>
+			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Handling"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Handling"] ]</xpath>
+					<value>
+						<li>FSFTaming</li>
+					</value>
+				</match>
+			</li>
+				
+			<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Handling"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Handling"] ]</xpath>
+					<value>
+						<li>FSFTaming</li>
+					</value>
+				</match>
+			</li>
+				
+			<!-- Change Task Worktype -->
+				
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "FSFTraining"]/description</xpath>
+				<value>
+					<description>Train domesticated animals.</description>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "Tame"]/workType</xpath>
+				<value>
+					<workType>FSFTaming</workType>
+				</value>
+			</li>
+				
+			<!-- Add Worktype to Human for Children -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Human"]/race/lifeStageWorkSettings</xpath>
+				<value>
+					<FSFTaming>7</FSFTaming> <!-- Default Handling 7 -->
+				</value>
+			</li>
+				
+			<!-- Vanilla Races Expanded - Archon -->
+				
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/GeneDef[defName="VRE_EarlyMaturity"]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/GeneDef[defName = "VRE_EarlyMaturity"]/modExtensions/li[@Class = "VREArchon.LifeStageWorkSettingsExtension"]/lifeStageWorkSettings</xpath>
+					<value>
+						<FSFTaming>4</FSFTaming> <!-- VRE_EarlyMaturity Handling 4 -->
+					</value>
+				</match>
+			</li>
+				
+			</operations>
+		</Operation>
+			
+		</caseTrue>
+	</Operation>
+
+</Patch>

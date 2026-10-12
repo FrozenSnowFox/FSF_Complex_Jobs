@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- FinishingOff 1140 (Allow Tool)
+ 
+		Default Priority Order
+
+			Allow Tool - FinishOff 50
+
+	-->
+				
+</Patch>

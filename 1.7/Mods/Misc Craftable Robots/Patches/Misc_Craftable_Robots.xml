@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Misc Craftable Robots -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+			
+			<!-- Gardener Robot -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AIRobot_GardenerBot"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFHarvesting</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFButcher</workTypeDef><priority>2</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/WorkTypeDef[defName="FSFPruning"]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName = "AIRobot_GardenerBot"]/robotWorkTypes</xpath>
+					<value>
+						<li><workTypeDef>FSFPruning</workTypeDef><priority>1</priority></li>
+					</value>
+				</match>
+			</li>
+			
+			<!-- Crafting Robot -->
+			
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AIRobot_CraftingBot"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFMachining</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFFabrication</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/WorkTypeDef[defName="FSFMechanoids"]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName = "AIRobot_CraftingBot"]/robotWorkTypes</xpath>
+					<value>
+						<li><workTypeDef>FSFMechanoids</workTypeDef><priority>1</priority></li>
+					</value>
+				</match>
+			</li>
+			
+			<!-- Mining Robot -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AIRobot_MiningBot"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFDrilling</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+			
+			<!-- Construction Robot -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "AIRobot_ConstructionBot"]/robotWorkTypes</xpath>
+				<value>
+					<li><workTypeDef>FSFRepair</workTypeDef><priority>1</priority></li>
+					<li><workTypeDef>FSFDeconstruct</workTypeDef><priority>1</priority></li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/WorkTypeDef[defName="FSFSmoothing"]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName = "AIRobot_ConstructionBot"]/robotWorkTypes</xpath>
+					<value>
+						<li><workTypeDef>FSFSmoothing</workTypeDef><priority>1</priority></li>
+					</value>
+				</match>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

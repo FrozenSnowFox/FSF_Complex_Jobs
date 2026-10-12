@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+	<Operation Class="XmlExtensions.OptionalPatch">
+		<modId>FrozenSnowFox.FrozenSnowFoxComplexJobs</modId>
+		<key>FSFSmoothingWorktype</key>
+		<defaultValue>false</defaultValue>
+		<caseTrue>
+			
+		<Operation Class="PatchOperationSequence">
+			<success>Normal</success>
+			<operations>
+				
+			<!-- Smoothing Worktype -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+	<WorkTypeDef>
+		<defName>FSFSmoothing</defName>
+		<labelShort>Smooth</labelShort>
+		<pawnLabel>Smoother</pawnLabel>
+		<gerundLabel>smoothing</gerundLabel>
+		<description>Smooth stone floors and walls.</description>
+		<verb>Smooth</verb>
+		<naturalPriority>895</naturalPriority>
+		<requireCapableColonist>true</requireCapableColonist>
+		<relevantSkills>
+			<li>Construction</li>
+		</relevantSkills>
+		<workTags>
+			<li>ManualSkilled</li>
+			<li>Commoner</li>
+			<li>Constructing</li>
+			<li>AllWork</li>
+		</workTags>
+	</WorkTypeDef>
+					
+				</value>
+			</li>
+				
+			<!-- Biotech Mechanoids Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Construction"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Construction"] ]</xpath>
+					<value>
+						<li>FSFSmoothing</li>
+					</value>
+				</match>
+			</li>
+				
+			<li MayRequire="imranfish.xmlextensions" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Construction"] ]</xpath>
+				<match Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+					<xpath>/Defs/ThingDef/race [mechEnabledWorkTypes/li [text()="Construction"] ]</xpath>
+					<compare>Both</compare>
+					<value>
+						<mechWorkTypePriorities>
+							<FSFSmoothing>3</FSFSmoothing>
+						</mechWorkTypePriorities>
+					</value>
+				</match>
+			</li>
+				
+		<!-- ABF Artificial Beings Framework Patch -->
+			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Construction"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Construction"] ]</xpath>
+					<value>
+						<li>FSFSmoothing</li>
+					</value>
+				</match>
+			</li>
+			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Construction"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Construction"] ]</xpath>
+					<value>
+						<li>FSFSmoothing</li>
+					</value>
+				</match>
+			</li>
+				
+			<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Construction"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Construction"] ]</xpath>
+					<value>
+						<li>FSFSmoothing</li>
+					</value>
+				</match>
+			</li>
+				
+			<!-- Change Task Worktype -->
+				
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ConstructSmoothFloors"]/workType</xpath>
+				<value>
+					<workType>FSFSmoothing</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ConstructSmoothWalls"]/workType</xpath>
+				<value>
+					<workType>FSFSmoothing</workType>
+				</value>
+			</li>
+				
+			<!-- Add Worktype to Human for Children -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Human"]/race/lifeStageWorkSettings</xpath>
+				<value>
+					<FSFSmoothing>7</FSFSmoothing> <!-- Default Construction 10 Recommended 7 -->
+				</value>
+			</li>
+				
+			<!-- Vanilla Races Expanded - Archon -->
+				
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/GeneDef[defName="VRE_EarlyMaturity"]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/GeneDef[defName = "VRE_EarlyMaturity"]/modExtensions/li[@Class = "VREArchon.LifeStageWorkSettingsExtension"]/lifeStageWorkSettings</xpath>
+					<value>
+						<FSFSmoothing>4</FSFSmoothing> <!-- VRE_EarlyMaturity Construction 7 Recommended 4 -->
+					</value>
+				</match>
+			</li>
+				
+			</operations>
+		</Operation>
+			
+		</caseTrue>
+	</Operation>
+
+</Patch>

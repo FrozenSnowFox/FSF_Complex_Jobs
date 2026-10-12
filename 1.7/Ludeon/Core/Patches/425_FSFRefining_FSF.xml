@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- FSFRefining 425 (FSF Complex Jobs)
+ 
+		Default Priority Order
+
+			Fortification Industrial Citadel - FT_OperateAutoChem 145
+			Core - DoBillsRefinery 97 (Moved to FSFRefining)
+			Archotech Crefinery - DoBills_ArchotetchCrefinery 97 (Moved to FSFRefining)
+			Vanilla Gravship Expanded - VGE_DoBillsRefinery 97 (Moved to FSFRefining)
+
+	-->
+			
+		<!-- Biotech Mechanoids Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Crafting"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Crafting"] ]</xpath>
+					<value>
+						<li>FSFRefining</li>
+					</value>
+				</match>
+			</li>
+			
+			<li MayRequire="imranfish.xmlextensions" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Crafting"] ]</xpath>
+				<match Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+					<xpath>/Defs/ThingDef/race [mechEnabledWorkTypes/li [text()="Crafting"] ]</xpath>
+					<compare>Both</compare>
+					<value>
+						<mechWorkTypePriorities>
+							<FSFRefining>3</FSFRefining>
+						</mechWorkTypePriorities>
+					</value>
+				</match>
+			</li>
+			
+		<!-- ABF Artificial Beings Framework Patch -->
+			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Crafting"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Crafting"] ]</xpath>
+					<value>
+						<li>FSFRefining</li>
+					</value>
+				</match>
+			</li>
+			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Crafting"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Crafting"] ]</xpath>
+					<value>
+						<li>FSFRefining</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Crafting"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Crafting"] ]</xpath>
+					<value>
+						<li>FSFRefining</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- VQE Drone Factory Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThinkTreeDef[defName = "VQE_Drone"]/thinkRoot/subNodes/li[@Class = "VanillaQuestsExpandedDroneFactory.ThinkNode_ConditionalPawnKindList"]/subNodes/li[@Class = "VanillaQuestsExpandedDroneFactory.JobGiver_DoWork"]/workTypes [li [text()="Crafting"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThinkTreeDef[defName = "VQE_Drone"]/thinkRoot/subNodes/li[@Class = "VanillaQuestsExpandedDroneFactory.ThinkNode_ConditionalPawnKindList"]/subNodes/li[@Class = "VanillaQuestsExpandedDroneFactory.JobGiver_DoWork"]/workTypes [li [text()="Crafting"] ]</xpath>
+					<value>
+						<li>FSFRefining</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Fortification Industrial Citadel - Do Bills at Pyrolysis Plant -->
+			
+			<li MayRequire="Aoba.Fortress.Industrial.Citadel" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "FT_OperateAutoChem"]/workType</xpath>
+				<value>
+					<workType>FSFRefining</workType>
+				</value>
+			</li>
+			
+		<!-- The Dead Man's Switch - Create new Workgiver for FSFRefining -->
+
+			<li MayRequire="Aoba.DeadManSwitch.Core" Class="PatchOperationRemove">
+				<xpath>/Defs/WorkGiverDef[defName = "DMS_Operate"]/fixedBillGiverDefs/li[text()="DMS_ReactionChamber"]</xpath>
+			</li>
+			
+			<li MayRequire="Aoba.DeadManSwitch.Core" Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					<WorkGiverDef>
+						<defName>FSFDMS_ReactionChamber</defName>
+						<label>Operate pressure chamber</label>
+						<giverClass>Fortified.WorkGiver_DoAutonomousBill</giverClass>
+						<workType>FSFRefining</workType>
+						<priorityInType>140</priorityInType>
+						<fixedBillGiverDefs>
+							<li>DMS_ReactionChamber</li>
+						</fixedBillGiverDefs>
+						<verb>Operate</verb>
+						<gerund>Operating at</gerund>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+						<prioritizeSustains>true</prioritizeSustains>
+					</WorkGiverDef>
+				</value>
+			</li>
+			
+			<li MayRequire="Aoba.DeadManSwitch.Core" Class="PatchOperationRemove">
+				<xpath>/Defs/WorkGiverDef[defName = "DMS_DoBill"]/fixedBillGiverDefs/li[text()="DMS_LabReactor"]</xpath>
+			</li>
+			
+			<li MayRequire="Aoba.DeadManSwitch.Core" Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					<WorkGiverDef>
+						<defName>FSFDMS_LabReactor</defName>
+						<label>Operate lab reactor</label>
+						<giverClass>WorkGiver_DoBill</giverClass>
+						<workType>FSFRefining</workType>
+						<priorityInType>139</priorityInType>
+						<fixedBillGiverDefs>
+							<li>DMS_LabReactor</li>
+						</fixedBillGiverDefs>
+						<verb>Operate</verb>
+						<gerund>Operating at</gerund>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+						<prioritizeSustains>true</prioritizeSustains>
+					</WorkGiverDef>
+				</value>
+			</li>
+			
+		<!-- Core - Do Bills at Refinery -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsRefinery"]/workType</xpath>
+				<value>
+					<workType>FSFRefining</workType>
+				</value>
+			</li>
+			
+		<!-- Archotech Crefinery - Do Bills at Crefinery -->
+
+			<li MayRequire="rpgwanderer.archotechcrefinery" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBills_ArchotetchCrefinery"]/workType</xpath>
+				<value>
+					<workType>FSFRefining</workType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Gravship Expanded - Do Bills At Mini Refinery -->
+
+			<li MayRequire="vanillaexpanded.gravship" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VGE_DoBillsRefinery"]/workType</xpath>
+				<value>
+					<workType>FSFRefining</workType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Patient 1350 (Core)
+ 
+		Default Priority Order
+
+			Core - PatientGoToBedEmergencyTreatment ???
+			Core - PatientGoToBedTreatment ???
+
+	-->
+				
+</Patch>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- FSFDrilling 595 (FSF Complex Jobs)
+ 
+		Default Priority Order
+
+			Dubs Rimefeller - SuperviseDrilling 110 (Moved to FSFDrilling)
+			Omni Core Drill (Continued) - DoBillsCoreMine 90 (Moved to FSFDrilling)
+			GarlicSauce's Advanced Deep Drill (Continued) - TRAHS_DoBillsAdvancedDeepDrill 80 (Moved to FSFDrilling)
+			Core - Drill 50 (Moved to FSFDrilling)
+			Appliances Expanded - SCP_ChemDrill 50
+
+	-->
+			
+		<!-- Biotech Mechanoids Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Mining"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Mining"] ]</xpath>
+					<value>
+						<li>FSFDrilling</li>
+					</value>
+				</match>
+			</li>
+			
+			<li MayRequire="imranfish.xmlextensions" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Mining"] ]</xpath>
+				<match Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+					<xpath>/Defs/ThingDef/race [mechEnabledWorkTypes/li [text()="Mining"] ]</xpath>
+					<compare>Both</compare>
+					<value>
+						<mechWorkTypePriorities>
+							<FSFDrilling>3</FSFDrilling>
+						</mechWorkTypePriorities>
+					</value>
+				</match>
+			</li>
+			
+		<!-- ABF Artificial Beings Framework Patch -->
+			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Mining"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Mining"] ]</xpath>
+					<value>
+						<li>FSFDrilling</li>
+					</value>
+				</match>
+			</li>
+			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Mining"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Mining"] ]</xpath>
+					<value>
+						<li>FSFDrilling</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Mining"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Mining"] ]</xpath>
+					<value>
+						<li>FSFDrilling</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Dubs Rimefeller - Supervise Drilling -->
+
+			<li MayRequire="Dubwise.Rimefeller" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "Drill"]/workType</xpath>
+				<value>
+					<workType>FSFDrilling</workType>
+				</value>
+			</li>
+			
+		<!-- Omni Core Drill (Continued) - Do Bills at Core Drill -->
+
+			<li MayRequire="Mlie.OmniCoreDrill" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsCoreMine"]/workType</xpath>
+				<value>
+					<workType>FSFDrilling</workType>
+				</value>
+			</li>
+			
+		<!-- GarlicSauce's Advanced Deep Drill (Continued) - Do Bills at Advanced Deep Drill -->
+
+			<li MayRequire="zal.advanceddeepdrill" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "TRAHS_DoBillsAdvancedDeepDrill"]/workType</xpath>
+				<value>
+					<workType>FSFDrilling</workType>
+				</value>
+			</li>
+			
+		<!-- Core - Deep Drill -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "Drill"]/workType</xpath>
+				<value>
+					<workType>FSFDrilling</workType>
+				</value>
+			</li>
+			
+		<!-- Appliances Expanded - Chemfuel Deep Drill -->
+
+			<li MayRequire="scpchemfuel.appliances" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "SCP_ChemDrill"]/workType</xpath>
+				<value>
+					<workType>FSFDrilling</workType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

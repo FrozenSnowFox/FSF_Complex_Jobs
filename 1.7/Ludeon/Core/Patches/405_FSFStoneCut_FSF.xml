@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- FSFStoneCut 405 (FSF Complex Jobs)
+ 
+		Default Priority Order
+
+			Core - DoBillsStonecut 90 (Moved to FSFStoneCut)
+			Medieval Overhaul - DankPyon_DoBillsMining 90 (Moved to FSFStoneCut) (Note: Task is misnamed this one is Stonecutting Spot)
+																				 (Note 2: There's a patch for stonecutting, so might not apply anymore?)
+
+	-->
+			
+		<!-- Biotech Mechanoids Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Crafting"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Crafting"] ]</xpath>
+					<value>
+						<li>FSFStoneCut</li>
+					</value>
+				</match>
+			</li>
+			
+			<li MayRequire="imranfish.xmlextensions" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Crafting"] ]</xpath>
+				<match Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+					<xpath>/Defs/ThingDef/race [mechEnabledWorkTypes/li [text()="Crafting"] ]</xpath>
+					<compare>Both</compare>
+					<value>
+						<mechWorkTypePriorities>
+							<FSFStoneCut>3</FSFStoneCut>
+						</mechWorkTypePriorities>
+					</value>
+				</match>
+			</li>
+			
+		<!-- ABF Artificial Beings Framework Patch -->
+			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Crafting"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Crafting"] ]</xpath>
+					<value>
+						<li>FSFStoneCut</li>
+					</value>
+				</match>
+			</li>
+			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Crafting"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Crafting"] ]</xpath>
+					<value>
+						<li>FSFStoneCut</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Crafting"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Crafting"] ]</xpath>
+					<value>
+						<li>FSFStoneCut</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Core - Do Bills at Stonecutting Bench -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsStonecut"]/workType</xpath>
+				<value>
+					<workType>FSFStoneCut</workType>
+				</value>
+			</li>
+			
+		<!-- Medieval Overhaul - Do Bills at Stonecutting Spot 
+			
+			<li MayRequire="DankPyon.Medieval.Overhaul" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DankPyon_DoBillsMining"]/workType</xpath>
+				<value>
+					<workType>FSFStoneCut</workType>
+				</value>
+			</li>
+
+		-->
+			
+		</operations>
+	</Operation>
+				
+</Patch>

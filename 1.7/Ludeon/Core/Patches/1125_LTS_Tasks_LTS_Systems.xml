@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- LTS_Tasks 1125 ([LTS] Systems) (1125)
+
+		Default Priority Order
+
+			[LTS] Ammunition Framework - DoBillsAmmunitionBench 105 (Moved to Crafting)
+			[LTS] Ammunition Framework - LTS_DoStrip 101 (Moved to FSFCremating)
+			[LTS] Ammunition Framework - LTS_DoLoadKit 88
+
+	-->
+				
+</Patch>

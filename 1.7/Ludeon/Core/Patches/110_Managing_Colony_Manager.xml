@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- Managing 110 (Colony Manager) (100)
+
+		Default Priority Order
+
+			Colony Manager - ManagerManage 100
+
+	-->
+			
+		<!-- Colony Manager - (Move Managing Worktype Priority) -->
+			
+			<li MayRequire="fluffy.colonymanager" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "Managing"]/naturalPriority</xpath>
+				<value>
+					<naturalPriority>110</naturalPriority>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

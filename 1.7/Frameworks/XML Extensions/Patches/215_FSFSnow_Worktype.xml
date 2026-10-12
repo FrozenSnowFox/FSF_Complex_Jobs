@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+	<Operation Class="XmlExtensions.OptionalPatch">
+		<modId>FrozenSnowFox.FrozenSnowFoxComplexJobs</modId>
+		<key>FSFClearSnowWorktype</key>
+		<defaultValue>false</defaultValue>
+		<caseTrue>
+			
+		<Operation Class="PatchOperationSequence">
+			<success>Normal</success>
+			<operations>
+				
+			<!-- Clear Snow Worktype -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+	<WorkTypeDef>
+		<defName>FSFSnow</defName>
+		<labelShort>Clear Snow</labelShort>
+		<pawnLabel>Shoveller</pawnLabel>
+		<gerundLabel>clearing</gerundLabel>
+		<description>Clear snow in the home area.</description>
+		<verb>Clear</verb>
+		<naturalPriority>215</naturalPriority>
+    	<requireCapableColonist>true</requireCapableColonist>
+    	<workTags>
+      		<li>ManualDumb</li>
+      		<li>Cleaning</li>
+      		<li>Commoner</li>
+      		<li>AllWork</li>
+    	</workTags>
+	</WorkTypeDef>
+					
+				</value>
+			</li>
+				
+			<!-- Biotech Mechanoids Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Cleaning"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Cleaning"] ]</xpath>
+					<value>
+						<li>FSFSnow</li>
+					</value>
+				</match>
+			</li>
+				
+			<li MayRequire="imranfish.xmlextensions" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Cleaning"] ]</xpath>
+				<match Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+					<xpath>/Defs/ThingDef/race [mechEnabledWorkTypes/li [text()="Cleaning"] ]</xpath>
+					<compare>Both</compare>
+					<value>
+						<mechWorkTypePriorities>
+							<FSFSnow>3</FSFSnow>
+						</mechWorkTypePriorities>
+					</value>
+				</match>
+			</li>
+				
+		<!-- ABF Artificial Beings Framework Patch -->
+			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Cleaning"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Cleaning"] ]</xpath>
+					<value>
+						<li>FSFSnow</li>
+					</value>
+				</match>
+			</li>
+			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Cleaning"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Cleaning"] ]</xpath>
+					<value>
+						<li>FSFSnow</li>
+					</value>
+				</match>
+			</li>
+				
+			<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Cleaning"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Cleaning"] ]</xpath>
+					<value>
+						<li>FSFSnow</li>
+					</value>
+				</match>
+			</li>
+				
+			<!-- Change Task Worktype -->
+				
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "CleanClearSnow"]/workType</xpath>
+				<value>
+					<workType>FSFSnow</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "Cleaning"]/description</xpath>
+				<value>
+					<description>Clean the floor in the home area.</description>
+				</value>
+			</li>
+				
+			<!-- Add Worktype to Human for Children -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Human"]/race/lifeStageWorkSettings</xpath>
+				<value>
+					<FSFSnow>3</FSFSnow> <!-- Default Cleaning 3 -->
+				</value>
+			</li>
+				
+			<!-- Vanilla Races Expanded - Archon -->
+				
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/GeneDef[defName="VRE_EarlyMaturity"]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/GeneDef[defName = "VRE_EarlyMaturity"]/modExtensions/li[@Class = "VREArchon.LifeStageWorkSettingsExtension"]/lifeStageWorkSettings</xpath>
+					<value>
+						<FSFSnow>3</FSFSnow> <!-- Default Cleaning 3 -->
+					</value>
+				</match>
+			</li>
+				
+			</operations>
+		</Operation>
+			
+		</caseTrue>
+	</Operation>
+
+</Patch>

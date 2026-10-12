@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+	<Operation Class="XmlExtensions.OptionalPatch">
+		<modId>FrozenSnowFox.FrozenSnowFoxComplexJobs</modId>
+		<key>FSFMechanoidsAreCapable</key>
+		<defaultValue>false</defaultValue>
+		<caseTrue>
+			
+		<Operation Class="PatchOperationSequence">
+			<success>Normal</success>
+			<operations>
+				
+			<!-- Mechanoids Are Capable -->
+				
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoctorTendToAnimals"]/canBeDoneByMechs</xpath>
+				<value>
+					<canBeDoneByMechs>true</canBeDoneByMechs>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoctorFeedAnimals"]/canBeDoneByMechs</xpath>
+				<value>
+					<canBeDoneByMechs>true</canBeDoneByMechs>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsBrew"]/canBeDoneByMechs</xpath>
+				<value>
+					<canBeDoneByMechs>true</canBeDoneByMechs>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ExtractTree"]/canBeDoneByMechs</xpath>
+				<value>
+					<canBeDoneByMechs>true</canBeDoneByMechs>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "Replant"]/canBeDoneByMechs</xpath>
+				<value>
+					<canBeDoneByMechs>true</canBeDoneByMechs>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "PaintBuilding"]/canBeDoneByMechs</xpath>
+				<value>
+					<canBeDoneByMechs>true</canBeDoneByMechs>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "PaintFloor"]/canBeDoneByMechs</xpath>
+				<value>
+					<canBeDoneByMechs>true</canBeDoneByMechs>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RemovePaintFloor"]/canBeDoneByMechs</xpath>
+				<value>
+					<canBeDoneByMechs>true</canBeDoneByMechs>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "Strip"]/canBeDoneByMechs</xpath>
+				<value>
+					<canBeDoneByMechs>true</canBeDoneByMechs>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "TakeBeerOutOfFermentingBarrel"]/canBeDoneByMechs</xpath>
+				<value>
+					<canBeDoneByMechs>true</canBeDoneByMechs>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "FillFermentingBarrel"]/canBeDoneByMechs</xpath>
+				<value>
+					<canBeDoneByMechs>true</canBeDoneByMechs>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "CarryToGeneExtractor"]/canBeDoneByMechs</xpath>
+				<value>
+					<canBeDoneByMechs>true</canBeDoneByMechs>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "CarryToGrowthVat"]/canBeDoneByMechs</xpath>
+				<value>
+					<canBeDoneByMechs>true</canBeDoneByMechs>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RepairMech"]/canBeDoneByMechs</xpath>
+				<value>
+					<canBeDoneByMechs>true</canBeDoneByMechs>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsSubcoreEncoder"]/canBeDoneByMechs</xpath>
+				<value>
+					<canBeDoneByMechs>true</canBeDoneByMechs>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "HaulMechsToCharger"]/canBeDoneByMechs</xpath>
+				<value>
+					<canBeDoneByMechs>true</canBeDoneByMechs>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech,DanielWedemeyer.GeneRipper" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "CarryToGeneRipper"]/canBeDoneByMechs</xpath>
+				<value>
+					<canBeDoneByMechs>true</canBeDoneByMechs>
+				</value>
+			</li>
+				
+			</operations>
+		</Operation>
+			
+		</caseTrue>
+	</Operation>
+
+</Patch>

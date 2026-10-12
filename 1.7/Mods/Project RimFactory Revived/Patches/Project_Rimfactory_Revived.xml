@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Project Rimfactory Revived -->
+	
+	<!-- Workshop Drone Station -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>			
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "PRF_MiniHelper"]/modExtensions/li[@Class = "ProjectRimFactory.Drones.DefModExtension_DroneStation"]/workTypes</xpath>
+				<value>
+					<li>FSFRearming</li>
+					<li>FSFProduction</li>
+					<li>FSFTransport</li>
+					<li>FSFCremating</li>
+					<li>FSFHauling</li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+	<!-- Add Optional Clear Snow Work Type -->
+
+	<Operation Class="PatchOperationConditional">
+		<success>Normal</success>
+		
+		<xpath>/Defs/WorkTypeDef[defName="FSFSnow"]</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName = "PRF_MiniHelper"]/modExtensions/li[@Class = "ProjectRimFactory.Drones.DefModExtension_DroneStation"]/workTypes</xpath>
+			<value>
+				<li>FSFSnow</li>
+			</value>
+		</match>
+
+	</Operation>
+	
+	<!-- Add Optional Clear Pollution Work Type -->
+
+	<Operation Class="PatchOperationConditional">
+		<success>Normal</success>
+		
+		<xpath>/Defs/WorkTypeDef[defName="FSFPollution"]</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName = "PRF_MiniHelper"]/modExtensions/li[@Class = "ProjectRimFactory.Drones.DefModExtension_DroneStation"]/workTypes</xpath>
+			<value>
+				<li>FSFPollution</li>
+			</value>
+		</match>
+
+	</Operation>
+	
+	
+	
+	<!-- Drone Column -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>			
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "PRF_MiniDroneColumn"]/modExtensions/li[@Class = "ProjectRimFactory.Drones.DefModExtension_DroneStation"]/workTypes</xpath>
+				<value>
+					<li>FSFRearming</li>
+					<li>FSFProduction</li>
+					<li>FSFTransport</li>
+					<li>FSFCremating</li>
+					<li>FSFHauling</li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+	<!-- Add Optional Clear Snow Work Type -->
+
+	<Operation Class="PatchOperationConditional">
+		<success>Normal</success>
+		
+		<xpath>/Defs/WorkTypeDef[defName="FSFSnow"]</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName = "PRF_MiniDroneColumn"]/modExtensions/li[@Class = "ProjectRimFactory.Drones.DefModExtension_DroneStation"]/workTypes</xpath>
+			<value>
+				<li>FSFSnow</li>
+			</value>
+		</match>
+
+	</Operation>
+	
+	<!-- Add Optional Clear Pollution Work Type -->
+
+	<Operation Class="PatchOperationConditional">
+		<success>Normal</success>
+		
+		<xpath>/Defs/WorkTypeDef[defName="FSFPollution"]</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName = "PRF_MiniDroneColumn"]/modExtensions/li[@Class = "ProjectRimFactory.Drones.DefModExtension_DroneStation"]/workTypes</xpath>
+			<value>
+				<li>FSFPollution</li>
+			</value>
+		</match>
+
+	</Operation>
+	
+	
+	
+	<!-- Drone Cultivator I -->
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>			
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "PRF_DroneCultivator_I"]/modExtensions/li[@Class = "ProjectRimFactory.Drones.DefModExtension_DroneStation"]/workTypes</xpath>
+				<value>
+					<li>FSFHarvesting</li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+	<!-- Add Optional Pruning Work Type -->
+
+	<Operation Class="PatchOperationConditional">
+		<success>Normal</success>
+		
+		<xpath>/Defs/WorkTypeDef[defName="FSFPruning"]</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName = "PRF_DroneCultivator_I"]/modExtensions/li[@Class = "ProjectRimFactory.Drones.DefModExtension_DroneStation"]/workTypes</xpath>
+			<value>
+				<li>FSFPruning</li>
+			</value>
+		</match>
+
+	</Operation>
+	
+
+	
+	<!-- Drone Cultivator II -->
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>			
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "PRF_DroneCultivator_II"]/modExtensions/li[@Class = "ProjectRimFactory.Drones.DefModExtension_DroneStation"]/workTypes</xpath>
+				<value>
+					<li>FSFHarvesting</li>
+					<li>FSFRearming</li>
+					<li>FSFProduction</li>
+					<li>FSFTransport</li>
+					<li>FSFCremating</li>
+					<li>FSFHauling</li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+	<!-- Add Optional Pruning Work Type -->
+
+	<Operation Class="PatchOperationConditional">
+		<success>Normal</success>
+		
+		<xpath>/Defs/WorkTypeDef[defName="FSFPruning"]</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName = "PRF_DroneCultivator_II"]/modExtensions/li[@Class = "ProjectRimFactory.Drones.DefModExtension_DroneStation"]/workTypes</xpath>
+			<value>
+				<li>FSFPruning</li>
+			</value>
+		</match>
+
+	</Operation>
+	
+	
+	
+	<!-- Drone Cultivator II Sunlamp -->
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>			
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "PRF_DroneCultivator_II_sun"]/modExtensions/li[@Class = "ProjectRimFactory.Drones.DefModExtension_DroneStation"]/workTypes</xpath>
+				<value>
+					<li>FSFHarvesting</li>
+					<li>FSFRearming</li>
+					<li>FSFProduction</li>
+					<li>FSFTransport</li>
+					<li>FSFCremating</li>
+					<li>FSFHauling</li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+	<!-- Add Optional Pruning Work Type -->
+
+	<Operation Class="PatchOperationConditional">
+		<success>Normal</success>
+		
+		<xpath>/Defs/WorkTypeDef[defName="FSFPruning"]</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName = "PRF_DroneCultivator_II_sun"]/modExtensions/li[@Class = "ProjectRimFactory.Drones.DefModExtension_DroneStation"]/workTypes</xpath>
+			<value>
+				<li>FSFPruning</li>
+			</value>
+		</match>
+
+	</Operation>
+	
+	
+	
+	<!-- Drone Cultivator III -->
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>			
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "PRF_DroneCultivator_III"]/modExtensions/li[@Class = "ProjectRimFactory.Drones.DefModExtension_DroneStation"]/workTypes</xpath>
+				<value>
+					<li>FSFHarvesting</li>
+					<li>FSFRearming</li>
+					<li>FSFProduction</li>
+					<li>FSFTransport</li>
+					<li>FSFCremating</li>
+					<li>FSFHauling</li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+	<!-- Add Optional Pruning Work Type -->
+
+	<Operation Class="PatchOperationConditional">
+		<success>Normal</success>
+		
+		<xpath>/Defs/WorkTypeDef[defName="FSFPruning"]</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName = "PRF_DroneCultivator_III"]/modExtensions/li[@Class = "ProjectRimFactory.Drones.DefModExtension_DroneStation"]/workTypes</xpath>
+			<value>
+				<li>FSFPruning</li>
+			</value>
+		</match>
+
+	</Operation>
+	
+	
+	
+	<!-- Mini RimAtomic station -->
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>			
+			
+			<li MayRequire="Dubwise.Rimatomics" Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "PRF_MiniHelperAtomic"]/modExtensions/li[@Class = "ProjectRimFactory.Drones.DefModExtension_DroneStation"]/workTypes</xpath>
+				<value>
+					<li>FSFRearming</li>
+					<li>FSFProduction</li>
+					<li>FSFTransport</li>
+					<li>FSFCremating</li>
+					<li>FSFHauling</li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+	
+	
+	<!-- Mini Fishing Station -->
+	
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Odyssey</li>
+		</mods>
+		<nomatch Class="PatchOperationSequence">
+			<success>Normal</success>
+			<operations>			
+			
+				<li MayRequire="VanillaExpanded.VCEF" Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName = "PRF_MiniHelperFishing"]/modExtensions/li[@Class = "ProjectRimFactory.Drones.DefModExtension_DroneStation"]/workTypes</xpath>
+					<value>
+						<li>FSFRearming</li>
+						<li>FSFProduction</li>
+						<li>FSFTransport</li>
+						<li>FSFCremating</li>
+						<li>FSFHauling</li>
+					</value>
+				</li>
+		
+			</operations>
+		</nomatch>
+	</Operation>
+	
+</Patch>

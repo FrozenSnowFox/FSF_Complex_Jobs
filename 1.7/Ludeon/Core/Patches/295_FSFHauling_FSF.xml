@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- FSFHauling 295 (FSF Complex Jobs)
+ 
+		Default Priority Order
+
+			MultiFloors - MF_HaulDesignatedToDestMap 152 (Moved to FSFHauling)
+			MultiFloors - MF_DeliverResourcesAcrossLevel 151 (Duplicated Task)
+			Core - HaulToPortal 105 (Moved to FSFHauling)
+			Core - HaulCorpses 90 (Moved to FSFHauling)
+			Vanilla Gravship Expanded - VEF_RefuelSecondary 70 (Moved to FSFRearming)
+			Deep And Deeper - ShashlichnikGoDownIfJobUnderground_Haul 43 (Moved to FSFHauling)
+			Deep And Deeper - ShashlichnikGoDownIfJobUnderground_HaulToPortal 43 (Moved to FSFHauling)
+			Please Haul Perishables - HaulPerishables 35 (Moved to FSFHauling)
+			Please Haul Perishables - HaulFoods 19 (Moved to FSFHauling)
+			Pick Up And Haul - HaulToInventory 18 (Moved to FSFHauling)
+			Please Haul Perishables - HaulBigStacks 17 (Moved to FSFHauling)
+			Core - HaulGeneral 15 (Moved to FSFHauling)
+			Core - DeliverResourcesToFrames 10 (Duplicated Task)
+			Core - DeliverResourcesToBlueprints 9 (Duplicated Task)
+			Core - HaulMerge 5 (Duplicated Task)
+
+	-->
+			
+		<!-- Biotech Mechanoids Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Hauling"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Hauling"] ]</xpath>
+					<value>
+						<li>FSFHauling</li>
+					</value>
+				</match>
+			</li>
+			
+			<li MayRequire="imranfish.xmlextensions" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Hauling"] ]</xpath>
+				<match Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+					<xpath>/Defs/ThingDef/race [mechEnabledWorkTypes/li [text()="Hauling"] ]</xpath>
+					<compare>Both</compare>
+					<value>
+						<mechWorkTypePriorities>
+							<FSFHauling>3</FSFHauling>
+						</mechWorkTypePriorities>
+					</value>
+				</match>
+			</li>
+			
+		<!-- ABF Artificial Beings Framework Patch -->
+			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Hauling"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Hauling"] ]</xpath>
+					<value>
+						<li>FSFHauling</li>
+					</value>
+				</match>
+			</li>
+			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Hauling"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Hauling"] ]</xpath>
+					<value>
+						<li>FSFHauling</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Hauling"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Hauling"] ]</xpath>
+					<value>
+						<li>FSFHauling</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- VQE Drone Factory Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThinkTreeDef[defName = "VQE_Drone"]/thinkRoot/subNodes/li[@Class = "VanillaQuestsExpandedDroneFactory.ThinkNode_ConditionalPawnKindList"]/subNodes/li[@Class = "VanillaQuestsExpandedDroneFactory.JobGiver_DoWork"]/workTypes [li [text()="Hauling"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThinkTreeDef[defName = "VQE_Drone"]/thinkRoot/subNodes/li[@Class = "VanillaQuestsExpandedDroneFactory.ThinkNode_ConditionalPawnKindList"]/subNodes/li[@Class = "VanillaQuestsExpandedDroneFactory.JobGiver_DoWork"]/workTypes [li [text()="Hauling"] ]</xpath>
+					<value>
+						<li>FSFHauling</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- MultiFloors - Haul Designated Thing Across Level -->
+			
+			<li MayRequireAnyOf="telardo.MultiFloors,telardo.MultiFloorsDev" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "MF_HaulDesignatedToDestMap"]/workType</xpath>
+				<value>
+					<workType>FSFHauling</workType>
+				</value>
+			</li>
+			
+		<!-- MultiFloors - Deliver Resources Across Level (Duplicated Task) -->
+			
+			<li MayRequireAnyOf="telardo.MultiFloors,telardo.MultiFloorsDev" Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>					
+					<WorkGiverDef>
+						<defName>FSFMF_DeliverResourcesAcrossLevel</defName>
+						<label>deliver resources across level</label>
+						<giverClass>MultiFloors.Jobs.WorkGiver_ConstructDeliverResourcesAcrossLevel</giverClass>
+						<workType>Hauling</workType>
+						<verb>deliver</verb>
+						<gerund>delivering</gerund>
+						<!-- later than MF_HaulDesignatedToDestMap -->
+						<priorityInType>151</priorityInType>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+						<directOrderable>false</directOrderable>
+					</WorkGiverDef>
+				</value>
+			</li>
+			
+		<!-- Core - Haul To Portal -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "HaulToPortal"]/workType</xpath>
+				<value>
+					<workType>FSFHauling</workType>
+				</value>
+			</li>
+			
+		<!-- Core - Haul Corpses -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "HaulCorpses"]/workType</xpath>
+				<value>
+					<workType>FSFHauling</workType>
+				</value>
+			</li>
+			
+		<!-- Deep And Deeper - Go Down If Job Underground Haul -->
+			
+			<li MayRequireAnyOf="Shashlichnik.DeepAndDeeper" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ShashlichnikGoDownIfJobUnderground_Haul"]/workType</xpath>
+				<value>
+					<workType>FSFHauling</workType>
+				</value>
+			</li>
+			
+		<!-- Deep And Deeper - Go Down If Job Underground Haul To Portal -->
+			
+			<li MayRequireAnyOf="Shashlichnik.DeepAndDeeper" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ShashlichnikGoDownIfJobUnderground_HaulToPortal"]/workType</xpath>
+				<value>
+					<workType>FSFHauling</workType>
+				</value>
+			</li>
+			
+		<!-- Please Haul Perishables - Haul Perishables -->
+			
+			<li MayRequireAnyOf="Mlie.PleaseHaulPerishables" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "HaulPerishables"]/workType</xpath>
+				<value>
+					<workType>FSFHauling</workType>
+				</value>
+			</li>
+			
+		<!-- Please Haul Perishables - Haul Perishables -->
+			
+			<li MayRequireAnyOf="Mlie.PleaseHaulPerishables" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "HaulFoods"]/workType</xpath>
+				<value>
+					<workType>FSFHauling</workType>
+				</value>
+			</li>
+			
+		<!-- Pick Up And Haul - Haul To Inventory -->
+			
+			<li MayRequireAnyOf="Mehni.PickUpAndHaul,Teemo.PickUpAndHaulForked" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "HaulToInventory"]/workType</xpath>
+				<value>
+					<workType>FSFHauling</workType>
+				</value>
+			</li>
+			
+		<!-- Please Haul Perishables - Haul Big Stacks -->
+			
+			<li MayRequireAnyOf="Mlie.PleaseHaulPerishables" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "HaulBigStacks"]/workType</xpath>
+				<value>
+					<workType>FSFHauling</workType>
+				</value>
+			</li>
+			
+		<!-- Core - Haul General -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "HaulGeneral"]/workType</xpath>
+				<value>
+					<workType>FSFHauling</workType>
+				</value>
+			</li>
+			
+		<!-- Core - Deliver Resources To Frames (Duplicated Task) -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>					
+					<WorkGiverDef>
+						<defName>FSFDeliverResourcesToFrames</defName>
+						<label>deliver resources to frames</label>
+						<giverClass>WorkGiver_ConstructDeliverResourcesToFrames</giverClass>
+						<workType>FSFHauling</workType>
+						<priorityInType>10</priorityInType>
+						<verb>deliver to</verb>
+						<gerund>delivering to</gerund>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+						<nonColonistsCanDo>true</nonColonistsCanDo>
+						<prioritizeSustains>true</prioritizeSustains>
+						<equivalenceGroup>AssistInConstruction</equivalenceGroup>
+					</WorkGiverDef>
+				</value>
+			</li>
+			
+		<!-- Core - Deliver Resources To Blueprints (Duplicated Task) -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					<WorkGiverDef>
+						<defName>FSFDeliverResourcesToBlueprints</defName>
+						<label>deliver resources to blueprints</label>
+						<giverClass>WorkGiver_ConstructDeliverResourcesToBlueprints</giverClass>
+						<workType>FSFHauling</workType>
+						<priorityInType>9</priorityInType>
+						<verb>deliver to</verb>
+						<gerund>delivering to</gerund>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+						<nonColonistsCanDo>true</nonColonistsCanDo>
+						<prioritizeSustains>true</prioritizeSustains>
+						<equivalenceGroup>AssistInConstruction</equivalenceGroup>
+					</WorkGiverDef>
+				</value>
+			</li>
+			
+		<!-- Core - Haul Merge Stacks -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "HaulMerge"]/workType</xpath>
+				<value>
+					<workType>FSFHauling</workType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

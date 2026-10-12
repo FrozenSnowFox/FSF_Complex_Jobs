@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- HaulingUrgent 1170 (Allow Tool) (Default 1180)
+ 
+		Default Priority Order
+
+			Allow Tool - HaulUrgently 50
+
+	-->
+			
+		<!-- Allow Tool - (Move HaulingUrgent Worktype Priority) -->
+			
+			<li MayRequire="UnlimitedHugs.AllowTool" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "HaulingUrgent"]/naturalPriority</xpath>
+				<value>
+					<naturalPriority>1170</naturalPriority>
+				</value>
+			</li>
+			
+		<!-- Biotech Mechanoids Patch -->
+			
+			<li MayRequire="UnlimitedHugs.AllowTool" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Hauling"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Hauling"] ]</xpath>
+					<value>
+						<li>HaulingUrgent</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov,UnlimitedHugs.AllowTool" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Hauling"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Hauling"] ]</xpath>
+					<value>
+						<li>HaulingUrgent</li>
+					</value>
+				</match>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

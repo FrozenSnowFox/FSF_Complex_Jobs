@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- Foraging 716 (Berry Picker) (Default 500)
+ 
+		Default Priority Order
+
+			Berry Picker - Forage ???
+
+	-->
+				
+		<!-- Berry Picker - Update Worktype Priority -->
+			
+			<li MayRequire="temmie3754.berrypicker" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "Foraging"]/naturalPriority</xpath>
+				<value>
+					<naturalPriority>716</naturalPriority>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

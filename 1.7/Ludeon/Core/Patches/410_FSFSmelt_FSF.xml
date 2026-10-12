@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- FSFSmelt 410 (FSF Complex Jobs)
+ 
+		Default Priority Order
+
+			Fortification Industrial Citadel - FT_OperateFurnace 125
+			Core - DoBillsSmelter 80 (Moved to FSFSmelt)
+
+	-->
+			
+		<!-- Biotech Mechanoids Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Crafting"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Crafting"] ]</xpath>
+					<value>
+						<li>FSFSmelt</li>
+					</value>
+				</match>
+			</li>
+			
+			<li MayRequire="imranfish.xmlextensions" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Crafting"] ]</xpath>
+				<match Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+					<xpath>/Defs/ThingDef/race [mechEnabledWorkTypes/li [text()="Crafting"] ]</xpath>
+					<compare>Both</compare>
+					<value>
+						<mechWorkTypePriorities>
+							<FSFSmelt>3</FSFSmelt>
+						</mechWorkTypePriorities>
+					</value>
+				</match>
+			</li>
+			
+		<!-- ABF Artificial Beings Framework Patch -->
+			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Crafting"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Crafting"] ]</xpath>
+					<value>
+						<li>FSFSmelt</li>
+					</value>
+				</match>
+			</li>
+			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Crafting"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Crafting"] ]</xpath>
+					<value>
+						<li>FSFSmelt</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Crafting"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Crafting"] ]</xpath>
+					<value>
+						<li>FSFSmelt</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- The Dead Man's Switch - Create new Workgiver for FSFSmelt -->
+
+			<li MayRequire="Aoba.DeadManSwitch.Core" Class="PatchOperationRemove">
+				<xpath>/Defs/WorkGiverDef[defName = "DMS_Operate"]/fixedBillGiverDefs/li[text()="DMS_Furnace"]</xpath>
+			</li>
+			
+			<li MayRequire="Aoba.DeadManSwitch.Core" Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					<WorkGiverDef>
+						<defName>FSFDMS_Furnace</defName>
+						<label>Operate sintering furnace</label>
+						<giverClass>Fortified.WorkGiver_DoAutonomousBill</giverClass>
+						<workType>FSFSmelt</workType>
+						<priorityInType>140</priorityInType>
+						<fixedBillGiverDefs>
+							<li>DMS_Furnace</li>
+						</fixedBillGiverDefs>
+						<verb>Operate</verb>
+						<gerund>Operating at</gerund>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+						<prioritizeSustains>true</prioritizeSustains>
+					</WorkGiverDef>
+				</value>
+			</li>
+			
+			<li MayRequire="Aoba.DeadManSwitch.Core" Class="PatchOperationRemove">
+				<xpath>/Defs/WorkGiverDef[defName = "DMS_DoBill"]/fixedBillGiverDefs/li[text()="DMS_LabFurnace"]</xpath>
+			</li>
+			
+			<li MayRequire="Aoba.DeadManSwitch.Core" Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					<WorkGiverDef>
+						<defName>FSFDMS_LabFurnace</defName>
+						<label>Operate lab furnace</label>
+						<giverClass>WorkGiver_DoBill</giverClass>
+						<workType>FSFSmelt</workType>
+						<priorityInType>139</priorityInType>
+						<fixedBillGiverDefs>
+							<li>DMS_LabFurnace</li>
+						</fixedBillGiverDefs>
+						<verb>Operate</verb>
+						<gerund>Operating at</gerund>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+						<prioritizeSustains>true</prioritizeSustains>
+					</WorkGiverDef>
+				</value>
+			</li>
+			
+		<!-- Fortification Industrial Citadel - Do Bills at Electric Arc Furnace -->
+			
+			<li MayRequire="Aoba.Fortress.Industrial.Citadel" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "FT_OperateFurnace"]/workType</xpath>
+				<value>
+					<workType>FSFSmelt</workType>
+				</value>
+			</li>
+			
+		<!-- Core - Do Bills at Smelter -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsSmelter"]/workType</xpath>
+				<value>
+					<workType>FSFSmelt</workType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

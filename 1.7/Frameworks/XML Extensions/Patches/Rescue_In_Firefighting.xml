@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+	<Operation Class="XmlExtensions.OptionalPatch">
+		<modId>FrozenSnowFox.FrozenSnowFoxComplexJobs</modId>
+		<key>FSFRescueInFirefighting</key>
+		<defaultValue>false</defaultValue>
+		<caseTrue>
+			
+		<Operation Class="PatchOperationSequence">
+			<success>Normal</success>
+			<operations>
+				
+			<!-- Update Worktype Description -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "Firefighter"]/description</xpath>
+				<value>
+					<description>Rescue down allies and extinguish fires in the colony.</description>
+				</value>
+			</li>
+				
+			<!-- Add Duplicated Task -->
+				
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					<WorkGiverDef>
+						<defName>FSFFirefighterRescue</defName>
+						<label>rescue downed allies to bed</label>
+						<giverClass>WorkGiver_RescueDowned</giverClass>
+						<workType>Firefighter</workType>
+						<verb>rescue</verb>
+						<gerund>rescuing</gerund>
+						<priorityInType>60</priorityInType>
+						<directOrderable>false</directOrderable>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+					</WorkGiverDef>
+				</value>
+			</li>
+				
+			<!-- MultiFloors Duplicated Task -->
+				
+			<li MayRequireAnyOf="telardo.MultiFloors,telardo.MultiFloorsDev" Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					<WorkGiverDef>
+						<defName>FSFMF_RescueDownedAcrossLevel</defName>
+						<label>rescue downed allies across level</label>
+						<giverClass>MultiFloors.Jobs.WorkGiver_RescueDownedAcrossLevel</giverClass>
+						<workType>Firefighter</workType>
+						<verb>rescue</verb>
+						<gerund>rescuing</gerund>
+						<!-- lower than vanilla DoctorRescue -->
+						<priorityInType>59</priorityInType>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+					</WorkGiverDef>
+				</value>
+			</li>
+				
+			</operations>
+		</Operation>
+			
+		</caseTrue>
+	</Operation>
+
+</Patch>

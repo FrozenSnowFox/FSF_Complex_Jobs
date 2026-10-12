@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- FSFRepair 910 (FSF Complex Jobs)
+ 
+		Default Priority Order
+
+			Vanilla Gravship Expanded - VGE_MaintainGrav 300 (Moved to FSFRepair)
+			Vanilla Quests Expanded The Generator - VQE_MaintainGenetron 300 (Moved to FSFRepair)
+			Dubs Rimkit - FixBrokenDownBuildingWithKit 130 (Moved to FSFRepair)
+			Mashed's Ashlands - Mashed_Ashlands_Restore 130 (Moved to FSFRepair)
+			MultiFloors - MF_FixBrokenDownBuildingAcrossLevel 121 (Moved to FSFRepair)
+			Core - FixBrokenDownBuilding 120 (Moved to FSFRepair)
+			Vanilla Quests Expanded The Generator - VQE_FixCriticallyBrokenDownBuilding 120 (Moved to FSFRepair)
+			Fluffy Breakdowns - FluffyBreakdowns_Maintenance 85 (Moved to FSFRepair)
+			Vehicle Framework - RepairVehicle 80 (Moved to FSFRepair)
+			Layered Wall Destruction - RestoreWall 45 (Moved to FSFRepair)
+			Core - Repair 40 (Moved to FSFRepair)
+
+	-->
+			
+		<!-- Biotech Mechanoids Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Construction"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Construction"] ]</xpath>
+					<value>
+						<li>FSFRepair</li>
+					</value>
+				</match>
+			</li>
+			
+			<li MayRequire="imranfish.xmlextensions" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Construction"] ]</xpath>
+				<match Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+					<xpath>/Defs/ThingDef/race [mechEnabledWorkTypes/li [text()="Construction"] ]</xpath>
+					<compare>Both</compare>
+					<value>
+						<mechWorkTypePriorities>
+							<FSFRepair>3</FSFRepair>
+						</mechWorkTypePriorities>
+					</value>
+				</match>
+			</li>
+			
+		<!-- ABF Artificial Beings Framework Patch -->
+			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Construction"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Construction"] ]</xpath>
+					<value>
+						<li>FSFRepair</li>
+					</value>
+				</match>
+			</li>
+			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Construction"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Construction"] ]</xpath>
+					<value>
+						<li>FSFRepair</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Construction"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Construction"] ]</xpath>
+					<value>
+						<li>FSFRepair</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Vanilla Quests Expanded The Generator - Maintain Arc -->
+			
+			<li MayRequire="vanillaquestsexpanded.generator" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VQE_MaintainGenetron"]/workType</xpath>
+				<value>
+					<workType>FSFRepair</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="vanillaquestsexpanded.generator" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VQE_MaintainGenetron"]/priorityInType</xpath>
+				<value>
+					<priorityInType>500</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Quests Expanded The Generator - Fix Critically Broken Down Buildings -->
+			
+			<li MayRequire="vanillaquestsexpanded.generator" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VQE_FixCriticallyBrokenDownBuilding"]/workType</xpath>
+				<value>
+					<workType>FSFRepair</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="vanillaquestsexpanded.generator" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VQE_FixCriticallyBrokenDownBuilding"]/priorityInType</xpath>
+				<value>
+					<priorityInType>499</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Dubs Rimkit - Fix Broken Down Buildings With Kit -->
+			
+			<li MayRequire="Dubwise.DubsRimkit" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "FixBrokenDownBuildingWithKit"]/workType</xpath>
+				<value>
+					<workType>FSFRepair</workType>
+				</value>
+			</li>
+			
+		<!-- Mashed's Ashlands - Restore Structures -->
+			
+			<li MayRequire="SirMashedPotato.Ashlands" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "Mashed_Ashlands_Restore"]/workType</xpath>
+				<value>
+					<workType>FSFRepair</workType>
+				</value>
+			</li>
+			
+		<!-- MultiFloors - Fix Broken Down Building Across Level -->
+			
+			<li MayRequireAnyOf="telardo.MultiFloors,telardo.MultiFloorsDev" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "MF_FixBrokenDownBuildingAcrossLevel"]/workType</xpath>
+				<value>
+					<workType>FSFRepair</workType>
+				</value>
+			</li>
+			
+		<!-- Core - Fix Broken Down Buildings -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "FixBrokenDownBuilding"]/workType</xpath>
+				<value>
+					<workType>FSFRepair</workType>
+				</value>
+			</li>
+			
+		<!-- Fluffy Breakdowns - Maintain Buildings -->
+			
+			<li MayRequireAnyOf="Fluffy.FluffyBreakdowns,theeyeofbrows.fluffybreakdowns" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "FluffyBreakdowns_Maintenance"]/workType</xpath>
+				<value>
+					<workType>FSFRepair</workType>
+				</value>
+			</li>
+			
+		<!-- Vehicle Framework - Repair Vehicle -->
+			
+			<li MayRequire="SmashPhil.VehicleFramework" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RepairVehicle"]/workType</xpath>
+				<value>
+					<workType>FSFRepair</workType>
+				</value>
+			</li>
+			
+		<!-- Layered Wall Destruction - Restore Walls -->
+			
+			<li MayRequire="Keshash.LayeredWallDestruction" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RestoreWall"]/workType</xpath>
+				<value>
+					<workType>FSFRepair</workType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Gravship Expanded - Maintain Gravship Structure -->
+
+			<li MayRequire="vanillaexpanded.gravship" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VGE_MaintainGrav"]/workType</xpath>
+				<value>
+					<workType>FSFRepair</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="vanillaexpanded.gravship" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VGE_MaintainGrav"]/priorityInType</xpath>
+				<value>
+					<priorityInType>41</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Core - Repair -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "Repair"]/workType</xpath>
+				<value>
+					<workType>FSFRepair</workType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

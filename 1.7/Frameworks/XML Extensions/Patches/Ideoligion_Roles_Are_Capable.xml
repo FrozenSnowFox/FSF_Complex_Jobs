@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+	<Operation Class="XmlExtensions.OptionalPatch">
+		<modId>FrozenSnowFox.FrozenSnowFoxComplexJobs</modId>
+		<key>FSFIdeoRolesAreCapable</key>
+		<defaultValue>false</defaultValue>
+		<caseTrue>
+			
+		<Operation Class="PatchOperationSequence">
+			<success>Normal</success>
+			<operations>
+				
+			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>/Defs/PreceptDef/roleDisabledWorkTags</xpath>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>/Defs/PreceptDef[defName = "IdeoRole_ShootingSpecialist"]/roleEffects/li[@Class = "RoleEffect_NoMeleeWeapons"]</xpath>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Ideology" Class="XmlExtensions.PatchOperationSafeRemove">
+				<xpath>/Defs/PreceptDef[defName = "IdeoRole_MeleeSpecialist"]/roleEffects/li[@Class = "RoleEffect_NoRangedWeapons"]</xpath>
+			</li>
+				
+			</operations>
+		</Operation>
+			
+		</caseTrue>
+	</Operation>
+
+</Patch>

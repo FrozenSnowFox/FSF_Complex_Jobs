@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- FSFSEStudy 49 (FSF Simple Education) (Default 25)
+ 
+		Default Priority Order
+
+		FSF Simple Education - FSFSEDoBillsStudySpot 100
+
+	-->
+			
+		<!-- FSF Simple Education - (Change Training Worktype Priority) -->
+			
+			<li MayRequire="FrozenSnowFox.SimpleEducation" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "FSFSEStudy"]/naturalPriority</xpath>
+				<value>
+					<naturalPriority>49</naturalPriority>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

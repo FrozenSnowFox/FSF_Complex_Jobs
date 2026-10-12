@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+	<Operation Class="XmlExtensions.OptionalPatch">
+		<modId>FrozenSnowFox.FrozenSnowFoxComplexJobs</modId>
+		<key>FSFRescueWorktype</key>
+		<defaultValue>false</defaultValue>
+		<caseTrue>
+			
+		<Operation Class="PatchOperationSequence">
+			<success>Normal</success>
+			<operations>
+				
+			<!-- Rescue Worktype -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+	<WorkTypeDef>
+		<defName>FSFRescue</defName>
+		<labelShort>Rescue</labelShort>
+		<pawnLabel>Rescuer</pawnLabel>
+		<gerundLabel>Rescuing</gerundLabel>
+		<description>Bring downed allies to beds so they can be treated.</description>
+		<verb>Rescue</verb>
+    	<alwaysStartActive>true</alwaysStartActive>
+		<naturalPriority>1410</naturalPriority>
+		<workTags>
+			<li>Commoner</li>
+			<li>AllWork</li>
+		</workTags>
+	</WorkTypeDef>
+					
+				</value>
+			</li>
+				
+			<!-- Add Duplicated Task -->
+				
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					<WorkGiverDef>
+						<defName>FSFDoctorRescue</defName>
+						<label>rescue downed allies to bed</label>
+						<giverClass>WorkGiver_RescueDowned</giverClass>
+						<workType>FSFRescue</workType>
+						<verb>rescue</verb>
+						<gerund>rescuing</gerund>
+						<priorityInType>60</priorityInType>
+						<directOrderable>false</directOrderable>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+					</WorkGiverDef>
+				</value>
+			</li>
+				
+			<!-- MultiFloors Duplicated Task -->
+				
+			<li MayRequireAnyOf="telardo.MultiFloors,telardo.MultiFloorsDev" Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					<WorkGiverDef>
+						<defName>FSFMF_RescueDownedAcrossLevel</defName>
+						<label>rescue downed allies across level</label>
+						<giverClass>MultiFloors.Jobs.WorkGiver_RescueDownedAcrossLevel</giverClass>
+						<workType>FSFRescue</workType>
+						<verb>rescue</verb>
+						<gerund>rescuing</gerund>
+						<!-- lower than vanilla DoctorRescue -->
+						<priorityInType>59</priorityInType>
+						<requiredCapacities>
+							<li>Manipulation</li>
+						</requiredCapacities>
+					</WorkGiverDef>
+				</value>
+			</li>
+				
+			<!-- Biotech Mechanoids Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Doctor"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Doctor"] ]</xpath>
+					<value>
+						<li>FSFRescue</li>
+					</value>
+				</match>
+			</li>
+				
+			<li MayRequire="imranfish.xmlextensions" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Doctor"] ]</xpath>
+				<match Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+					<xpath>/Defs/ThingDef/race [mechEnabledWorkTypes/li [text()="Doctor"] ]</xpath>
+					<compare>Both</compare>
+					<value>
+						<mechWorkTypePriorities>
+							<FSFRescue>3</FSFRescue>
+						</mechWorkTypePriorities>
+					</value>
+				</match>
+			</li>
+				
+		<!-- ABF Artificial Beings Framework Patch -->
+			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Doctor"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Doctor"] ]</xpath>
+					<value>
+						<li>FSFRescue</li>
+					</value>
+				</match>
+			</li>
+			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Doctor"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Doctor"] ]</xpath>
+					<value>
+						<li>FSFRescue</li>
+					</value>
+				</match>
+			</li>
+				
+			<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Doctor"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Doctor"] ]</xpath>
+					<value>
+						<li>FSFRescue</li>
+					</value>
+				</match>
+			</li>
+				
+			<!-- Add Worktype to Human for Children -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Human"]/race/lifeStageWorkSettings</xpath>
+				<value>
+					<FSFRescue>3</FSFRescue> <!-- Default Hauling 3 -->
+				</value>
+			</li>
+				
+			<!-- Vanilla Races Expanded - Archon -->
+				
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/GeneDef[defName="VRE_EarlyMaturity"]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/GeneDef[defName = "VRE_EarlyMaturity"]/modExtensions/li[@Class = "VREArchon.LifeStageWorkSettingsExtension"]/lifeStageWorkSettings</xpath>
+					<value>
+						<FSFRescue>3</FSFRescue> <!-- VRE_EarlyMaturity Hauling 3 -->
+					</value>
+				</match>
+			</li>
+				
+			</operations>
+		</Operation>
+			
+		</caseTrue>
+	</Operation>
+
+</Patch>

@@ -43,15 +43,6 @@
 			Worksites Expanded - OperatePulseEmitter 40 (Moved to FSFScan)
  
 	-->
-	
-		<!-- Vanilla Gravship Expanded - Collect Gravdata -->
-			
-			<li MayRequire="vanillaexpanded.gravship" Class="PatchOperationReplace">
-				<xpath>/Defs/WorkGiverDef[defName = "VGE_CollectGravdata"]/priorityInType</xpath>
-				<value>
-					<priorityInType>1005</priorityInType>
-				</value>
-			</li>
 			
 		<!-- Core - Hack Buildings -->
 			
@@ -116,6 +107,15 @@
 				</value>
 			</li>
 			
+		<!-- Vanilla Quests Expanded The Generator - Study Genetron -->
+			
+			<li MayRequire="vanillaquestsexpanded.generator" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VQE_StudyGenetron"]/priorityInType</xpath>
+				<value>
+					<priorityInType>160</priorityInType>
+				</value>
+			</li>
+			
 		<!-- Altered Carbon 2 - Do Bills Decryption Bench -->
 			
 			<li MayRequire="hlx.UltratechAlteredCarbon" Class="PatchOperationReplace">
@@ -140,6 +140,15 @@
 				<xpath>/Defs/WorkGiverDef[defName = "USH_VaccineResearch"]/priorityInType</xpath>
 				<value>
 					<priorityInType>154</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Gravship Expanded - Collect Gravdata -->
+			
+			<li MayRequire="vanillaexpanded.gravship" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VGE_CollectGravdata"]/priorityInType</xpath>
+				<value>
+					<priorityInType>101</priorityInType>
 				</value>
 			</li>
 			

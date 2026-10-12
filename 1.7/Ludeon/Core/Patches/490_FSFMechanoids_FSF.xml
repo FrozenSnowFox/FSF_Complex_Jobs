@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- FSFMechanoids 490 (FSF Complex Jobs)
+ 
+		Default Priority Order
+
+			Biotech DLC - DoBillsSubcoreEncoder 220 (Moved to FSFMechanoids if Enabled)
+			Biotech DLC - DoBillsMechGestator 210 (Moved to FSFMechanoids if Enabled)
+			Biotech DLC - RepairMech 200 (Moved to FSFMechanoids if Enabled)
+			Vanilla Races Expanded Androids - VREA_RepairAndroid 200 (Moved to FSFMechanoids if Enabled)
+			Vanilla Races Expanded Androids - VREA_DoBillsUseAndroidPartWorkbench 100 (Moved to FSFMechanoids if Enabled)
+			Vanilla Races Expanded Androids - VREA_CreateAndroid 100 (Moved to FSFMechanoids if Enabled)
+			Vanilla Races Expanded Androids - VREA_DoBillsAndroidOperation 70
+
+	-->
+				
+</Patch>

@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+	<Operation Class="XmlExtensions.OptionalPatch">
+		<modId>FrozenSnowFox.FrozenSnowFoxComplexJobs</modId>
+		<key>FSFPrisonCareWorktype</key>
+		<defaultValue>false</defaultValue>
+		<caseTrue>
+			
+		<Operation Class="PatchOperationSequence">
+			<success>Normal</success>
+			<operations>
+				
+			<!-- Prison Care Worktype -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+  <WorkTypeDef>
+    <defName>FSFPrisonCare</defName>
+    <labelShort>Prison Care</labelShort>
+    <pawnLabel>Prison Nurse</pawnLabel>
+    <gerundLabel>prison nursing</gerundLabel>
+    <description>Care for prisoners, bring them food, and perform assigned duties</description>
+    <verb>Care for</verb>
+    <naturalPriority>1110</naturalPriority>
+    <requireCapableColonist>true</requireCapableColonist>
+    <disabledForSlaves>true</disabledForSlaves>
+    <relevantSkills>
+      <li>Medicine</li>
+    </relevantSkills>
+    <workTags>
+		<li>Caring</li>
+		<li>Commoner</li>
+		<li>AllWork</li>
+    </workTags>
+  </WorkTypeDef>
+					
+				</value>
+			</li>
+				
+			<!-- Biotech Mechanoids Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Warden"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Warden"] ]</xpath>
+					<value>
+						<li>FSFPrisonCare</li>
+					</value>
+				</match>
+			</li>
+				
+			<li MayRequire="imranfish.xmlextensions" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Warden"] ]</xpath>
+				<match Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+					<xpath>/Defs/ThingDef/race [mechEnabledWorkTypes/li [text()="Warden"] ]</xpath>
+					<compare>Both</compare>
+					<value>
+						<mechWorkTypePriorities>
+							<FSFPrisonCare>3</FSFPrisonCare>
+						</mechWorkTypePriorities>
+					</value>
+				</match>
+			</li>
+				
+		<!-- ABF Artificial Beings Framework Patch -->
+			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Warden"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Warden"] ]</xpath>
+					<value>
+						<li>FSFPrisonCare</li>
+					</value>
+				</match>
+			</li>
+			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Warden"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Warden"] ]</xpath>
+					<value>
+						<li>FSFPrisonCare</li>
+					</value>
+				</match>
+			</li>
+				
+			<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Warden"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Warden"] ]</xpath>
+					<value>
+						<li>FSFPrisonCare</li>
+					</value>
+				</match>
+			</li>
+				
+			<!-- Change Task Worktype -->
+			
+			<li MayRequire="Euterpe.MilkyTitfuck" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "SEX_WorkGiver_WardenMilkPrisoner"]/workType</xpath>
+				<value>
+					<workType>FSFPrisonCare</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="Dubwise.DubsBadHygiene" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DBHAdministerFluidsWarden"]/workType</xpath>
+				<value>
+					<workType>FSFPrisonCare</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="sarg.alphagenes" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "AG_Warden_DeliverMetal"]/workType</xpath>
+				<value>
+					<workType>FSFPrisonCare</workType>
+				</value>
+			</li>
+				
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "FeedPrisoner"]/workType</xpath>
+				<value>
+					<workType>FSFPrisonCare</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DeliverFoodToPrisoner"]/workType</xpath>
+				<value>
+					<workType>FSFPrisonCare</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DeliverHemogenToPrisoner"]/workType</xpath>
+				<value>
+					<workType>FSFPrisonCare</workType>
+				</value>
+			</li>
+				
+			<!-- Add Worktype to Human for Children -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Human"]/race/lifeStageWorkSettings</xpath>
+				<value>
+					<FSFPrisonCare>10</FSFPrisonCare> <!-- Default Warden 10 -->
+				</value>
+			</li>
+				
+			<!-- Vanilla Races Expanded - Archon -->
+				
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/GeneDef[defName="VRE_EarlyMaturity"]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/GeneDef[defName = "VRE_EarlyMaturity"]/modExtensions/li[@Class = "VREArchon.LifeStageWorkSettingsExtension"]/lifeStageWorkSettings</xpath>
+					<value>
+						<FSFPrisonCare>7</FSFPrisonCare> <!-- VRE_EarlyMaturity Warden 7 -->
+					</value>
+				</match>
+			</li>
+				
+			</operations>
+		</Operation>
+			
+		</caseTrue>
+	</Operation>
+
+</Patch>

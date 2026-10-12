@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<!-- Vanilla Factions Expanded - Tribal -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/VFETribals.TribalResearchProjectDef[defName = "VFET_Agriculture"]/unlocksWorkTypes</xpath>
+				<value>
+					<li>FSFHarvesting</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/VFETribals.TribalResearchProjectDef[defName = "VFET_AnimalHandling"]/unlocksWorkTypes</xpath>
+				<value>
+					<li>FSFTraining</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/VFETribals.TribalResearchProjectDef[defName = "VFET_Mining"]/unlocksWorkTypes</xpath>
+				<value>
+					<li>FSFDrilling</li>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+	
+</Patch>

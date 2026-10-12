@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- NuclearWork 316 (Dubs Rimatomics) (Default 310)
+ 
+		Default Priority Order
+
+		Dubs Rimatomics - LoadFuelModule 155
+		Dubs Rimatomics - LoadSpentFuel 150
+		Dubs Rimatomics - LoadProcChemFuel 148
+		Dubs Rimatomics - UnloadPlutonium 145
+		Dubs Rimatomics - RemoveFuelModule 140
+
+	-->
+	
+		<!-- Dubs Rimatomics - (Move NuclearWork Worktype Priority) -->
+			
+			<li MayRequire="Dubwise.Rimatomics" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "NuclearWork"]/naturalPriority</xpath>
+				<value>
+					<naturalPriority>316</naturalPriority>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

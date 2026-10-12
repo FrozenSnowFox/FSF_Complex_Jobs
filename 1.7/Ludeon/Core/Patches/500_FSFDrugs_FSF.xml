@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- FSFDrugs 500 (FSF Complex Jobs)
+ 
+		Default Priority Order
+
+			Medieval Overhaul - DankPyon_DoBillsWorkAlchemy 115 (Moved to FSFDrugs)
+			Core - DoBillsProduceDrugs 95 (Moved to FSFDrugs)
+			Vanilla Gravship Expanded - VGE_DoBillsProduceDrugs 95 (Moved to FSFDrugs)
+			Anomaly DLC - DoBillsSerumCentrifuge 75 (Moved to FSFDrugs)
+			Vanilla Factions Expanded Medieval 2 - VFEM2_DoBillsAlchemyTable 20 (Moved to FSFDrugs)
+			Vanilla Factions Expanded Medieval 2 - VFEM2_DoBillsAlchemyTable_Electric 20 (Moved to FSFDrugs)
+
+	-->
+			
+		<!-- Biotech Mechanoids Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Crafting"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Crafting"] ]</xpath>
+					<value>
+						<li>FSFDrugs</li>
+					</value>
+				</match>
+			</li>
+			
+			<li MayRequire="imranfish.xmlextensions" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Crafting"] ]</xpath>
+				<match Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+					<xpath>/Defs/ThingDef/race [mechEnabledWorkTypes/li [text()="Crafting"] ]</xpath>
+					<compare>Both</compare>
+					<value>
+						<mechWorkTypePriorities>
+							<FSFDrugs>3</FSFDrugs>
+						</mechWorkTypePriorities>
+					</value>
+				</match>
+			</li>
+			
+		<!-- ABF Artificial Beings Framework Patch -->
+			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Crafting"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Crafting"] ]</xpath>
+					<value>
+						<li>FSFDrugs</li>
+					</value>
+				</match>
+			</li>
+			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Crafting"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Crafting"] ]</xpath>
+					<value>
+						<li>FSFDrugs</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Crafting"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Crafting"] ]</xpath>
+					<value>
+						<li>FSFDrugs</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- VQE Drone Factory Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThinkTreeDef[defName = "VQE_Drone"]/thinkRoot/subNodes/li[@Class = "VanillaQuestsExpandedDroneFactory.ThinkNode_ConditionalPawnKindList"]/subNodes/li[@Class = "VanillaQuestsExpandedDroneFactory.JobGiver_DoWork"]/workTypes [li [text()="Crafting"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThinkTreeDef[defName = "VQE_Drone"]/thinkRoot/subNodes/li[@Class = "VanillaQuestsExpandedDroneFactory.ThinkNode_ConditionalPawnKindList"]/subNodes/li[@Class = "VanillaQuestsExpandedDroneFactory.JobGiver_DoWork"]/workTypes [li [text()="Crafting"] ]</xpath>
+					<value>
+						<li>FSFDrugs</li>
+					</value>
+				</match>
+			</li>
+			
+		<!-- Core - Do Bills At Drug Bench -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsProduceDrugs"]/workType</xpath>
+				<value>
+					<workType>FSFDrugs</workType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Gravship Expanded - Do Bills At Mini Drug Bench -->
+
+			<li MayRequire="vanillaexpanded.gravship" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VGE_DoBillsProduceDrugs"]/workType</xpath>
+				<value>
+					<workType>FSFDrugs</workType>
+				</value>
+			</li>
+			
+		<!-- Anomaly DLC - Do Bills at Serum Centrifuge -->
+			
+			<li MayRequire="Ludeon.RimWorld.Anomaly" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsSerumCentrifuge"]/workType</xpath>
+				<value>
+					<workType>FSFDrugs</workType>
+				</value>
+			</li>
+			
+		<!-- Medieval Overhaul - Do Bills at Alchemy Bench -->
+			
+			<li MayRequire="DankPyon.Medieval.Overhaul" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DankPyon_DoBillsWorkAlchemy"]/workType</xpath>
+				<value>
+					<workType>FSFDrugs</workType>
+				</value>
+			</li>
+			
+			<li MayRequire="DankPyon.Medieval.Overhaul" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DankPyon_DoBillsWorkAlchemy"]/priorityInType</xpath>
+				<value>
+					<priorityInType>70</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Factions Expanded Medieval 2 - Do Bills at Alchemy Table -->
+			
+			<li MayRequire="OskarPotocki.VFE.Medieval2" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VFEM2_DoBillsAlchemyTable"]/workType</xpath>
+				<value>
+					<workType>FSFDrugs</workType>
+				</value>
+			</li>
+			
+		<!-- Vanilla Factions Expanded Medieval 2 - Do Bills at Alchemy Table Electric -->
+			
+			<li MayRequire="OskarPotocki.VFE.Medieval2" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "VFEM2_DoBillsAlchemyTable_Electric"]/workType</xpath>
+				<value>
+					<workType>FSFDrugs</workType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

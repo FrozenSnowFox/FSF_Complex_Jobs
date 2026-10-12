@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+	<Operation Class="XmlExtensions.OptionalPatch">
+		<modId>FrozenSnowFox.FrozenSnowFoxComplexJobs</modId>
+		<key>FSFTeachWorktype</key>
+		<defaultValue>false</defaultValue>
+		<caseTrue>
+			
+		<Operation Class="PatchOperationSequence">
+			<success>Normal</success>
+			<operations>
+				
+			<!-- Teach Worktype -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+  <WorkTypeDef>
+    <defName>FSFTeach</defName>
+    <labelShort>teach</labelShort>
+    <pawnLabel>Teacher</pawnLabel>
+    <gerundLabel>teaching</gerundLabel>
+    <description>Teach children of the colony.</description>
+    <verb>Teach</verb>
+    <alwaysStartActive>true</alwaysStartActive>
+    <requireCapableColonist>true</requireCapableColonist>
+    <naturalPriority>1174</naturalPriority>
+    <relevantSkills>
+      <li>Social</li>
+    </relevantSkills>
+    <workTags>
+      <li>Social</li>
+      <li>Caring</li>
+      <li>AllWork</li>
+    </workTags>
+  </WorkTypeDef>
+					
+				</value>
+			</li>
+				
+			<!-- Biotech Mechanoids Patch -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Childcare"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Childcare"] ]</xpath>
+					<value>
+						<li>FSFTeach</li>
+					</value>
+				</match>
+			</li>
+				
+			<li MayRequire="Ludeon.RimWorld.Biotech,imranfish.xmlextensions" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Childcare"] ]</xpath>
+				<match Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+					<xpath>/Defs/ThingDef/race [mechEnabledWorkTypes/li [text()="Childcare"] ]</xpath>
+					<compare>Both</compare>
+					<value>
+						<mechWorkTypePriorities>
+							<FSFTeach>3</FSFTeach>
+						</mechWorkTypePriorities>
+					</value>
+				</match>
+			</li>
+				
+		<!-- ABF Artificial Beings Framework Patch -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech,Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Childcare"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Childcare"] ]</xpath>
+					<value>
+						<li>FSFTeach</li>
+					</value>
+				</match>
+			</li>
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech,Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Childcare"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Childcare"] ]</xpath>
+					<value>
+						<li>FSFTeach</li>
+					</value>
+				</match>
+			</li>
+				
+			<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech,Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Childcare"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Childcare"] ]</xpath>
+					<value>
+						<li>FSFTeach</li>
+					</value>
+				</match>
+			</li>
+				
+			<!-- Change Task Worktype -->
+				
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ChildcarerTeach"]/workType</xpath>
+				<value>
+					<workType>FSFTeach</workType>
+				</value>
+			</li>
+				
+			<!-- Add Worktype to Human for Children -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Human"]/race/lifeStageWorkSettings</xpath>
+				<value>
+					<FSFTeach>0</FSFTeach> <!-- Default Childcare 0 -->
+				</value>
+			</li>
+				
+			<!-- Vanilla Races Expanded - Archon -->
+				
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationConditional">		
+				<xpath>/Defs/GeneDef[defName="VRE_EarlyMaturity"]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/GeneDef[defName = "VRE_EarlyMaturity"]/modExtensions/li[@Class = "VREArchon.LifeStageWorkSettingsExtension"]/lifeStageWorkSettings</xpath>
+					<value>
+						<FSFTeach>0</FSFTeach> <!-- VRE_EarlyMaturity Childcare 0 -->
+					</value>
+				</match>
+			</li>
+				
+			</operations>
+		</Operation>
+			
+		</caseTrue>
+	</Operation>
+
+</Patch>

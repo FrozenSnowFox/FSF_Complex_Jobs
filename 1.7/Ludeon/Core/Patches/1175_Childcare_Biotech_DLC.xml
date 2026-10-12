@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- Childcare 1175 (Biotech DLC)
+ 
+		Default Priority Order
+
+			Biotech DLC - ChildcarerTeach 9999
+			Biotech DLC - BringBabyToSafety 200
+			Biotech DLC - BreastfeedBaby 80
+			Biotech DLC - PlayWithBaby 80
+			Biotech DLC - BottleFeedBaby 80
+			Biotech DLC - CarryToBreastfeed 80
+			Dubs Bad Hygiene - washChild 52
+
+	-->
+			
+		<!-- Biotech DLC - Bring Baby To Safety -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "BringBabyToSafety"]/priorityInType</xpath>
+				<value>
+					<priorityInType>500</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Biotech DLC - Breast Feed Baby -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "BreastfeedBaby"]/priorityInType</xpath>
+				<value>
+					<priorityInType>499</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Biotech DLC - Bottle Feed Baby -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "BottleFeedBaby"]/priorityInType</xpath>
+				<value>
+					<priorityInType>498</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Biotech DLC - Carry To Breastfeed -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "CarryToBreastfeed"]/priorityInType</xpath>
+				<value>
+					<priorityInType>497</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Dubs Bad Hygiene - Wash Child -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech,Dubwise.DubsBadHygiene" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "washChild"]/priorityInType</xpath>
+				<value>
+					<priorityInType>490</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Biotech DLC - Play With Baby -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "PlayWithBaby"]/priorityInType</xpath>
+				<value>
+					<priorityInType>485</priorityInType>
+				</value>
+			</li>
+			
+		<!-- Biotech DLC - Child Carer Teach -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "ChildcarerTeach"]/priorityInType</xpath>
+				<value>
+					<priorityInType>450</priorityInType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

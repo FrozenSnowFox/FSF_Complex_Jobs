@@ -371,4 +371,57 @@
 		
 	</v1.6>
 	
+	<v1.7>	
+
+		<!-- Ludeon -->
+		
+		<!-- Core -->
+		
+		<li>/</li>
+		
+		<li>1.7/Ludeon/Core</li>
+		
+		
+		
+		<!-- Frameworks -->
+		
+		<!-- XML Extensions -->
+		<li IfModActive="imranfish.xmlextensions">1.7/Frameworks/XML Extensions</li>
+		
+		
+		
+		<!-- Mods -->
+		
+		<!-- Alpha Mechs -->
+		<li IfModActive="sarg.alphamechs">1.7/Mods/Alpha Mechs</li>
+
+		<!-- Misc Craftable Robots -->
+		<li IfModActive="leion247658.MiscVHCraftableHRobots">1.7/Mods/Misc Craftable Robots</li>
+		
+		<!-- Misc Robots -->
+		<li IfModActive="Haplo.Miscellaneous.Robots">1.7/Mods/Misc Robots</li>
+		
+		<!-- Misc Robots Plus Plus -->
+		<li IfModActive="Alaestor.MiscRobots.PlusPlus">1.7/Mods/Misc Robots Plus Plus</li>
+		
+		<!-- Project Rimfactory Drones -->
+		<li IfModActive="spdskatr.projectrimfactory.drones">1.7/Mods/Project Rimfactory Drones</li>
+		
+		<!-- Project RimFactory Revived -->
+		<li IfModActive="spdskatr.projectrimfactory">1.7/Mods/Project RimFactory Revived</li>
+		
+		<!-- Vanilla Factions Expanded Pirates -->
+		<li IfModActive="OskarPotocki.VFE.Pirates">1.7/Mods/Vanilla Factions Expanded Pirates</li>
+		
+		<!-- Vanilla Factions Expanded Tribals -->
+		<li IfModActive="OskarPotocki.VFE.Tribals">1.7/Mods/Vanilla Factions Expanded Tribals</li>
+		
+		<!-- Vanilla Factions Expanded Mechanoids Unofficial -->
+		<li IfModActive="isorex.mechanoidsaddon">1.7/Mods/Vanilla Factions Expanded Mechanoids Unofficial</li>
+		
+		<!-- What The Hack -->
+		<li IfModActive="roolo.whatthehack">1.7/Mods/What The Hack</li>
+		
+	</v1.7>
+	
 </loadFolders>

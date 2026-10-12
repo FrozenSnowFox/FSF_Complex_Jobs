@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- Cleaning 200 (Core)
+
+		Default Priority Order
+
+			Dubs Rimefeller - CleanOil 150
+			Dubs Bad Hygiene - ClearBlockage 50
+			Dubs Bad Hygiene - cleanBedpan 50
+			Core - CleanClearSnow 10
+			Categorized Cleaning Combo - CategorizedCleaning_CleanFilth_Sterile 7
+			Categorized Cleaning Combo - CategorizedCleaning_CleanFilth_Indoors 6
+			Dubs Bad Hygiene - CleanFilthIndoors 6
+			Core - CleanFilth 5
+			Biotech DLC - CleanClearPollution ?? (Not listed?)
+ 
+	-->
+	
+		<!-- Biotech DLC - CleanClearPollution -->
+			
+			<li MayRequire="Ludeon.RimWorld.Biotech" Class="PatchOperationAdd">
+				<xpath>/Defs/WorkGiverDef[defName = "CleanClearPollution"]</xpath>
+				<value>
+					<priorityInType>9</priorityInType>
+				</value>
+			</li>
+	
+		</operations>
+	</Operation>
+				
+</Patch>

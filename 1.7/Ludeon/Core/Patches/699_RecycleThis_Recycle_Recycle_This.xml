@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- RecycleThis_Recycle 411 (Recycle This) (Default 431)
+ 
+		Default Priority Order
+
+			RecycleThis_Recycle - RecycleThis_Destroy 100
+			RecycleThis_Recycle - RecycleThis_Recycle 90
+
+	-->
+				
+		<!-- Recycle This - Update Worktype Priority -->
+			
+			<li MayRequire="Mlie.RecycleThis" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkTypeDef[defName = "RecycleThis_Recycle"]/naturalPriority</xpath>
+				<value>
+					<naturalPriority>411</naturalPriority>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>

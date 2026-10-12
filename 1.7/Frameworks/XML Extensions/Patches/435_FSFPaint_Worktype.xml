@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+	<Operation Class="XmlExtensions.OptionalPatch">
+		<modId>FrozenSnowFox.FrozenSnowFoxComplexJobs</modId>
+		<key>FSFPaintWorktype</key>
+		<defaultValue>false</defaultValue>
+		<caseTrue>
+			
+		<Operation Class="PatchOperationSequence">
+			<success>Normal</success>
+			<operations>
+				
+			<!-- Paint Worktype -->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+  <WorkTypeDef>
+    <defName>FSFPaint</defName>
+    <labelShort>Paint</labelShort>
+    <pawnLabel>Painter</pawnLabel>
+    <gerundLabel>painting</gerundLabel>
+    <description>Paint floors, walls and items.</description>
+    <verb>Paint</verb>
+    <naturalPriority>435</naturalPriority>
+    <disabledForSlaves>true</disabledForSlaves>
+    <relevantSkills>
+      <li>Artistic</li>
+    </relevantSkills>
+    <workTags>
+      <li>Artistic</li>
+      <li>Commoner</li>
+      <li>AllWork</li>
+    </workTags>
+  </WorkTypeDef>
+					
+				</value>
+			</li>
+				
+			<!-- Biotech Mechanoids Patch -->
+			
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Art"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Art"] ]</xpath>
+					<value>
+						<li>FSFPaint</li>
+					</value>
+				</match>
+			</li>
+				
+			<li MayRequire="imranfish.xmlextensions" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/race/mechEnabledWorkTypes [li [text()="Art"] ]</xpath>
+				<match Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+					<xpath>/Defs/ThingDef/race [mechEnabledWorkTypes/li [text()="Art"] ]</xpath>
+					<compare>Both</compare>
+					<value>
+						<mechWorkTypePriorities>
+							<FSFPaint>3</FSFPaint>
+						</mechWorkTypePriorities>
+					</value>
+				</match>
+			</li>
+				
+		<!-- ABF Artificial Beings Framework Patch -->
+			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Art"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/inherentWorkTypes [li [text()="Art"] ]</xpath>
+					<value>
+						<li>FSFPaint</li>
+					</value>
+				</match>
+			</li>
+			
+			<li MayRequire="Killathon.ArtificialBeings" Class="PatchOperationConditional">		
+				<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Art"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/modExtensions/li[@Class = "ArtificialBeings.ABF_ArtificialPawnExtension"]/forbiddenWorkTypes [li [text()="Art"] ]</xpath>
+					<value>
+						<li>FSFPaint</li>
+					</value>
+				</match>
+			</li>
+				
+			<!-- Asimov Automation Patch -->
+			
+			<li MayRequire="Neronix17.Asimov" Class="PatchOperationConditional">		
+				<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Art"] ]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef/comps/li[@Class = "Asimov.CompProperties_Automaton"]/enabledWorkTypes [li [text()="Art"] ]</xpath>
+					<value>
+						<li>FSFPaint</li>
+					</value>
+				</match>
+			</li>
+				
+			<!-- Change Task Worktype -->
+				
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "PaintBuilding"]/workType</xpath>
+				<value>
+					<workType>FSFPaint</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "PaintFloor"]/workType</xpath>
+				<value>
+					<workType>FSFPaint</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RemovePaintBuilding"]/workType</xpath>
+				<value>
+					<workType>FSFPaint</workType>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "RemovePaintFloor"]/workType</xpath>
+				<value>
+					<workType>FSFPaint</workType>
+				</value>
+			</li>
+				
+			<li MayRequire="Dubwise.DubsPaintShop" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DPSPaintThings"]/workType</xpath>
+				<value>
+					<workType>FSFPaint</workType>
+				</value>
+			</li>
+				
+			<li MayRequire="Dubwise.DubsPaintShop" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DPSPaintFloors"]/workType</xpath>
+				<value>
+					<workType>FSFPaint</workType>
+				</value>
+			</li>
+				
+			<li MayRequire="Dubwise.DubsPaintShop" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DPSStripPaint"]/workType</xpath>
+				<value>
+					<workType>FSFPaint</workType>
+				</value>
+			</li>
+				
+		<!-- Vehicle Framework - Paint Vehicle -->
+				
+			<li MayRequire="SmashPhil.VehicleFramework" Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "PaintVehicle"]/workType</xpath>
+				<value>
+					<workType>FSFPaint</workType>
+				</value>
+			</li>
+				
+			<!-- Add Worktype to Human for Children -->
+				
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "Human"]/race/lifeStageWorkSettings</xpath>
+				<value>
+					<FSFPaint>7</FSFPaint> <!-- Default Art 10 Recommended 7 -->
+				</value>
+			</li>
+				
+			<!-- Vanilla Races Expanded - Archon -->
+				
+			<li Class="PatchOperationConditional">		
+				<xpath>/Defs/GeneDef[defName="VRE_EarlyMaturity"]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/GeneDef[defName = "VRE_EarlyMaturity"]/modExtensions/li[@Class = "VREArchon.LifeStageWorkSettingsExtension"]/lifeStageWorkSettings</xpath>
+					<value>
+						<FSFPaint>4</FSFPaint> <!-- VRE_EarlyMaturity Art 7 Recommended 4 -->
+					</value>
+				</match>
+			</li>
+				
+			</operations>
+		</Operation>
+			
+		</caseTrue>
+	</Operation>
+
+</Patch>

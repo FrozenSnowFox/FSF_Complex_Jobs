@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+	<!-- Art 430 (Core)
+ 
+		Default Priority Order
+
+			Core - RemovePaintBuilding 202 (Moved to FSFPaint if Enabled)
+			Core - RemovePaintFloor 202 (Moved to FSFPaint if Enabled)
+			Core - PaintBuilding 200 (Moved to FSFPaint if Enabled)
+			Core - PaintFloor 200 (Moved to FSFPaint if Enabled)
+			Primitive Workbenches - VBY_DoBillsPottery 101
+			Core - DoBillsSculpt 100
+			Vanilla Expanded Framework - VEF_Art_ConstructFinishFrames 80
+			Vanilla Expanded Framework - VEF_Art_ConstructDeliverResourcesToFrames 70
+			Vanilla Expanded Framework - VEF_Art_ConstructDeliverResourcesToBlueprints 60
+
+	-->
+			
+		<!-- Core - Do Bills at Sculpting Table -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/WorkGiverDef[defName = "DoBillsSculpt"]/priorityInType</xpath>
+				<value>
+					<priorityInType>20</priorityInType>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+				
+</Patch>
